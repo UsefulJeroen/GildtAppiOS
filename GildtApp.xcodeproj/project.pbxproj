@@ -59,6 +59,38 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		B0177A34219B89B700E379D5 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				B078A90F219B0EE000545EAC /* FirstViewController.swift */,
+				B078A911219B0EE000545EAC /* SecondViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		B0177A35219B89D400E379D5 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B078A913219B0EE000545EAC /* Main.storyboard */,
+				B078A918219B0EE300545EAC /* LaunchScreen.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		B0177A36219B89E400E379D5 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		B0177A37219B89E900E379D5 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		B078A901219B0EE000545EAC = {
 			isa = PBXGroup;
 			children = (
@@ -80,12 +112,12 @@
 		B078A90C219B0EE000545EAC /* GildtApp */ = {
 			isa = PBXGroup;
 			children = (
-				B078A90D219B0EE000545EAC /* AppDelegate.swift */,
-				B078A90F219B0EE000545EAC /* FirstViewController.swift */,
-				B078A911219B0EE000545EAC /* SecondViewController.swift */,
-				B078A913219B0EE000545EAC /* Main.storyboard */,
 				B078A916219B0EE300545EAC /* Assets.xcassets */,
-				B078A918219B0EE300545EAC /* LaunchScreen.storyboard */,
+				B0177A34219B89B700E379D5 /* Controllers */,
+				B0177A37219B89E900E379D5 /* Models */,
+				B0177A36219B89E400E379D5 /* Services */,
+				B0177A35219B89D400E379D5 /* Views */,
+				B078A90D219B0EE000545EAC /* AppDelegate.swift */,
 				B078A91B219B0EE300545EAC /* Info.plist */,
 			);
 			path = GildtApp;
