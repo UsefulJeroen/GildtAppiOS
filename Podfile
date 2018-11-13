@@ -6,5 +6,8 @@ target 'GildtApp' do
   use_frameworks!
 
   # Pods for GildtApp
-
+  pod 'Alamofire'
+  pod 'Kingfisher'
+  pod 'SwiftKeychainWrapper'
+  
 end
