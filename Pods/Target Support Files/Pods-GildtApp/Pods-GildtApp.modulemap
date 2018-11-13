@@ -1,0 +1,6 @@
+framework module Pods_GildtApp {
+  umbrella header "Pods-GildtApp-umbrella.h"
+
+  export *
+  module * { export * }
+}
