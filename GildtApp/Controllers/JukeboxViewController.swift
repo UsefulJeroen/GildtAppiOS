@@ -11,6 +11,9 @@ import UIKit
 
 class JukeboxViewController: UITableViewController {
     
+    var songRequests: [SongRequest] = []
+    
+    //can remove?
     var image: UIImage?
     
     private let tableHeaderViewheight: CGFloat = 500.0
