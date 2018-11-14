@@ -17,7 +17,7 @@ class JukeboxViewController: UITableViewController {
         SongRequest(id: 1, artist: "Post Malone", title: "Better Now", votes: 22, datetime: Date()),
         SongRequest(id: 2, artist: "Drake", title: "In My Feelings", votes: 17, datetime: Date()),
         SongRequest(id: 3, artist: "5 Seconds of Summer", title: "Youngblood", votes: 16, datetime: Date()),
-        SongRequest(id: 4, artist: "Zware Jongens", title: "De kneu", votes: 88, datetime: Date()),
+        SongRequest(id: 4, artist: "Zware Jongens", title: "De kneu", votes: 16, datetime: Date()),
         SongRequest(id: 5, artist: "Andre Hazes", title: "Bloed, zweet en tranen", votes: 12, datetime: Date()),
         SongRequest(id: 6, artist: "Panic! At the disco", title: "High Hopes", votes: 10, datetime: Date()),
         SongRequest(id: 7, artist: "Bl0f", title: "Harder dan ik hebben kan", votes: 9, datetime: Date()),

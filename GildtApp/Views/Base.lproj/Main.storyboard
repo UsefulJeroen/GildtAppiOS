@@ -171,11 +171,12 @@
         <!--Jukebox View Controller-->
         <scene sceneID="pFN-YM-oHP">
             <objects>
-                <tableViewController id="1gQ-zM-pZk" customClass="JukeboxViewController" customModule="GildtApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Sfz-i9-y84">
+                <tableViewController storyboardIdentifier="JukeboxViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="1gQ-zM-pZk" customClass="JukeboxViewController" customModule="GildtApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="55" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Sfz-i9-y84">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.96421021220000003" green="0.97613400220000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="sectionIndexBackgroundColor" red="0.96421021220000003" green="0.97613400220000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <view key="tableHeaderView" contentMode="scaleToFill" id="uPp-mG-A03">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="175"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -197,7 +198,7 @@
                             <outlet property="delegate" destination="1gQ-zM-pZk" id="0QM-Qd-kHT"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="WTf-E5-bbB"/>
+                    <navigationItem key="navigationItem" id="f8I-Nl-ffB"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NMj-5w-UOb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -11,61 +11,63 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="55" id="6Du-TQ-KM1" customClass="SongRequestTableViewCell" customModule="GildtApp" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="55"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="45" id="6Du-TQ-KM1" customClass="SongRequestTableViewCell" customModule="GildtApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="45"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="6Du-TQ-KM1" id="mv6-fb-J6Y">
-                <rect key="frame" x="0.0" y="0.0" width="375" height="54.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="375" height="44.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="SongRequestCircleImage" translatesAutoresizingMaskIntoConstraints="NO" id="pYq-Rh-XPg">
-                        <rect key="frame" x="16" y="7" width="40" height="40"/>
+                        <rect key="frame" x="16" y="6" width="34" height="34"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     </imageView>
-                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="1" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ixO-0y-2Ml">
-                        <rect key="frame" x="28" y="12" width="17" height="31"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="SongRequestUpvoteImage" translatesAutoresizingMaskIntoConstraints="NO" id="zVJ-hY-Hkf">
+                        <rect key="frame" x="343" y="8" width="32" height="26"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.96421021220000003" green="0.97613400220000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jRQ-PC-Lhw">
+                        <rect key="frame" x="28" y="15" width="18" height="17"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
-                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                    </textView>
-                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Better Now" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="VRh-5W-cwe">
-                        <rect key="frame" x="85" y="0.0" width="100" height="28"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Better Now" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oON-nV-vis">
+                        <rect key="frame" x="84" y="10" width="222" height="20"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" red="0.96421021220000003" green="0.97613400220000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
-                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                    </textView>
-                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Post Malone" translatesAutoresizingMaskIntoConstraints="NO" id="xyn-D8-Wgs">
-                        <rect key="frame" x="85" y="26" width="90" height="21"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Post Malone" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pwm-hk-saF">
+                        <rect key="frame" x="84" y="26" width="198" height="12"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" red="0.96421021220000003" green="0.97613400220000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="10"/>
-                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                    </textView>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="SongRequestUpvoteImage" translatesAutoresizingMaskIntoConstraints="NO" id="zVJ-hY-Hkf">
-                        <rect key="frame" x="318" y="12" width="32" height="26"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="22" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CsP-w3-XS9">
+                        <rect key="frame" x="310" y="11" width="25" height="17"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" red="0.96421021220000003" green="0.97613400220000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    </imageView>
-                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="22" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Ypf-uI-ABf">
-                        <rect key="frame" x="278" y="11" width="32" height="26"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" red="0.96421021220000003" green="0.97613400220000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
-                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                    </textView>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <color key="backgroundColor" red="0.96421021223068237" green="0.97613400220870972" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             </tableViewCellContentView>
             <connections>
-                <outlet property="artistLabelView" destination="xyn-D8-Wgs" id="XyP-Wc-7lR"/>
-                <outlet property="idLabelView" destination="ixO-0y-2Ml" id="1xV-L2-fvw"/>
-                <outlet property="titleLabelView" destination="VRh-5W-cwe" id="kOK-WJ-r3J"/>
+                <outlet property="artistLabelView" destination="Pwm-hk-saF" id="2sy-qL-UFU"/>
+                <outlet property="idLabelView" destination="jRQ-PC-Lhw" id="vNF-9K-slb"/>
+                <outlet property="titleLabelView" destination="oON-nV-vis" id="hCY-Dz-iIg"/>
                 <outlet property="upvoteButton" destination="zVJ-hY-Hkf" id="I0S-qD-RyT"/>
-                <outlet property="upvotesAmountLabelView" destination="Ypf-uI-ABf" id="EpP-hk-Gmw"/>
+                <outlet property="upvotesAmountLabelView" destination="CsP-w3-XS9" id="Sg7-7u-0Pg"/>
             </connections>
-            <point key="canvasLocation" x="45.600000000000001" y="54.422788605697157"/>
+            <point key="canvasLocation" x="45.600000000000001" y="49.925037481259373"/>
         </tableViewCell>
     </objects>
     <resources>

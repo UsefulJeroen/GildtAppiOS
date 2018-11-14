@@ -12,13 +12,12 @@ import UIKit
 //custom tableviewcell for jukebox-tableview
 class SongRequestTableViewCell: UITableViewCell {
     
-    @IBOutlet weak var idLabelView: UITextView!
-    @IBOutlet weak var titleLabelView: UITextView!
-    @IBOutlet weak var artistLabelView: UITextView!
-    @IBOutlet weak var upvotesAmountLabelView: UITextView!
+    @IBOutlet weak var idLabelView: UILabel!
+    @IBOutlet weak var titleLabelView: UILabel!
+    @IBOutlet weak var artistLabelView: UILabel!
+    @IBOutlet weak var upvotesAmountLabelView: UILabel!
     
     @IBOutlet weak var upvoteButton: UIImageView!
-    
     
     override func awakeFromNib() {
         super.awakeFromNib()
