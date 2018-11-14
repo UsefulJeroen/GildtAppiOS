@@ -49,7 +49,7 @@
                         <color key="backgroundColor" red="0.96421021220000003" green="0.97613400220000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </imageView>
                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="22" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Ypf-uI-ABf">
-                        <rect key="frame" x="278" y="11" width="62" height="26"/>
+                        <rect key="frame" x="278" y="11" width="32" height="26"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" red="0.96421021220000003" green="0.97613400220000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>

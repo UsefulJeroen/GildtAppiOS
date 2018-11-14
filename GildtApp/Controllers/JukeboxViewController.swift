@@ -40,13 +40,25 @@ class JukeboxViewController: UITableViewController {
         tableView.estimatedRowHeight = tableView.rowHeight
         tableView.rowHeight = UITableView.automaticDimension
         tableView.dataSource = self
-        //register custom nib for songrequest-row
+        tableView.register(UINib(nibName: "SongRequestTableViewCell", bundle: nil), forCellReuseIdentifier: "SongRequestTableViewCell")
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         super.tableView(tableView, numberOfRowsInSection: section)
-        return 99
+        return songRequests.count
     }
     
-    
+    //set properties for each row
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        super.tableView(tableView, cellForRowAt: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "SongRequestTableViewCell") as! SongRequestTableViewCell
+        let row: Int = indexPath.row
+        
+        cell.idLabelView.text = String(songRequests[row].id)
+        cell.titleLabelView.text = songRequests[row].title
+        cell.artistLabelView.text = songRequests[row].artist
+        cell.upvotesAmountLabelView.text = String(songRequests[row].votes)
+
+        return cell
+    }
 }

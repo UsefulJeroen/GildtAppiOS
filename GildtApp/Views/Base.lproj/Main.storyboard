@@ -168,10 +168,10 @@
             </objects>
             <point key="canvasLocation" x="953" y="2110"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Jukebox View Controller-->
         <scene sceneID="pFN-YM-oHP">
             <objects>
-                <tableViewController id="1gQ-zM-pZk" sceneMemberID="viewController">
+                <tableViewController id="1gQ-zM-pZk" customClass="JukeboxViewController" customModule="GildtApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Sfz-i9-y84">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -192,16 +192,6 @@
                                 <constraint firstAttribute="bottom" secondItem="Oid-cs-V16" secondAttribute="bottom" id="vat-cd-Kle"/>
                             </constraints>
                         </view>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="87" id="qwq-ma-pP3">
-                                <rect key="frame" x="0.0" y="203" width="375" height="87"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="qwq-ma-pP3" id="p9c-Qb-gTV">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="86.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="1gQ-zM-pZk" id="zns-Wl-dE9"/>
                             <outlet property="delegate" destination="1gQ-zM-pZk" id="0QM-Qd-kHT"/>
