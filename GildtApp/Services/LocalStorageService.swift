@@ -9,6 +9,9 @@
 import Foundation
 import SwiftKeychainWrapper
 
+//class to set data in the localstorage of device
+//will be used to save authtoken in keychain
+//and can be extended to support other data / settings
 final class LocalStorageService {
     private static let authTokenKey: String = "changeToSecureRandomKey"
     

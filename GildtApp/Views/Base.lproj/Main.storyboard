@@ -106,35 +106,6 @@
             <point key="canvasLocation" x="953" y="1379"/>
         </scene>
         <!--Root View Controller-->
-        <scene sceneID="IaF-6C-IJz">
-            <objects>
-                <tableViewController id="65U-fw-igl" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Jf5-Ft-7zL">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="yc1-su-dcp">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="yc1-su-dcp" id="5Ln-WD-WcH">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="65U-fw-igl" id="2uw-q7-nWy"/>
-                            <outlet property="delegate" destination="65U-fw-igl" id="LLo-fk-ChN"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="waS-tv-Yoq"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="cGp-C5-SV1" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1905" y="2110"/>
-        </scene>
-        <!--Root View Controller-->
         <scene sceneID="luq-AM-CI3">
             <objects>
                 <tableViewController id="g13-Ll-MeS" sceneMemberID="viewController">
@@ -190,12 +161,57 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="65U-fw-igl" kind="relationship" relationship="rootViewController" id="oFa-Tz-bcA"/>
+                        <segue destination="1gQ-zM-pZk" kind="relationship" relationship="rootViewController" id="nzQ-tT-nkb"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hcB-Go-iWD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="953" y="2110"/>
+        </scene>
+        <!--Table View Controller-->
+        <scene sceneID="pFN-YM-oHP">
+            <objects>
+                <tableViewController id="1gQ-zM-pZk" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Sfz-i9-y84">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="uPp-mG-A03">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="175"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="JukeboxImage" translatesAutoresizingMaskIntoConstraints="NO" id="Oid-cs-V16">
+                                    <rect key="frame" x="0.0" y="-18" width="375" height="234"/>
+                                </imageView>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstItem="Oid-cs-V16" firstAttribute="top" secondItem="uPp-mG-A03" secondAttribute="top" id="3s2-Cn-L6l"/>
+                                <constraint firstItem="Oid-cs-V16" firstAttribute="leading" secondItem="uPp-mG-A03" secondAttribute="leading" id="3uw-z6-FsN"/>
+                                <constraint firstAttribute="trailing" secondItem="Oid-cs-V16" secondAttribute="trailing" id="Yie-mJ-bFG"/>
+                                <constraint firstAttribute="bottom" secondItem="Oid-cs-V16" secondAttribute="bottom" id="vat-cd-Kle"/>
+                            </constraints>
+                        </view>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="87" id="qwq-ma-pP3">
+                                <rect key="frame" x="0.0" y="203" width="375" height="87"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="qwq-ma-pP3" id="p9c-Qb-gTV">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="86.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="1gQ-zM-pZk" id="zns-Wl-dE9"/>
+                            <outlet property="delegate" destination="1gQ-zM-pZk" id="0QM-Qd-kHT"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="WTf-E5-bbB"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NMj-5w-UOb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1904.8" y="2109.8950524737634"/>
         </scene>
         <!--Deals-->
         <scene sceneID="vKe-a4-cAC">
@@ -261,4 +277,7 @@
             <point key="canvasLocation" x="953" y="-86"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="JukeboxImage" width="712.87127685546875" height="414.17822265625"/>
+    </resources>
 </document>

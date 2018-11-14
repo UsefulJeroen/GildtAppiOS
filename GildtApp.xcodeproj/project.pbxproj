@@ -11,6 +11,7 @@
 		B0177A3A219B8F1C00E379D5 /* OnBoarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0177A39219B8F1C00E379D5 /* OnBoarding.storyboard */; };
 		B0177A3E219B9C4B00E379D5 /* BackendAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0177A3D219B9C4B00E379D5 /* BackendAPIService.swift */; };
 		B0177A40219B9C8100E379D5 /* LocalStorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0177A3F219B9C8100E379D5 /* LocalStorageService.swift */; };
+		B0177A42219C64E500E379D5 /* JukeboxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0177A41219C64E500E379D5 /* JukeboxViewController.swift */; };
 		B078A90E219B0EE000545EAC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B078A90D219B0EE000545EAC /* AppDelegate.swift */; };
 		B078A915219B0EE000545EAC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B078A913219B0EE000545EAC /* Main.storyboard */; };
 		B078A917219B0EE300545EAC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B078A916219B0EE300545EAC /* Assets.xcassets */; };
@@ -24,6 +25,7 @@
 		B0177A39219B8F1C00E379D5 /* OnBoarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OnBoarding.storyboard; sourceTree = "<group>"; };
 		B0177A3D219B9C4B00E379D5 /* BackendAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackendAPIService.swift; sourceTree = "<group>"; };
 		B0177A3F219B9C8100E379D5 /* LocalStorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStorageService.swift; sourceTree = "<group>"; };
+		B0177A41219C64E500E379D5 /* JukeboxViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JukeboxViewController.swift; sourceTree = "<group>"; };
 		B078A90A219B0EE000545EAC /* GildtApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GildtApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B078A90D219B0EE000545EAC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B078A914219B0EE000545EAC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -64,6 +66,7 @@
 		B0177A34219B89B700E379D5 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				B0177A41219C64E500E379D5 /* JukeboxViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -252,6 +255,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B078A90E219B0EE000545EAC /* AppDelegate.swift in Sources */,
+				B0177A42219C64E500E379D5 /* JukeboxViewController.swift in Sources */,
 				B0177A40219B9C8100E379D5 /* LocalStorageService.swift in Sources */,
 				B0177A3E219B9C4B00E379D5 /* BackendAPIService.swift in Sources */,
 			);
