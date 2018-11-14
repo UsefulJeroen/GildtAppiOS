@@ -26,11 +26,11 @@ struct SongRequest: Codable {
     }
     
     //for new songrequest on device
-    init(artist: String, title: String) {
-        self.id = 0
+    init(id: Int, artist: String, title: String, votes: Int, datetime: Date) {
+        self.id = id
         self.artist = artist
         self.title = title
-        self.votes = 1
-        self.datetime = Date()
+        self.votes = votes
+        self.datetime = datetime
     }
 }
