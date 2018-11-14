@@ -12,7 +12,8 @@ import UIKit
 //custom tableviewcontroller for jukebox-view in main.storyboard
 class JukeboxViewController: UITableViewController {
     
-    var songRequests: [SongRequest] = []
+    //fake data, real backendapi should be used!
+    var songRequests: [SongRequest] = [SongRequest(artist: "Post Malone", title: "Better Now")]
     
     //can remove?
     var image: UIImage?

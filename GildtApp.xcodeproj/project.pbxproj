@@ -13,6 +13,8 @@
 		B0177A40219B9C8100E379D5 /* LocalStorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0177A3F219B9C8100E379D5 /* LocalStorageService.swift */; };
 		B0177A42219C64E500E379D5 /* JukeboxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0177A41219C64E500E379D5 /* JukeboxViewController.swift */; };
 		B0177A44219CC6A100E379D5 /* SongRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0177A43219CC6A100E379D5 /* SongRequest.swift */; };
+		B0177A47219CCD6800E379D5 /* SongRequestTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0177A46219CCD6800E379D5 /* SongRequestTableViewCell.swift */; };
+		B0177A49219CCE3500E379D5 /* SongRequestTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B0177A48219CCE3500E379D5 /* SongRequestTableViewCell.xib */; };
 		B078A90E219B0EE000545EAC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B078A90D219B0EE000545EAC /* AppDelegate.swift */; };
 		B078A915219B0EE000545EAC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B078A913219B0EE000545EAC /* Main.storyboard */; };
 		B078A917219B0EE300545EAC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B078A916219B0EE300545EAC /* Assets.xcassets */; };
@@ -28,6 +30,8 @@
 		B0177A3F219B9C8100E379D5 /* LocalStorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStorageService.swift; sourceTree = "<group>"; };
 		B0177A41219C64E500E379D5 /* JukeboxViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JukeboxViewController.swift; sourceTree = "<group>"; };
 		B0177A43219CC6A100E379D5 /* SongRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongRequest.swift; sourceTree = "<group>"; };
+		B0177A46219CCD6800E379D5 /* SongRequestTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongRequestTableViewCell.swift; sourceTree = "<group>"; };
+		B0177A48219CCE3500E379D5 /* SongRequestTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SongRequestTableViewCell.xib; sourceTree = "<group>"; };
 		B078A90A219B0EE000545EAC /* GildtApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GildtApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B078A90D219B0EE000545EAC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B078A914219B0EE000545EAC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -76,6 +80,7 @@
 		B0177A35219B89D400E379D5 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				B0177A45219CCD2D00E379D5 /* SongRequestTableViewCell */,
 				B078A913219B0EE000545EAC /* Main.storyboard */,
 				B078A918219B0EE300545EAC /* LaunchScreen.storyboard */,
 				B0177A39219B8F1C00E379D5 /* OnBoarding.storyboard */,
@@ -98,6 +103,15 @@
 				B0177A43219CC6A100E379D5 /* SongRequest.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		B0177A45219CCD2D00E379D5 /* SongRequestTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				B0177A46219CCD6800E379D5 /* SongRequestTableViewCell.swift */,
+				B0177A48219CCE3500E379D5 /* SongRequestTableViewCell.xib */,
+			);
+			path = SongRequestTableViewCell;
 			sourceTree = "<group>";
 		};
 		B078A901219B0EE000545EAC = {
@@ -196,6 +210,7 @@
 				B078A917219B0EE300545EAC /* Assets.xcassets in Resources */,
 				B078A915219B0EE000545EAC /* Main.storyboard in Resources */,
 				B0177A3A219B8F1C00E379D5 /* OnBoarding.storyboard in Resources */,
+				B0177A49219CCE3500E379D5 /* SongRequestTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -257,6 +272,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B0177A47219CCD6800E379D5 /* SongRequestTableViewCell.swift in Sources */,
 				B078A90E219B0EE000545EAC /* AppDelegate.swift in Sources */,
 				B0177A42219C64E500E379D5 /* JukeboxViewController.swift in Sources */,
 				B0177A44219CC6A100E379D5 /* SongRequest.swift in Sources */,
