@@ -9,6 +9,8 @@
 import Foundation
 import Alamofire
 
+//bakendapiservice to implement alamofire requests (probably pils&python)
+//this will be updated as soon as the backend is ready to use
 final class BackendAPIService {
     private static let baseURL = "unkown :("
 }

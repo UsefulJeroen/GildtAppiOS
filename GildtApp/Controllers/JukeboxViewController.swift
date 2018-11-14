@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 
+//custom tableviewcontroller for jukebox-view in main.storyboard
 class JukeboxViewController: UITableViewController {
     
     var songRequests: [SongRequest] = []
@@ -27,7 +28,24 @@ class JukeboxViewController: UITableViewController {
         
         navigationItem.title = "Jukebox"
         
+        setupTableView()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.navigationBar.prefersLargeTitles = true
+    }
+    
+    func setupTableView() {
         tableView.estimatedRowHeight = tableView.rowHeight
         tableView.rowHeight = UITableView.automaticDimension
+        tableView.dataSource = self
+        //register custom nib for songrequest-row
     }
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        super.tableView(tableView, numberOfRowsInSection: section)
+        return 99
+    }
+    
+    
 }
