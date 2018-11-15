@@ -34,7 +34,6 @@ class JukeboxViewController: UITableViewController {
     
     //can remove?
     var image: UIImage?
-    
     private let tableHeaderViewheight: CGFloat = 500.0 // make height of image etc
     private let tableHeaderViewCutaway: CGFloat = 40.0
     
@@ -57,6 +56,7 @@ class JukeboxViewController: UITableViewController {
     func setupTableView() {
         tableView.dataSource = self
         tableView.register(UINib(nibName: "SongRequestTableViewCell", bundle: nil), forCellReuseIdentifier: "SongRequestTableViewCell")
+        //can remove these 2 lines?
         tableView.estimatedRowHeight = tableView.rowHeight
         tableView.rowHeight = UITableView.automaticDimension
     }

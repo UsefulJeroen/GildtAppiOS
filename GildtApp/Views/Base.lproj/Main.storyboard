@@ -213,12 +213,12 @@
                         <color key="backgroundColor" red="0.96421021220000003" green="0.97613400220000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="sectionIndexBackgroundColor" red="0.96421021220000003" green="0.97613400220000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <imageView key="tableHeaderView" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="JukeboxHeaderImage" id="8Bc-vH-h3C">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="248"/>
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="257"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="SongRequestTableViewCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="kpp-Zc-8Po" customClass="SongRequestTableViewCell" customModule="GildtApp" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="276" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="285" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="kpp-Zc-8Po" id="RLu-W8-x1n">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -302,6 +302,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="JukeboxHeaderImage" width="779" height="511"/>
+        <image name="JukeboxHeaderImage" width="878" height="597.5"/>
     </resources>
 </document>
