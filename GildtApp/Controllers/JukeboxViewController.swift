@@ -23,16 +23,24 @@ class JukeboxViewController: UITableViewController {
         SongRequest(id: 7, artist: "Bl0f", title: "Harder dan ik hebben kan", votes: 9, datetime: Date()),
         SongRequest(id: 8, artist: "Boney M.", title: "Daddy Cool", votes: 6, datetime: Date()),
         SongRequest(id: 9, artist: "Wham!", title: "Wake me up before you go go", votes: 3, datetime: Date()),
+        SongRequest(id: 9, artist: "Wham!", title: "Wake me up before you go go", votes: 3, datetime: Date()),
+        SongRequest(id: 9, artist: "Wham!", title: "Wake me up before you go go", votes: 3, datetime: Date()),
+        SongRequest(id: 9, artist: "Wham!", title: "Wake me up before you go go", votes: 3, datetime: Date()),
+        SongRequest(id: 9, artist: "Wham!", title: "Wake me up before you go go", votes: 3, datetime: Date()),
+        SongRequest(id: 9, artist: "Wham!", title: "Wake me up before you go go", votes: 3, datetime: Date()),
+        SongRequest(id: 9, artist: "Wham!", title: "Wake me up before you go go", votes: 3, datetime: Date()),
+        SongRequest(id: 9, artist: "Wham!", title: "Wake me up before you go go", votes: 3, datetime: Date())
     ]
     
     //can remove?
     var image: UIImage?
     
-    private let tableHeaderViewheight: CGFloat = 500.0
+    private let tableHeaderViewheight: CGFloat = 500.0 // make height of image etc
     private let tableHeaderViewCutaway: CGFloat = 40.0
     
+    //is niet nodig, gebruik gewoon die ene image
     //var headerView: DetailHeaderView!
-    //var headerMaskLayer: CASHapeLayer!
+    var headerMaskLayer: CAShapeLayer!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,10 +55,10 @@ class JukeboxViewController: UITableViewController {
     }
     
     func setupTableView() {
-        tableView.estimatedRowHeight = tableView.rowHeight
-        tableView.rowHeight = UITableView.automaticDimension
         tableView.dataSource = self
         tableView.register(UINib(nibName: "SongRequestTableViewCell", bundle: nil), forCellReuseIdentifier: "SongRequestTableViewCell")
+        tableView.estimatedRowHeight = tableView.rowHeight
+        tableView.rowHeight = UITableView.automaticDimension
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

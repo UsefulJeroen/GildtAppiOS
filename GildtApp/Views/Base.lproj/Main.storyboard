@@ -161,7 +161,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="1gQ-zM-pZk" kind="relationship" relationship="rootViewController" id="nzQ-tT-nkb"/>
+                        <segue destination="XU3-U3-NsF" kind="relationship" relationship="rootViewController" id="p6z-ZH-75g"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hcB-Go-iWD" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -178,19 +178,18 @@
                         <color key="backgroundColor" red="0.96421021220000003" green="0.97613400220000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="sectionIndexBackgroundColor" red="0.96421021220000003" green="0.97613400220000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <view key="tableHeaderView" contentMode="scaleToFill" id="uPp-mG-A03">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="175"/>
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="176"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="JukeboxImage" translatesAutoresizingMaskIntoConstraints="NO" id="Oid-cs-V16">
-                                    <rect key="frame" x="0.0" y="-18" width="375" height="234"/>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="JukeboxHeaderImage" translatesAutoresizingMaskIntoConstraints="NO" id="Oid-cs-V16">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="251"/>
                                 </imageView>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
-                                <constraint firstItem="Oid-cs-V16" firstAttribute="top" secondItem="uPp-mG-A03" secondAttribute="top" id="3s2-Cn-L6l"/>
-                                <constraint firstItem="Oid-cs-V16" firstAttribute="leading" secondItem="uPp-mG-A03" secondAttribute="leading" id="3uw-z6-FsN"/>
-                                <constraint firstAttribute="trailing" secondItem="Oid-cs-V16" secondAttribute="trailing" id="Yie-mJ-bFG"/>
-                                <constraint firstAttribute="bottom" secondItem="Oid-cs-V16" secondAttribute="bottom" id="vat-cd-Kle"/>
+                                <constraint firstItem="Oid-cs-V16" firstAttribute="leading" secondItem="uPp-mG-A03" secondAttribute="leading" id="cMe-4W-BTz"/>
+                                <constraint firstItem="Oid-cs-V16" firstAttribute="top" secondItem="uPp-mG-A03" secondAttribute="top" id="hQb-k4-HuG"/>
+                                <constraint firstAttribute="trailing" secondItem="Oid-cs-V16" secondAttribute="trailing" id="vYX-Fc-oZz"/>
                             </constraints>
                         </view>
                         <connections>
@@ -203,6 +202,40 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NMj-5w-UOb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1904.8" y="2109.8950524737634"/>
+        </scene>
+        <!--Jukebox View Controller-->
+        <scene sceneID="sYD-vp-q50">
+            <objects>
+                <tableViewController useStoryboardIdentifierAsRestorationIdentifier="YES" id="XU3-U3-NsF" customClass="JukeboxViewController" customModule="GildtApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="yxm-qn-v2z">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.96421021220000003" green="0.97613400220000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="sectionIndexBackgroundColor" red="0.96421021220000003" green="0.97613400220000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <imageView key="tableHeaderView" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="JukeboxHeaderImage" id="8Bc-vH-h3C">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="248"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </imageView>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="SongRequestTableViewCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="kpp-Zc-8Po" customClass="SongRequestTableViewCell" customModule="GildtApp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="276" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="kpp-Zc-8Po" id="RLu-W8-x1n">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="XU3-U3-NsF" id="QOv-kF-nkZ"/>
+                            <outlet property="delegate" destination="XU3-U3-NsF" id="8Ne-lj-GW2"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="ghd-H5-aix"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eym-Cu-hgn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2604" y="2109.8950524737634"/>
         </scene>
         <!--Deals-->
         <scene sceneID="vKe-a4-cAC">
@@ -269,6 +302,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="JukeboxImage" width="712.87127685546875" height="414.17822265625"/>
+        <image name="JukeboxHeaderImage" width="779" height="511"/>
     </resources>
 </document>
