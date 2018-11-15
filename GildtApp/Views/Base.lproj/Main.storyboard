@@ -212,13 +212,51 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.96421021220000003" green="0.97613400220000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="sectionIndexBackgroundColor" red="0.96421021220000003" green="0.97613400220000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <imageView key="tableHeaderView" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="JukeboxHeaderImage" id="8Bc-vH-h3C">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="257"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="bQZ-Wr-JVU">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="253"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        </imageView>
+                            <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="JukeboxHeaderImage" translatesAutoresizingMaskIntoConstraints="NO" id="R1I-e0-45f">
+                                    <rect key="frame" x="0.0" y="-6" width="375" height="259"/>
+                                    <color key="backgroundColor" red="0.96421021220000003" green="0.97613400220000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </imageView>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="JukeboxRequestRectangle" translatesAutoresizingMaskIntoConstraints="NO" id="prq-bD-Yb5">
+                                    <rect key="frame" x="35" y="96" width="250" height="63"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="63" id="22u-3c-aXY"/>
+                                    </constraints>
+                                </imageView>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="JukeboxRequestRectangle" translatesAutoresizingMaskIntoConstraints="NO" id="4kp-jh-PZh">
+                                    <rect key="frame" x="35" y="162" width="250" height="69"/>
+                                </imageView>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="PlusButton" translatesAutoresizingMaskIntoConstraints="NO" id="bQQ-l6-0RH">
+                                    <rect key="frame" x="280" y="130" width="75" height="75"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="75" id="kfz-XB-CFY"/>
+                                        <constraint firstAttribute="width" constant="75" id="oHH-e5-DBT"/>
+                                    </constraints>
+                                </imageView>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstItem="prq-bD-Yb5" firstAttribute="top" secondItem="bQZ-Wr-JVU" secondAttribute="top" constant="96" id="1Ap-kX-4Dc"/>
+                                <constraint firstItem="R1I-e0-45f" firstAttribute="leading" secondItem="bQZ-Wr-JVU" secondAttribute="leading" id="9LN-0d-Qc8"/>
+                                <constraint firstItem="prq-bD-Yb5" firstAttribute="trailing" secondItem="4kp-jh-PZh" secondAttribute="trailing" id="Crc-mZ-fj1"/>
+                                <constraint firstAttribute="trailing" secondItem="R1I-e0-45f" secondAttribute="trailing" id="P6C-V2-lKe"/>
+                                <constraint firstItem="prq-bD-Yb5" firstAttribute="leading" secondItem="bQZ-Wr-JVU" secondAttribute="leading" constant="35" id="SM4-r0-fOg"/>
+                                <constraint firstAttribute="bottom" secondItem="4kp-jh-PZh" secondAttribute="bottom" constant="22" id="XrK-yn-Uza"/>
+                                <constraint firstItem="prq-bD-Yb5" firstAttribute="leading" secondItem="4kp-jh-PZh" secondAttribute="leading" id="YeE-qo-eZp"/>
+                                <constraint firstItem="4kp-jh-PZh" firstAttribute="top" secondItem="prq-bD-Yb5" secondAttribute="bottom" constant="3" id="a4U-Ez-LtM"/>
+                                <constraint firstAttribute="bottom" secondItem="bQQ-l6-0RH" secondAttribute="bottom" constant="48" id="mJW-UT-xM9"/>
+                                <constraint firstItem="R1I-e0-45f" firstAttribute="top" secondItem="bQZ-Wr-JVU" secondAttribute="top" constant="-6" id="phg-2L-Pdd"/>
+                                <constraint firstAttribute="trailing" secondItem="prq-bD-Yb5" secondAttribute="trailing" constant="90" id="xK8-5e-nVb"/>
+                                <constraint firstAttribute="trailing" secondItem="bQQ-l6-0RH" secondAttribute="trailing" constant="20" id="zGL-5t-4ta"/>
+                                <constraint firstAttribute="bottom" secondItem="R1I-e0-45f" secondAttribute="bottom" id="ztU-je-ZGN"/>
+                            </constraints>
+                        </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="SongRequestTableViewCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="kpp-Zc-8Po" customClass="SongRequestTableViewCell" customModule="GildtApp" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="285" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="281" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="kpp-Zc-8Po" id="RLu-W8-x1n">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -303,5 +341,7 @@
     </scenes>
     <resources>
         <image name="JukeboxHeaderImage" width="878" height="597.5"/>
+        <image name="JukeboxRequestRectangle" width="234" height="35"/>
+        <image name="PlusButton" width="64" height="64"/>
     </resources>
 </document>
