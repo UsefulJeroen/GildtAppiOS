@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		348921BC5C45455992621375 /* Pods_GildtApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 851FFD7A69B2CD05610C3A5C /* Pods_GildtApp.framework */; };
-		B00563B7219DB69B00B9F635 /* JukeboxHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00563B6219DB69B00B9F635 /* JukeboxHeaderView.swift */; };
 		B00563B9219DC34E00B9F635 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B00563B8219DC34E00B9F635 /* Assets.xcassets */; };
 		B0177A3A219B8F1C00E379D5 /* OnBoarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0177A39219B8F1C00E379D5 /* OnBoarding.storyboard */; };
 		B0177A3E219B9C4B00E379D5 /* BackendAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0177A3D219B9C4B00E379D5 /* BackendAPIService.swift */; };
@@ -26,7 +25,6 @@
 		010AC7F5A521E5C8F7C74994 /* Pods-GildtApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GildtApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GildtApp/Pods-GildtApp.debug.xcconfig"; sourceTree = "<group>"; };
 		851FFD7A69B2CD05610C3A5C /* Pods_GildtApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GildtApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC61AC83AADC724FF2441FBC /* Pods-GildtApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GildtApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-GildtApp/Pods-GildtApp.release.xcconfig"; sourceTree = "<group>"; };
-		B00563B6219DB69B00B9F635 /* JukeboxHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JukeboxHeaderView.swift; sourceTree = "<group>"; };
 		B00563B8219DC34E00B9F635 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B0177A39219B8F1C00E379D5 /* OnBoarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OnBoarding.storyboard; sourceTree = "<group>"; };
 		B0177A3D219B9C4B00E379D5 /* BackendAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackendAPIService.swift; sourceTree = "<group>"; };
@@ -86,7 +84,6 @@
 				B078A913219B0EE000545EAC /* Main.storyboard */,
 				B078A918219B0EE300545EAC /* LaunchScreen.storyboard */,
 				B0177A39219B8F1C00E379D5 /* OnBoarding.storyboard */,
-				B00563B6219DB69B00B9F635 /* JukeboxHeaderView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -281,7 +278,6 @@
 				B0177A44219CC6A100E379D5 /* SongRequest.swift in Sources */,
 				B0177A40219B9C8100E379D5 /* LocalStorageService.swift in Sources */,
 				B0177A3E219B9C4B00E379D5 /* BackendAPIService.swift in Sources */,
-				B00563B7219DB69B00B9F635 /* JukeboxHeaderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -32,15 +32,6 @@ class JukeboxViewController: UITableViewController {
         SongRequest(id: 9, artist: "Wham!", title: "Wake me up before you go go", votes: 3, datetime: Date())
     ]
     
-    //can remove?
-    var image: UIImage?
-    private let tableHeaderViewheight: CGFloat = 500.0 // make height of image etc
-    private let tableHeaderViewCutaway: CGFloat = 40.0
-    
-    //is niet nodig, gebruik gewoon die ene image
-    //var headerView: DetailHeaderView!
-    var headerMaskLayer: CAShapeLayer!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
