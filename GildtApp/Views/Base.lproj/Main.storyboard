@@ -169,41 +169,6 @@
             <point key="canvasLocation" x="953" y="2110"/>
         </scene>
         <!--Jukebox View Controller-->
-        <scene sceneID="pFN-YM-oHP">
-            <objects>
-                <tableViewController storyboardIdentifier="JukeboxViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="1gQ-zM-pZk" customClass="JukeboxViewController" customModule="GildtApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="55" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Sfz-i9-y84">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.96421021220000003" green="0.97613400220000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <color key="sectionIndexBackgroundColor" red="0.96421021220000003" green="0.97613400220000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <view key="tableHeaderView" contentMode="scaleToFill" id="uPp-mG-A03">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="176"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <subviews>
-                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="JukeboxHeaderImage" translatesAutoresizingMaskIntoConstraints="NO" id="Oid-cs-V16">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="251"/>
-                                </imageView>
-                            </subviews>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <constraints>
-                                <constraint firstItem="Oid-cs-V16" firstAttribute="leading" secondItem="uPp-mG-A03" secondAttribute="leading" id="cMe-4W-BTz"/>
-                                <constraint firstItem="Oid-cs-V16" firstAttribute="top" secondItem="uPp-mG-A03" secondAttribute="top" id="hQb-k4-HuG"/>
-                                <constraint firstAttribute="trailing" secondItem="Oid-cs-V16" secondAttribute="trailing" id="vYX-Fc-oZz"/>
-                            </constraints>
-                        </view>
-                        <connections>
-                            <outlet property="dataSource" destination="1gQ-zM-pZk" id="zns-Wl-dE9"/>
-                            <outlet property="delegate" destination="1gQ-zM-pZk" id="0QM-Qd-kHT"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" id="f8I-Nl-ffB"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="NMj-5w-UOb" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1904.8" y="2109.8950524737634"/>
-        </scene>
-        <!--Jukebox View Controller-->
         <scene sceneID="sYD-vp-q50">
             <objects>
                 <tableViewController useStoryboardIdentifierAsRestorationIdentifier="YES" id="XU3-U3-NsF" customClass="JukeboxViewController" customModule="GildtApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -275,7 +240,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eym-Cu-hgn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2604" y="2109.8950524737634"/>
+            <point key="canvasLocation" x="1905" y="2110"/>
         </scene>
         <!--Deals-->
         <scene sceneID="vKe-a4-cAC">
