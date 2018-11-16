@@ -12,25 +12,9 @@ import UIKit
 //custom tableviewcontroller for jukebox-view in main.storyboard
 class JukeboxViewController: UITableViewController {
     
+    var pendingNetworkRequest: Bool = false
     //fake data, real backendapi should be used in endproduct!
-    var songRequests: [SongRequest] = [
-        SongRequest(id: 1, artist: "Post Malone", title: "Better Now", votes: 22, datetime: Date()),
-        SongRequest(id: 2, artist: "Drake", title: "In My Feelings", votes: 17, datetime: Date()),
-        SongRequest(id: 3, artist: "5 Seconds of Summer", title: "Youngblood", votes: 16, datetime: Date()),
-        SongRequest(id: 4, artist: "Zware Jongens", title: "De kneu", votes: 16, datetime: Date()),
-        SongRequest(id: 5, artist: "Andre Hazes", title: "Bloed, zweet en tranen", votes: 12, datetime: Date()),
-        SongRequest(id: 6, artist: "Panic! At the disco", title: "High Hopes", votes: 10, datetime: Date()),
-        SongRequest(id: 7, artist: "Bl0f", title: "Harder dan ik hebben kan", votes: 9, datetime: Date()),
-        SongRequest(id: 8, artist: "Boney M.", title: "Daddy Cool", votes: 6, datetime: Date()),
-        SongRequest(id: 9, artist: "Wham!", title: "Wake me up before you go go", votes: 3, datetime: Date()),
-        SongRequest(id: 9, artist: "Wham!", title: "Wake me up before you go go", votes: 3, datetime: Date()),
-        SongRequest(id: 9, artist: "Wham!", title: "Wake me up before you go go", votes: 3, datetime: Date()),
-        SongRequest(id: 9, artist: "Wham!", title: "Wake me up before you go go", votes: 3, datetime: Date()),
-        SongRequest(id: 9, artist: "Wham!", title: "Wake me up before you go go", votes: 3, datetime: Date()),
-        SongRequest(id: 9, artist: "Wham!", title: "Wake me up before you go go", votes: 3, datetime: Date()),
-        SongRequest(id: 9, artist: "Wham!", title: "Wake me up before you go go", votes: 3, datetime: Date()),
-        SongRequest(id: 9, artist: "Wham!", title: "Wake me up before you go go", votes: 3, datetime: Date())
-    ]
+    var songRequests: [SongRequest] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,6 +22,7 @@ class JukeboxViewController: UITableViewController {
         navigationItem.title = "Jukebox"
         
         setupTableView()
+        getSongRequests()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -50,6 +35,29 @@ class JukeboxViewController: UITableViewController {
         //can remove these 2 lines?
         tableView.estimatedRowHeight = tableView.rowHeight
         tableView.rowHeight = UITableView.automaticDimension
+    }
+    
+    func getSongRequests() {
+        pendingNetworkRequest = true
+        BackendAPIService.getSongRequests()
+            .responseData(completionHandler: { [weak self] (response) in
+                guard let jsonData = response.data else { return }
+                
+                let decoder = JSONDecoder()
+                let data = try? decoder.decode([SongRequest].self, from: jsonData)
+                
+                DispatchQueue.main.async {
+                    if data != nil {
+                        self?.reloadSongRequests(newData: data!)
+                    }
+                }
+            })
+        pendingNetworkRequest = false
+    }
+    
+    func reloadSongRequests(newData: [SongRequest]) {
+        songRequests = newData
+        tableView.reloadData()
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

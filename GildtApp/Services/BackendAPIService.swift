@@ -15,10 +15,10 @@ import Alamofire
 final class BackendAPIService {
     private static let baseURL = "http://146.185.156.30/api/v1/"
     
-    static func getSongs() -> DataRequest {
+    static func getSongRequests() -> DataRequest {
         var headers: [String: String] = [:]
         if let authToken = LocalStorageService.getAuthToken() {
-            headers["x-authtoken"] = authToken
+            headers["Authorization"] = "Bearer \(authToken)"
         }
         return Alamofire.request("\(baseURL)/song", method: .get, parameters: nil, encoding: URLEncoding.default, headers: headers)
     }
