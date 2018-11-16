@@ -13,7 +13,7 @@ import UIKit
 class JukeboxViewController: UITableViewController {
     
     var pendingNetworkRequest: Bool = false
-    //fake data, real backendapi should be used in endproduct!
+    
     var songRequests: [SongRequest] = []
     
     override func viewDidLoad() {
@@ -23,6 +23,7 @@ class JukeboxViewController: UITableViewController {
         
         setupTableView()
         getSongRequests()
+        setupRefreshControl()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -58,6 +59,25 @@ class JukeboxViewController: UITableViewController {
     func reloadSongRequests(newData: [SongRequest]) {
         songRequests = newData
         tableView.reloadData()
+        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: {
+            self.refreshControl?.alpha = 0
+            self.refreshControl?.endRefreshing()
+            
+        })
+        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2), execute: {
+            self.refreshControl?.alpha = 1
+        })
+    }
+    
+    @objc func refresh() {
+        refreshControl?.alpha = 1
+        getSongRequests()
+    }
+    
+    func setupRefreshControl() {
+        refreshControl = UIRefreshControl()
+        tableView.refreshControl = refreshControl
+        refreshControl?.addTarget(self, action: #selector(refresh), for: .valueChanged)
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
