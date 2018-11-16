@@ -19,6 +19,11 @@
 		B078A90E219B0EE000545EAC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B078A90D219B0EE000545EAC /* AppDelegate.swift */; };
 		B078A915219B0EE000545EAC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B078A913219B0EE000545EAC /* Main.storyboard */; };
 		B078A91A219B0EE300545EAC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B078A918219B0EE300545EAC /* LaunchScreen.storyboard */; };
+		DF70F66F219EE2C2001D3006 /* Agenda.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF70F66E219EE2C2001D3006 /* Agenda.storyboard */; };
+		DF70F671219EE2DB001D3006 /* Deals.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF70F670219EE2DB001D3006 /* Deals.storyboard */; };
+		DF70F673219EE304001D3006 /* Stempelkaart.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF70F672219EE304001D3006 /* Stempelkaart.storyboard */; };
+		DF70F675219EE318001D3006 /* Jukebox.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF70F674219EE318001D3006 /* Jukebox.storyboard */; };
+		DF70F677219EE337001D3006 /* Foto.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF70F676219EE337001D3006 /* Foto.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +43,11 @@
 		B078A914219B0EE000545EAC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B078A919219B0EE300545EAC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B078A91B219B0EE300545EAC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DF70F66E219EE2C2001D3006 /* Agenda.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Agenda.storyboard; sourceTree = "<group>"; };
+		DF70F670219EE2DB001D3006 /* Deals.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Deals.storyboard; sourceTree = "<group>"; };
+		DF70F672219EE304001D3006 /* Stempelkaart.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Stempelkaart.storyboard; sourceTree = "<group>"; };
+		DF70F674219EE318001D3006 /* Jukebox.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Jukebox.storyboard; sourceTree = "<group>"; };
+		DF70F676219EE337001D3006 /* Foto.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Foto.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +90,11 @@
 		B0177A35219B89D400E379D5 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				DF70F676219EE337001D3006 /* Foto.storyboard */,
+				DF70F674219EE318001D3006 /* Jukebox.storyboard */,
+				DF70F672219EE304001D3006 /* Stempelkaart.storyboard */,
+				DF70F670219EE2DB001D3006 /* Deals.storyboard */,
+				DF70F66E219EE2C2001D3006 /* Agenda.storyboard */,
 				B0177A45219CCD2D00E379D5 /* SongRequestTableViewCell */,
 				B078A913219B0EE000545EAC /* Main.storyboard */,
 				B078A918219B0EE300545EAC /* LaunchScreen.storyboard */,
@@ -206,10 +221,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DF70F66F219EE2C2001D3006 /* Agenda.storyboard in Resources */,
+				DF70F671219EE2DB001D3006 /* Deals.storyboard in Resources */,
+				DF70F675219EE318001D3006 /* Jukebox.storyboard in Resources */,
 				B078A91A219B0EE300545EAC /* LaunchScreen.storyboard in Resources */,
+				DF70F673219EE304001D3006 /* Stempelkaart.storyboard in Resources */,
 				B078A915219B0EE000545EAC /* Main.storyboard in Resources */,
 				B0177A3A219B8F1C00E379D5 /* OnBoarding.storyboard in Resources */,
 				B0177A49219CCE3500E379D5 /* SongRequestTableViewCell.xib in Resources */,
+				DF70F677219EE337001D3006 /* Foto.storyboard in Resources */,
 				B00563B9219DC34E00B9F635 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
