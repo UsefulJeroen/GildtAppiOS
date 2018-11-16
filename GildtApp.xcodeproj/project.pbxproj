@@ -90,15 +90,15 @@
 		B0177A35219B89D400E379D5 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				DF70F66E219EE2C2001D3006 /* Agenda.storyboard */,
+				DF70F670219EE2DB001D3006 /* Deals.storyboard */,
 				DF70F676219EE337001D3006 /* Foto.storyboard */,
 				DF70F674219EE318001D3006 /* Jukebox.storyboard */,
-				DF70F672219EE304001D3006 /* Stempelkaart.storyboard */,
-				DF70F670219EE2DB001D3006 /* Deals.storyboard */,
-				DF70F66E219EE2C2001D3006 /* Agenda.storyboard */,
-				B0177A45219CCD2D00E379D5 /* SongRequestTableViewCell */,
-				B078A913219B0EE000545EAC /* Main.storyboard */,
 				B078A918219B0EE300545EAC /* LaunchScreen.storyboard */,
+				B078A913219B0EE000545EAC /* Main.storyboard */,
 				B0177A39219B8F1C00E379D5 /* OnBoarding.storyboard */,
+				B0177A45219CCD2D00E379D5 /* SongRequestTableViewCell */,
+				DF70F672219EE304001D3006 /* Stempelkaart.storyboard */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -150,13 +150,13 @@
 		B078A90C219B0EE000545EAC /* GildtApp */ = {
 			isa = PBXGroup;
 			children = (
+				B078A90D219B0EE000545EAC /* AppDelegate.swift */,
 				B00563B8219DC34E00B9F635 /* Assets.xcassets */,
 				B0177A34219B89B700E379D5 /* Controllers */,
+				B078A91B219B0EE300545EAC /* Info.plist */,
 				B0177A37219B89E900E379D5 /* Models */,
 				B0177A36219B89E400E379D5 /* Services */,
 				B0177A35219B89D400E379D5 /* Views */,
-				B078A90D219B0EE000545EAC /* AppDelegate.swift */,
-				B078A91B219B0EE300545EAC /* Info.plist */,
 			);
 			path = GildtApp;
 			sourceTree = "<group>";

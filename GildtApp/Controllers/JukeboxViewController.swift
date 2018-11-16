@@ -16,6 +16,10 @@ class JukeboxViewController: UITableViewController {
     
     var songRequests: [SongRequest] = []
     
+    @IBOutlet weak var titleTextField: UITextField!
+    @IBOutlet weak var artistTextField: UITextField!
+    @IBOutlet weak var plusButton: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -98,4 +102,13 @@ class JukeboxViewController: UITableViewController {
 
         return cell
     }
+    
+    @IBAction func titleTextFieldDidEnd(_ sender: Any) {
+        var verycool = "something"
+    }
+
+    @IBAction func artistTextFieldDidEnd(_ sender: Any) {
+    }
+    
+    
 }
