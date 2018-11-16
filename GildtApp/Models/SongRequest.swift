@@ -9,28 +9,28 @@
 import Foundation
 import UIKit
 
-//model created with Pils&Python backendAPI in mind
+//model created with Erik's backendAPI in mind
 struct SongRequest: Codable {
     let id: Int
     let artist: String
     let title: String
     var votes: Int
-    var datetime: Date
+    let userId: Int
     
     enum CodingKeys: String, CodingKey {
-        case id = "Id"
-        case artist = "Artist"
-        case title = "Title"
-        case votes = "Votes"
-        case datetime = "DateTime"
+        case id = "id"
+        case artist = "artist"
+        case title = "title"
+        case votes = "votes"
+        case userId = "user_id"
     }
     
     //for new songrequest on device
-    init(id: Int, artist: String, title: String, votes: Int, datetime: Date) {
+    init(id: Int, artist: String, title: String, votes: Int, userId: Int) {
         self.id = id
         self.artist = artist
         self.title = title
         self.votes = votes
-        self.datetime = datetime
+        self.userId = userId
     }
 }
