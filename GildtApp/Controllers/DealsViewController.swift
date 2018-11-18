@@ -42,6 +42,10 @@ class DealsViewController: UIViewController {
 extension DealsViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print("Selected Cell #\(indexPath.row)")
+        if let currentCenteredPage = centeredCollectionViewFlowLayout.currentCenteredPage,
+            currentCenteredPage != indexPath.row {
+            centeredCollectionViewFlowLayout.scrollToPage(index: indexPath.row, animated: true)
+        }
     }
 }
 
