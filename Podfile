@@ -9,5 +9,6 @@ target 'GildtApp' do
   pod 'Alamofire'
   pod 'Kingfisher'
   pod 'SwiftKeychainWrapper'
+  pod 'CenteredCollectionView'
   
 end
