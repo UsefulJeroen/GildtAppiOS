@@ -24,6 +24,9 @@
 		DF70F673219EE304001D3006 /* Stempelkaart.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF70F672219EE304001D3006 /* Stempelkaart.storyboard */; };
 		DF70F675219EE318001D3006 /* Jukebox.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF70F674219EE318001D3006 /* Jukebox.storyboard */; };
 		DF70F677219EE337001D3006 /* Foto.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF70F676219EE337001D3006 /* Foto.storyboard */; };
+		DF70F67B21A183A7001D3006 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF70F67A21A183A7001D3006 /* UIColor.swift */; };
+		DF70F68121A185FD001D3006 /* DealsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF70F68021A185FD001D3006 /* DealsViewController.swift */; };
+		DF70F68321A18635001D3006 /* DealsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF70F68221A18635001D3006 /* DealsCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +51,9 @@
 		DF70F672219EE304001D3006 /* Stempelkaart.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Stempelkaart.storyboard; sourceTree = "<group>"; };
 		DF70F674219EE318001D3006 /* Jukebox.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Jukebox.storyboard; sourceTree = "<group>"; };
 		DF70F676219EE337001D3006 /* Foto.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Foto.storyboard; sourceTree = "<group>"; };
+		DF70F67A21A183A7001D3006 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		DF70F68021A185FD001D3006 /* DealsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealsViewController.swift; sourceTree = "<group>"; };
+		DF70F68221A18635001D3006 /* DealsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealsCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +88,7 @@
 		B0177A34219B89B700E379D5 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				DF70F68021A185FD001D3006 /* DealsViewController.swift */,
 				B0177A41219C64E500E379D5 /* JukeboxViewController.swift */,
 			);
 			path = Controllers;
@@ -90,6 +97,7 @@
 		B0177A35219B89D400E379D5 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				DF70F67F21A18516001D3006 /* DealsCollectionViewCell */,
 				DF70F66E219EE2C2001D3006 /* Agenda.storyboard */,
 				DF70F670219EE2DB001D3006 /* Deals.storyboard */,
 				DF70F676219EE337001D3006 /* Foto.storyboard */,
@@ -132,10 +140,10 @@
 		B078A901219B0EE000545EAC = {
 			isa = PBXGroup;
 			children = (
-				B078A90C219B0EE000545EAC /* GildtApp */,
-				B078A90B219B0EE000545EAC /* Products */,
-				AACEAF5C890BC292E12073A4 /* Pods */,
 				31E327F8F5D21CA5C28B2C22 /* Frameworks */,
+				B078A90C219B0EE000545EAC /* GildtApp */,
+				AACEAF5C890BC292E12073A4 /* Pods */,
+				B078A90B219B0EE000545EAC /* Products */,
 			);
 			sourceTree = "<group>";
 		};
@@ -156,9 +164,26 @@
 				B078A91B219B0EE300545EAC /* Info.plist */,
 				B0177A37219B89E900E379D5 /* Models */,
 				B0177A36219B89E400E379D5 /* Services */,
+				DF70F67921A1837E001D3006 /* Styling */,
 				B0177A35219B89D400E379D5 /* Views */,
 			);
 			path = GildtApp;
+			sourceTree = "<group>";
+		};
+		DF70F67921A1837E001D3006 /* Styling */ = {
+			isa = PBXGroup;
+			children = (
+				DF70F67A21A183A7001D3006 /* UIColor.swift */,
+			);
+			path = Styling;
+			sourceTree = "<group>";
+		};
+		DF70F67F21A18516001D3006 /* DealsCollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				DF70F68221A18635001D3006 /* DealsCollectionViewCell.swift */,
+			);
+			path = DealsCollectionViewCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -269,6 +294,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-GildtApp/Pods-GildtApp-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/CenteredCollectionView/CenteredCollectionView.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftKeychainWrapper/SwiftKeychainWrapper.framework",
 			);
@@ -277,6 +303,7 @@
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CenteredCollectionView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftKeychainWrapper.framework",
 			);
@@ -293,6 +320,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				B0177A47219CCD6800E379D5 /* SongRequestTableViewCell.swift in Sources */,
+				DF70F68321A18635001D3006 /* DealsCollectionViewCell.swift in Sources */,
+				DF70F68121A185FD001D3006 /* DealsViewController.swift in Sources */,
+				DF70F67B21A183A7001D3006 /* UIColor.swift in Sources */,
 				B078A90E219B0EE000545EAC /* AppDelegate.swift in Sources */,
 				B0177A42219C64E500E379D5 /* JukeboxViewController.swift in Sources */,
 				B0177A44219CC6A100E379D5 /* SongRequest.swift in Sources */,
@@ -445,7 +475,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6FC9595Z84;
+				DEVELOPMENT_TEAM = XT9TUGW438;
 				INFOPLIST_FILE = GildtApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -465,7 +495,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6FC9595Z84;
+				DEVELOPMENT_TEAM = XT9TUGW438;
 				INFOPLIST_FILE = GildtApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
