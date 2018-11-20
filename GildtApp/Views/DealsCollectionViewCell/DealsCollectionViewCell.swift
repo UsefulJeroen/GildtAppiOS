@@ -72,8 +72,11 @@ extension DealsCollectionViewCell {
         self.slideUpPoint = CGPoint.zero
         self.slideUpDelta = 0
 
-        self.center = initialCenter
-        initialCenter = self.center
+        UIView.animate(withDuration: 0.2, animations: {
+            self.center = self.initialCenter
+        }, completion: { (complete: Bool) in
+            self.initialCenter = self.center
+        })
     }
 
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
