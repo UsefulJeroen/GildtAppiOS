@@ -38,7 +38,7 @@
                             <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DealUpIndicator" translatesAutoresizingMaskIntoConstraints="NO" id="XX1-qs-zhc">
                                 <rect key="frame" x="0.0" y="132" width="375" height="36"/>
                             </imageView>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsVerticalScrollIndicator="NO" indicatorStyle="black" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="60I-j6-rE5">
+                            <collectionView multipleTouchEnabled="YES" contentMode="scaleToFill" showsVerticalScrollIndicator="NO" indicatorStyle="black" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="60I-j6-rE5">
                                 <rect key="frame" x="0.0" y="176" width="375" height="449"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewLayout key="collectionViewLayout" id="hMW-Aj-q8H" customClass="CenteredCollectionViewFlowLayout" customModule="CenteredCollectionView"/>
