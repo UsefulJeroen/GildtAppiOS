@@ -22,6 +22,7 @@ class DealsCollectionViewCell: UICollectionViewCell {
     private var slideUpPoint:CGPoint = CGPoint.zero
     private var SlideUpInitPoint:CGPoint = CGPoint.zero
     private var slideUpDelta:CGFloat = 0
+    private var slideUpReached = false
     private var initialCenter: CGPoint = CGPoint.zero
 
     func setUpView() {
@@ -62,6 +63,10 @@ extension DealsCollectionViewCell {
                 if slideUpDelta <= self.slideUpEndDistance {
                     let newCenter = CGPoint(x: initialCenter.x, y: initialCenter.y - slideUpDelta)
                     self.center = newCenter
+                    slideUpReached = false
+                } else if !slideUpReached {
+                    slideUpReached = true
+                    UIImpactFeedbackGenerator(style: .medium).impactOccurred()
                 }
             }
         }
