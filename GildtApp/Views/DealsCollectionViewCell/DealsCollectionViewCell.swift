@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import StatusAlert
 
 class DealsCollectionViewCell: UICollectionViewCell {
     // view
@@ -39,6 +40,19 @@ class DealsCollectionViewCell: UICollectionViewCell {
         self.layer.shadowOpacity = 0.16
         self.layer.masksToBounds = false
         self.layer.shadowPath = UIBezierPath(roundedRect: self.bounds, cornerRadius: self.contentView.layer.cornerRadius).cgPath
+    }
+
+    private func showStatusAlert(
+        withImage image: UIImage?,
+        title: String?,
+        message: String?) {
+
+        let statusAlert = StatusAlert()
+        statusAlert.image = image
+        statusAlert.title = title
+        statusAlert.message = message
+        statusAlert.canBePickedOrDismissed = true
+        statusAlert.show(withVerticalPosition: .center)
     }
 }
 
@@ -92,6 +106,11 @@ extension DealsCollectionViewCell {
         print("Ended")
         if self.slideUpDelta >= self.slideUpEndDistance {
             print("CLAIMED")
+            showStatusAlert(
+                withImage: #imageLiteral(resourceName: "Success icon"),
+                title: "Deal ingediend",
+                message: "Geniet van je drankje!")
+            UINotificationFeedbackGenerator().notificationOccurred(.success)
         } else {
             print("NOT CLAIMED")
         }
