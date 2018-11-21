@@ -64,8 +64,10 @@ extension DealsCollectionViewCell {
                     let newCenter = CGPoint(x: initialCenter.x, y: initialCenter.y - slideUpDelta)
                     self.center = newCenter
                     slideUpReached = false
+                    NotificationCenter.default.post(name: Notification.Name("DealIsSlideUpIdentifier"), object: nil, userInfo: ["ClaimState":false])
                 } else if !slideUpReached {
                     slideUpReached = true
+                    NotificationCenter.default.post(name: Notification.Name("DealIsSlideUpIdentifier"), object: nil, userInfo: ["ClaimState":true])
                     UIImpactFeedbackGenerator(style: .medium).impactOccurred()
                 }
             }
@@ -76,6 +78,8 @@ extension DealsCollectionViewCell {
         self.SlideUpInitPoint = CGPoint.zero
         self.slideUpPoint = CGPoint.zero
         self.slideUpDelta = 0
+
+        NotificationCenter.default.post(name: Notification.Name("DealIsSlideUpIdentifier"), object: nil, userInfo: ["ClaimState":false])
 
         UIView.animate(withDuration: 0.2, animations: {
             self.center = self.initialCenter
