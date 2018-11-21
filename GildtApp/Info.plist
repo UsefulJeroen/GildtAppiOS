@@ -51,48 +51,48 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-    <key>UIApplicationShortcutItems</key>
-    <array>
-        <dict>
-            <key>UIApplicationShortcutItemType</key>
-            <string>AgendaAction</string>
-            <key>UIApplicationShortcutItemIconFile</key>
-            <string>TabAgenda</string>
-            <key>UIApplicationShortcutItemTitle</key>
-            <string>Agenda</string>
-            <key>UIApplicationShortcutItemSubtitle</key>
-            <string>Opkomende Events</string>
-        </dict>
-        <dict>
-            <key>UIApplicationShortcutItemType</key>
-            <string>DealsAction</string>
-            <key>UIApplicationShortcutItemIconFile</key>
-            <string>TabDeals</string>
-            <key>UIApplicationShortcutItemTitle</key>
-            <string>Deals</string>
-            <key>UIApplicationShortcutItemSubtitle</key>
-            <string>Bespaar muntjes</string>
-        </dict>
-        <dict>
-            <key>UIApplicationShortcutItemType</key>
-            <string>StempelkaartAction</string>
-            <key>UIApplicationShortcutItemIconFile</key>
-            <string>TabStempelkaart</string>
-            <key>UIApplicationShortcutItemTitle</key>
-            <string>Stempelkaart</string>
-            <key>UIApplicationShortcutItemSubtitle</key>
-            <string>Open de stempelkaart</string>
-        </dict>
-        <dict>
-            <key>UIApplicationShortcutItemType</key>
-            <string>JukeboxAction</string>
-            <key>UIApplicationShortcutItemIconFile</key>
-            <string>TabJukebox</string>
-            <key>UIApplicationShortcutItemTitle</key>
-            <string>Jukebox</string>
-            <key>UIApplicationShortcutItemSubtitle</key>
-            <string>Nummertje aanvragen</string>
-        </dict>
-    </array>
+	<key>UIApplicationShortcutItems</key>
+	<array>
+		<dict>
+			<key>UIApplicationShortcutItemType</key>
+			<string>AgendaAction</string>
+			<key>UIApplicationShortcutItemIconFile</key>
+			<string>TabAgenda</string>
+			<key>UIApplicationShortcutItemTitle</key>
+			<string>Agenda</string>
+			<key>UIApplicationShortcutItemSubtitle</key>
+			<string>Opkomende events</string>
+		</dict>
+		<dict>
+			<key>UIApplicationShortcutItemType</key>
+			<string>DealsAction</string>
+			<key>UIApplicationShortcutItemIconFile</key>
+			<string>TabDeals</string>
+			<key>UIApplicationShortcutItemTitle</key>
+			<string>Deals</string>
+			<key>UIApplicationShortcutItemSubtitle</key>
+			<string>Bespaar muntjes</string>
+		</dict>
+		<dict>
+			<key>UIApplicationShortcutItemType</key>
+			<string>StempelkaartAction</string>
+			<key>UIApplicationShortcutItemIconFile</key>
+			<string>TabStempelkaart</string>
+			<key>UIApplicationShortcutItemTitle</key>
+			<string>Stempelkaart</string>
+			<key>UIApplicationShortcutItemSubtitle</key>
+			<string>Open de stempelkaart</string>
+		</dict>
+		<dict>
+			<key>UIApplicationShortcutItemType</key>
+			<string>JukeboxAction</string>
+			<key>UIApplicationShortcutItemIconFile</key>
+			<string>TabJukebox</string>
+			<key>UIApplicationShortcutItemTitle</key>
+			<string>Jukebox</string>
+			<key>UIApplicationShortcutItemSubtitle</key>
+			<string>Nummertje aanvragen</string>
+		</dict>
+	</array>
 </dict>
 </plist>
