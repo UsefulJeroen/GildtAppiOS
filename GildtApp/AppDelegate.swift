@@ -42,6 +42,31 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
+    func application(_ application: UIApplication, performActionFor shortcutItem: UIApplicationShortcutItem, completionHandler: @escaping (Bool) -> Void) {
+        print(shortcutItem)
+        completionHandler(handleQuickAction(shortcutItem: shortcutItem))
+    }
 
+    private func handleQuickAction(shortcutItem: UIApplicationShortcutItem) -> Bool {
+        let shortcutType = shortcutItem.type
+
+        guard let tabBarController = window?.rootViewController as? UITabBarController else {
+            return false
+        }
+
+        switch shortcutType {
+        case "AgendaAction":
+            tabBarController.selectedIndex = 0
+        case "DealsAction":
+            tabBarController.selectedIndex = 1
+        case "StempelkaartAction":
+            tabBarController.selectedIndex = 2
+        case "JukeboxAction":
+            tabBarController.selectedIndex = 3
+        default:
+            return false
+        }
+        return true
+    }
 }
 
