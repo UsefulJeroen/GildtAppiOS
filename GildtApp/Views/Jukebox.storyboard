@@ -13,7 +13,7 @@
         <scene sceneID="MtJ-ht-EqD">
             <objects>
                 <navigationController id="Rab-lL-Qvb" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Jukebox" id="UtJ-ad-Bs8"/>
+                    <tabBarItem key="tabBarItem" title="Jukebox" image="TabJukebox" id="UtJ-ad-Bs8"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="uNF-H1-3U1">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -115,5 +115,6 @@
     <resources>
         <image name="JukeboxHeaderImage" width="878" height="597.5"/>
         <image name="PlusButton" width="64" height="64"/>
+        <image name="TabJukebox" width="26" height="26"/>
     </resources>
 </document>
