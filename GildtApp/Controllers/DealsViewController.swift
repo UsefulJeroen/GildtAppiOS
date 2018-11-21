@@ -16,6 +16,7 @@ class DealsViewController: UIViewController {
     var centeredCollectionViewFlowLayout: CenteredCollectionViewFlowLayout!
     
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var LetGoLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,6 +36,19 @@ class DealsViewController: UIViewController {
         )
         
         centeredCollectionViewFlowLayout.minimumLineSpacing = 20
+
+        // Set up DealIsSlideUp Notification Observer
+        NotificationCenter.default.addObserver(self, selector: #selector(self.DealIsSlideUpNotificationHandler(notification:)), name: NSNotification.Name(rawValue: "DealIsSlideUpIdentifier"), object: nil)
+
+    }
+
+    @objc private func DealIsSlideUpNotificationHandler(notification: Notification) {
+        let showLabel = notification.userInfo!["ClaimState"] as! Bool
+        if showLabel {
+            LetGoLabel.isHidden = false
+        } else {
+            LetGoLabel.isHidden = true
+        }
     }
     
 }

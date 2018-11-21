@@ -38,7 +38,7 @@
                             <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DealUpIndicator" translatesAutoresizingMaskIntoConstraints="NO" id="XX1-qs-zhc">
                                 <rect key="frame" x="0.0" y="132" width="375" height="36"/>
                             </imageView>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="60I-j6-rE5">
+                            <collectionView multipleTouchEnabled="YES" contentMode="scaleToFill" showsVerticalScrollIndicator="NO" indicatorStyle="black" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="60I-j6-rE5">
                                 <rect key="frame" x="0.0" y="176" width="375" height="449"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewLayout key="collectionViewLayout" id="hMW-Aj-q8H" customClass="CenteredCollectionViewFlowLayout" customModule="CenteredCollectionView"/>
@@ -125,6 +125,12 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Laat los om in te dienen" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="THy-Ff-5xH" userLabel="LetGoLabel">
+                                <rect key="frame" x="8" y="544" width="359" height="17"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                <color key="textColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Deals worden ingewisseld door de kaart door het bar personeel omhoog te laten swipen." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z2C-Bx-yGd">
                                 <rect key="frame" x="8" y="625" width="359" height="34"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
@@ -135,21 +141,25 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="Z2C-Bx-yGd" secondAttribute="trailing" constant="8" id="2pc-Wq-Dmu"/>
+                            <constraint firstItem="X6t-Pe-cZu" firstAttribute="trailing" secondItem="THy-Ff-5xH" secondAttribute="trailing" constant="8" id="36C-A1-dUj"/>
                             <constraint firstItem="Z2C-Bx-yGd" firstAttribute="leading" secondItem="X6t-Pe-cZu" secondAttribute="leading" constant="8" id="3lZ-IU-oCz"/>
                             <constraint firstItem="60I-j6-rE5" firstAttribute="top" secondItem="XX1-qs-zhc" secondAttribute="bottom" constant="8" id="4Ud-l6-RHz"/>
                             <constraint firstItem="X6t-Pe-cZu" firstAttribute="trailing" secondItem="XX1-qs-zhc" secondAttribute="trailing" id="Bbq-Bf-KVV"/>
                             <constraint firstItem="60I-j6-rE5" firstAttribute="leading" secondItem="X6t-Pe-cZu" secondAttribute="leading" id="Cld-v4-ODd"/>
                             <constraint firstItem="X6t-Pe-cZu" firstAttribute="bottom" secondItem="Z2C-Bx-yGd" secondAttribute="bottom" constant="8" id="PRu-Vb-Ca1"/>
+                            <constraint firstItem="THy-Ff-5xH" firstAttribute="leading" secondItem="X6t-Pe-cZu" secondAttribute="leading" constant="8" id="egJ-nK-HHB"/>
                             <constraint firstItem="XX1-qs-zhc" firstAttribute="top" secondItem="X6t-Pe-cZu" secondAttribute="top" constant="16" id="jpe-ya-ttf"/>
                             <constraint firstItem="Z2C-Bx-yGd" firstAttribute="top" secondItem="60I-j6-rE5" secondAttribute="bottom" id="k7t-Cm-VzL"/>
                             <constraint firstItem="60I-j6-rE5" firstAttribute="trailing" secondItem="X6t-Pe-cZu" secondAttribute="trailing" id="klY-uh-hNS"/>
                             <constraint firstItem="60I-j6-rE5" firstAttribute="top" secondItem="X6t-Pe-cZu" secondAttribute="top" constant="60" id="ngd-rt-BWe"/>
                             <constraint firstItem="XX1-qs-zhc" firstAttribute="leading" secondItem="X6t-Pe-cZu" secondAttribute="leading" id="rAp-AX-kvc"/>
+                            <constraint firstItem="Z2C-Bx-yGd" firstAttribute="top" secondItem="THy-Ff-5xH" secondAttribute="bottom" constant="64" id="rmI-3l-hfz"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="X6t-Pe-cZu"/>
                     </view>
                     <navigationItem key="navigationItem" largeTitleDisplayMode="always" id="GWJ-Tc-RbC"/>
                     <connections>
+                        <outlet property="LetGoLabel" destination="THy-Ff-5xH" id="U0m-Qh-sVw"/>
                         <outlet property="collectionView" destination="60I-j6-rE5" id="KED-pZ-dNz"/>
                     </connections>
                 </viewController>

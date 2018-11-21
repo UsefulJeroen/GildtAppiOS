@@ -22,6 +22,7 @@ class DealsCollectionViewCell: UICollectionViewCell {
     private var slideUpPoint:CGPoint = CGPoint.zero
     private var SlideUpInitPoint:CGPoint = CGPoint.zero
     private var slideUpDelta:CGFloat = 0
+    private var slideUpReached = false
     private var initialCenter: CGPoint = CGPoint.zero
 
     func setUpView() {
@@ -62,6 +63,12 @@ extension DealsCollectionViewCell {
                 if slideUpDelta <= self.slideUpEndDistance {
                     let newCenter = CGPoint(x: initialCenter.x, y: initialCenter.y - slideUpDelta)
                     self.center = newCenter
+                    slideUpReached = false
+                    NotificationCenter.default.post(name: Notification.Name("DealIsSlideUpIdentifier"), object: nil, userInfo: ["ClaimState":false])
+                } else if !slideUpReached {
+                    slideUpReached = true
+                    NotificationCenter.default.post(name: Notification.Name("DealIsSlideUpIdentifier"), object: nil, userInfo: ["ClaimState":true])
+                    UIImpactFeedbackGenerator(style: .medium).impactOccurred()
                 }
             }
         }
@@ -72,8 +79,13 @@ extension DealsCollectionViewCell {
         self.slideUpPoint = CGPoint.zero
         self.slideUpDelta = 0
 
-        self.center = initialCenter
-        initialCenter = self.center
+        NotificationCenter.default.post(name: Notification.Name("DealIsSlideUpIdentifier"), object: nil, userInfo: ["ClaimState":false])
+
+        UIView.animate(withDuration: 0.2, animations: {
+            self.center = self.initialCenter
+        }, completion: { (complete: Bool) in
+            self.initialCenter = self.center
+        })
     }
 
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
