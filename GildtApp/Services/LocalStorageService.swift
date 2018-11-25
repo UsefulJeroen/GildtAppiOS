@@ -19,16 +19,12 @@ final class LocalStorageService {
         KeychainWrapper.standard.set(authToken, forKey: authTokenKey)
     }
     
-    //hardcoded authToken, will be fixed when we have a login/register page
     static func getAuthToken() -> String? {
-        //return KeychainWrapper.standard.string(forKey: authTokenKey)
-        return "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NDI0NTAzMTAsInN1YiI6M30.Hsjr-ngSDhwRXUSKSFwlcE_A7KlPhZGCuQY26lKmnZE"
+        return KeychainWrapper.standard.string(forKey: authTokenKey)
     }
     
-    //hardcoded authToken, will be fixed when we have a login/register page
     static func isAuthTokenSet() -> Bool {
-        //return KeychainWrapper.standard.string(forKey: authTokenKey) != nil
-        return true
+        return KeychainWrapper.standard.string(forKey: authTokenKey) != nil
     }
     
     static func removeAuthToken() {
