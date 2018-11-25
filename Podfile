@@ -10,6 +10,6 @@ target 'GildtApp' do
   pod 'Kingfisher'
   pod 'SwiftKeychainWrapper'
   pod 'CenteredCollectionView'
-  pod 'StatusAlert', '~> 1.0.0'
+  pod 'StatusAlert'
   
 end
