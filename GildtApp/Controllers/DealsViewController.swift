@@ -24,6 +24,7 @@ class DealsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "Deals"
+        navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.refresh, target: self, action: #selector(getDeals))
         view.backgroundColor = UIColor.appBackground
         
         setUpCollectionView()
@@ -49,7 +50,7 @@ class DealsViewController: UIViewController {
         centeredCollectionViewFlowLayout.minimumLineSpacing = 20
     }
 
-    private func getDeals() {
+    @objc private func getDeals() {
         DealsAPIService.getDeals()
             .responseData(completionHandler: { [weak self] (response) in
                 guard let jsonData = response.data else { return }
