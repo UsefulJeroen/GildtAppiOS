@@ -141,7 +141,6 @@ class DealsViewController: UIViewController {
 
 extension DealsViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("Selected Cell #\(indexPath.row)")
         if let currentCenteredPage = centeredCollectionViewFlowLayout.currentCenteredPage,
             currentCenteredPage != indexPath.row {
             centeredCollectionViewFlowLayout.scrollToPage(index: indexPath.row, animated: true)
@@ -160,13 +159,5 @@ extension DealsViewController: UICollectionViewDataSource {
         cell.deal = deals[indexPath.row]
         cell.loadDealData()
         return cell
-    }
-    
-    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-        print("Current centered index: \(String(describing: centeredCollectionViewFlowLayout.currentCenteredPage ?? nil))")
-    }
-    
-    func scrollViewDidEndScrollingAnimation(_ scrollView: UIScrollView) {
-        print("Current centered index: \(String(describing: centeredCollectionViewFlowLayout.currentCenteredPage ?? nil))")
     }
 }

@@ -81,7 +81,6 @@ extension DealsCollectionViewCell {
 
             SlideUpInitPoint = touch.location(in: self)
             slideUpPoint = touch.location(in: self)
-            print("Start")
         }
     }
 
@@ -90,7 +89,6 @@ extension DealsCollectionViewCell {
             if touch.location(in: self.superview).y < SlideUpInitPoint.y {
                 slideUpPoint = touch.location(in: self.superview)
                 slideUpDelta = SlideUpInitPoint.y - slideUpPoint.y
-                print("Updated: Delta \(self.slideUpDelta)")
 
                 if slideUpDelta <= self.slideUpEndDistance {
                     let newCenter = CGPoint(x: initialCenter.x, y: initialCenter.y - slideUpDelta)
@@ -121,28 +119,18 @@ extension DealsCollectionViewCell {
     }
 
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        print("Ended")
         if self.slideUpDelta >= self.slideUpEndDistance {
             NotificationCenter.default.post(name: Notification.Name("DealIsClaimedIdentifier"), object: nil, userInfo: ["Deal":deal!])
-            print("CLAIMED")
             showStatusAlert(
                 withImage: #imageLiteral(resourceName: "Success icon"),
                 title: "Deal ingediend",
                 message: "Geniet van je drankje!")
             UINotificationFeedbackGenerator().notificationOccurred(.success)
-        } else {
-            print("NOT CLAIMED")
         }
         self.reset()
     }
 
     override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
-        print("Cancelled")
-        if self.slideUpDelta >= self.slideUpEndDistance {
-            print("CLAIMED")
-        } else {
-            print("NOT CLAIMED")
-        }
         self.reset()
     }
 }
