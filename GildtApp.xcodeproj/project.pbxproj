@@ -35,6 +35,8 @@
 		DF70F67B21A183A7001D3006 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF70F67A21A183A7001D3006 /* UIColor.swift */; };
 		DF70F68121A185FD001D3006 /* DealsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF70F68021A185FD001D3006 /* DealsViewController.swift */; };
 		DF70F68321A18635001D3006 /* DealsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF70F68221A18635001D3006 /* DealsCollectionViewCell.swift */; };
+		DF70F69021AF36B5001D3006 /* DealsAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF70F68F21AF36B5001D3006 /* DealsAPIService.swift */; };
+		DF70F69221AF394A001D3006 /* Deal.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF70F69121AF394A001D3006 /* Deal.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +72,8 @@
 		DF70F67A21A183A7001D3006 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		DF70F68021A185FD001D3006 /* DealsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealsViewController.swift; sourceTree = "<group>"; };
 		DF70F68221A18635001D3006 /* DealsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealsCollectionViewCell.swift; sourceTree = "<group>"; };
+		DF70F68F21AF36B5001D3006 /* DealsAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealsAPIService.swift; sourceTree = "<group>"; };
+		DF70F69121AF394A001D3006 /* Deal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Deal.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +140,7 @@
 			children = (
 				B0177A3D219B9C4B00E379D5 /* BackendAPIService.swift */,
 				B0177A3F219B9C8100E379D5 /* LocalStorageService.swift */,
+				DF70F68F21AF36B5001D3006 /* DealsAPIService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -145,6 +150,7 @@
 			children = (
 				B0CADB8421AB242F00E6D848 /* User */,
 				B0177A43219CC6A100E379D5 /* SongRequest.swift */,
+				DF70F69121AF394A001D3006 /* Deal.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -365,6 +371,7 @@
 				B0177A47219CCD6800E379D5 /* SongRequestTableViewCell.swift in Sources */,
 				B0CADB8A21AB258C00E6D848 /* LoginModel.swift in Sources */,
 				DF70F68321A18635001D3006 /* DealsCollectionViewCell.swift in Sources */,
+				DF70F69221AF394A001D3006 /* Deal.swift in Sources */,
 				DF70F68121A185FD001D3006 /* DealsViewController.swift in Sources */,
 				DF70F67B21A183A7001D3006 /* UIColor.swift in Sources */,
 				B099D20221B029AA00DA4473 /* NavigationViewController.swift in Sources */,
@@ -374,6 +381,7 @@
 				B099D20421B02ED000DA4473 /* MainTabBarController.swift in Sources */,
 				B0177A44219CC6A100E379D5 /* SongRequest.swift in Sources */,
 				B0177A40219B9C8100E379D5 /* LocalStorageService.swift in Sources */,
+				DF70F69021AF36B5001D3006 /* DealsAPIService.swift in Sources */,
 				B0177A3E219B9C4B00E379D5 /* BackendAPIService.swift in Sources */,
 				B0CADB8E21AB2EA200E6D848 /* LoginViewController.swift in Sources */,
 				B099D20021B0278400DA4473 /* AgendaViewController.swift in Sources */,
