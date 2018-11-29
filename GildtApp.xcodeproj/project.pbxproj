@@ -22,6 +22,7 @@
 		B099D20021B0278400DA4473 /* AgendaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B099D1FF21B0278400DA4473 /* AgendaViewController.swift */; };
 		B099D20221B029AA00DA4473 /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B099D20121B029AA00DA4473 /* NavigationViewController.swift */; };
 		B099D20421B02ED000DA4473 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B099D20321B02ED000DA4473 /* MainTabBarController.swift */; };
+		B099D20A21B0442600DA4473 /* NewSong.swift in Sources */ = {isa = PBXBuildFile; fileRef = B099D20921B0442600DA4473 /* NewSong.swift */; };
 		B0CADB8621AB243C00E6D848 /* RegisterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0CADB8521AB243C00E6D848 /* RegisterModel.swift */; };
 		B0CADB8821AB254600E6D848 /* LoginPostBack.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0CADB8721AB254600E6D848 /* LoginPostBack.swift */; };
 		B0CADB8A21AB258C00E6D848 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0CADB8921AB258C00E6D848 /* LoginModel.swift */; };
@@ -57,6 +58,7 @@
 		B099D1FF21B0278400DA4473 /* AgendaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgendaViewController.swift; sourceTree = "<group>"; };
 		B099D20121B029AA00DA4473 /* NavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationViewController.swift; sourceTree = "<group>"; };
 		B099D20321B02ED000DA4473 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		B099D20921B0442600DA4473 /* NewSong.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewSong.swift; sourceTree = "<group>"; };
 		B0CADB8521AB243C00E6D848 /* RegisterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterModel.swift; sourceTree = "<group>"; };
 		B0CADB8721AB254600E6D848 /* LoginPostBack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPostBack.swift; sourceTree = "<group>"; };
 		B0CADB8921AB258C00E6D848 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
@@ -143,8 +145,8 @@
 		B0177A37219B89E900E379D5 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				B099D20821B0440A00DA4473 /* Song */,
 				B0CADB8421AB242F00E6D848 /* User */,
-				B0177A43219CC6A100E379D5 /* SongRequest.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -198,6 +200,15 @@
 				B099D20321B02ED000DA4473 /* MainTabBarController.swift */,
 			);
 			path = Hierarchy;
+			sourceTree = "<group>";
+		};
+		B099D20821B0440A00DA4473 /* Song */ = {
+			isa = PBXGroup;
+			children = (
+				B0177A43219CC6A100E379D5 /* SongRequest.swift */,
+				B099D20921B0442600DA4473 /* NewSong.swift */,
+			);
+			path = Song;
 			sourceTree = "<group>";
 		};
 		B0CADB8421AB242F00E6D848 /* User */ = {
@@ -373,6 +384,7 @@
 				B0CADB8621AB243C00E6D848 /* RegisterModel.swift in Sources */,
 				B099D20421B02ED000DA4473 /* MainTabBarController.swift in Sources */,
 				B0177A44219CC6A100E379D5 /* SongRequest.swift in Sources */,
+				B099D20A21B0442600DA4473 /* NewSong.swift in Sources */,
 				B0177A40219B9C8100E379D5 /* LocalStorageService.swift in Sources */,
 				B0177A3E219B9C4B00E379D5 /* BackendAPIService.swift in Sources */,
 				B0CADB8E21AB2EA200E6D848 /* LoginViewController.swift in Sources */,

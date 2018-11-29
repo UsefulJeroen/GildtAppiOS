@@ -9,7 +9,6 @@
 import Foundation
 import UIKit
 
-//custom tableviewcontroller for jukebox-view in main.storyboard
 class JukeboxViewController: UITableViewController {
     
     var pendingNetworkRequest: Bool = false
@@ -104,11 +103,41 @@ class JukeboxViewController: UITableViewController {
     }
     
     @IBAction func titleTextFieldDidEnd(_ sender: Any) {
-        //var verycool = "something"
+        //set highlighted to artistfield
     }
 
     @IBAction func artistTextFieldDidEnd(_ sender: Any) {
+        addSong()
     }
     
+    func addSong() {
+        let title = titleTextField.text
+        let artist = artistTextField.text
+        //check if nil!!??
+        if let title = title, let artist = artist {
+            let song = NewSong(title: title, artist: artist)
+            BackendAPIService.addSong(song: song)
+                .response(completionHandler: { [weak self] (response) in
+                    
+                    guard let jsonData = response.data else { return }
+                    
+                    let decoder = JSONDecoder()
+                    let songRequest = try? decoder.decode(SongRequest.self, from: jsonData)
+                    
+                    DispatchQueue.main.async {
+                        if let songRequest = songRequest {
+                            self?.successfullyAddedSong(song: songRequest)
+                        }
+                    }
+                })
+        }
+    }
     
+    func successfullyAddedSong(song: SongRequest) {
+        songRequests.append(song)
+        tableView.reloadData()
+        titleTextField.text = ""
+        artistTextField.text = ""
+        //make beautifull animation highlight thingy
+    }
 }
