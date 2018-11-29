@@ -49,8 +49,8 @@ class LoginViewController: UIViewController {
     func successfullyLoggedIn(postBack: LoginPostBack) {
         LocalStorageService.setAuthToken(authToken: postBack.jwt)
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let agendaPageVc = storyboard.instantiateViewController(withIdentifier: "AgendaViewController") as! AgendaViewController
-        self.navigationController?.pushViewController(agendaPageVc, animated: true)
+        let agendaPageVc = storyboard.instantiateViewController(withIdentifier: "MainTabBarController") as! MainTabBarController
+        self.present(agendaPageVc, animated: true, completion: nil)
     }
     
     //add method when clicked on return buttons

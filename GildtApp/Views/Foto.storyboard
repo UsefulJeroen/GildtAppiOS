@@ -41,7 +41,7 @@
         <!--Foto's-->
         <scene sceneID="wxf-W8-2m0">
             <objects>
-                <navigationController id="rPH-ua-vVl" sceneMemberID="viewController">
+                <navigationController id="rPH-ua-vVl" customClass="NavigationViewController" customModule="GildtApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Foto's" image="TabFotos" id="xbM-eE-Rof"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="GcQ-qN-aFo">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
