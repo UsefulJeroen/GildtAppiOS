@@ -36,6 +36,7 @@ class JukeboxViewController: UITableViewController {
     func setupTableView() {
         tableView.dataSource = self
         tableView.register(UINib(nibName: "SongRequestTableViewCell", bundle: nil), forCellReuseIdentifier: "SongRequestTableViewCell")
+        tableView.keyboardDismissMode = UIScrollView.KeyboardDismissMode.onDrag
         //can remove these 2 lines?
         tableView.estimatedRowHeight = tableView.rowHeight
         tableView.rowHeight = UITableView.automaticDimension
@@ -103,11 +104,13 @@ class JukeboxViewController: UITableViewController {
     }
     
     @IBAction func titleTextFieldDidEnd(_ sender: Any) {
-        //set highlighted to artistfield
+        titleTextField.endEditing(true)
+        artistTextField.becomeFirstResponder()
     }
 
     @IBAction func artistTextFieldDidEnd(_ sender: Any) {
         addSong()
+        artistTextField.endEditing(true)
     }
     
     func addSong() {
