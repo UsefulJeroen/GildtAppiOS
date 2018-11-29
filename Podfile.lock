@@ -2,12 +2,14 @@ PODS:
   - Alamofire (4.7.3)
   - CenteredCollectionView (2.0.0)
   - Kingfisher (4.10.1)
+  - StatusAlert (1.0.0)
   - SwiftKeychainWrapper (3.0.1)
 
 DEPENDENCIES:
   - Alamofire
   - CenteredCollectionView
   - Kingfisher
+  - StatusAlert
   - SwiftKeychainWrapper
 
 SPEC REPOS:
@@ -15,14 +17,16 @@ SPEC REPOS:
     - Alamofire
     - CenteredCollectionView
     - Kingfisher
+    - StatusAlert
     - SwiftKeychainWrapper
 
 SPEC CHECKSUMS:
   Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
   CenteredCollectionView: 6548b515645aea6ea89618f4b5ca090191dc8628
   Kingfisher: c148cd7b47ebde9989f6bc7c27dcaa79d81279a0
+  StatusAlert: 329dc305de42c63811782729c3a38ca49662afc9
   SwiftKeychainWrapper: 38952a3636320ae61bad3513cadd870929de7a4a
 
-PODFILE CHECKSUM: cde2317dbfba76ad362f602df3161c266c88d2a9
+PODFILE CHECKSUM: 4c7450248713d20666979cd7a3d3c21437c70cf4
 
 COCOAPODS: 1.5.3

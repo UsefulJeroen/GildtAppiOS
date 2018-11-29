@@ -13,7 +13,7 @@
         <!--Deals-->
         <scene sceneID="vKe-a4-cAC">
             <objects>
-                <navigationController id="Ajn-XQ-hlb" sceneMemberID="viewController">
+                <navigationController id="Ajn-XQ-hlb" customClass="NavigationViewController" customModule="GildtApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Deals" image="TabDeals" id="yqR-fN-pxe"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="erx-MS-2gT">
                         <rect key="frame" x="0.0" y="20" width="375" height="96"/>

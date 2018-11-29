@@ -17,6 +17,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         window?.tintColor = UIColor.primaryGildtGreen
+        //if user isn't loggedin, show login page
+        if !LocalStorageService.isAuthTokenSet() {
+            let storyboard = UIStoryboard(name: "Login", bundle: nil)
+            let viewController = storyboard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+            self.window?.rootViewController = viewController
+            self.window?.makeKeyAndVisible()
+        }
         return true
     }
 
