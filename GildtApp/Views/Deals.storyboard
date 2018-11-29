@@ -58,6 +58,9 @@
                                                 </label>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="DealImage" image="DealSample" translatesAutoresizingMaskIntoConstraints="NO" id="aS3-xP-GQV">
                                                     <rect key="frame" x="16" y="73" width="240" height="125"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="aS3-xP-GQV" secondAttribute="height" multiplier="48:25" id="l6m-hM-psD"/>
+                                                    </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0vV-Nh-dDM" userLabel="Description">
                                                     <rect key="frame" x="20" y="206" width="232" height="20.5"/>

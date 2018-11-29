@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 import StatusAlert
 
 class DealsCollectionViewCell: UICollectionViewCell {
@@ -26,6 +27,9 @@ class DealsCollectionViewCell: UICollectionViewCell {
     private var slideUpReached = false
     private var initialCenter: CGPoint = CGPoint.zero
 
+    // Data
+    var deal: Deal? = nil
+
     func setUpView() {
         // corner radiusus
         self.layer.cornerRadius = 10
@@ -40,6 +44,20 @@ class DealsCollectionViewCell: UICollectionViewCell {
         self.layer.shadowOpacity = 0.16
         self.layer.masksToBounds = false
         self.layer.shadowPath = UIBezierPath(roundedRect: self.bounds, cornerRadius: self.contentView.layer.cornerRadius).cgPath
+    }
+
+    func loadDealData() {
+        self.Title.text = deal?.title
+        if let url = deal?.image {
+            self.DealImage.kf.setImage(with: URL(string: url))
+        }
+        self.Description.text = deal?.description
+        if deal?.dealType == "usage" {
+            self.Usability.text = "Nog \(deal?.dealsLeft ?? 0) keer bruikbaar"
+        } else {
+            self.Usability.text = "Onbeperkt bruikbaar"
+        }
+        self.Availability.text = deal?.expireDateHumanized
     }
 
     private func showStatusAlert(
@@ -63,7 +81,6 @@ extension DealsCollectionViewCell {
 
             SlideUpInitPoint = touch.location(in: self)
             slideUpPoint = touch.location(in: self)
-            print("Start")
         }
     }
 
@@ -72,7 +89,6 @@ extension DealsCollectionViewCell {
             if touch.location(in: self.superview).y < SlideUpInitPoint.y {
                 slideUpPoint = touch.location(in: self.superview)
                 slideUpDelta = SlideUpInitPoint.y - slideUpPoint.y
-                print("Updated: Delta \(self.slideUpDelta)")
 
                 if slideUpDelta <= self.slideUpEndDistance {
                     let newCenter = CGPoint(x: initialCenter.x, y: initialCenter.y - slideUpDelta)
@@ -103,27 +119,18 @@ extension DealsCollectionViewCell {
     }
 
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        print("Ended")
         if self.slideUpDelta >= self.slideUpEndDistance {
-            print("CLAIMED")
+            NotificationCenter.default.post(name: Notification.Name("DealIsClaimedIdentifier"), object: nil, userInfo: ["Deal":deal!])
             showStatusAlert(
                 withImage: #imageLiteral(resourceName: "Success icon"),
                 title: "Deal ingediend",
                 message: "Geniet van je drankje!")
             UINotificationFeedbackGenerator().notificationOccurred(.success)
-        } else {
-            print("NOT CLAIMED")
         }
         self.reset()
     }
 
     override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
-        print("Cancelled")
-        if self.slideUpDelta >= self.slideUpEndDistance {
-            print("CLAIMED")
-        } else {
-            print("NOT CLAIMED")
-        }
         self.reset()
     }
 }
