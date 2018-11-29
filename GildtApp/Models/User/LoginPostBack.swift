@@ -7,12 +7,18 @@
 //
 
 import Foundation
-
+//maybe make this jwt a extension of a string?
 struct LoginPostBack: Codable {
     
     let jwt: String
+    let username: String
+    let email: String
+    let notification: String
     
     enum CodingKeys: String, CodingKey {
         case jwt = "jwt"
+        case username = "username"
+        case email = "email"
+        case notification = "notification"
     }
 }

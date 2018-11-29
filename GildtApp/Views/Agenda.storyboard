@@ -12,7 +12,8 @@
         <!--Root View Controller-->
         <scene sceneID="NZQ-LK-ZCm">
             <objects>
-                <tableViewController id="duW-lM-qqk" sceneMemberID="viewController">
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cul-Ke-5O1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tableViewController storyboardIdentifier="AgendaViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="duW-lM-qqk" customClass="AgendaViewController" customModule="GildtApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="neP-01-SoD">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -34,7 +35,6 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Root View Controller" id="vbv-d5-RmN"/>
                 </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="cul-Ke-5O1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1905" y="-86"/>
         </scene>

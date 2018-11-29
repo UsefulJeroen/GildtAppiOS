@@ -30,7 +30,7 @@ final class BackendAPIService {
         return Alamofire.request(request)
     }
     
-    static func login(user: auth) -> DataRequest {
+    static func login(user: LoginModel) -> DataRequest {
         var request = URLRequest(url: URL(string: "\(baseURL)/user_token")!)
         request.httpMethod = HTTPMethod.post.rawValue
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")

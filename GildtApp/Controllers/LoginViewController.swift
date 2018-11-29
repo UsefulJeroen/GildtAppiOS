@@ -29,7 +29,7 @@ class LoginViewController: UIViewController {
         let password: String = secondTextField.text!
         //show error if this is nil
         
-        let user: auth = auth(email: email, password: password)
+        let user: LoginModel = LoginModel(email: email, password: password)
         BackendAPIService.login(user: user)
             .response(completionHandler: { [weak self] (response) in
                 guard let jsonData = response.data else { return }
@@ -48,7 +48,9 @@ class LoginViewController: UIViewController {
     
     func successfullyLoggedIn(postBack: LoginPostBack) {
         LocalStorageService.setAuthToken(authToken: postBack.jwt)
-        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let agendaPageVc = storyboard.instantiateViewController(withIdentifier: "AgendaViewController") as! AgendaViewController
+        self.navigationController?.pushViewController(agendaPageVc, animated: true)
     }
     
     //add method when clicked on return buttons

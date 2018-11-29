@@ -104,7 +104,7 @@ class JukeboxViewController: UITableViewController {
     }
     
     @IBAction func titleTextFieldDidEnd(_ sender: Any) {
-        var verycool = "something"
+        //var verycool = "something"
     }
 
     @IBAction func artistTextFieldDidEnd(_ sender: Any) {
