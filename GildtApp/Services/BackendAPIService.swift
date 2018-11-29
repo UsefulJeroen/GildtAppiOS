@@ -15,7 +15,7 @@ import Alamofire
 final class BackendAPIService {
     private static let baseURL = "http://146.185.156.30/api/v1/"
     
-    static func createUser(user: RegisterModel) -> DataRequest{
+    static func register(user: RegisterModel) -> DataRequest{
         var request = URLRequest(url: URL(string: "\(baseURL)/user")!)
         request.httpMethod = HTTPMethod.post.rawValue
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
