@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 import StatusAlert
 
 class DealsCollectionViewCell: UICollectionViewCell {
@@ -26,6 +27,9 @@ class DealsCollectionViewCell: UICollectionViewCell {
     private var slideUpReached = false
     private var initialCenter: CGPoint = CGPoint.zero
 
+    // Data
+    var deal: Deal? = nil
+
     func setUpView() {
         // corner radiusus
         self.layer.cornerRadius = 10
@@ -40,6 +44,20 @@ class DealsCollectionViewCell: UICollectionViewCell {
         self.layer.shadowOpacity = 0.16
         self.layer.masksToBounds = false
         self.layer.shadowPath = UIBezierPath(roundedRect: self.bounds, cornerRadius: self.contentView.layer.cornerRadius).cgPath
+    }
+
+    func loadDealData() {
+        self.Title.text = deal?.title
+        if let url = deal?.image {
+            self.DealImage.kf.setImage(with: URL(string: url))
+        }
+        self.Description.text = deal?.description
+        if deal?.dealType == "usage" {
+            self.Usability.text = "Nog \(deal?.dealsLeft ?? 0) keer bruikbaar"
+        } else {
+            self.Usability.text = "Onbeperkt bruikbaar"
+        }
+        self.Availability.text = deal?.expireDateHumanized
     }
 
     private func showStatusAlert(
@@ -105,6 +123,7 @@ extension DealsCollectionViewCell {
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         print("Ended")
         if self.slideUpDelta >= self.slideUpEndDistance {
+            NotificationCenter.default.post(name: Notification.Name("DealIsClaimedIdentifier"), object: nil, userInfo: ["Deal":deal!])
             print("CLAIMED")
             showStatusAlert(
                 withImage: #imageLiteral(resourceName: "Success icon"),
