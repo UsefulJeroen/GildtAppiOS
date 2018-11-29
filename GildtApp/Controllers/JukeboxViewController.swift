@@ -37,6 +37,9 @@ class JukeboxViewController: UITableViewController {
         tableView.dataSource = self
         tableView.register(UINib(nibName: "SongRequestTableViewCell", bundle: nil), forCellReuseIdentifier: "SongRequestTableViewCell")
         tableView.keyboardDismissMode = UIScrollView.KeyboardDismissMode.onDrag
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(addSongButtonTouched))
+        plusButton.isUserInteractionEnabled = true
+        plusButton.addGestureRecognizer(tapGestureRecognizer)
         //can remove these 2 lines?
         tableView.estimatedRowHeight = tableView.rowHeight
         tableView.rowHeight = UITableView.automaticDimension
@@ -111,6 +114,10 @@ class JukeboxViewController: UITableViewController {
     @IBAction func artistTextFieldDidEnd(_ sender: Any) {
         addSong()
         artistTextField.endEditing(true)
+    }
+    
+    @objc func addSongButtonTouched() {
+        addSong()
     }
     
     func addSong() {
