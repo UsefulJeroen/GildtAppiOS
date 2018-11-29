@@ -9,6 +9,8 @@
 import Foundation
 import UIKit
 
+//TODO: make methods when clicking on return on textfields
+//TODO: show error messages from server
 class LoginViewController: UIViewController {
     
     @IBOutlet weak var segmentedControl: UISegmentedControl!
@@ -64,6 +66,8 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func wantAccountButtonTouched(_ sender: Any) {
+        segmentedControl.selectedSegmentIndex = 0
+        changeViewToRegister()
     }
     
     @IBAction func registerButtonTouched(_ sender: Any) {
@@ -71,6 +75,8 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func haveAccountButtonTouched(_ sender: Any) {
+        segmentedControl.selectedSegmentIndex = 1
+        changeViewToLogin()
     }
     
     func login() {
@@ -137,7 +143,4 @@ class LoginViewController: UIViewController {
             changeViewToLogin()
         }
     }
-    
-    //add method when clicked on return buttons
-    //make register methods
 }
