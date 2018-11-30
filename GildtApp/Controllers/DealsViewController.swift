@@ -76,13 +76,17 @@ class DealsViewController: UIViewController {
     private func showStatusAlert(
         withImage image: UIImage?,
         title: String?,
-        message: String?) {
+        message: String?,
+        error: Bool = false) {
 
         let statusAlert = StatusAlert()
         statusAlert.image = image
         statusAlert.title = title
         statusAlert.message = message
-        statusAlert.canBePickedOrDismissed = true
+        statusAlert.canBePickedOrDismissed = false
+        if error {
+            statusAlert.appearance.tintColor = UIColor.errorRed
+        }
         statusAlert.show(withVerticalPosition: .center)
     }
 
@@ -134,7 +138,7 @@ class DealsViewController: UIViewController {
         }
 
         showStatusAlert(
-            withImage: #imageLiteral(resourceName: "Success icon"),
+            withImage: #imageLiteral(resourceName: "IconSucces"),
             title: "Deal ingediend",
             message: "Geniet van je drankje!")
         UINotificationFeedbackGenerator().notificationOccurred(.success)
@@ -142,9 +146,10 @@ class DealsViewController: UIViewController {
 
     func dealUnsuccessfullyRedeemed(message: String) {
         showStatusAlert(
-            withImage: #imageLiteral(resourceName: "Success icon"), // Needs other image
+            withImage: #imageLiteral(resourceName: "IconError"),
             title: "Whoops!",
-            message: message)
+            message: message,
+            error: true)
         UINotificationFeedbackGenerator().notificationOccurred(.error)
     }
 }
