@@ -220,9 +220,9 @@
 		B0CADB8421AB242F00E6D848 /* User */ = {
 			isa = PBXGroup;
 			children = (
-				B0CADB8521AB243C00E6D848 /* RegisterModel.swift */,
-				B0CADB8721AB254600E6D848 /* LoginPostBack.swift */,
 				B0CADB8921AB258C00E6D848 /* LoginModel.swift */,
+				B0CADB8721AB254600E6D848 /* LoginPostBack.swift */,
+				B0CADB8521AB243C00E6D848 /* RegisterModel.swift */,
 			);
 			path = User;
 			sourceTree = "<group>";
