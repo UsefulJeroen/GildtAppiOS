@@ -110,7 +110,7 @@ class DealsViewController: UIViewController {
                     if data != nil {
                         self?.dealSuccessfullyRedeemed(updatedDeal: data!)
                     } else {
-                        self?.dealUnsuccessfullyRedeemed(message: (response.error?.localizedDescription)!)
+                        self?.dealUnsuccessfullyRedeemed(message: "Er is iets mis gegaan tijdens het indienen...")
                     }
                 }
             })
