@@ -20,6 +20,8 @@ class AgendaViewController: UITableViewController {
         setupTableView()
         getAgendaItems()
         setupRefreshControl()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(self.AttendanceNotificationHandler(notification:)), name: NSNotification.Name(rawValue: "AttendanceIdentifier"), object: nil)
     }
     
     func setupTableView() {
@@ -33,6 +35,14 @@ class AgendaViewController: UITableViewController {
         refreshControl = UIRefreshControl()
         tableView.refreshControl = refreshControl
         refreshControl?.addTarget(self, action: #selector(refresh), for: .valueChanged)
+    }
+    
+    @objc private func AttendanceNotificationHandler(notification: Notification) {
+        let event = notification.userInfo!["Event"] as! Event
+        if let i = agenda.firstIndex(where: {$0.id == event.id}) {
+            agenda[i] = event
+        }
+        tableView.reloadData()
     }
     
     @objc func refresh() {
@@ -85,5 +95,10 @@ class AgendaViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("Selected \(indexPath.row)")
+        let storyboard = UIStoryboard(name: "Agenda", bundle: nil)
+        let detailPageVc = storyboard.instantiateViewController(withIdentifier: "EventViewController") as! EventViewController
+        detailPageVc.navigationItem.largeTitleDisplayMode = .never
+        detailPageVc.event = agenda[indexPath.row]
+        self.navigationController?.pushViewController(detailPageVc, animated: true)
     }
 }
