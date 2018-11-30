@@ -19,7 +19,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SongRequestCircleImage" translatesAutoresizingMaskIntoConstraints="NO" id="pYq-Rh-XPg">
-                        <rect key="frame" x="16" y="6" width="53" height="53"/>
+                        <rect key="frame" x="16" y="6" width="53" height="52.5"/>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jRQ-PC-Lhw">
                         <rect key="frame" x="33" y="13" width="18" height="38"/>
@@ -30,8 +30,8 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Better Now" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oON-nV-vis">
-                        <rect key="frame" x="84" y="10" width="222" height="21"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Better Now" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="2" translatesAutoresizingMaskIntoConstraints="NO" id="oON-nV-vis">
+                        <rect key="frame" x="84" y="10" width="213" height="21"/>
                         <color key="backgroundColor" red="0.96421021220000003" green="0.97613400220000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
                         <nil key="textColor"/>
@@ -53,7 +53,7 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SongRequestUpvoteImage" translatesAutoresizingMaskIntoConstraints="NO" id="zVJ-hY-Hkf">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SongRequestUpvoteImage" translatesAutoresizingMaskIntoConstraints="NO" id="zVJ-hY-Hkf">
                         <rect key="frame" x="337" y="6" width="26" height="50.5"/>
                         <color key="backgroundColor" red="0.96421021220000003" green="0.97613400220000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -66,7 +66,7 @@
                     <constraint firstItem="zVJ-hY-Hkf" firstAttribute="top" secondItem="mv6-fb-J6Y" secondAttribute="topMargin" constant="-5" id="1uD-Qp-XwQ"/>
                     <constraint firstItem="oON-nV-vis" firstAttribute="leading" secondItem="Pwm-hk-saF" secondAttribute="leading" id="2Oi-zW-BXf"/>
                     <constraint firstAttribute="trailing" secondItem="zVJ-hY-Hkf" secondAttribute="trailing" constant="12" id="32D-Rt-jZz"/>
-                    <constraint firstItem="CsP-w3-XS9" firstAttribute="leading" secondItem="oON-nV-vis" secondAttribute="trailing" constant="-7" id="GaF-o7-Y0K"/>
+                    <constraint firstItem="CsP-w3-XS9" firstAttribute="leading" secondItem="oON-nV-vis" secondAttribute="trailing" constant="2" id="GaF-o7-Y0K"/>
                     <constraint firstItem="oON-nV-vis" firstAttribute="centerY" secondItem="CsP-w3-XS9" secondAttribute="centerY" constant="-12" id="KYI-1T-mUm"/>
                     <constraint firstItem="zVJ-hY-Hkf" firstAttribute="centerY" secondItem="mv6-fb-J6Y" secondAttribute="centerY" constant="-1" id="Vgz-fa-dYA"/>
                     <constraint firstItem="jRQ-PC-Lhw" firstAttribute="leading" secondItem="mv6-fb-J6Y" secondAttribute="leadingMargin" constant="17" id="VuM-4q-qTT"/>

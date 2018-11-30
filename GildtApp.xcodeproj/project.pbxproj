@@ -22,6 +22,7 @@
 		B099D20021B0278400DA4473 /* AgendaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B099D1FF21B0278400DA4473 /* AgendaViewController.swift */; };
 		B099D20221B029AA00DA4473 /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B099D20121B029AA00DA4473 /* NavigationViewController.swift */; };
 		B099D20421B02ED000DA4473 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B099D20321B02ED000DA4473 /* MainTabBarController.swift */; };
+		B099D20A21B0442600DA4473 /* NewSong.swift in Sources */ = {isa = PBXBuildFile; fileRef = B099D20921B0442600DA4473 /* NewSong.swift */; };
 		B0CADB8621AB243C00E6D848 /* RegisterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0CADB8521AB243C00E6D848 /* RegisterModel.swift */; };
 		B0CADB8821AB254600E6D848 /* LoginPostBack.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0CADB8721AB254600E6D848 /* LoginPostBack.swift */; };
 		B0CADB8A21AB258C00E6D848 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0CADB8921AB258C00E6D848 /* LoginModel.swift */; };
@@ -64,6 +65,7 @@
 		B099D1FF21B0278400DA4473 /* AgendaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgendaViewController.swift; sourceTree = "<group>"; };
 		B099D20121B029AA00DA4473 /* NavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationViewController.swift; sourceTree = "<group>"; };
 		B099D20321B02ED000DA4473 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		B099D20921B0442600DA4473 /* NewSong.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewSong.swift; sourceTree = "<group>"; };
 		B0CADB8521AB243C00E6D848 /* RegisterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterModel.swift; sourceTree = "<group>"; };
 		B0CADB8721AB254600E6D848 /* LoginPostBack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPostBack.swift; sourceTree = "<group>"; };
 		B0CADB8921AB258C00E6D848 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
@@ -118,11 +120,11 @@
 		B0177A34219B89B700E379D5 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				B099D20521B02F9900DA4473 /* Hierarchy */,
+				B099D1FF21B0278400DA4473 /* AgendaViewController.swift */,
 				DF70F68021A185FD001D3006 /* DealsViewController.swift */,
 				B0177A41219C64E500E379D5 /* JukeboxViewController.swift */,
 				B0CADB8D21AB2EA200E6D848 /* LoginViewController.swift */,
-				B099D1FF21B0278400DA4473 /* AgendaViewController.swift */,
+				B099D20521B02F9900DA4473 /* Hierarchy */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -136,12 +138,13 @@
 				DF70F670219EE2DB001D3006 /* Deals.storyboard */,
 				DF70F676219EE337001D3006 /* Foto.storyboard */,
 				DF70F674219EE318001D3006 /* Jukebox.storyboard */,
+				B0CADB8B21AB2AE700E6D848 /* Login.storyboard */,
+				B0177A39219B8F1C00E379D5 /* OnBoarding.storyboard */,
+				DF70F672219EE304001D3006 /* Stempelkaart.storyboard */,
+				DF70F67F21A18516001D3006 /* DealsCollectionViewCell */,
 				B078A918219B0EE300545EAC /* LaunchScreen.storyboard */,
 				B078A913219B0EE000545EAC /* Main.storyboard */,
-				B0177A39219B8F1C00E379D5 /* OnBoarding.storyboard */,
 				B0177A45219CCD2D00E379D5 /* SongRequestTableViewCell */,
-				DF70F672219EE304001D3006 /* Stempelkaart.storyboard */,
-				B0CADB8B21AB2AE700E6D848 /* Login.storyboard */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -150,9 +153,9 @@
 			isa = PBXGroup;
 			children = (
 				B0177A3D219B9C4B00E379D5 /* BackendAPIService.swift */,
-				B0177A3F219B9C8100E379D5 /* LocalStorageService.swift */,
 				DF70F68F21AF36B5001D3006 /* DealsAPIService.swift */,
 				DF9D57B421B09982003A97FB /* AgendaAPIService.swift */,
+				B0177A3F219B9C8100E379D5 /* LocalStorageService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -160,10 +163,10 @@
 		B0177A37219B89E900E379D5 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				B0CADB8421AB242F00E6D848 /* User */,
-				B0177A43219CC6A100E379D5 /* SongRequest.swift */,
 				DF70F69121AF394A001D3006 /* Deal.swift */,
 				DF9D57B621B09A8C003A97FB /* Event.swift */,
+				B099D20821B0440A00DA4473 /* Song */,
+				B0CADB8421AB242F00E6D848 /* User */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -198,10 +201,10 @@
 		B078A90C219B0EE000545EAC /* GildtApp */ = {
 			isa = PBXGroup;
 			children = (
+				B078A91B219B0EE300545EAC /* Info.plist */,
 				B078A90D219B0EE000545EAC /* AppDelegate.swift */,
 				B00563B8219DC34E00B9F635 /* Assets.xcassets */,
 				B0177A34219B89B700E379D5 /* Controllers */,
-				B078A91B219B0EE300545EAC /* Info.plist */,
 				B0177A37219B89E900E379D5 /* Models */,
 				B0177A36219B89E400E379D5 /* Services */,
 				DF70F67921A1837E001D3006 /* Extensions */,
@@ -213,18 +216,27 @@
 		B099D20521B02F9900DA4473 /* Hierarchy */ = {
 			isa = PBXGroup;
 			children = (
-				B099D20121B029AA00DA4473 /* NavigationViewController.swift */,
 				B099D20321B02ED000DA4473 /* MainTabBarController.swift */,
+				B099D20121B029AA00DA4473 /* NavigationViewController.swift */,
 			);
 			path = Hierarchy;
+			sourceTree = "<group>";
+		};
+		B099D20821B0440A00DA4473 /* Song */ = {
+			isa = PBXGroup;
+			children = (
+				B099D20921B0442600DA4473 /* NewSong.swift */,
+				B0177A43219CC6A100E379D5 /* SongRequest.swift */,
+			);
+			path = Song;
 			sourceTree = "<group>";
 		};
 		B0CADB8421AB242F00E6D848 /* User */ = {
 			isa = PBXGroup;
 			children = (
-				B0CADB8521AB243C00E6D848 /* RegisterModel.swift */,
-				B0CADB8721AB254600E6D848 /* LoginPostBack.swift */,
 				B0CADB8921AB258C00E6D848 /* LoginModel.swift */,
+				B0CADB8721AB254600E6D848 /* LoginPostBack.swift */,
+				B0CADB8521AB243C00E6D848 /* RegisterModel.swift */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -406,6 +418,7 @@
 				B099D20421B02ED000DA4473 /* MainTabBarController.swift in Sources */,
 				DF9D57B921B0A52D003A97FB /* String.swift in Sources */,
 				B0177A44219CC6A100E379D5 /* SongRequest.swift in Sources */,
+				B099D20A21B0442600DA4473 /* NewSong.swift in Sources */,
 				B0177A40219B9C8100E379D5 /* LocalStorageService.swift in Sources */,
 				DF70F69021AF36B5001D3006 /* DealsAPIService.swift in Sources */,
 				DF9D57B321B08615003A97FB /* AgendaTableViewCell.swift in Sources */,
