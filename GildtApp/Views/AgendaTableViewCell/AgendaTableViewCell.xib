@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="161" id="fog-IA-8Ln" customClass="AgendaTableViewCell" customModule="GildtApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="161"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fog-IA-8Ln" id="5Kj-2Z-XCF">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="160.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="whx-JT-bZD">
+                        <rect key="frame" x="24" y="19" width="327" height="120"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gildt Eindfeest 2018: " lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="To5-bW-2Oq" userLabel="Title">
+                                <rect key="frame" x="8" y="8" width="279" height="24"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AgendaStamp" translatesAutoresizingMaskIntoConstraints="NO" id="CKi-qF-2Ba">
+                                <rect key="frame" x="258" y="0.0" width="69" height="69"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="CKi-qF-2Ba" secondAttribute="height" multiplier="1:1" id="ZIz-U3-0yO"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="30 jun om 16:00 - 1 jul om 04:00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Evh-la-2No" userLabel="Time">
+                                <rect key="frame" x="8" y="80" width="189" height="16"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="13"/>
+                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WVR-Qv-rOn">
+                                <rect key="frame" x="113" y="103" width="101" height="34"/>
+                                <color key="backgroundColor" red="0.13725490200000001" green="0.75294117650000003" blue="0.23921568630000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <inset key="contentEdgeInsets" minX="12" minY="8" maxX="12" maxY="8"/>
+                                <state key="normal" title="Aanmelden">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="attendanceButtonTapped:" destination="fog-IA-8Ln" eventType="touchUpInside" id="EB6-a0-gux"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="CKi-qF-2Ba" firstAttribute="top" secondItem="whx-JT-bZD" secondAttribute="top" id="1OL-1p-U22"/>
+                            <constraint firstItem="Evh-la-2No" firstAttribute="leading" secondItem="whx-JT-bZD" secondAttribute="leading" constant="8" id="DvL-gy-UhM"/>
+                            <constraint firstAttribute="bottom" secondItem="WVR-Qv-rOn" secondAttribute="centerY" id="H5u-6x-zbP"/>
+                            <constraint firstItem="WVR-Qv-rOn" firstAttribute="centerX" secondItem="whx-JT-bZD" secondAttribute="centerX" id="Hii-fB-X9M"/>
+                            <constraint firstAttribute="trailing" secondItem="To5-bW-2Oq" secondAttribute="trailing" constant="40" id="MPs-b5-wE6"/>
+                            <constraint firstAttribute="trailing" secondItem="CKi-qF-2Ba" secondAttribute="trailing" id="eAM-zI-lI6"/>
+                            <constraint firstItem="To5-bW-2Oq" firstAttribute="top" secondItem="whx-JT-bZD" secondAttribute="top" constant="8" id="gQn-qO-004"/>
+                            <constraint firstItem="To5-bW-2Oq" firstAttribute="leading" secondItem="whx-JT-bZD" secondAttribute="leading" constant="8" id="hel-KB-OlE"/>
+                            <constraint firstAttribute="height" constant="120" id="o9t-jM-xky"/>
+                            <constraint firstAttribute="bottom" secondItem="Evh-la-2No" secondAttribute="bottom" constant="24" id="ysp-U5-Hp5"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" red="0.96470588235294119" green="0.97647058823529409" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                <constraints>
+                    <constraint firstAttribute="trailingMargin" secondItem="whx-JT-bZD" secondAttribute="trailing" constant="8" id="Nb1-ZI-WrI"/>
+                    <constraint firstItem="whx-JT-bZD" firstAttribute="top" secondItem="5Kj-2Z-XCF" secondAttribute="topMargin" constant="8" id="iAD-gi-LVb"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="whx-JT-bZD" secondAttribute="bottom" constant="8" id="jqn-pA-kW7"/>
+                    <constraint firstItem="whx-JT-bZD" firstAttribute="centerX" secondItem="5Kj-2Z-XCF" secondAttribute="centerX" id="lER-kQ-bgS"/>
+                    <constraint firstItem="whx-JT-bZD" firstAttribute="leading" secondItem="5Kj-2Z-XCF" secondAttribute="leadingMargin" constant="8" id="xoo-Ue-oBk"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="Button" destination="WVR-Qv-rOn" id="DwE-z0-ZFu"/>
+                <outlet property="Container" destination="whx-JT-bZD" id="PKJ-7S-64A"/>
+                <outlet property="DateLabel" destination="Evh-la-2No" id="mgK-Xv-4kc"/>
+                <outlet property="Stamp" destination="CKi-qF-2Ba" id="dxk-ca-FdB"/>
+                <outlet property="TitleLabel" destination="To5-bW-2Oq" id="50K-fD-s4J"/>
+            </connections>
+            <point key="canvasLocation" x="53.600000000000001" y="101.19940029985008"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="AgendaStamp" width="69.5" height="58.5"/>
+    </resources>
+</document>
