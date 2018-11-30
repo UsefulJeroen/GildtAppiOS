@@ -9,7 +9,6 @@
 import Foundation
 import UIKit
 
-//custom tableviewcontroller for jukebox-view in main.storyboard
 class JukeboxViewController: UITableViewController {
     
     var pendingNetworkRequest: Bool = false
@@ -37,6 +36,10 @@ class JukeboxViewController: UITableViewController {
     func setupTableView() {
         tableView.dataSource = self
         tableView.register(UINib(nibName: "SongRequestTableViewCell", bundle: nil), forCellReuseIdentifier: "SongRequestTableViewCell")
+        tableView.keyboardDismissMode = UIScrollView.KeyboardDismissMode.onDrag
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(addSongButtonTouched))
+        plusButton.isUserInteractionEnabled = true
+        plusButton.addGestureRecognizer(tapGestureRecognizer)
         //can remove these 2 lines?
         tableView.estimatedRowHeight = tableView.rowHeight
         tableView.rowHeight = UITableView.automaticDimension
@@ -104,11 +107,47 @@ class JukeboxViewController: UITableViewController {
     }
     
     @IBAction func titleTextFieldDidEnd(_ sender: Any) {
-        //var verycool = "something"
+        titleTextField.endEditing(true)
+        artistTextField.becomeFirstResponder()
     }
 
     @IBAction func artistTextFieldDidEnd(_ sender: Any) {
+        addSong()
+        artistTextField.endEditing(true)
     }
     
+    @objc func addSongButtonTouched() {
+        addSong()
+    }
     
+    func addSong() {
+        let title = titleTextField.text
+        let artist = artistTextField.text
+        //check if nil!!??
+        if let title = title, let artist = artist {
+            let song = NewSong(title: title, artist: artist)
+            BackendAPIService.addSong(song: song)
+                .response(completionHandler: { [weak self] (response) in
+                    
+                    guard let jsonData = response.data else { return }
+                    
+                    let decoder = JSONDecoder()
+                    let songRequest = try? decoder.decode(SongRequest.self, from: jsonData)
+                    
+                    DispatchQueue.main.async {
+                        if let songRequest = songRequest {
+                            self?.successfullyAddedSong(song: songRequest)
+                        }
+                    }
+                })
+        }
+    }
+    
+    func successfullyAddedSong(song: SongRequest) {
+        songRequests.append(song)
+        tableView.reloadData()
+        titleTextField.text = ""
+        artistTextField.text = ""
+        //make beautifull animation highlight thingy
+    }
 }
