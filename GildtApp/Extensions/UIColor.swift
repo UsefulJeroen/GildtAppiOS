@@ -13,6 +13,10 @@ extension UIColor {
         return UIColor(red:0.14, green:0.75, blue:0.24, alpha:1.0)
     }
     
+    static var errorRed: UIColor {
+        return UIColor(red:0.84, green:0.19, blue:0.19, alpha:1.0)
+    }
+    
     static var appBackground: UIColor {
         return UIColor(red:0.96, green:0.98, blue:1.00, alpha:1.0)
     }

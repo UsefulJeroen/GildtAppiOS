@@ -30,7 +30,8 @@ class DealsViewController: UIViewController {
         setUpCollectionView()
         getDeals()
 
-        // Set up DealIsSlideUp && DealIsClaimend Notification Observer
+        // Set up DealSlideUpIsActive, DealIsSlideUp & DealIsClaimend Notification Observer
+        NotificationCenter.default.addObserver(self, selector: #selector(self.SlideUpIsActiveIdentifierNotificationHandler(notification:)), name: NSNotification.Name(rawValue: "SlideUpIsActiveIdentifier"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(self.DealIsSlideUpNotificationHandler(notification:)), name: NSNotification.Name(rawValue: "DealIsSlideUpIdentifier"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(self.DealIsClaimedNotificationHandler(notification:)), name: NSNotification.Name(rawValue: "DealIsClaimedIdentifier"), object: nil)
     }
@@ -68,23 +69,33 @@ class DealsViewController: UIViewController {
 
     func reloadDeals(newData: [Deal]) {
         deals = newData
+        deals = deals.filter({$0.dealsLeft != 0})
         collectionView.reloadData()
     }
 
     private func showStatusAlert(
         withImage image: UIImage?,
         title: String?,
-        message: String?) {
+        message: String?,
+        error: Bool = false) {
 
         let statusAlert = StatusAlert()
         statusAlert.image = image
         statusAlert.title = title
         statusAlert.message = message
-        statusAlert.canBePickedOrDismissed = true
+        statusAlert.canBePickedOrDismissed = false
+        if error {
+            statusAlert.appearance.tintColor = UIColor.errorRed
+        }
         statusAlert.show(withVerticalPosition: .center)
     }
 
+    @objc private func SlideUpIsActiveIdentifierNotificationHandler(notification: Notification) {
+        collectionView.isScrollEnabled = false
+    }
+    
     @objc private func DealIsSlideUpNotificationHandler(notification: Notification) {
+        collectionView.isScrollEnabled = true
         let showLabel = notification.userInfo!["ClaimState"] as! Bool
         if showLabel {
             LetGoLabel.isHidden = false
@@ -117,14 +128,17 @@ class DealsViewController: UIViewController {
     }
 
     func dealSuccessfullyRedeemed(updatedDeal: Deal) {
-        // TODO: Still need to check for when coupon is used the last time
         if let i = deals.firstIndex(where: {$0.id == updatedDeal.id}) {
-            deals[i] = updatedDeal
+            if updatedDeal.dealsLeft == 0 {
+                deals.remove(at: i)
+            } else {
+                deals[i] = updatedDeal
+            }
             collectionView.reloadData()
         }
 
         showStatusAlert(
-            withImage: #imageLiteral(resourceName: "Success icon"),
+            withImage: #imageLiteral(resourceName: "IconSucces"),
             title: "Deal ingediend",
             message: "Geniet van je drankje!")
         UINotificationFeedbackGenerator().notificationOccurred(.success)
@@ -132,9 +146,10 @@ class DealsViewController: UIViewController {
 
     func dealUnsuccessfullyRedeemed(message: String) {
         showStatusAlert(
-            withImage: #imageLiteral(resourceName: "Success icon"), // Needs other image
+            withImage: #imageLiteral(resourceName: "IconError"),
             title: "Whoops!",
-            message: message)
+            message: message,
+            error: true)
         UINotificationFeedbackGenerator().notificationOccurred(.error)
     }
 }
