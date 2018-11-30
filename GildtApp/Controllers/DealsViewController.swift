@@ -29,11 +29,19 @@ class DealsViewController: UIViewController {
         
         setUpCollectionView()
         getDeals()
-
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super .viewWillAppear(animated)
         // Set up DealSlideUpIsActive, DealIsSlideUp & DealIsClaimend Notification Observer
         NotificationCenter.default.addObserver(self, selector: #selector(self.SlideUpIsActiveIdentifierNotificationHandler(notification:)), name: NSNotification.Name(rawValue: "SlideUpIsActiveIdentifier"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(self.DealIsSlideUpNotificationHandler(notification:)), name: NSNotification.Name(rawValue: "DealIsSlideUpIdentifier"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(self.DealIsClaimedNotificationHandler(notification:)), name: NSNotification.Name(rawValue: "DealIsClaimedIdentifier"), object: nil)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super .viewWillDisappear(animated)
+        NotificationCenter.default.removeObserver(self)
     }
 
     private func setUpCollectionView() {
