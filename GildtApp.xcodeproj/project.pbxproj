@@ -37,6 +37,11 @@
 		DF70F68321A18635001D3006 /* DealsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF70F68221A18635001D3006 /* DealsCollectionViewCell.swift */; };
 		DF70F69021AF36B5001D3006 /* DealsAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF70F68F21AF36B5001D3006 /* DealsAPIService.swift */; };
 		DF70F69221AF394A001D3006 /* Deal.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF70F69121AF394A001D3006 /* Deal.swift */; };
+		DF9D57B121B085BE003A97FB /* AgendaTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF9D57B021B085BE003A97FB /* AgendaTableViewCell.xib */; };
+		DF9D57B321B08615003A97FB /* AgendaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9D57B221B08615003A97FB /* AgendaTableViewCell.swift */; };
+		DF9D57B521B09982003A97FB /* AgendaAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9D57B421B09982003A97FB /* AgendaAPIService.swift */; };
+		DF9D57B721B09A8C003A97FB /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9D57B621B09A8C003A97FB /* Event.swift */; };
+		DF9D57B921B0A52D003A97FB /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9D57B821B0A52D003A97FB /* String.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,6 +79,11 @@
 		DF70F68221A18635001D3006 /* DealsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealsCollectionViewCell.swift; sourceTree = "<group>"; };
 		DF70F68F21AF36B5001D3006 /* DealsAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealsAPIService.swift; sourceTree = "<group>"; };
 		DF70F69121AF394A001D3006 /* Deal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Deal.swift; sourceTree = "<group>"; };
+		DF9D57B021B085BE003A97FB /* AgendaTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AgendaTableViewCell.xib; sourceTree = "<group>"; };
+		DF9D57B221B08615003A97FB /* AgendaTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgendaTableViewCell.swift; sourceTree = "<group>"; };
+		DF9D57B421B09982003A97FB /* AgendaAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgendaAPIService.swift; sourceTree = "<group>"; };
+		DF9D57B621B09A8C003A97FB /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		DF9D57B821B0A52D003A97FB /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +130,7 @@
 		B0177A35219B89D400E379D5 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				DF9D57AF21B08591003A97FB /* AgendaTableViewCell */,
 				DF70F67F21A18516001D3006 /* DealsCollectionViewCell */,
 				DF70F66E219EE2C2001D3006 /* Agenda.storyboard */,
 				DF70F670219EE2DB001D3006 /* Deals.storyboard */,
@@ -141,6 +152,7 @@
 				B0177A3D219B9C4B00E379D5 /* BackendAPIService.swift */,
 				B0177A3F219B9C8100E379D5 /* LocalStorageService.swift */,
 				DF70F68F21AF36B5001D3006 /* DealsAPIService.swift */,
+				DF9D57B421B09982003A97FB /* AgendaAPIService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -151,6 +163,7 @@
 				B0CADB8421AB242F00E6D848 /* User */,
 				B0177A43219CC6A100E379D5 /* SongRequest.swift */,
 				DF70F69121AF394A001D3006 /* Deal.swift */,
+				DF9D57B621B09A8C003A97FB /* Event.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -191,7 +204,7 @@
 				B078A91B219B0EE300545EAC /* Info.plist */,
 				B0177A37219B89E900E379D5 /* Models */,
 				B0177A36219B89E400E379D5 /* Services */,
-				DF70F67921A1837E001D3006 /* Styling */,
+				DF70F67921A1837E001D3006 /* Extensions */,
 				B0177A35219B89D400E379D5 /* Views */,
 			);
 			path = GildtApp;
@@ -216,12 +229,13 @@
 			path = User;
 			sourceTree = "<group>";
 		};
-		DF70F67921A1837E001D3006 /* Styling */ = {
+		DF70F67921A1837E001D3006 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
 				DF70F67A21A183A7001D3006 /* UIColor.swift */,
+				DF9D57B821B0A52D003A97FB /* String.swift */,
 			);
-			path = Styling;
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		DF70F67F21A18516001D3006 /* DealsCollectionViewCell */ = {
@@ -230,6 +244,15 @@
 				DF70F68221A18635001D3006 /* DealsCollectionViewCell.swift */,
 			);
 			path = DealsCollectionViewCell;
+			sourceTree = "<group>";
+		};
+		DF9D57AF21B08591003A97FB /* AgendaTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				DF9D57B021B085BE003A97FB /* AgendaTableViewCell.xib */,
+				DF9D57B221B08615003A97FB /* AgendaTableViewCell.swift */,
+			);
+			path = AgendaTableViewCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -303,6 +326,7 @@
 				DF70F677219EE337001D3006 /* Foto.storyboard in Resources */,
 				B00563B9219DC34E00B9F635 /* Assets.xcassets in Resources */,
 				B0CADB8C21AB2AE700E6D848 /* Login.storyboard in Resources */,
+				DF9D57B121B085BE003A97FB /* AgendaTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -372,6 +396,7 @@
 				B0CADB8A21AB258C00E6D848 /* LoginModel.swift in Sources */,
 				DF70F68321A18635001D3006 /* DealsCollectionViewCell.swift in Sources */,
 				DF70F69221AF394A001D3006 /* Deal.swift in Sources */,
+				DF9D57B521B09982003A97FB /* AgendaAPIService.swift in Sources */,
 				DF70F68121A185FD001D3006 /* DealsViewController.swift in Sources */,
 				DF70F67B21A183A7001D3006 /* UIColor.swift in Sources */,
 				B099D20221B029AA00DA4473 /* NavigationViewController.swift in Sources */,
@@ -379,12 +404,15 @@
 				B0177A42219C64E500E379D5 /* JukeboxViewController.swift in Sources */,
 				B0CADB8621AB243C00E6D848 /* RegisterModel.swift in Sources */,
 				B099D20421B02ED000DA4473 /* MainTabBarController.swift in Sources */,
+				DF9D57B921B0A52D003A97FB /* String.swift in Sources */,
 				B0177A44219CC6A100E379D5 /* SongRequest.swift in Sources */,
 				B0177A40219B9C8100E379D5 /* LocalStorageService.swift in Sources */,
 				DF70F69021AF36B5001D3006 /* DealsAPIService.swift in Sources */,
+				DF9D57B321B08615003A97FB /* AgendaTableViewCell.swift in Sources */,
 				B0177A3E219B9C4B00E379D5 /* BackendAPIService.swift in Sources */,
 				B0CADB8E21AB2EA200E6D848 /* LoginViewController.swift in Sources */,
 				B099D20021B0278400DA4473 /* AgendaViewController.swift in Sources */,
+				DF9D57B721B09A8C003A97FB /* Event.swift in Sources */,
 				B0CADB8821AB254600E6D848 /* LoginPostBack.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -533,7 +561,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6FC9595Z84;
+				DEVELOPMENT_TEAM = XT9TUGW438;
 				INFOPLIST_FILE = GildtApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -553,7 +581,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6FC9595Z84;
+				DEVELOPMENT_TEAM = XT9TUGW438;
 				INFOPLIST_FILE = GildtApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
