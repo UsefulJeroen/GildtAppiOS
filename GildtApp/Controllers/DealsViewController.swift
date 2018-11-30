@@ -30,7 +30,8 @@ class DealsViewController: UIViewController {
         setUpCollectionView()
         getDeals()
 
-        // Set up DealIsSlideUp && DealIsClaimend Notification Observer
+        // Set up DealSlideUpIsActive, DealIsSlideUp & DealIsClaimend Notification Observer
+        NotificationCenter.default.addObserver(self, selector: #selector(self.SlideUpIsActiveIdentifierNotificationHandler(notification:)), name: NSNotification.Name(rawValue: "SlideUpIsActiveIdentifier"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(self.DealIsSlideUpNotificationHandler(notification:)), name: NSNotification.Name(rawValue: "DealIsSlideUpIdentifier"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(self.DealIsClaimedNotificationHandler(notification:)), name: NSNotification.Name(rawValue: "DealIsClaimedIdentifier"), object: nil)
     }
@@ -84,7 +85,12 @@ class DealsViewController: UIViewController {
         statusAlert.show(withVerticalPosition: .center)
     }
 
+    @objc private func SlideUpIsActiveIdentifierNotificationHandler(notification: Notification) {
+        collectionView.isScrollEnabled = false
+    }
+    
     @objc private func DealIsSlideUpNotificationHandler(notification: Notification) {
+        collectionView.isScrollEnabled = true
         let showLabel = notification.userInfo!["ClaimState"] as! Bool
         if showLabel {
             LetGoLabel.isHidden = false

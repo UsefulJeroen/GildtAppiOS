@@ -23,6 +23,7 @@ class DealsCollectionViewCell: UICollectionViewCell {
     private var slideUpPoint:CGPoint = CGPoint.zero
     private var SlideUpInitPoint:CGPoint = CGPoint.zero
     private var slideUpDelta:CGFloat = 0
+    private var slideUpIsActive = false
     private var slideUpReached = false
     private var initialCenter: CGPoint = CGPoint.zero
 
@@ -77,6 +78,13 @@ extension DealsCollectionViewCell {
                 slideUpDelta = SlideUpInitPoint.y - slideUpPoint.y
 
                 if slideUpDelta <= self.slideUpEndDistance {
+                    // logic to Disable scrollview after sliding up
+                    if !slideUpIsActive {
+                        if slideUpDelta >= 5 {
+                            slideUpIsActive = true
+                            NotificationCenter.default.post(name: Notification.Name("SlideUpIsActiveIdentifier"), object: nil, userInfo: nil)
+                        }
+                    }
                     let newCenter = CGPoint(x: initialCenter.x, y: initialCenter.y - slideUpDelta)
                     self.center = newCenter
                     slideUpReached = false
@@ -94,6 +102,7 @@ extension DealsCollectionViewCell {
         self.SlideUpInitPoint = CGPoint.zero
         self.slideUpPoint = CGPoint.zero
         self.slideUpDelta = 0
+        self.slideUpIsActive = false
 
         NotificationCenter.default.post(name: Notification.Name("DealIsSlideUpIdentifier"), object: nil, userInfo: ["ClaimState":false])
 
