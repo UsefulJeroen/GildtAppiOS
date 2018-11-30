@@ -8,7 +8,6 @@
 
 import UIKit
 import Kingfisher
-import StatusAlert
 
 class DealsCollectionViewCell: UICollectionViewCell {
     // view
@@ -59,19 +58,6 @@ class DealsCollectionViewCell: UICollectionViewCell {
         }
         self.Availability.text = deal?.expireDateHumanized
     }
-
-    private func showStatusAlert(
-        withImage image: UIImage?,
-        title: String?,
-        message: String?) {
-
-        let statusAlert = StatusAlert()
-        statusAlert.image = image
-        statusAlert.title = title
-        statusAlert.message = message
-        statusAlert.canBePickedOrDismissed = true
-        statusAlert.show(withVerticalPosition: .center)
-    }
 }
 
 extension DealsCollectionViewCell {
@@ -121,11 +107,6 @@ extension DealsCollectionViewCell {
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         if self.slideUpDelta >= self.slideUpEndDistance {
             NotificationCenter.default.post(name: Notification.Name("DealIsClaimedIdentifier"), object: nil, userInfo: ["Deal":deal!])
-            showStatusAlert(
-                withImage: #imageLiteral(resourceName: "Success icon"),
-                title: "Deal ingediend",
-                message: "Geniet van je drankje!")
-            UINotificationFeedbackGenerator().notificationOccurred(.success)
         }
         self.reset()
     }
