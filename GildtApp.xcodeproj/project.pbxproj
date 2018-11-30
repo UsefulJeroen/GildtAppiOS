@@ -43,6 +43,7 @@
 		DF9D57B521B09982003A97FB /* AgendaAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9D57B421B09982003A97FB /* AgendaAPIService.swift */; };
 		DF9D57B721B09A8C003A97FB /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9D57B621B09A8C003A97FB /* Event.swift */; };
 		DF9D57B921B0A52D003A97FB /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9D57B821B0A52D003A97FB /* String.swift */; };
+		DF9D57BE21B1D732003A97FB /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9D57BD21B1D732003A97FB /* EventViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -86,6 +87,7 @@
 		DF9D57B421B09982003A97FB /* AgendaAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgendaAPIService.swift; sourceTree = "<group>"; };
 		DF9D57B621B09A8C003A97FB /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		DF9D57B821B0A52D003A97FB /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		DF9D57BD21B1D732003A97FB /* EventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +127,7 @@
 				B0177A41219C64E500E379D5 /* JukeboxViewController.swift */,
 				B0CADB8D21AB2EA200E6D848 /* LoginViewController.swift */,
 				B099D20521B02F9900DA4473 /* Hierarchy */,
+				DF9D57BD21B1D732003A97FB /* EventViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -133,7 +136,6 @@
 			isa = PBXGroup;
 			children = (
 				DF9D57AF21B08591003A97FB /* AgendaTableViewCell */,
-				DF70F67F21A18516001D3006 /* DealsCollectionViewCell */,
 				DF70F66E219EE2C2001D3006 /* Agenda.storyboard */,
 				DF70F670219EE2DB001D3006 /* Deals.storyboard */,
 				DF70F676219EE337001D3006 /* Foto.storyboard */,
@@ -409,6 +411,7 @@
 				DF70F68321A18635001D3006 /* DealsCollectionViewCell.swift in Sources */,
 				DF70F69221AF394A001D3006 /* Deal.swift in Sources */,
 				DF9D57B521B09982003A97FB /* AgendaAPIService.swift in Sources */,
+				DF9D57BE21B1D732003A97FB /* EventViewController.swift in Sources */,
 				DF70F68121A185FD001D3006 /* DealsViewController.swift in Sources */,
 				DF70F67B21A183A7001D3006 /* UIColor.swift in Sources */,
 				B099D20221B029AA00DA4473 /* NavigationViewController.swift in Sources */,

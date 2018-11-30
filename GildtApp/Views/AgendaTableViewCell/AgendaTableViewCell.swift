@@ -47,6 +47,7 @@ class AgendaTableViewCell: UITableViewCell {
     }
     
     @IBAction func attendanceButtonTapped(_ sender: Any) {
+        UIImpactFeedbackGenerator(style: .medium).impactOccurred()
         if let event = event {
             setAttendance(attendance: !event.attendance)
         }
@@ -86,6 +87,7 @@ class AgendaTableViewCell: UITableViewCell {
     
     func successfullySetAttendance(updatedEvent: Event) {
         self.event = updatedEvent
+        NotificationCenter.default.post(name: Notification.Name("AttendanceIdentifier"), object: nil, userInfo: ["Event" : updatedEvent])
         self.loadEventData()
     }
 
