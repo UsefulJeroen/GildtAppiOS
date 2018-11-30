@@ -69,6 +69,7 @@ class DealsViewController: UIViewController {
 
     func reloadDeals(newData: [Deal]) {
         deals = newData
+        deals = deals.filter({$0.dealsLeft != 0})
         collectionView.reloadData()
     }
 
@@ -123,9 +124,12 @@ class DealsViewController: UIViewController {
     }
 
     func dealSuccessfullyRedeemed(updatedDeal: Deal) {
-        // TODO: Still need to check for when coupon is used the last time
         if let i = deals.firstIndex(where: {$0.id == updatedDeal.id}) {
-            deals[i] = updatedDeal
+            if updatedDeal.dealsLeft == 0 {
+                deals.remove(at: i)
+            } else {
+                deals[i] = updatedDeal
+            }
             collectionView.reloadData()
         }
 
