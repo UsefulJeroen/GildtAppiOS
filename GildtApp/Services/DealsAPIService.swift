@@ -10,7 +10,7 @@ import Foundation
 import Alamofire
 
 final class DealsAPIService {
-    private static let baseURL = "http://146.185.156.30/api/v1/"
+    private static let baseURL = "https://gildt.inholland-informatica.nl/api/v1/"
 
     static func getDeals() -> DataRequest {
         var headers: [String: String] = [:]

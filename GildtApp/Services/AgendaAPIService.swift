@@ -10,7 +10,7 @@ import Foundation
 import Alamofire
 
 final class AgendaAPIService {
-    private static let baseURL = "http://146.185.156.30/api/v1/"
+    private static let baseURL = "https://gildt.inholland-informatica.nl/api/v1/"
     
     static func getAgendaItems() -> DataRequest {
         var headers: [String: String] = [:]

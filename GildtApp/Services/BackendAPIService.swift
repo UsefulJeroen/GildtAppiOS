@@ -13,7 +13,7 @@ import Alamofire
 //this will depend on the api made by Erik,
 //possibly changed if an api from an apigroup is available at launch
 final class BackendAPIService {
-    private static let baseURL = "http://146.185.156.30/api/v1/"
+    private static let baseURL = "https://gildt.inholland-informatica.nl/api/v1/"
     
     static func register(user: RegisterModel) -> DataRequest{
         var request = URLRequest(url: URL(string: "\(baseURL)/user")!)
