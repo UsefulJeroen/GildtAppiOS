@@ -21,6 +21,8 @@ class AgendaViewController: UITableViewController {
         getAgendaItems()
         setupRefreshControl()
         
+        registerForPreviewing(with: self, sourceView: tableView)
+        
         NotificationCenter.default.addObserver(self, selector: #selector(self.AttendanceNotificationHandler(notification:)), name: NSNotification.Name(rawValue: "AttendanceIdentifier"), object: nil)
     }
     
@@ -95,10 +97,29 @@ class AgendaViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("Selected \(indexPath.row)")
+        self.navigationController?.pushViewController(detailViewController(for: indexPath.row), animated: true)
+    }
+    
+    func detailViewController(for index: Int) -> UIViewController {
         let storyboard = UIStoryboard(name: "Agenda", bundle: nil)
-        let detailPageVc = storyboard.instantiateViewController(withIdentifier: "EventViewController") as! EventViewController
-        detailPageVc.navigationItem.largeTitleDisplayMode = .never
-        detailPageVc.event = agenda[indexPath.row]
-        self.navigationController?.pushViewController(detailPageVc, animated: true)
+        let vc = storyboard.instantiateViewController(withIdentifier: "EventViewController") as! EventViewController
+        vc.navigationItem.largeTitleDisplayMode = .never
+        vc.event = agenda[index]
+        return vc
+    }
+}
+
+extension AgendaViewController : UIViewControllerPreviewingDelegate {
+    func previewingContext(_ previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
+        if let indexPath = tableView.indexPathForRow(at: location) {
+            previewingContext.sourceRect = tableView.rectForRow(at: indexPath)
+            return detailViewController(for: indexPath.row)
+        }
+        
+        return nil
+    }
+    
+    func previewingContext(_ previewingContext: UIViewControllerPreviewing, commit viewControllerToCommit: UIViewController) {
+        navigationController?.pushViewController(viewControllerToCommit, animated: true)
     }
 }
