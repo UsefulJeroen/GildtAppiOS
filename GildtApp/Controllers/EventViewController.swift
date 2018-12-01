@@ -44,6 +44,7 @@ class EventViewController: UIViewController {
     
     func loadEventData() {
         if let event = event {
+            navigationItem.title = event.title
             EventImage.kf.setImage(with: URL(string: event.image))
             setAttendanceButton(attendance: event.attendance)
             EventTitle.text = "\(event.title):\n\(event.shortDescription)"
