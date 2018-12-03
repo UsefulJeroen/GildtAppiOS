@@ -11,33 +11,13 @@ import Alamofire
 
 final class UserAPIService: BackendAPIService {
     
-    static func register(user: RegisterModel) -> DataRequest{
-        var request = URLRequest(url: URL(string: "\(baseURL)/user")!)
-        request.httpMethod = HTTPMethod.post.rawValue
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        
-        let jsonEncoder = JSONEncoder()
-        let jsonData = try! jsonEncoder.encode(user)
-        let json = String(data: jsonData, encoding: .utf8)
-        let data = json?.data(using: .utf8, allowLossyConversion: false)!
-        
-        request.httpBody = data
-        
-        return Alamofire.request(request)
+    static func register(user: RegisterModel) -> DataRequest {
+        let endPointURL = "user"
+        return createRequestWithBody(endPointURL: endPointURL, model: user)
     }
     
     static func login(user: LoginModel) -> DataRequest {
-        var request = URLRequest(url: URL(string: "\(baseURL)/user_token")!)
-        request.httpMethod = HTTPMethod.post.rawValue
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        
-        let jsonEncoder = JSONEncoder()
-        let jsonData = try! jsonEncoder.encode(user)
-        let json = String(data: jsonData, encoding: .utf8)
-        let data = json?.data(using: .utf8, allowLossyConversion: false)!
-        
-        request.httpBody = data
-        
-        return Alamofire.request(request)
+        let endPointURL = "user_token"
+        return createRequestWithBody(endPointURL: endPointURL, model: user)
     }
 }
