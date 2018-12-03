@@ -12,18 +12,12 @@ import Alamofire
 final class DealsAPIService: BackendAPIService {
 
     static func getDeals() -> DataRequest {
-        var headers: [String: String] = [:]
-        if let authToken = LocalStorageService.getAuthToken() {
-            headers["Authorization"] = "Bearer \(authToken)"
-        }
+        let headers = getAuthHeaderDict()
         return Alamofire.request("\(baseURL)/deal", method: .get, parameters: nil, encoding: URLEncoding.default, headers: headers)
     }
 
     static func redeemDeal(deal: Deal) -> DataRequest {
-        var headers: [String: String] = [:]
-        if let authToken = LocalStorageService.getAuthToken() {
-            headers["Authorization"] = "Bearer \(authToken)"
-        }
+        let headers = getAuthHeaderDict()
         return Alamofire.request("\(baseURL)/deal/\(deal.id)/redeem", method: .put, parameters: nil, encoding: URLEncoding.default, headers: headers)
     }
 }

@@ -12,10 +12,7 @@ import Alamofire
 final class AgendaAPIService: BackendAPIService {
     
     static func getAgendaItems() -> DataRequest {
-        var headers: [String: String] = [:]
-        if let authToken = LocalStorageService.getAuthToken() {
-            headers["Authorization"] = "Bearer \(authToken)"
-        }
+        let headers = getAuthHeaderDict()
         return Alamofire.request("\(baseURL)/event", method: .get, parameters: nil, encoding: URLEncoding.default, headers: headers)
     }
     

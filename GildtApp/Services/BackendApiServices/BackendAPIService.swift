@@ -13,5 +13,15 @@ import Alamofire
 //this will depend on the api made by Erik,
 //possibly changed if an api from an apigroup is available at launch
 class BackendAPIService {
-    public static let baseURL = "https://gildt.inholland-informatica.nl/api/v1/"
+    static let baseURL = "https://gildt.inholland-informatica.nl/api/v1/"
+    
+    static func getAuthHeaderDict() -> [String: String] {
+        var headers: [String: String] = [:]
+        if let authToken = LocalStorageService.getAuthToken() {
+            headers["Authorization"] = "Bearer \(authToken)"
+        }
+        return headers
+    }
+    
+    
 }

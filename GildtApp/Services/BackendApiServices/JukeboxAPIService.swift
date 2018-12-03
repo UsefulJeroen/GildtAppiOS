@@ -12,10 +12,7 @@ import Alamofire
 final class JukeboxAPIService: BackendAPIService {
     
     static func getSongRequests() -> DataRequest {
-        var headers: [String: String] = [:]
-        if let authToken = LocalStorageService.getAuthToken() {
-            headers["Authorization"] = "Bearer \(authToken)"
-        }
+        let headers = getAuthHeaderDict()
         return Alamofire.request("\(baseURL)/song", method: .get, parameters: nil, encoding: URLEncoding.default, headers: headers)
     }
     
