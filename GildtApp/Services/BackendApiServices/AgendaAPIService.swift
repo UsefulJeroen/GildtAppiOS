@@ -9,8 +9,7 @@
 import Foundation
 import Alamofire
 
-final class AgendaAPIService {
-    private static let baseURL = "https://gildt.inholland-informatica.nl/api/v1/"
+final class AgendaAPIService: BackendAPIService {
     
     static func getAgendaItems() -> DataRequest {
         var headers: [String: String] = [:]

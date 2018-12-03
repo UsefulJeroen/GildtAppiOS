@@ -86,7 +86,7 @@ class LoginViewController: UIViewController {
         //show error if this is nil
         
         let user: LoginModel = LoginModel(email: email, password: password)
-        BackendAPIService.login(user: user)
+        UserAPIService.login(user: user)
             .response(completionHandler: { [weak self] (response) in
                 guard let jsonData = response.data else { return }
                 
@@ -119,7 +119,7 @@ class LoginViewController: UIViewController {
         //show error if this is nil
         
         let user: RegisterModel = RegisterModel(username: username, email: email, password: password, password_confirmation: passwordConfirmation)
-        BackendAPIService.register(user: user)
+        UserAPIService.register(user: user)
             .response(completionHandler: { [weak self] (response) in
                 
                 DispatchQueue.main.async {

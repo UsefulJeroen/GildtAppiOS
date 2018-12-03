@@ -12,38 +12,8 @@ import Alamofire
 //bakendapiservice to implement alamofire requests
 //this will depend on the api made by Erik,
 //possibly changed if an api from an apigroup is available at launch
-final class BackendAPIService {
-    private static let baseURL = "https://gildt.inholland-informatica.nl/api/v1/"
-    
-    static func register(user: RegisterModel) -> DataRequest{
-        var request = URLRequest(url: URL(string: "\(baseURL)/user")!)
-        request.httpMethod = HTTPMethod.post.rawValue
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        
-        let jsonEncoder = JSONEncoder()
-        let jsonData = try! jsonEncoder.encode(user)
-        let json = String(data: jsonData, encoding: .utf8)
-        let data = json?.data(using: .utf8, allowLossyConversion: false)!
-        
-        request.httpBody = data
-        
-        return Alamofire.request(request)
-    }
-    
-    static func login(user: LoginModel) -> DataRequest {
-        var request = URLRequest(url: URL(string: "\(baseURL)/user_token")!)
-        request.httpMethod = HTTPMethod.post.rawValue
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        
-        let jsonEncoder = JSONEncoder()
-        let jsonData = try! jsonEncoder.encode(user)
-        let json = String(data: jsonData, encoding: .utf8)
-        let data = json?.data(using: .utf8, allowLossyConversion: false)!
-        
-        request.httpBody = data
-        
-        return Alamofire.request(request)
-    }
+class BackendAPIService {
+    public static let baseURL = "https://gildt.inholland-informatica.nl/api/v1/"
     
     static func getSongRequests() -> DataRequest {
         var headers: [String: String] = [:]
