@@ -47,7 +47,7 @@ class JukeboxViewController: UITableViewController {
     
     func getSongRequests() {
         pendingNetworkRequest = true
-        BackendAPIService.getSongRequests()
+        JukeboxAPIService.getSongRequests()
             .responseData(completionHandler: { [weak self] (response) in
                 guard let jsonData = response.data else { return }
                 
@@ -126,7 +126,7 @@ class JukeboxViewController: UITableViewController {
         //check if nil!!??
         if let title = title, let artist = artist {
             let song = NewSong(title: title, artist: artist)
-            BackendAPIService.addSong(song: song)
+            JukeboxAPIService.addSong(song: song)
                 .response(completionHandler: { [weak self] (response) in
                     
                     guard let jsonData = response.data else { return }

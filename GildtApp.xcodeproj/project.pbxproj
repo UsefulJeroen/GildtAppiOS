@@ -17,6 +17,7 @@
 		B0177A47219CCD6800E379D5 /* SongRequestTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0177A46219CCD6800E379D5 /* SongRequestTableViewCell.swift */; };
 		B0177A49219CCE3500E379D5 /* SongRequestTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B0177A48219CCE3500E379D5 /* SongRequestTableViewCell.xib */; };
 		B05DB6B321B5592800C09A5F /* UserAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05DB6B221B5592800C09A5F /* UserAPIService.swift */; };
+		B05DB6B521B559A600C09A5F /* JukeboxAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05DB6B421B559A600C09A5F /* JukeboxAPIService.swift */; };
 		B078A90E219B0EE000545EAC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B078A90D219B0EE000545EAC /* AppDelegate.swift */; };
 		B078A915219B0EE000545EAC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B078A913219B0EE000545EAC /* Main.storyboard */; };
 		B078A91A219B0EE300545EAC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B078A918219B0EE300545EAC /* LaunchScreen.storyboard */; };
@@ -60,6 +61,7 @@
 		B0177A46219CCD6800E379D5 /* SongRequestTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongRequestTableViewCell.swift; sourceTree = "<group>"; };
 		B0177A48219CCE3500E379D5 /* SongRequestTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SongRequestTableViewCell.xib; sourceTree = "<group>"; };
 		B05DB6B221B5592800C09A5F /* UserAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAPIService.swift; sourceTree = "<group>"; };
+		B05DB6B421B559A600C09A5F /* JukeboxAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JukeboxAPIService.swift; sourceTree = "<group>"; };
 		B078A90A219B0EE000545EAC /* GildtApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GildtApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B078A90D219B0EE000545EAC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B078A914219B0EE000545EAC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -189,6 +191,7 @@
 				DF70F68F21AF36B5001D3006 /* DealsAPIService.swift */,
 				DF9D57B421B09982003A97FB /* AgendaAPIService.swift */,
 				B05DB6B221B5592800C09A5F /* UserAPIService.swift */,
+				B05DB6B421B559A600C09A5F /* JukeboxAPIService.swift */,
 			);
 			path = BackendApiServices;
 			sourceTree = "<group>";
@@ -426,6 +429,7 @@
 				DF70F68121A185FD001D3006 /* DealsViewController.swift in Sources */,
 				DF70F67B21A183A7001D3006 /* UIColor.swift in Sources */,
 				B099D20221B029AA00DA4473 /* NavigationViewController.swift in Sources */,
+				B05DB6B521B559A600C09A5F /* JukeboxAPIService.swift in Sources */,
 				B078A90E219B0EE000545EAC /* AppDelegate.swift in Sources */,
 				B0177A42219C64E500E379D5 /* JukeboxViewController.swift in Sources */,
 				B0CADB8621AB243C00E6D848 /* RegisterModel.swift in Sources */,

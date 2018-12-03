@@ -14,30 +14,4 @@ import Alamofire
 //possibly changed if an api from an apigroup is available at launch
 class BackendAPIService {
     public static let baseURL = "https://gildt.inholland-informatica.nl/api/v1/"
-    
-    static func getSongRequests() -> DataRequest {
-        var headers: [String: String] = [:]
-        if let authToken = LocalStorageService.getAuthToken() {
-            headers["Authorization"] = "Bearer \(authToken)"
-        }
-        return Alamofire.request("\(baseURL)/song", method: .get, parameters: nil, encoding: URLEncoding.default, headers: headers)
-    }
-    
-    static func addSong(song: NewSong) -> DataRequest {
-        var request = URLRequest(url: URL(string: "\(baseURL)/song")!)
-        request.httpMethod = HTTPMethod.post.rawValue
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        
-        let jsonEncoder = JSONEncoder()
-        let jsonData = try! jsonEncoder.encode(song)
-        let json = String(data: jsonData, encoding: .utf8)
-        let data = json?.data(using: .utf8, allowLossyConversion: false)!
-        
-        request.httpBody = data
-
-        if let authToken = LocalStorageService.getAuthToken() {
-            request.addValue("Bearer \(authToken)", forHTTPHeaderField: "Authorization")
-        }
-        return Alamofire.request(request)
-    }
 }
