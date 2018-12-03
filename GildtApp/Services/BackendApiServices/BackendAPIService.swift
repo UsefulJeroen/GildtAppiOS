@@ -1,42 +1,40 @@
 //
-//  AgendaAPIService.swift
+//  BackendAPIService.swift
 //  GildtApp
 //
-//  Created by Wouter Janson on 29/11/2018.
+//  Created by Jeroen Besse on 14/11/2018.
 //  Copyright © 2018 Gildt. All rights reserved.
 //
 
 import Foundation
 import Alamofire
 
-final class AgendaAPIService {
-    private static let baseURL = "https://gildt.inholland-informatica.nl/api/v1/"
+//bakendapiservice to implement alamofire requests
+//this will depend on the api made by Erik,
+//possibly changed if an api from an apigroup is available at launch
+class BackendAPIService {
+    static let baseURL = "https://gildt.inholland-informatica.nl/api/v1"
     
-    static func getAgendaItems() -> DataRequest {
+    static func getAuthHeaderDict() -> [String: String] {
         var headers: [String: String] = [:]
         if let authToken = LocalStorageService.getAuthToken() {
             headers["Authorization"] = "Bearer \(authToken)"
         }
-        return Alamofire.request("\(baseURL)/event", method: .get, parameters: nil, encoding: URLEncoding.default, headers: headers)
+        return headers
     }
     
-    static func setAttendance(event: Event, attendance: Bool) -> DataRequest {
-        var request = URLRequest(url: URL(string: "\(baseURL)event/\(event.id)/attendance")!)
+    static func createRequestWithBody<T>(endPointURL: String, model: T) -> DataRequest where T: Encodable {
+        var request = URLRequest(url: URL(string: "\(baseURL)/\(endPointURL)")!)
         request.httpMethod = HTTPMethod.post.rawValue
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         if let authToken = LocalStorageService.getAuthToken() {
             request.setValue("Bearer \(authToken)", forHTTPHeaderField: "Authorization")
         }
-        
-        let attendance = Attendance.init(attendance: attendance)
-        
         let jsonEncoder = JSONEncoder()
-        let jsonData = try! jsonEncoder.encode(attendance)
+        let jsonData = try! jsonEncoder.encode(model)
         let json = String(data: jsonData, encoding: .utf8)
         let data = json?.data(using: .utf8, allowLossyConversion: false)!
-        
         request.httpBody = data
-        
         return Alamofire.request(request)
     }
 }

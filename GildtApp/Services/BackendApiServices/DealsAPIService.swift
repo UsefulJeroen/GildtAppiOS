@@ -9,22 +9,15 @@
 import Foundation
 import Alamofire
 
-final class DealsAPIService {
-    private static let baseURL = "https://gildt.inholland-informatica.nl/api/v1/"
+final class DealsAPIService: BackendAPIService {
 
     static func getDeals() -> DataRequest {
-        var headers: [String: String] = [:]
-        if let authToken = LocalStorageService.getAuthToken() {
-            headers["Authorization"] = "Bearer \(authToken)"
-        }
+        let headers = getAuthHeaderDict()
         return Alamofire.request("\(baseURL)/deal", method: .get, parameters: nil, encoding: URLEncoding.default, headers: headers)
     }
 
     static func redeemDeal(deal: Deal) -> DataRequest {
-        var headers: [String: String] = [:]
-        if let authToken = LocalStorageService.getAuthToken() {
-            headers["Authorization"] = "Bearer \(authToken)"
-        }
+        let headers = getAuthHeaderDict()
         return Alamofire.request("\(baseURL)/deal/\(deal.id)/redeem", method: .put, parameters: nil, encoding: URLEncoding.default, headers: headers)
     }
 }
