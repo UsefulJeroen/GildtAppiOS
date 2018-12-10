@@ -13,17 +13,39 @@ class TagOverviewViewController: UICollectionViewController {
     
     let itemsPerRow: CGFloat = 2
     let sectionInsets = UIEdgeInsets(top: 50.0, left: 20.0, bottom: 50.0, right: 20.0)
-    let tags: [Tag] = [Tag(id: 1, title: "taggie", preview_image: "google.com", number_of_images: 5)]
+    var tags: [Tag] = [Tag(id: 1, title: "taggie", preview_image: "http://vsb2006001.pbworks.com/f/samythehero.jpg", number_of_images: 5)]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupCollectionView()
+        getTags()
     }
     
     func setupCollectionView() {
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.register(UINib(nibName: "TagCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "TagCollectionViewCell")
+    }
+    
+    func getTags() {
+        PhotoAPIService.getAllTags()
+            .responseData(completionHandler: { [weak self] (response) in
+                guard let jsonData = response.data else { return }
+                
+                let decoder = JSONDecoder()
+                let data = try? decoder.decode([Tag].self, from: jsonData)
+                
+                DispatchQueue.main.async {
+                    if data != nil {
+                        self?.reloadData(newData: data!)
+                    }
+                }
+            })
+    }
+    
+    func reloadData(newData: [Tag]) {
+        tags = newData
+        collectionView.reloadData()
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

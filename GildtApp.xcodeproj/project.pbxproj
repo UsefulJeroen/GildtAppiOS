@@ -138,13 +138,12 @@
 		B0177A34219B89B700E379D5 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				B0CD4DD021BEB8040060A28C /* Agenda */,
 				B0CD4DC821BE9F120060A28C /* Photos */,
-				B099D1FF21B0278400DA4473 /* AgendaViewController.swift */,
 				DF70F68021A185FD001D3006 /* DealsViewController.swift */,
 				B0177A41219C64E500E379D5 /* JukeboxViewController.swift */,
 				B0CADB8D21AB2EA200E6D848 /* LoginViewController.swift */,
 				B099D20521B02F9900DA4473 /* Hierarchy */,
-				DF9D57BD21B1D732003A97FB /* EventViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -305,6 +304,15 @@
 				B0CD4DCE21BEA3200060A28C /* TagCollectionViewCell.swift */,
 			);
 			path = TagCollectionViewCell;
+			sourceTree = "<group>";
+		};
+		B0CD4DD021BEB8040060A28C /* Agenda */ = {
+			isa = PBXGroup;
+			children = (
+				B099D1FF21B0278400DA4473 /* AgendaViewController.swift */,
+				DF9D57BD21B1D732003A97FB /* EventViewController.swift */,
+			);
+			path = Agenda;
 			sourceTree = "<group>";
 		};
 		DF70F67921A1837E001D3006 /* Extensions */ = {
