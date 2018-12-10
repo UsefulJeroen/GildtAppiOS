@@ -30,6 +30,9 @@
 		B0CADB8A21AB258C00E6D848 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0CADB8921AB258C00E6D848 /* LoginModel.swift */; };
 		B0CADB8C21AB2AE700E6D848 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0CADB8B21AB2AE700E6D848 /* Login.storyboard */; };
 		B0CADB8E21AB2EA200E6D848 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0CADB8D21AB2EA200E6D848 /* LoginViewController.swift */; };
+		B0CD4DC121BE981F0060A28C /* FotoAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0CD4DC021BE981F0060A28C /* FotoAPIService.swift */; };
+		B0CD4DC321BE99440060A28C /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0CD4DC221BE99440060A28C /* Tag.swift */; };
+		B0CD4DC621BE99620060A28C /* Foto.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0CD4DC521BE99620060A28C /* Foto.swift */; };
 		DF70F66F219EE2C2001D3006 /* Agenda.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF70F66E219EE2C2001D3006 /* Agenda.storyboard */; };
 		DF70F671219EE2DB001D3006 /* Deals.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF70F670219EE2DB001D3006 /* Deals.storyboard */; };
 		DF70F673219EE304001D3006 /* Stempelkaart.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF70F672219EE304001D3006 /* Stempelkaart.storyboard */; };
@@ -76,6 +79,9 @@
 		B0CADB8921AB258C00E6D848 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
 		B0CADB8B21AB2AE700E6D848 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		B0CADB8D21AB2EA200E6D848 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		B0CD4DC021BE981F0060A28C /* FotoAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FotoAPIService.swift; sourceTree = "<group>"; };
+		B0CD4DC221BE99440060A28C /* Tag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tag.swift; sourceTree = "<group>"; };
+		B0CD4DC521BE99620060A28C /* Foto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Foto.swift; sourceTree = "<group>"; };
 		DF70F66E219EE2C2001D3006 /* Agenda.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Agenda.storyboard; sourceTree = "<group>"; };
 		DF70F670219EE2DB001D3006 /* Deals.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Deals.storyboard; sourceTree = "<group>"; };
 		DF70F672219EE304001D3006 /* Stempelkaart.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Stempelkaart.storyboard; sourceTree = "<group>"; };
@@ -167,6 +173,7 @@
 		B0177A37219B89E900E379D5 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				B0CD4DC421BE99530060A28C /* Foto's */,
 				DF70F69121AF394A001D3006 /* Deal.swift */,
 				DF9D57B621B09A8C003A97FB /* Event.swift */,
 				B099D20821B0440A00DA4473 /* Song */,
@@ -192,6 +199,7 @@
 				DF9D57B421B09982003A97FB /* AgendaAPIService.swift */,
 				B05DB6B221B5592800C09A5F /* UserAPIService.swift */,
 				B05DB6B421B559A600C09A5F /* JukeboxAPIService.swift */,
+				B0CD4DC021BE981F0060A28C /* FotoAPIService.swift */,
 			);
 			path = BackendApiServices;
 			sourceTree = "<group>";
@@ -255,6 +263,15 @@
 				B0CADB8521AB243C00E6D848 /* RegisterModel.swift */,
 			);
 			path = User;
+			sourceTree = "<group>";
+		};
+		B0CD4DC421BE99530060A28C /* Foto's */ = {
+			isa = PBXGroup;
+			children = (
+				B0CD4DC221BE99440060A28C /* Tag.swift */,
+				B0CD4DC521BE99620060A28C /* Foto.swift */,
+			);
+			path = "Foto's";
 			sourceTree = "<group>";
 		};
 		DF70F67921A1837E001D3006 /* Extensions */ = {
@@ -428,6 +445,7 @@
 				DF9D57BE21B1D732003A97FB /* EventViewController.swift in Sources */,
 				DF70F68121A185FD001D3006 /* DealsViewController.swift in Sources */,
 				DF70F67B21A183A7001D3006 /* UIColor.swift in Sources */,
+				B0CD4DC621BE99620060A28C /* Foto.swift in Sources */,
 				B099D20221B029AA00DA4473 /* NavigationViewController.swift in Sources */,
 				B05DB6B521B559A600C09A5F /* JukeboxAPIService.swift in Sources */,
 				B078A90E219B0EE000545EAC /* AppDelegate.swift in Sources */,
@@ -444,8 +462,10 @@
 				B0177A3E219B9C4B00E379D5 /* BackendAPIService.swift in Sources */,
 				B0CADB8E21AB2EA200E6D848 /* LoginViewController.swift in Sources */,
 				B099D20021B0278400DA4473 /* AgendaViewController.swift in Sources */,
+				B0CD4DC321BE99440060A28C /* Tag.swift in Sources */,
 				DF9D57B721B09A8C003A97FB /* Event.swift in Sources */,
 				B0CADB8821AB254600E6D848 /* LoginPostBack.swift in Sources */,
+				B0CD4DC121BE981F0060A28C /* FotoAPIService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
