@@ -9,7 +9,6 @@
 import Foundation
 import UIKit
 
-//model created with Erik's backendAPI in mind
 struct SongRequest: Codable {
     let id: Int
     let artist: String
