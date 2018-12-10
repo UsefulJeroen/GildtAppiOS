@@ -1,5 +1,5 @@
 //
-//  Foto.swift
+//  Photo.swift
 //  GildtApp
 //
 //  Created by Jeroen Besse on 10/12/2018.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Foto: Codable {
+struct Photo: Codable {
     let description: String
     let image: String
     let publish_date: String

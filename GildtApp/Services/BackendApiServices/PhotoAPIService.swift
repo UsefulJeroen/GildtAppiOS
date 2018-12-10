@@ -1,5 +1,5 @@
 //
-//  FotoAPIService.swift
+//  PhotoAPIService.swift
 //  GildtApp
 //
 //  Created by Jeroen Besse on 10/12/2018.
@@ -9,7 +9,7 @@
 import Foundation
 import Alamofire
 
-final class FotoAPIService: BackendAPIService {
+final class PhotoAPIService: BackendAPIService {
     
     static func getAllTags() -> DataRequest {
         let headers = getAuthHeaderDict()
