@@ -20,4 +20,11 @@ struct Tag: Codable {
         case preview_image = "preview_image"
         case number_of_images = "number_of_images"
     }
+    
+    init(id: Int, title: String, preview_image: String, number_of_images: Int) {
+        self.id = id
+        self.title = title
+        self.preview_image = preview_image
+        self.number_of_images = number_of_images
+    }
 }

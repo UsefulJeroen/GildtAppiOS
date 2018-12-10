@@ -33,6 +33,9 @@
 		B0CD4DC121BE981F0060A28C /* PhotoAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0CD4DC021BE981F0060A28C /* PhotoAPIService.swift */; };
 		B0CD4DC321BE99440060A28C /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0CD4DC221BE99440060A28C /* Tag.swift */; };
 		B0CD4DC621BE99620060A28C /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0CD4DC521BE99620060A28C /* Photo.swift */; };
+		B0CD4DCA21BE9F900060A28C /* TagOverviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0CD4DC921BE9F900060A28C /* TagOverviewViewController.swift */; };
+		B0CD4DCD21BEA3120060A28C /* TagCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B0CD4DCC21BEA3120060A28C /* TagCollectionViewCell.xib */; };
+		B0CD4DCF21BEA3200060A28C /* TagCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0CD4DCE21BEA3200060A28C /* TagCollectionViewCell.swift */; };
 		DF70F66F219EE2C2001D3006 /* Agenda.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF70F66E219EE2C2001D3006 /* Agenda.storyboard */; };
 		DF70F671219EE2DB001D3006 /* Deals.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF70F670219EE2DB001D3006 /* Deals.storyboard */; };
 		DF70F673219EE304001D3006 /* Stempelkaart.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF70F672219EE304001D3006 /* Stempelkaart.storyboard */; };
@@ -82,6 +85,9 @@
 		B0CD4DC021BE981F0060A28C /* PhotoAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoAPIService.swift; sourceTree = "<group>"; };
 		B0CD4DC221BE99440060A28C /* Tag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tag.swift; sourceTree = "<group>"; };
 		B0CD4DC521BE99620060A28C /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
+		B0CD4DC921BE9F900060A28C /* TagOverviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagOverviewViewController.swift; sourceTree = "<group>"; };
+		B0CD4DCC21BEA3120060A28C /* TagCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TagCollectionViewCell.xib; sourceTree = "<group>"; };
+		B0CD4DCE21BEA3200060A28C /* TagCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagCollectionViewCell.swift; sourceTree = "<group>"; };
 		DF70F66E219EE2C2001D3006 /* Agenda.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Agenda.storyboard; sourceTree = "<group>"; };
 		DF70F670219EE2DB001D3006 /* Deals.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Deals.storyboard; sourceTree = "<group>"; };
 		DF70F672219EE304001D3006 /* Stempelkaart.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Stempelkaart.storyboard; sourceTree = "<group>"; };
@@ -276,6 +282,7 @@
 		B0CD4DC721BE9A810060A28C /* ViewCells */ = {
 			isa = PBXGroup;
 			children = (
+				B0CD4DCB21BEA2E70060A28C /* TagCollectionViewCell */,
 				DF9D57AF21B08591003A97FB /* AgendaTableViewCell */,
 				DF70F67F21A18516001D3006 /* DealsCollectionViewCell */,
 				B0177A45219CCD2D00E379D5 /* SongRequestTableViewCell */,
@@ -286,8 +293,18 @@
 		B0CD4DC821BE9F120060A28C /* Photos */ = {
 			isa = PBXGroup;
 			children = (
+				B0CD4DC921BE9F900060A28C /* TagOverviewViewController.swift */,
 			);
 			path = Photos;
+			sourceTree = "<group>";
+		};
+		B0CD4DCB21BEA2E70060A28C /* TagCollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				B0CD4DCC21BEA3120060A28C /* TagCollectionViewCell.xib */,
+				B0CD4DCE21BEA3200060A28C /* TagCollectionViewCell.swift */,
+			);
+			path = TagCollectionViewCell;
 			sourceTree = "<group>";
 		};
 		DF70F67921A1837E001D3006 /* Extensions */ = {
@@ -379,6 +396,7 @@
 				DF70F66F219EE2C2001D3006 /* Agenda.storyboard in Resources */,
 				DF70F671219EE2DB001D3006 /* Deals.storyboard in Resources */,
 				DF70F675219EE318001D3006 /* Jukebox.storyboard in Resources */,
+				B0CD4DCD21BEA3120060A28C /* TagCollectionViewCell.xib in Resources */,
 				B078A91A219B0EE300545EAC /* LaunchScreen.storyboard in Resources */,
 				DF70F673219EE304001D3006 /* Stempelkaart.storyboard in Resources */,
 				B078A915219B0EE000545EAC /* Main.storyboard in Resources */,
@@ -463,6 +481,7 @@
 				DF70F67B21A183A7001D3006 /* UIColor.swift in Sources */,
 				B0CD4DC621BE99620060A28C /* Photo.swift in Sources */,
 				B099D20221B029AA00DA4473 /* NavigationViewController.swift in Sources */,
+				B0CD4DCF21BEA3200060A28C /* TagCollectionViewCell.swift in Sources */,
 				B05DB6B521B559A600C09A5F /* JukeboxAPIService.swift in Sources */,
 				B078A90E219B0EE000545EAC /* AppDelegate.swift in Sources */,
 				B0177A42219C64E500E379D5 /* JukeboxViewController.swift in Sources */,
@@ -471,6 +490,7 @@
 				B099D20421B02ED000DA4473 /* MainTabBarController.swift in Sources */,
 				DF9D57B921B0A52D003A97FB /* String.swift in Sources */,
 				B0177A44219CC6A100E379D5 /* SongRequest.swift in Sources */,
+				B0CD4DCA21BE9F900060A28C /* TagOverviewViewController.swift in Sources */,
 				B099D20A21B0442600DA4473 /* NewSong.swift in Sources */,
 				B0177A40219B9C8100E379D5 /* LocalStorageService.swift in Sources */,
 				DF70F69021AF36B5001D3006 /* DealsAPIService.swift in Sources */,
