@@ -21,6 +21,8 @@ class TagOverviewViewController: UICollectionViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        navigationItem.title = "Foto's"
         setupCollectionView()
         getTags()
     }
