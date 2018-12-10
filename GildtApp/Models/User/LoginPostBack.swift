@@ -7,7 +7,7 @@
 //
 
 import Foundation
-//maybe make this jwt a extension of a string?
+
 struct LoginPostBack: Codable {
     
     let jwt: String

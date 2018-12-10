@@ -145,18 +145,16 @@
 		B0177A35219B89D400E379D5 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				DF9D57AF21B08591003A97FB /* AgendaTableViewCell */,
 				DF70F66E219EE2C2001D3006 /* Agenda.storyboard */,
 				DF70F670219EE2DB001D3006 /* Deals.storyboard */,
 				DF70F676219EE337001D3006 /* Foto.storyboard */,
 				DF70F674219EE318001D3006 /* Jukebox.storyboard */,
+				B078A918219B0EE300545EAC /* LaunchScreen.storyboard */,
 				B0CADB8B21AB2AE700E6D848 /* Login.storyboard */,
+				B078A913219B0EE000545EAC /* Main.storyboard */,
 				B0177A39219B8F1C00E379D5 /* OnBoarding.storyboard */,
 				DF70F672219EE304001D3006 /* Stempelkaart.storyboard */,
-				DF70F67F21A18516001D3006 /* DealsCollectionViewCell */,
-				B078A918219B0EE300545EAC /* LaunchScreen.storyboard */,
-				B078A913219B0EE000545EAC /* Main.storyboard */,
-				B0177A45219CCD2D00E379D5 /* SongRequestTableViewCell */,
+				B0CD4DC721BE9A810060A28C /* ViewCells */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -272,6 +270,16 @@
 				B0CD4DC521BE99620060A28C /* Foto.swift */,
 			);
 			path = "Foto's";
+			sourceTree = "<group>";
+		};
+		B0CD4DC721BE9A810060A28C /* ViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				DF9D57AF21B08591003A97FB /* AgendaTableViewCell */,
+				DF70F67F21A18516001D3006 /* DealsCollectionViewCell */,
+				B0177A45219CCD2D00E379D5 /* SongRequestTableViewCell */,
+			);
+			path = ViewCells;
 			sourceTree = "<group>";
 		};
 		DF70F67921A1837E001D3006 /* Extensions */ = {

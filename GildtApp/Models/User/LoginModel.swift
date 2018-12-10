@@ -8,7 +8,6 @@
 
 import Foundation
 
-//should be renamed to LoginModel? auth isn't swift, but it is specified in Erik's api
 class LoginModel: Codable {
     
     let email: String
