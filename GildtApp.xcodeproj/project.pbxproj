@@ -16,6 +16,7 @@
 		B0177A44219CC6A100E379D5 /* SongRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0177A43219CC6A100E379D5 /* SongRequest.swift */; };
 		B0177A47219CCD6800E379D5 /* SongRequestTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0177A46219CCD6800E379D5 /* SongRequestTableViewCell.swift */; };
 		B0177A49219CCE3500E379D5 /* SongRequestTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B0177A48219CCE3500E379D5 /* SongRequestTableViewCell.xib */; };
+		B01E218D21BEC06F00431166 /* TagPhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01E218C21BEC06F00431166 /* TagPhotosViewController.swift */; };
 		B05DB6B321B5592800C09A5F /* UserAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05DB6B221B5592800C09A5F /* UserAPIService.swift */; };
 		B05DB6B521B559A600C09A5F /* JukeboxAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05DB6B421B559A600C09A5F /* JukeboxAPIService.swift */; };
 		B078A90E219B0EE000545EAC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B078A90D219B0EE000545EAC /* AppDelegate.swift */; };
@@ -66,6 +67,7 @@
 		B0177A43219CC6A100E379D5 /* SongRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongRequest.swift; sourceTree = "<group>"; };
 		B0177A46219CCD6800E379D5 /* SongRequestTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongRequestTableViewCell.swift; sourceTree = "<group>"; };
 		B0177A48219CCE3500E379D5 /* SongRequestTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SongRequestTableViewCell.xib; sourceTree = "<group>"; };
+		B01E218C21BEC06F00431166 /* TagPhotosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagPhotosViewController.swift; sourceTree = "<group>"; };
 		B05DB6B221B5592800C09A5F /* UserAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAPIService.swift; sourceTree = "<group>"; };
 		B05DB6B421B559A600C09A5F /* JukeboxAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JukeboxAPIService.swift; sourceTree = "<group>"; };
 		B078A90A219B0EE000545EAC /* GildtApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GildtApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -293,6 +295,7 @@
 			isa = PBXGroup;
 			children = (
 				B0CD4DC921BE9F900060A28C /* TagOverviewViewController.swift */,
+				B01E218C21BEC06F00431166 /* TagPhotosViewController.swift */,
 			);
 			path = Photos;
 			sourceTree = "<group>";
@@ -495,6 +498,7 @@
 				B0177A42219C64E500E379D5 /* JukeboxViewController.swift in Sources */,
 				B0CADB8621AB243C00E6D848 /* RegisterModel.swift in Sources */,
 				B05DB6B321B5592800C09A5F /* UserAPIService.swift in Sources */,
+				B01E218D21BEC06F00431166 /* TagPhotosViewController.swift in Sources */,
 				B099D20421B02ED000DA4473 /* MainTabBarController.swift in Sources */,
 				DF9D57B921B0A52D003A97FB /* String.swift in Sources */,
 				B0177A44219CC6A100E379D5 /* SongRequest.swift in Sources */,
