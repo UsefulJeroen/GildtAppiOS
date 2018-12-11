@@ -13,11 +13,11 @@ class TagOverviewViewController: UICollectionViewController {
     
     let itemsPerRow: CGFloat = 2
     let sectionInsets = UIEdgeInsets(top: 50.0, left: 20.0, bottom: 50.0, right: 20.0)
-    var tags: [Tag] = [Tag(id: 1, title: "Smudge", preview_image: "http://lorempixel.com/300/300", number_of_images: 2),
-                       Tag(id: 2, title: "Smudge", preview_image: "http://lorempixel.com/300/300", number_of_images: 3),
-                       Tag(id: 3, title: "Angel", preview_image: "http://lorempixel.com/300/300", number_of_images: 3),
-                       Tag(id: 4, title: "Lucky", preview_image: "http://lorempixel.com/300/300", number_of_images: 3),
-                       Tag(id: 5, title: "Chloe", preview_image: "http://lorempixel.com/300/300", number_of_images: 2)]
+    var tags: [Tag] = [Tag(id: 1, title: "Smudge", preview_image: "https://lorempixel.com/300/300", number_of_images: 2),
+                       Tag(id: 2, title: "Smudge", preview_image: "https://lorempixel.com/300/300", number_of_images: 3),
+                       Tag(id: 3, title: "Angel", preview_image: "https://lorempixel.com/300/300", number_of_images: 3),
+                       Tag(id: 4, title: "Lucky", preview_image: "https://lorempixel.com/300/300", number_of_images: 3),
+                       Tag(id: 5, title: "Chloe", preview_image: "https://lorempixel.com/300/300", number_of_images: 2)]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,9 +61,9 @@ class TagOverviewViewController: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TagCollectionViewCell", for: indexPath) as! TagCollectionViewCell
         let tag = tags[indexPath.row]
-        cell.previewImage.kf.setImage(with: URL(string: tag.preview_image))
+        cell.previewImage.kf.setImage(with: URL(string: tag.preview_image ?? ""))
         cell.titleTextView.text = tag.title
-        cell.amountPhotosTextView.text = String(tag.number_of_images)
+        cell.amountPhotosTextView.text = String(tag.number_of_images ?? 0)
         return cell
     }
     

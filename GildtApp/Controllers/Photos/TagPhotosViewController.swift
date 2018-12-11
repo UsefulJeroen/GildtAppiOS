@@ -20,6 +20,7 @@ class TagPhotosViewController: UICollectionViewController {
         super.viewDidLoad()
         navigationItem.title = tag.title
         setupCollectionView()
+        getPhotos()
     }
     
     func setupCollectionView() {
@@ -30,9 +31,31 @@ class TagPhotosViewController: UICollectionViewController {
         collectionView.autoresizingMask = UIView.AutoresizingMask(rawValue: UIView.AutoresizingMask.RawValue(UInt8(UIView.AutoresizingMask.flexibleWidth.rawValue) | UInt8(UIView.AutoresizingMask.flexibleHeight.rawValue)))
     }
     
+    func getPhotos() {
+        PhotoAPIService.getImagesFromTag(id: tag.id ?? 0)
+            .responseData(completionHandler: { [weak self] (response) in
+                guard let jsonData = response.data else { return }
+                
+                let decoder = JSONDecoder()
+                let data = try? decoder.decode([Photo].self, from: jsonData)
+                
+                DispatchQueue.main.async {
+                    if data != nil {
+                        self?.reloadData(newData: data!)
+                    }
+                }
+            })
+    }
+    
+    func reloadData(newData: [Photo]) {
+        photos = newData
+        collectionView.reloadData()
+    }
+    
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TagCollectionViewCell", for: indexPath) as! TagCollectionViewCell
-        //set image
+        let photo = photos[indexPath.row]
+        cell.previewImage.kf.setImage(with: URL(string: photo.image))
         return cell
     }
     
