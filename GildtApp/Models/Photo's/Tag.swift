@@ -22,14 +22,6 @@ struct Tag: Codable {
         case number_of_images = "number_of_images"
     }
     
-    init(from decoder: Decoder) throws {
-        let values = try decoder.container(keyedBy: CodingKeys.self)
-        id = try values.decodeIfPresent(Int.self, forKey: .id)
-        title = try values.decodeIfPresent(String.self, forKey: .title)
-        preview_image = try values.decodeIfPresent(String.self, forKey: .preview_image)
-        number_of_images = try values.decodeIfPresent(Int.self, forKey: .number_of_images)
-    }
-    
     init(id: Int, title: String, preview_image: String, number_of_images: Int) {
         self.id = id
         self.title = title
