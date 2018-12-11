@@ -52,6 +52,10 @@
 		DF9D57B721B09A8C003A97FB /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9D57B621B09A8C003A97FB /* Event.swift */; };
 		DF9D57B921B0A52D003A97FB /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9D57B821B0A52D003A97FB /* String.swift */; };
 		DF9D57BE21B1D732003A97FB /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9D57BD21B1D732003A97FB /* EventViewController.swift */; };
+		DFD460DE21C0493100F90B52 /* StempelkaartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD460DD21C0493100F90B52 /* StempelkaartViewController.swift */; };
+		DFD460E121C0559400F90B52 /* StampCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD460E021C0559400F90B52 /* StampCollectionViewCell.swift */; };
+		DFD460E321C059E100F90B52 /* StampAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD460E221C059E100F90B52 /* StampAPIService.swift */; };
+		DFD460E521C05AD900F90B52 /* Stamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD460E421C05AD900F90B52 /* Stamp.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -104,6 +108,10 @@
 		DF9D57B621B09A8C003A97FB /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		DF9D57B821B0A52D003A97FB /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		DF9D57BD21B1D732003A97FB /* EventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventViewController.swift; sourceTree = "<group>"; };
+		DFD460DD21C0493100F90B52 /* StempelkaartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StempelkaartViewController.swift; sourceTree = "<group>"; };
+		DFD460E021C0559400F90B52 /* StampCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StampCollectionViewCell.swift; sourceTree = "<group>"; };
+		DFD460E221C059E100F90B52 /* StampAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StampAPIService.swift; sourceTree = "<group>"; };
+		DFD460E421C05AD900F90B52 /* Stamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stamp.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +146,7 @@
 		B0177A34219B89B700E379D5 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				DFD460DC21C048E300F90B52 /* Stempelkaart */,
 				B0CD4DD021BEB8040060A28C /* Agenda */,
 				B0CD4DC821BE9F120060A28C /* Photos */,
 				DF70F68021A185FD001D3006 /* DealsViewController.swift */,
@@ -182,6 +191,7 @@
 				DF9D57B621B09A8C003A97FB /* Event.swift */,
 				B099D20821B0440A00DA4473 /* Song */,
 				B0CADB8421AB242F00E6D848 /* User */,
+				DFD460E421C05AD900F90B52 /* Stamp.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -204,6 +214,7 @@
 				B05DB6B221B5592800C09A5F /* UserAPIService.swift */,
 				B05DB6B421B559A600C09A5F /* JukeboxAPIService.swift */,
 				B0CD4DC021BE981F0060A28C /* PhotoAPIService.swift */,
+				DFD460E221C059E100F90B52 /* StampAPIService.swift */,
 			);
 			path = BackendApiServices;
 			sourceTree = "<group>";
@@ -281,6 +292,7 @@
 		B0CD4DC721BE9A810060A28C /* ViewCells */ = {
 			isa = PBXGroup;
 			children = (
+				DFD460DF21C0557C00F90B52 /* StampCollectionViewCell */,
 				B0CD4DCB21BEA2E70060A28C /* TagCollectionViewCell */,
 				DF9D57AF21B08591003A97FB /* AgendaTableViewCell */,
 				DF70F67F21A18516001D3006 /* DealsCollectionViewCell */,
@@ -339,6 +351,22 @@
 				DF9D57B221B08615003A97FB /* AgendaTableViewCell.swift */,
 			);
 			path = AgendaTableViewCell;
+			sourceTree = "<group>";
+		};
+		DFD460DC21C048E300F90B52 /* Stempelkaart */ = {
+			isa = PBXGroup;
+			children = (
+				DFD460DD21C0493100F90B52 /* StempelkaartViewController.swift */,
+			);
+			path = Stempelkaart;
+			sourceTree = "<group>";
+		};
+		DFD460DF21C0557C00F90B52 /* StampCollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				DFD460E021C0559400F90B52 /* StampCollectionViewCell.swift */,
+			);
+			path = StampCollectionViewCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -483,6 +511,7 @@
 				B0CADB8A21AB258C00E6D848 /* LoginModel.swift in Sources */,
 				DF70F68321A18635001D3006 /* DealsCollectionViewCell.swift in Sources */,
 				DF70F69221AF394A001D3006 /* Deal.swift in Sources */,
+				DFD460E521C05AD900F90B52 /* Stamp.swift in Sources */,
 				DF9D57B521B09982003A97FB /* AgendaAPIService.swift in Sources */,
 				DF9D57BE21B1D732003A97FB /* EventViewController.swift in Sources */,
 				DF70F68121A185FD001D3006 /* DealsViewController.swift in Sources */,
@@ -493,6 +522,7 @@
 				B05DB6B521B559A600C09A5F /* JukeboxAPIService.swift in Sources */,
 				B078A90E219B0EE000545EAC /* AppDelegate.swift in Sources */,
 				B0177A42219C64E500E379D5 /* JukeboxViewController.swift in Sources */,
+				DFD460DE21C0493100F90B52 /* StempelkaartViewController.swift in Sources */,
 				B0CADB8621AB243C00E6D848 /* RegisterModel.swift in Sources */,
 				B05DB6B321B5592800C09A5F /* UserAPIService.swift in Sources */,
 				B099D20421B02ED000DA4473 /* MainTabBarController.swift in Sources */,
@@ -500,8 +530,10 @@
 				B0177A44219CC6A100E379D5 /* SongRequest.swift in Sources */,
 				B0CD4DCA21BE9F900060A28C /* TagOverviewViewController.swift in Sources */,
 				B099D20A21B0442600DA4473 /* NewSong.swift in Sources */,
+				DFD460E321C059E100F90B52 /* StampAPIService.swift in Sources */,
 				B0177A40219B9C8100E379D5 /* LocalStorageService.swift in Sources */,
 				DF70F69021AF36B5001D3006 /* DealsAPIService.swift in Sources */,
+				DFD460E121C0559400F90B52 /* StampCollectionViewCell.swift in Sources */,
 				DF9D57B321B08615003A97FB /* AgendaTableViewCell.swift in Sources */,
 				B0177A3E219B9C4B00E379D5 /* BackendAPIService.swift in Sources */,
 				B0CADB8E21AB2EA200E6D848 /* LoginViewController.swift in Sources */,
