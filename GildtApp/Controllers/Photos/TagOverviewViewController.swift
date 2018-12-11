@@ -67,6 +67,13 @@ class TagOverviewViewController: UICollectionViewController {
         return cell
     }
     
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let storyboard = UIStoryboard(name: "Photo", bundle: nil)
+        let tagPhotosVc = storyboard.instantiateViewController(withIdentifier: "TagPhotosViewController") as! TagPhotosViewController
+        let tag = tags[indexPath.row]
+        tagPhotosVc.tag = tag
+        self.navigationController?.pushViewController(tagPhotosVc, animated: true)
+    }
 }
 
 extension TagOverviewViewController: UICollectionViewDelegateFlowLayout {
