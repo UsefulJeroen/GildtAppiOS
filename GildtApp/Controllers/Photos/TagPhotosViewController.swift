@@ -28,6 +28,7 @@ class TagPhotosViewController: UICollectionViewController {
         collectionView.delegate = self
         collectionView.register(UINib(nibName: "TagCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "TagCollectionViewCell")
         collectionView.backgroundColor = UIColor.white
+        //make sure the page also works in horizontal mode
         collectionView.autoresizingMask = UIView.AutoresizingMask(rawValue: UIView.AutoresizingMask.RawValue(UInt8(UIView.AutoresizingMask.flexibleWidth.rawValue) | UInt8(UIView.AutoresizingMask.flexibleHeight.rawValue)))
     }
     
@@ -53,13 +54,67 @@ class TagPhotosViewController: UICollectionViewController {
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TagCollectionViewCell", for: indexPath) as! TagCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! PhotoItemCell
         let photo = photos[indexPath.row]
-        cell.previewImage.kf.setImage(with: URL(string: photo.image))
+        cell.img.kf.setImage(with: URL(string: photo.image))
         return cell
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return photos.count
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let vc = ImagePreviewViewController()
+        //todo; FIX THIS
+        //vc.imgArray = self.photos
+        vc.passedContentOffset = indexPath
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let width = collectionView.frame.width
+        if DeviceInfoHelper.Orientation.isPortrait {
+            return CGSize(width: width/4 - 1, height: width/4 -1)
+        }
+        else {
+            return CGSize(width: width/6 - 1, heigth: width/6 - 1)
+        }
+    }
+    
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        collectionView.collectionViewLayout.invalidateLayout()
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 1.0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 1.0
+    }
+
+}
+
+class PhotoItemCell: UICollectionViewCell {
+    
+    var img = UIImageView()
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        
+        img.contentMode = .scaleAspectFill
+        img.clipsToBounds = true
+        self.addSubview(img)
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        img.frame = self.bounds
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 }
