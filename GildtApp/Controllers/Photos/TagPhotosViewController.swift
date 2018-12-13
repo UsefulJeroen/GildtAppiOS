@@ -14,7 +14,7 @@ class TagPhotosViewController: UICollectionViewController {
     let itemsPerRow: CGFloat = 2
     let sectionInsets = UIEdgeInsets(top: 50.0, left: 20.0, bottom: 50.0, right: 20.0)
     var photos: [Photo] = []
-    var tag: Tag = Tag(id: 0, title: "voorbeeldtitel", preview_image: "url.com", number_of_images: 0)
+    var tag: Tag = Tag(id: 0, title: "voorbeeldtitel", preview_image: Image(url: "url.com"), number_of_images: 0)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,7 +56,7 @@ class TagPhotosViewController: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! PhotoItemCell
         let photo = photos[indexPath.row]
-        cell.img.kf.setImage(with: URL(string: "https://gildt.inholland-informatica.nl" + photo.image))
+        cell.img.kf.setImage(with: photo.image.getURL())
         return cell
     }
     

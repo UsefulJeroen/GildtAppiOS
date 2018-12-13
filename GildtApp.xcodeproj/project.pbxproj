@@ -39,6 +39,7 @@
 		B0CD4DCF21BEA3200060A28C /* TagCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0CD4DCE21BEA3200060A28C /* TagCollectionViewCell.swift */; };
 		B0E84EF421C047F200EF2C49 /* DeviceInfoHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E84EF321C047F200EF2C49 /* DeviceInfoHelper.swift */; };
 		B0E84EF621C0498A00EF2C49 /* ImagePreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E84EF521C0498A00EF2C49 /* ImagePreviewViewController.swift */; };
+		B0E84EF821C2709B00EF2C49 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E84EF721C2709B00EF2C49 /* Image.swift */; };
 		DF70F66F219EE2C2001D3006 /* Agenda.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF70F66E219EE2C2001D3006 /* Agenda.storyboard */; };
 		DF70F671219EE2DB001D3006 /* Deals.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF70F670219EE2DB001D3006 /* Deals.storyboard */; };
 		DF70F673219EE304001D3006 /* Stempelkaart.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF70F672219EE304001D3006 /* Stempelkaart.storyboard */; };
@@ -94,6 +95,7 @@
 		B0CD4DCE21BEA3200060A28C /* TagCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagCollectionViewCell.swift; sourceTree = "<group>"; };
 		B0E84EF321C047F200EF2C49 /* DeviceInfoHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceInfoHelper.swift; sourceTree = "<group>"; };
 		B0E84EF521C0498A00EF2C49 /* ImagePreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePreviewViewController.swift; sourceTree = "<group>"; };
+		B0E84EF721C2709B00EF2C49 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		DF70F66E219EE2C2001D3006 /* Agenda.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Agenda.storyboard; sourceTree = "<group>"; };
 		DF70F670219EE2DB001D3006 /* Deals.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Deals.storyboard; sourceTree = "<group>"; };
 		DF70F672219EE304001D3006 /* Stempelkaart.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Stempelkaart.storyboard; sourceTree = "<group>"; };
@@ -281,6 +283,7 @@
 			children = (
 				B0CD4DC221BE99440060A28C /* Tag.swift */,
 				B0CD4DC521BE99620060A28C /* Photo.swift */,
+				B0E84EF721C2709B00EF2C49 /* Image.swift */,
 			);
 			path = "Photo's";
 			sourceTree = "<group>";
@@ -490,6 +493,7 @@
 			files = (
 				B0177A47219CCD6800E379D5 /* SongRequestTableViewCell.swift in Sources */,
 				B0E84EF421C047F200EF2C49 /* DeviceInfoHelper.swift in Sources */,
+				B0E84EF821C2709B00EF2C49 /* Image.swift in Sources */,
 				B0CADB8A21AB258C00E6D848 /* LoginModel.swift in Sources */,
 				DF70F68321A18635001D3006 /* DealsCollectionViewCell.swift in Sources */,
 				DF70F69221AF394A001D3006 /* Deal.swift in Sources */,
