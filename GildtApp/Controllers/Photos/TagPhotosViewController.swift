@@ -59,11 +59,16 @@ class TagPhotosViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         super.tableView(tableView, cellForRowAt: indexPath)
         let cell = tableView.dequeueReusableCell(withIdentifier: "PreviewImageTableViewCell") as! PreviewImageTableViewCell
-        let row: Int = indexPath.row
+        let photo: Photo = photos[indexPath.row]
         
-        cell.photo.kf.setImage(with: photos[row].image.getURL())
-        cell.descriptionLabel.text = photos[row].description
-        cell.publishDateLabel.text = photos[row].publish_date
+        cell.photo.kf.setImage(with: photo.image.getURL())
+        cell.descriptionLabel.text = photo.description
+        
+        let date = photo.publish_date.toDate(dateFormat: "yyyy-MM-dd'T'HH:mm:ss.SSSZ")
+        let formatter = DateFormatter()
+        formatter.timeStyle = .none
+        formatter.dateStyle = .long
+        cell.publishDateLabel.text = "\(formatter.string(from: date))"
         
         return cell
     }

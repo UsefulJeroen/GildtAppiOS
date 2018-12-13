@@ -12,7 +12,7 @@ import UIKit
 class TagOverviewViewController: UICollectionViewController {
     
     let itemsPerRow: CGFloat = 2
-    let sectionInsets = UIEdgeInsets(top: 10.0, left: 10.0, bottom: 10.0, right: 10.0)
+    let sectionInsets = UIEdgeInsets(top: 20.0, left: 20.0, bottom: 20.0, right: 20.0)
     var tags: [Tag] = []
     
     override func viewDidLoad() {
