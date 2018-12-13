@@ -6,54 +6,134 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Root View Controller-->
-        <scene sceneID="c4K-sc-Rbc">
-            <objects>
-                <tableViewController id="Vyu-UK-JmZ" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="RNX-hz-d6j">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="5zx-JE-BRS">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="5zx-JE-BRS" id="1rX-Dz-2dW">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="Vyu-UK-JmZ" id="z1J-od-ZQW"/>
-                            <outlet property="delegate" destination="Vyu-UK-JmZ" id="9dn-d8-9R6"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="Qzf-PA-WTz"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="g2B-JW-bAx" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1905" y="1379"/>
-        </scene>
         <!--Stempelkaart-->
         <scene sceneID="JAA-sf-0j4">
             <objects>
                 <navigationController id="Vd2-fw-5Q0" customClass="NavigationViewController" customModule="GildtApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Stempelkaart" image="TabStempelkaart" id="wV3-Sr-4bc"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="a5R-bO-9E0">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="a5R-bO-9E0">
+                        <rect key="frame" x="0.0" y="20" width="375" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="Vyu-UK-JmZ" kind="relationship" relationship="rootViewController" id="S9p-Tt-rdU"/>
+                        <segue destination="mRx-gc-CsI" kind="relationship" relationship="rootViewController" id="NfR-OH-UeX"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B13-pp-Fwd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="953" y="1379"/>
+        </scene>
+        <!--Stempelkaart-->
+        <scene sceneID="elZ-yh-4GP">
+            <objects>
+                <viewController id="mRx-gc-CsI" customClass="StempelkaartViewController" customModule="GildtApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="WDk-Kh-TYq">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5gK-da-rQG">
+                                <rect key="frame" x="16" y="162" width="343" height="343"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OYv-jv-mPc">
+                                        <rect key="frame" x="86" y="297" width="171" height="38"/>
+                                        <color key="backgroundColor" red="0.13725490200000001" green="0.75294117650000003" blue="0.23921568630000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="18"/>
+                                        <inset key="contentEdgeInsets" minX="16" minY="8" maxX="16" maxY="8"/>
+                                        <state key="normal" title="Claim je stempel">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="ClaimStampButtonTapped:" destination="mRx-gc-CsI" eventType="touchUpInside" id="uPQ-CM-g3b"/>
+                                        </connections>
+                                    </button>
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="5fd-rV-pFE">
+                                        <rect key="frame" x="8" y="8" width="327" height="281"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="l7B-BT-7AF">
+                                            <size key="itemSize" width="90" height="90"/>
+                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        </collectionViewFlowLayout>
+                                        <cells>
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="StampCollectionViewCell" id="CMH-Ok-tf0" customClass="StampCollectionViewCell" customModule="GildtApp" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                                    <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="01-01" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tm7-O4-3xi">
+                                                            <rect key="frame" x="18.5" y="33" width="53" height="24"/>
+                                                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
+                                                            <color key="textColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pDR-O2-kWh">
+                                                            <rect key="frame" x="8" y="8" width="74" height="74"/>
+                                                        </imageView>
+                                                    </subviews>
+                                                </view>
+                                                <color key="backgroundColor" red="0.89411764705882346" green="0.89411764705882346" blue="0.89411764705882346" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstItem="pDR-O2-kWh" firstAttribute="top" secondItem="CMH-Ok-tf0" secondAttribute="top" constant="8" id="2By-23-8wD"/>
+                                                    <constraint firstAttribute="bottom" secondItem="pDR-O2-kWh" secondAttribute="bottom" constant="8" id="9fl-Ta-n7H"/>
+                                                    <constraint firstItem="tm7-O4-3xi" firstAttribute="centerX" secondItem="CMH-Ok-tf0" secondAttribute="centerX" id="NjY-b4-cph"/>
+                                                    <constraint firstItem="tm7-O4-3xi" firstAttribute="centerY" secondItem="CMH-Ok-tf0" secondAttribute="centerY" id="czz-ee-Ye7"/>
+                                                    <constraint firstAttribute="trailing" secondItem="pDR-O2-kWh" secondAttribute="trailing" constant="8" id="kgr-A1-3BE"/>
+                                                    <constraint firstItem="pDR-O2-kWh" firstAttribute="leading" secondItem="CMH-Ok-tf0" secondAttribute="leading" constant="8" id="owQ-Et-unO"/>
+                                                </constraints>
+                                                <connections>
+                                                    <outlet property="StampImage" destination="pDR-O2-kWh" id="hQV-NI-xrB"/>
+                                                    <outlet property="StampLabel" destination="tm7-O4-3xi" id="Nsu-3S-O3h"/>
+                                                </connections>
+                                            </collectionViewCell>
+                                        </cells>
+                                    </collectionView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="5fd-rV-pFE" firstAttribute="leading" secondItem="5gK-da-rQG" secondAttribute="leading" constant="8" id="4O0-cd-k2C"/>
+                                    <constraint firstAttribute="trailing" secondItem="5fd-rV-pFE" secondAttribute="trailing" constant="8" id="6ma-o7-vcT"/>
+                                    <constraint firstAttribute="bottom" secondItem="OYv-jv-mPc" secondAttribute="bottom" constant="8" id="Egp-Ip-4KC"/>
+                                    <constraint firstItem="OYv-jv-mPc" firstAttribute="centerX" secondItem="5gK-da-rQG" secondAttribute="centerX" id="VB8-pm-Glp"/>
+                                    <constraint firstItem="5fd-rV-pFE" firstAttribute="top" secondItem="5gK-da-rQG" secondAttribute="top" constant="8" id="iWK-5U-45c"/>
+                                    <constraint firstAttribute="width" secondItem="5gK-da-rQG" secondAttribute="height" multiplier="1:1" id="wda-mN-PkP"/>
+                                    <constraint firstItem="OYv-jv-mPc" firstAttribute="top" secondItem="5fd-rV-pFE" secondAttribute="bottom" constant="8" id="zZE-Ey-gHd"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stempels worden enkel uitgedeeld op thema feesten, zie de agenda voor meer informatie." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sNC-xc-U2C">
+                                <rect key="frame" x="8" y="521" width="359" height="34"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
+                                <color key="textColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.96470588239999999" green="0.97647058819999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="sNC-xc-U2C" firstAttribute="leading" secondItem="SCK-GD-asU" secondAttribute="leading" constant="8" id="9Dw-qf-S5A"/>
+                            <constraint firstItem="sNC-xc-U2C" firstAttribute="top" secondItem="5gK-da-rQG" secondAttribute="bottom" constant="16" id="EBN-lK-jmI"/>
+                            <constraint firstItem="5gK-da-rQG" firstAttribute="centerY" secondItem="WDk-Kh-TYq" secondAttribute="centerY" id="LO4-rC-d4X"/>
+                            <constraint firstItem="SCK-GD-asU" firstAttribute="trailing" secondItem="5gK-da-rQG" secondAttribute="trailing" constant="16" id="NUm-Ep-jeP"/>
+                            <constraint firstItem="SCK-GD-asU" firstAttribute="trailing" secondItem="sNC-xc-U2C" secondAttribute="trailing" constant="8" id="aKb-Be-Z09"/>
+                            <constraint firstItem="5gK-da-rQG" firstAttribute="leading" secondItem="SCK-GD-asU" secondAttribute="leading" constant="16" id="eVv-4A-oCX"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="SCK-GD-asU"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Stempelkaart" id="BuL-RN-CMD"/>
+                    <connections>
+                        <outlet property="ClaimButton" destination="OYv-jv-mPc" id="yqB-gg-U7y"/>
+                        <outlet property="CollectionView" destination="5fd-rV-pFE" id="ib1-yO-sic"/>
+                        <outlet property="Container" destination="5gK-da-rQG" id="Q44-eZ-49w"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Zoh-Av-oLS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1693.5999999999999" y="1376.7616191904049"/>
         </scene>
     </scenes>
     <resources>
