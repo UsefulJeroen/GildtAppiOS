@@ -216,6 +216,21 @@
             </objects>
             <point key="canvasLocation" x="2631" y="-87"/>
         </scene>
+        <!--Tag Photos View Controller-->
+        <scene sceneID="M3I-4Q-o8I">
+            <objects>
+                <viewController storyboardIdentifier="TagPhotosViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="X0J-aT-S9z" customClass="TagPhotosViewController" customModule="GildtApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Pl1-Tz-1QY">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="wLb-m7-JLY"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xjJ-UR-SjN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3476" y="-87"/>
+        </scene>
         <!--Agenda-->
         <scene sceneID="nYH-cA-FUp">
             <objects>
