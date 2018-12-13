@@ -9,10 +9,11 @@
 import Foundation
 import UIKit
 
-class TagPhotosViewController: UICollectionViewController {
+class TagPhotosViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UINavigationControllerDelegate {
     
-    let itemsPerRow: CGFloat = 2
-    let sectionInsets = UIEdgeInsets(top: 50.0, left: 20.0, bottom: 50.0, right: 20.0)
+    var myCollectionView: UICollectionView!
+    //let itemsPerRow: CGFloat = 2
+    //let sectionInsets = UIEdgeInsets(top: 50.0, left: 20.0, bottom: 50.0, right: 20.0)
     var photos: [Photo] = []
     var tag: Tag = Tag(id: 0, title: "voorbeeldtitel", preview_image: Image(url: "url.com"), number_of_images: 0)
     
@@ -24,12 +25,19 @@ class TagPhotosViewController: UICollectionViewController {
     }
     
     func setupCollectionView() {
-        collectionView.dataSource = self
-        collectionView.delegate = self
-        collectionView.register(UINib(nibName: "TagCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "TagCollectionViewCell")
-        collectionView.backgroundColor = UIColor.white
+        //collectionView.dataSource = self
+        //collectionView.delegate = self
+        //collectionView.register(UINib(nibName: "TagCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "TagCollectionViewCell")
+        
+        let layout = UICollectionViewLayout()
+        myCollectionView = UICollectionView(frame: self.view.frame, collectionViewLayout: layout)
+        myCollectionView.delegate = self
+        myCollectionView.dataSource = self
+        myCollectionView.register(PhotoItemCell.self, forCellWithReuseIdentifier: "Cell")
+        myCollectionView.backgroundColor = UIColor.white
+        self.view.addSubview(myCollectionView)
         //make sure the page also works in horizontal mode
-        collectionView.autoresizingMask = UIView.AutoresizingMask(rawValue: UIView.AutoresizingMask.RawValue(UInt8(UIView.AutoresizingMask.flexibleWidth.rawValue) | UInt8(UIView.AutoresizingMask.flexibleHeight.rawValue)))
+        myCollectionView.autoresizingMask = UIView.AutoresizingMask(rawValue: UIView.AutoresizingMask.RawValue(UInt8(UIView.AutoresizingMask.flexibleWidth.rawValue) | UInt8(UIView.AutoresizingMask.flexibleHeight.rawValue)))
     }
     
     func getPhotos() {
@@ -50,21 +58,21 @@ class TagPhotosViewController: UICollectionViewController {
     
     func reloadData(newData: [Photo]) {
         photos = newData
-        collectionView.reloadData()
+        myCollectionView.reloadData()
     }
     
-    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! PhotoItemCell
         let photo = photos[indexPath.row]
         cell.img.kf.setImage(with: photo.image.getURL())
         return cell
     }
     
-    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return photos.count
     }
     
-    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let vc = ImagePreviewViewController()
         //todo; FIX THIS
         //vc.imgArray = self.photos
@@ -86,7 +94,7 @@ class TagPhotosViewController: UICollectionViewController {
     
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
-        collectionView.collectionViewLayout.invalidateLayout()
+        myCollectionView.collectionViewLayout.invalidateLayout()
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
