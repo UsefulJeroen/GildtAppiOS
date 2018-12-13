@@ -12,7 +12,7 @@ import UIKit
 class TagOverviewViewController: UICollectionViewController {
     
     let itemsPerRow: CGFloat = 2
-    let sectionInsets = UIEdgeInsets(top: 50.0, left: 20.0, bottom: 50.0, right: 20.0)
+    let sectionInsets = UIEdgeInsets(top: 10.0, left: 10.0, bottom: 10.0, right: 10.0)
     var tags: [Tag] = []
     
     override func viewDidLoad() {
@@ -88,5 +88,11 @@ extension TagOverviewViewController: UICollectionViewDelegateFlowLayout {
                         minimumLineSpacingForSectionAt section: Int) -> CGFloat
     {
         return sectionInsets.left
+    }
+    
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        insetForSectionAt section: Int) -> UIEdgeInsets {
+        return sectionInsets
     }
 }
