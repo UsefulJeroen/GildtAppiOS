@@ -36,6 +36,12 @@
 		B0CD4DCA21BE9F900060A28C /* TagOverviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0CD4DC921BE9F900060A28C /* TagOverviewViewController.swift */; };
 		B0CD4DCD21BEA3120060A28C /* TagCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B0CD4DCC21BEA3120060A28C /* TagCollectionViewCell.xib */; };
 		B0CD4DCF21BEA3200060A28C /* TagCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0CD4DCE21BEA3200060A28C /* TagCollectionViewCell.swift */; };
+		B0E84EF421C047F200EF2C49 /* DeviceInfoHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E84EF321C047F200EF2C49 /* DeviceInfoHelper.swift */; };
+		B0E84EF621C0498A00EF2C49 /* ImagePreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E84EF521C0498A00EF2C49 /* ImagePreviewViewController.swift */; };
+		B0E84EF821C2709B00EF2C49 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E84EF721C2709B00EF2C49 /* Image.swift */; };
+		B0E84EFA21C2AA1700EF2C49 /* TagPhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E84EF921C2AA1700EF2C49 /* TagPhotosViewController.swift */; };
+		B0E84EFD21C2BEAC00EF2C49 /* PreviewImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E84EFC21C2BEAC00EF2C49 /* PreviewImageTableViewCell.swift */; };
+		B0E84EFF21C2BEF300EF2C49 /* PreviewImageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B0E84EFE21C2BEF300EF2C49 /* PreviewImageTableViewCell.xib */; };
 		DF70F66F219EE2C2001D3006 /* Agenda.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF70F66E219EE2C2001D3006 /* Agenda.storyboard */; };
 		DF70F671219EE2DB001D3006 /* Deals.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF70F670219EE2DB001D3006 /* Deals.storyboard */; };
 		DF70F673219EE304001D3006 /* Stempelkaart.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF70F672219EE304001D3006 /* Stempelkaart.storyboard */; };
@@ -88,6 +94,12 @@
 		B0CD4DC921BE9F900060A28C /* TagOverviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagOverviewViewController.swift; sourceTree = "<group>"; };
 		B0CD4DCC21BEA3120060A28C /* TagCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TagCollectionViewCell.xib; sourceTree = "<group>"; };
 		B0CD4DCE21BEA3200060A28C /* TagCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagCollectionViewCell.swift; sourceTree = "<group>"; };
+		B0E84EF321C047F200EF2C49 /* DeviceInfoHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceInfoHelper.swift; sourceTree = "<group>"; };
+		B0E84EF521C0498A00EF2C49 /* ImagePreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePreviewViewController.swift; sourceTree = "<group>"; };
+		B0E84EF721C2709B00EF2C49 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
+		B0E84EF921C2AA1700EF2C49 /* TagPhotosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagPhotosViewController.swift; sourceTree = "<group>"; };
+		B0E84EFC21C2BEAC00EF2C49 /* PreviewImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewImageTableViewCell.swift; sourceTree = "<group>"; };
+		B0E84EFE21C2BEF300EF2C49 /* PreviewImageTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PreviewImageTableViewCell.xib; sourceTree = "<group>"; };
 		DF70F66E219EE2C2001D3006 /* Agenda.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Agenda.storyboard; sourceTree = "<group>"; };
 		DF70F670219EE2DB001D3006 /* Deals.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Deals.storyboard; sourceTree = "<group>"; };
 		DF70F672219EE304001D3006 /* Stempelkaart.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Stempelkaart.storyboard; sourceTree = "<group>"; };
@@ -170,6 +182,7 @@
 			children = (
 				B05DB6B121B558E800C09A5F /* BackendApiServices */,
 				B0177A3F219B9C8100E379D5 /* LocalStorageService.swift */,
+				B0E84EF321C047F200EF2C49 /* DeviceInfoHelper.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -274,6 +287,7 @@
 			children = (
 				B0CD4DC221BE99440060A28C /* Tag.swift */,
 				B0CD4DC521BE99620060A28C /* Photo.swift */,
+				B0E84EF721C2709B00EF2C49 /* Image.swift */,
 			);
 			path = "Photo's";
 			sourceTree = "<group>";
@@ -281,6 +295,7 @@
 		B0CD4DC721BE9A810060A28C /* ViewCells */ = {
 			isa = PBXGroup;
 			children = (
+				B0E84EFB21C2BE8A00EF2C49 /* PreviewImageTableViewCell */,
 				B0CD4DCB21BEA2E70060A28C /* TagCollectionViewCell */,
 				DF9D57AF21B08591003A97FB /* AgendaTableViewCell */,
 				DF70F67F21A18516001D3006 /* DealsCollectionViewCell */,
@@ -293,6 +308,8 @@
 			isa = PBXGroup;
 			children = (
 				B0CD4DC921BE9F900060A28C /* TagOverviewViewController.swift */,
+				B0E84EF521C0498A00EF2C49 /* ImagePreviewViewController.swift */,
+				B0E84EF921C2AA1700EF2C49 /* TagPhotosViewController.swift */,
 			);
 			path = Photos;
 			sourceTree = "<group>";
@@ -313,6 +330,15 @@
 				DF9D57BD21B1D732003A97FB /* EventViewController.swift */,
 			);
 			path = Agenda;
+			sourceTree = "<group>";
+		};
+		B0E84EFB21C2BE8A00EF2C49 /* PreviewImageTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				B0E84EFC21C2BEAC00EF2C49 /* PreviewImageTableViewCell.swift */,
+				B0E84EFE21C2BEF300EF2C49 /* PreviewImageTableViewCell.xib */,
+			);
+			path = PreviewImageTableViewCell;
 			sourceTree = "<group>";
 		};
 		DF70F67921A1837E001D3006 /* Extensions */ = {
@@ -405,6 +431,7 @@
 				DF70F671219EE2DB001D3006 /* Deals.storyboard in Resources */,
 				DF70F675219EE318001D3006 /* Jukebox.storyboard in Resources */,
 				B0CD4DCD21BEA3120060A28C /* TagCollectionViewCell.xib in Resources */,
+				B0E84EFF21C2BEF300EF2C49 /* PreviewImageTableViewCell.xib in Resources */,
 				B078A91A219B0EE300545EAC /* LaunchScreen.storyboard in Resources */,
 				DF70F673219EE304001D3006 /* Stempelkaart.storyboard in Resources */,
 				B078A915219B0EE000545EAC /* Main.storyboard in Resources */,
@@ -479,7 +506,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B0E84EFA21C2AA1700EF2C49 /* TagPhotosViewController.swift in Sources */,
 				B0177A47219CCD6800E379D5 /* SongRequestTableViewCell.swift in Sources */,
+				B0E84EF421C047F200EF2C49 /* DeviceInfoHelper.swift in Sources */,
+				B0E84EF821C2709B00EF2C49 /* Image.swift in Sources */,
 				B0CADB8A21AB258C00E6D848 /* LoginModel.swift in Sources */,
 				DF70F68321A18635001D3006 /* DealsCollectionViewCell.swift in Sources */,
 				DF70F69221AF394A001D3006 /* Deal.swift in Sources */,
@@ -490,6 +520,7 @@
 				B0CD4DC621BE99620060A28C /* Photo.swift in Sources */,
 				B099D20221B029AA00DA4473 /* NavigationViewController.swift in Sources */,
 				B0CD4DCF21BEA3200060A28C /* TagCollectionViewCell.swift in Sources */,
+				B0E84EF621C0498A00EF2C49 /* ImagePreviewViewController.swift in Sources */,
 				B05DB6B521B559A600C09A5F /* JukeboxAPIService.swift in Sources */,
 				B078A90E219B0EE000545EAC /* AppDelegate.swift in Sources */,
 				B0177A42219C64E500E379D5 /* JukeboxViewController.swift in Sources */,
@@ -498,6 +529,7 @@
 				B099D20421B02ED000DA4473 /* MainTabBarController.swift in Sources */,
 				DF9D57B921B0A52D003A97FB /* String.swift in Sources */,
 				B0177A44219CC6A100E379D5 /* SongRequest.swift in Sources */,
+				B0E84EFD21C2BEAC00EF2C49 /* PreviewImageTableViewCell.swift in Sources */,
 				B0CD4DCA21BE9F900060A28C /* TagOverviewViewController.swift in Sources */,
 				B099D20A21B0442600DA4473 /* NewSong.swift in Sources */,
 				B0177A40219B9C8100E379D5 /* LocalStorageService.swift in Sources */,
@@ -657,7 +689,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = XT9TUGW438;
+				DEVELOPMENT_TEAM = 6FC9595Z84;
 				INFOPLIST_FILE = GildtApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -677,7 +709,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = XT9TUGW438;
+				DEVELOPMENT_TEAM = 6FC9595Z84;
 				INFOPLIST_FILE = GildtApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
