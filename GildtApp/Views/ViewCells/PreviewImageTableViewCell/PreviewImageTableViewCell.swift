@@ -13,6 +13,7 @@ class PreviewImageTableViewCell: UITableViewCell {
     
     @IBOutlet weak var photo: UIImageView!
     @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var publishDateLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -22,5 +23,6 @@ class PreviewImageTableViewCell: UITableViewCell {
         super.prepareForReuse()
         photo.image = nil
         descriptionLabel.text = ""
+        publishDateLabel.text = ""
     }
 }

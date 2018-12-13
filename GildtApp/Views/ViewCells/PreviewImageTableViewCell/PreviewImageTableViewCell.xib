@@ -21,14 +21,19 @@
                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="PtZ-gU-CQn">
                         <rect key="frame" x="16" y="11" width="343" height="138"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="138" id="9KB-L6-37A"/>
-                            <constraint firstAttribute="width" constant="343" id="LSH-lo-aFS"/>
+                            <constraint firstAttribute="height" constant="138" id="9KI-m2-p3i"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r2M-hw-leq">
-                        <rect key="frame" x="16" y="166" width="343" height="82"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TEZ-Mh-gxi">
+                        <rect key="frame" x="16" y="165" width="343" height="21"/>
+                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r2M-hw-leq">
+                        <rect key="frame" x="16" y="194" width="343" height="54"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="82" id="1pp-06-9rP"/>
+                            <constraint firstAttribute="height" constant="54" id="XV1-6j-wTG"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
@@ -36,18 +41,22 @@
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="PtZ-gU-CQn" firstAttribute="leading" secondItem="YTd-Ej-tBu" secondAttribute="leadingMargin" id="BIC-w7-XfA"/>
-                    <constraint firstItem="PtZ-gU-CQn" firstAttribute="trailing" secondItem="r2M-hw-leq" secondAttribute="trailing" id="KJu-U2-h6H"/>
-                    <constraint firstItem="PtZ-gU-CQn" firstAttribute="top" secondItem="YTd-Ej-tBu" secondAttribute="topMargin" id="V98-Zn-EBl"/>
-                    <constraint firstItem="PtZ-gU-CQn" firstAttribute="trailing" secondItem="YTd-Ej-tBu" secondAttribute="trailingMargin" id="W0z-5F-BTI"/>
-                    <constraint firstItem="PtZ-gU-CQn" firstAttribute="leading" secondItem="r2M-hw-leq" secondAttribute="leading" id="aDv-DJ-0Dm"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="r2M-hw-leq" secondAttribute="bottom" constant="11" id="eDJ-If-AJk"/>
-                    <constraint firstItem="r2M-hw-leq" firstAttribute="top" secondItem="PtZ-gU-CQn" secondAttribute="bottom" constant="17" id="ohp-UL-PoQ"/>
+                    <constraint firstItem="PtZ-gU-CQn" firstAttribute="leading" secondItem="TEZ-Mh-gxi" secondAttribute="leading" id="0qd-Z9-oSE"/>
+                    <constraint firstItem="PtZ-gU-CQn" firstAttribute="trailing" secondItem="YTd-Ej-tBu" secondAttribute="trailingMargin" id="6iE-L9-gG6"/>
+                    <constraint firstItem="TEZ-Mh-gxi" firstAttribute="trailing" secondItem="r2M-hw-leq" secondAttribute="trailing" id="CbV-ub-c1q"/>
+                    <constraint firstItem="PtZ-gU-CQn" firstAttribute="trailing" secondItem="TEZ-Mh-gxi" secondAttribute="trailing" id="KtA-Pd-esZ"/>
+                    <constraint firstItem="TEZ-Mh-gxi" firstAttribute="leading" secondItem="r2M-hw-leq" secondAttribute="leading" id="Ybk-eb-jLQ"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="r2M-hw-leq" secondAttribute="bottom" constant="11" id="bnU-hn-AQR"/>
+                    <constraint firstItem="r2M-hw-leq" firstAttribute="top" secondItem="TEZ-Mh-gxi" secondAttribute="bottom" constant="8" symbolic="YES" id="eyn-vx-9id"/>
+                    <constraint firstItem="PtZ-gU-CQn" firstAttribute="top" secondItem="YTd-Ej-tBu" secondAttribute="topMargin" id="jJC-dB-UrY"/>
+                    <constraint firstItem="PtZ-gU-CQn" firstAttribute="leading" secondItem="YTd-Ej-tBu" secondAttribute="leadingMargin" id="pfK-ch-csU"/>
+                    <constraint firstItem="TEZ-Mh-gxi" firstAttribute="top" secondItem="PtZ-gU-CQn" secondAttribute="bottom" constant="16" id="rCy-LJ-L3n"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="descriptionLabel" destination="r2M-hw-leq" id="OjQ-dY-Hoa"/>
                 <outlet property="photo" destination="PtZ-gU-CQn" id="tfY-Zi-XPU"/>
+                <outlet property="publishDateLabel" destination="TEZ-Mh-gxi" id="7hf-mz-zRL"/>
             </connections>
             <point key="canvasLocation" x="149.59999999999999" y="195.20239880059972"/>
         </tableViewCell>

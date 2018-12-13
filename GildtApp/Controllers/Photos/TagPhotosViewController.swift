@@ -63,6 +63,7 @@ class TagPhotosViewController: UITableViewController {
         
         cell.photo.kf.setImage(with: photos[row].image.getURL())
         cell.descriptionLabel.text = photos[row].description
+        cell.publishDateLabel.text = photos[row].publish_date
         
         return cell
     }
