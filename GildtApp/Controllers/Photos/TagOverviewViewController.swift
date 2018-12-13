@@ -61,7 +61,9 @@ class TagOverviewViewController: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TagCollectionViewCell", for: indexPath) as! TagCollectionViewCell
         let tag = tags[indexPath.row]
-        cell.previewImage.kf.setImage(with: URL(string: tag.preview_image ?? ""))
+        if let imageURL = tag.preview_image {
+            cell.previewImage.kf.setImage(with: URL(string: "https://gildt.inholland-informatica.nl" + imageURL))
+        }
         cell.titleTextView.text = tag.title
         cell.amountPhotosTextView.text = String(tag.number_of_images ?? 0)
         return cell

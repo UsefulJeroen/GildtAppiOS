@@ -56,7 +56,7 @@ class TagPhotosViewController: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! PhotoItemCell
         let photo = photos[indexPath.row]
-        cell.img.kf.setImage(with: URL(string: photo.image))
+        cell.img.kf.setImage(with: URL(string: "https://gildt.inholland-informatica.nl" + photo.image))
         return cell
     }
     
@@ -75,10 +75,12 @@ class TagPhotosViewController: UICollectionViewController {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width = collectionView.frame.width
         if DeviceInfoHelper.Orientation.isPortrait {
-            return CGSize(width: width/4 - 1, height: width/4 -1)
+            let length: Int = Int(width / 4 - 1)
+            return CGSize(width: length, height: length)
         }
         else {
-            return CGSize(width: width/6 - 1, heigth: width/6 - 1)
+            let length: Int = Int(width / 6 - 1)
+            return CGSize(width: length, height: length)
         }
     }
     

@@ -33,7 +33,7 @@ class ImagePreviewViewController: UIViewController, UICollectionViewDelegate, UI
         
         self.view.addSubview(myCollectionView)
         
-        myCollectionView.AutoresizingMask = UIView.AutoresizingMask(rawVlaue: UIView.AutoresizingMask.RawValue(UInt8(UIView.AutoresizingMask.flexibleWidth.rawValue) | UInt8(UIView.AutoresizingMask.flexibleHeight.rawValue)))
+        //myCollectionView.AutoresizingMask = UIView.AutoresizingMask(rawVlaue: UIView.AutoresizingMask.RawValue(UInt8(UIView.AutoresizingMask.flexibleWidth.rawValue) | UInt8(UIView.AutoresizingMask.flexibleHeight.rawValue)))
         
     }
     

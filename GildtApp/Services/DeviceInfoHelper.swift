@@ -7,6 +7,8 @@
 //
 
 import Foundation
+import UIKit
+
 struct DeviceInfoHelper {
     
     struct Orientation {
