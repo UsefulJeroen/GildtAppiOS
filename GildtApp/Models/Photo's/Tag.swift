@@ -9,7 +9,7 @@
 import Foundation
 
 struct Tag: Codable {
-    let id : Int?
+    let id : Int
     let title : String?
     let preview_image : Image?
     let number_of_images : Int?
