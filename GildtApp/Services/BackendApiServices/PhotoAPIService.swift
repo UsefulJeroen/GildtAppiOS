@@ -12,12 +12,12 @@ import Alamofire
 final class PhotoAPIService: BackendAPIService {
     
     static func getAllTags() -> DataRequest {
-        let headers = getAuthHeaderDict()
-        return Alamofire.request("\(baseURL)/tag", method: .get, parameters: nil, encoding: URLEncoding.default, headers: headers)
+        let endPointURL = "tag"
+        return createRequest(endPointURL: endPointURL)
     }
     
     static func getImagesFromTag(id: Int) -> DataRequest {
-        let headers = getAuthHeaderDict()
-        return Alamofire.request("\(baseURL)/tag/\(id)/images", method: .get, parameters: nil, encoding: URLEncoding.default, headers: headers)
+        let endPointURL = "tag/\(id)/images"
+        return createRequest(endPointURL: endPointURL)
     }
 }

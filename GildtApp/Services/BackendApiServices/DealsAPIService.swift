@@ -12,12 +12,12 @@ import Alamofire
 final class DealsAPIService: BackendAPIService {
 
     static func getDeals() -> DataRequest {
-        let headers = getAuthHeaderDict()
-        return Alamofire.request("\(baseURL)/deal", method: .get, parameters: nil, encoding: URLEncoding.default, headers: headers)
+        let endPointURL = "deal"
+        return createRequest(endPointURL: endPointURL)
     }
 
     static func redeemDeal(deal: Deal) -> DataRequest {
-        let headers = getAuthHeaderDict()
-        return Alamofire.request("\(baseURL)/deal/\(deal.id)/redeem", method: .put, parameters: nil, encoding: URLEncoding.default, headers: headers)
+        let endPointURL = "deal/\(deal.id)/redeem"
+        return createRequest(endPointURL: endPointURL)
     }
 }

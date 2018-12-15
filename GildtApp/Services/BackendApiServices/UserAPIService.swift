@@ -13,11 +13,11 @@ final class UserAPIService: BackendAPIService {
     
     static func register(user: RegisterModel) -> DataRequest {
         let endPointURL = "user"
-        return createRequestWithBody(endPointURL: endPointURL, model: user)
+        return createRequest(endPointURL: endPointURL, model: user)
     }
     
     static func login(user: LoginModel) -> DataRequest {
         let endPointURL = "user_token"
-        return createRequestWithBody(endPointURL: endPointURL, model: user)
+        return createRequest(endPointURL: endPointURL, model: user)
     }
 }

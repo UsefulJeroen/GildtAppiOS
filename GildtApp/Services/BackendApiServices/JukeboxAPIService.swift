@@ -12,12 +12,12 @@ import Alamofire
 final class JukeboxAPIService: BackendAPIService {
     
     static func getSongRequests() -> DataRequest {
-        let headers = getAuthHeaderDict()
-        return Alamofire.request("\(baseURL)/song", method: .get, parameters: nil, encoding: URLEncoding.default, headers: headers)
+        let endPointURL = "song"
+        return createRequest(endPointURL: endPointURL)
     }
     
     static func addSong(song: NewSong) -> DataRequest {
         let endPointURL = "song"
-        return createRequestWithBody(endPointURL: endPointURL, model: song)
+        return createRequest(endPointURL: endPointURL, model: song)
     }
 }

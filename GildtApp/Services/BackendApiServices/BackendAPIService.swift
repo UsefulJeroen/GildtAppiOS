@@ -15,15 +15,7 @@ import Alamofire
 class BackendAPIService {
     static let baseURL = "https://gildt.inholland-informatica.nl/api/v1"
     
-    static func getAuthHeaderDict() -> [String: String] {
-        var headers: [String: String] = [:]
-        if let authToken = LocalStorageService.getAuthToken() {
-            headers["Authorization"] = "Bearer \(authToken)"
-        }
-        return headers
-    }
-    
-    static func createRequestWithBody<T>(endPointURL: String, model: T) -> DataRequest where T: Encodable {
+    static func createRequest<T>(endPointURL: String, model: T?) -> DataRequest where T: Encodable {
         var request = URLRequest(url: URL(string: "\(baseURL)/\(endPointURL)")!)
         request.httpMethod = HTTPMethod.post.rawValue
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
@@ -36,5 +28,13 @@ class BackendAPIService {
         let data = json?.data(using: .utf8, allowLossyConversion: false)!
         request.httpBody = data
         return Alamofire.request(request)
+    }
+    
+    static func createRequest(endPointURL: String) -> DataRequest {
+        var headers: [String: String] = [:]
+        if let authToken = LocalStorageService.getAuthToken() {
+            headers["Authorization"] = "Bearer \(authToken)"
+        }
+        return Alamofire.request("\(baseURL)/\(endPointURL)", method: .get, parameters: nil, encoding: URLEncoding.default, headers: headers)
     }
 }

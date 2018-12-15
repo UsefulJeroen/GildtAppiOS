@@ -12,13 +12,13 @@ import Alamofire
 final class AgendaAPIService: BackendAPIService {
     
     static func getAgendaItems() -> DataRequest {
-        let headers = getAuthHeaderDict()
-        return Alamofire.request("\(baseURL)/event", method: .get, parameters: nil, encoding: URLEncoding.default, headers: headers)
+        let endPointURL = "event"
+        return createRequest(endPointURL: endPointURL)
     }
     
     static func setAttendance(event: Event, attendance: Bool) -> DataRequest {
-        let attendance = Attendance.init(attendance: attendance)
         let endPointURL = "event/\(event.id)/attendance"
-        return createRequestWithBody(endPointURL: endPointURL, model: attendance)
+        let attendance = Attendance.init(attendance: attendance)
+        return createRequest(endPointURL: endPointURL, model: attendance)
     }
 }
