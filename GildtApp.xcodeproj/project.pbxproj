@@ -16,8 +16,6 @@
 		B0177A44219CC6A100E379D5 /* SongRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0177A43219CC6A100E379D5 /* SongRequest.swift */; };
 		B0177A47219CCD6800E379D5 /* SongRequestTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0177A46219CCD6800E379D5 /* SongRequestTableViewCell.swift */; };
 		B0177A49219CCE3500E379D5 /* SongRequestTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B0177A48219CCE3500E379D5 /* SongRequestTableViewCell.xib */; };
-		B05DB6B321B5592800C09A5F /* UserAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05DB6B221B5592800C09A5F /* UserAPIService.swift */; };
-		B05DB6B521B559A600C09A5F /* JukeboxAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05DB6B421B559A600C09A5F /* JukeboxAPIService.swift */; };
 		B078A90E219B0EE000545EAC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B078A90D219B0EE000545EAC /* AppDelegate.swift */; };
 		B078A915219B0EE000545EAC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B078A913219B0EE000545EAC /* Main.storyboard */; };
 		B078A91A219B0EE300545EAC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B078A918219B0EE300545EAC /* LaunchScreen.storyboard */; };
@@ -30,7 +28,6 @@
 		B0CADB8A21AB258C00E6D848 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0CADB8921AB258C00E6D848 /* LoginModel.swift */; };
 		B0CADB8C21AB2AE700E6D848 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0CADB8B21AB2AE700E6D848 /* Login.storyboard */; };
 		B0CADB8E21AB2EA200E6D848 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0CADB8D21AB2EA200E6D848 /* LoginViewController.swift */; };
-		B0CD4DC121BE981F0060A28C /* PhotoAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0CD4DC021BE981F0060A28C /* PhotoAPIService.swift */; };
 		B0CD4DC321BE99440060A28C /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0CD4DC221BE99440060A28C /* Tag.swift */; };
 		B0CD4DC621BE99620060A28C /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0CD4DC521BE99620060A28C /* Photo.swift */; };
 		B0CD4DCA21BE9F900060A28C /* TagOverviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0CD4DC921BE9F900060A28C /* TagOverviewViewController.swift */; };
@@ -50,17 +47,14 @@
 		DF70F67B21A183A7001D3006 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF70F67A21A183A7001D3006 /* UIColor.swift */; };
 		DF70F68121A185FD001D3006 /* DealsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF70F68021A185FD001D3006 /* DealsViewController.swift */; };
 		DF70F68321A18635001D3006 /* DealsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF70F68221A18635001D3006 /* DealsCollectionViewCell.swift */; };
-		DF70F69021AF36B5001D3006 /* DealsAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF70F68F21AF36B5001D3006 /* DealsAPIService.swift */; };
 		DF70F69221AF394A001D3006 /* Deal.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF70F69121AF394A001D3006 /* Deal.swift */; };
 		DF9D57B121B085BE003A97FB /* AgendaTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF9D57B021B085BE003A97FB /* AgendaTableViewCell.xib */; };
 		DF9D57B321B08615003A97FB /* AgendaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9D57B221B08615003A97FB /* AgendaTableViewCell.swift */; };
-		DF9D57B521B09982003A97FB /* AgendaAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9D57B421B09982003A97FB /* AgendaAPIService.swift */; };
 		DF9D57B721B09A8C003A97FB /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9D57B621B09A8C003A97FB /* Event.swift */; };
 		DF9D57B921B0A52D003A97FB /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9D57B821B0A52D003A97FB /* String.swift */; };
 		DF9D57BE21B1D732003A97FB /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9D57BD21B1D732003A97FB /* EventViewController.swift */; };
 		DFD460DE21C0493100F90B52 /* StempelkaartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD460DD21C0493100F90B52 /* StempelkaartViewController.swift */; };
 		DFD460E121C0559400F90B52 /* StampCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD460E021C0559400F90B52 /* StampCollectionViewCell.swift */; };
-		DFD460E321C059E100F90B52 /* StampAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD460E221C059E100F90B52 /* StampAPIService.swift */; };
 		DFD460E521C05AD900F90B52 /* Stamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD460E421C05AD900F90B52 /* Stamp.swift */; };
 /* End PBXBuildFile section */
 
@@ -76,8 +70,6 @@
 		B0177A43219CC6A100E379D5 /* SongRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongRequest.swift; sourceTree = "<group>"; };
 		B0177A46219CCD6800E379D5 /* SongRequestTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongRequestTableViewCell.swift; sourceTree = "<group>"; };
 		B0177A48219CCE3500E379D5 /* SongRequestTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SongRequestTableViewCell.xib; sourceTree = "<group>"; };
-		B05DB6B221B5592800C09A5F /* UserAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAPIService.swift; sourceTree = "<group>"; };
-		B05DB6B421B559A600C09A5F /* JukeboxAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JukeboxAPIService.swift; sourceTree = "<group>"; };
 		B078A90A219B0EE000545EAC /* GildtApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GildtApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B078A90D219B0EE000545EAC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B078A914219B0EE000545EAC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -92,7 +84,6 @@
 		B0CADB8921AB258C00E6D848 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
 		B0CADB8B21AB2AE700E6D848 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		B0CADB8D21AB2EA200E6D848 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		B0CD4DC021BE981F0060A28C /* PhotoAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoAPIService.swift; sourceTree = "<group>"; };
 		B0CD4DC221BE99440060A28C /* Tag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tag.swift; sourceTree = "<group>"; };
 		B0CD4DC521BE99620060A28C /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		B0CD4DC921BE9F900060A28C /* TagOverviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagOverviewViewController.swift; sourceTree = "<group>"; };
@@ -112,17 +103,14 @@
 		DF70F67A21A183A7001D3006 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		DF70F68021A185FD001D3006 /* DealsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealsViewController.swift; sourceTree = "<group>"; };
 		DF70F68221A18635001D3006 /* DealsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealsCollectionViewCell.swift; sourceTree = "<group>"; };
-		DF70F68F21AF36B5001D3006 /* DealsAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealsAPIService.swift; sourceTree = "<group>"; };
 		DF70F69121AF394A001D3006 /* Deal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Deal.swift; sourceTree = "<group>"; };
 		DF9D57B021B085BE003A97FB /* AgendaTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AgendaTableViewCell.xib; sourceTree = "<group>"; };
 		DF9D57B221B08615003A97FB /* AgendaTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgendaTableViewCell.swift; sourceTree = "<group>"; };
-		DF9D57B421B09982003A97FB /* AgendaAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgendaAPIService.swift; sourceTree = "<group>"; };
 		DF9D57B621B09A8C003A97FB /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		DF9D57B821B0A52D003A97FB /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		DF9D57BD21B1D732003A97FB /* EventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventViewController.swift; sourceTree = "<group>"; };
 		DFD460DD21C0493100F90B52 /* StempelkaartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StempelkaartViewController.swift; sourceTree = "<group>"; };
 		DFD460E021C0559400F90B52 /* StampCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StampCollectionViewCell.swift; sourceTree = "<group>"; };
-		DFD460E221C059E100F90B52 /* StampAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StampAPIService.swift; sourceTree = "<group>"; };
 		DFD460E421C05AD900F90B52 /* Stamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stamp.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -189,7 +177,7 @@
 		B0177A36219B89E400E379D5 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				B05DB6B121B558E800C09A5F /* BackendApiServices */,
+				B0177A3D219B9C4B00E379D5 /* BackendAPIService.swift */,
 				B0177A3F219B9C8100E379D5 /* LocalStorageService.swift */,
 				B0E84EF321C047F200EF2C49 /* DeviceInfoHelper.swift */,
 			);
@@ -216,20 +204,6 @@
 				B0177A48219CCE3500E379D5 /* SongRequestTableViewCell.xib */,
 			);
 			path = SongRequestTableViewCell;
-			sourceTree = "<group>";
-		};
-		B05DB6B121B558E800C09A5F /* BackendApiServices */ = {
-			isa = PBXGroup;
-			children = (
-				B0177A3D219B9C4B00E379D5 /* BackendAPIService.swift */,
-				DF70F68F21AF36B5001D3006 /* DealsAPIService.swift */,
-				DF9D57B421B09982003A97FB /* AgendaAPIService.swift */,
-				B05DB6B221B5592800C09A5F /* UserAPIService.swift */,
-				B05DB6B421B559A600C09A5F /* JukeboxAPIService.swift */,
-				B0CD4DC021BE981F0060A28C /* PhotoAPIService.swift */,
-				DFD460E221C059E100F90B52 /* StampAPIService.swift */,
-			);
-			path = BackendApiServices;
 			sourceTree = "<group>";
 		};
 		B078A901219B0EE000545EAC = {
@@ -542,7 +516,6 @@
 				DF70F68321A18635001D3006 /* DealsCollectionViewCell.swift in Sources */,
 				DF70F69221AF394A001D3006 /* Deal.swift in Sources */,
 				DFD460E521C05AD900F90B52 /* Stamp.swift in Sources */,
-				DF9D57B521B09982003A97FB /* AgendaAPIService.swift in Sources */,
 				DF9D57BE21B1D732003A97FB /* EventViewController.swift in Sources */,
 				DF70F68121A185FD001D3006 /* DealsViewController.swift in Sources */,
 				DF70F67B21A183A7001D3006 /* UIColor.swift in Sources */,
@@ -550,21 +523,17 @@
 				B099D20221B029AA00DA4473 /* NavigationViewController.swift in Sources */,
 				B0CD4DCF21BEA3200060A28C /* TagCollectionViewCell.swift in Sources */,
 				B0E84EF621C0498A00EF2C49 /* ImagePreviewViewController.swift in Sources */,
-				B05DB6B521B559A600C09A5F /* JukeboxAPIService.swift in Sources */,
 				B078A90E219B0EE000545EAC /* AppDelegate.swift in Sources */,
 				B0177A42219C64E500E379D5 /* JukeboxViewController.swift in Sources */,
 				DFD460DE21C0493100F90B52 /* StempelkaartViewController.swift in Sources */,
 				B0CADB8621AB243C00E6D848 /* RegisterModel.swift in Sources */,
-				B05DB6B321B5592800C09A5F /* UserAPIService.swift in Sources */,
 				B099D20421B02ED000DA4473 /* MainTabBarController.swift in Sources */,
 				DF9D57B921B0A52D003A97FB /* String.swift in Sources */,
 				B0177A44219CC6A100E379D5 /* SongRequest.swift in Sources */,
 				B0E84EFD21C2BEAC00EF2C49 /* PreviewImageTableViewCell.swift in Sources */,
 				B0CD4DCA21BE9F900060A28C /* TagOverviewViewController.swift in Sources */,
 				B099D20A21B0442600DA4473 /* NewSong.swift in Sources */,
-				DFD460E321C059E100F90B52 /* StampAPIService.swift in Sources */,
 				B0177A40219B9C8100E379D5 /* LocalStorageService.swift in Sources */,
-				DF70F69021AF36B5001D3006 /* DealsAPIService.swift in Sources */,
 				DFD460E121C0559400F90B52 /* StampCollectionViewCell.swift in Sources */,
 				DF9D57B321B08615003A97FB /* AgendaTableViewCell.swift in Sources */,
 				B0177A3E219B9C4B00E379D5 /* BackendAPIService.swift in Sources */,
@@ -573,7 +542,6 @@
 				B0CD4DC321BE99440060A28C /* Tag.swift in Sources */,
 				DF9D57B721B09A8C003A97FB /* Event.swift in Sources */,
 				B0CADB8821AB254600E6D848 /* LoginPostBack.swift in Sources */,
-				B0CD4DC121BE981F0060A28C /* PhotoAPIService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
