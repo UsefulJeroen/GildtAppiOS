@@ -16,7 +16,7 @@ class BackendAPIService {
     
     private static let baseURL = "https://gildt.inholland-informatica.nl/api/v1"
     
-    fileprivate static func createRequest<T>(endPointURL: String, model: T?) -> DataRequest where T: Encodable {
+    fileprivate static func createRequest<T>(endPointURL: String, model: T) -> DataRequest where T: Encodable {
         var request = URLRequest(url: URL(string: "\(baseURL)/\(endPointURL)")!)
         request.httpMethod = HTTPMethod.post.rawValue
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
