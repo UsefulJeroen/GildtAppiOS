@@ -162,7 +162,24 @@ class LoginViewController: UIViewController {
         let alert = UIAlertController(title: alertTitle, message: alertMessage, preferredStyle: .alert)
         
         alert.addAction(UIAlertAction(title: discardText, style: .cancel, handler: { action in
-            self.secondTextField.becomeFirstResponder()
+            self.firstTextField.becomeFirstResponder()
+        }))
+        
+        self.present(alert, animated: true)
+    }
+    
+    func couldntRegisterError(error: ErrorMessage?) {
+        let alertTitle = "Kan niet registreren :("
+        var alertMessage = "Het is helaas niet gelukt om je te registreren, waarschijnlijk omdat je iets verkeerds hebt ingevuld."
+        if let error = error {
+            alertMessage = "Het is helaas niet gelukt om je te registreren, omdat: \(error.message)"
+        }
+        let discardText = "Probeer het eens opnieuw"
+        
+        let alert = UIAlertController(title: alertTitle, message: alertMessage, preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: discardText, style: .cancel, handler: { action in
+            self.firstTextField.becomeFirstResponder()
         }))
         
         self.present(alert, animated: true)
@@ -188,17 +205,23 @@ class LoginViewController: UIViewController {
         let user: RegisterModel = RegisterModel(username: username, email: email, password: password, password_confirmation: passwordConfirmation)
         UserAPIService.register(user: user)
             .response(completionHandler: { [weak self] (response) in
+                guard let jsonData = response.data else { return }
                 
-                DispatchQueue.main.async {
-                    self?.successfullyRegistered(user: user)
+                let decoder = JSONDecoder()
+                let loginPostBack: LoginPostBack? = try? decoder.decode(LoginPostBack.self, from: jsonData)
+                if let loginPostBack = loginPostBack {
+                    DispatchQueue.main.async {
+                        self?.successfullyLoggedIn(postBack: loginPostBack)
+                    }
                 }
+                else {
+                    let errorMessage = try? decoder.decode(ErrorMessage.self, from: jsonData)
+                    DispatchQueue.main.async {
+                        self?.couldntRegisterError(error: errorMessage)
+                    }
+                }
+                
             })
-    }
-    
-    func successfullyRegistered(user: RegisterModel) {
-        firstTextField.text = user.email
-        secondTextField.text = user.password
-        login()
     }
     
     //when changing the register/login switch segmentedcontrol
