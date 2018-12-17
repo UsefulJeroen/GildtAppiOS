@@ -44,9 +44,24 @@ class LoginViewController: UIViewController {
         haveAccountButton.isHidden = false
         
         firstTextField.placeholder = "Gebruikersnaam"
+        firstTextField.keyboardType = UIKeyboardType.alphabet
+        firstTextField.returnKeyType = UIReturnKeyType.next
+        
         secondTextField.placeholder = "Emailadres"
+        secondTextField.keyboardType = UIKeyboardType.emailAddress
+        secondTextField.isSecureTextEntry = false
+        secondTextField.returnKeyType = UIReturnKeyType.next
+        
         thirdTextField.placeholder = "Wachtwoord"
+        thirdTextField.keyboardType = UIKeyboardType.default
+        thirdTextField.isSecureTextEntry = true
+        thirdTextField.returnKeyType = UIReturnKeyType.next
+        
         fourthTextField.placeholder = "Wachtwoord verificatie"
+        fourthTextField.keyboardType = UIKeyboardType.default
+        fourthTextField.isSecureTextEntry = true
+        fourthTextField.returnKeyType = UIReturnKeyType.go
+        
         haveAccountButton.setTitle("Heb je al een account?", for: UIControl.State.normal)
     }
     
@@ -60,7 +75,14 @@ class LoginViewController: UIViewController {
         wantAccountButton.isHidden = false
         
         firstTextField.placeholder = "Emailadres"
+        firstTextField.keyboardType = UIKeyboardType.emailAddress
+        firstTextField.returnKeyType = UIReturnKeyType.next
+        
         secondTextField.placeholder = "Wachtwoord"
+        secondTextField.keyboardType = UIKeyboardType.default
+        secondTextField.isSecureTextEntry = true
+        secondTextField.returnKeyType = UIReturnKeyType.go
+        
         wantAccountButton.setTitle("Heb je nog geen account?", for: UIControl.State.normal)
     }
     

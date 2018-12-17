@@ -32,7 +32,7 @@
                                 <rect key="frame" x="61" y="181" width="252" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
                                 <connections>
                                     <action selector="secondTextFieldTrigger:" destination="9hQ-k7-HEv" eventType="primaryActionTriggered" id="iHh-ej-IOP"/>
                                 </connections>
@@ -41,7 +41,7 @@
                                 <rect key="frame" x="61" y="232" width="252" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
                                 <connections>
                                     <action selector="thirdTextFieldTrigger:" destination="9hQ-k7-HEv" eventType="primaryActionTriggered" id="XhO-m1-2gz"/>
                                 </connections>
@@ -50,7 +50,7 @@
                                 <rect key="frame" x="61" y="281" width="252" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
                                 <connections>
                                     <action selector="fourthTextFieldTrigger:" destination="9hQ-k7-HEv" eventType="primaryActionTriggered" id="5Zs-q9-gpX"/>
                                 </connections>
@@ -81,7 +81,7 @@
                                 <rect key="frame" x="61" y="134" width="252" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
                                 <connections>
                                     <action selector="firstTextFieldTrigger:" destination="9hQ-k7-HEv" eventType="primaryActionTriggered" id="AnC-wy-dxL"/>
                                 </connections>
