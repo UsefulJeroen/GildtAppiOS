@@ -13,6 +13,9 @@ import UIKit
 //TODO: show error messages from server
 class LoginViewController: UIViewController {
     
+    //do you need to login or register? which part of the segmentedcontrol is selected?
+    //var needsToRegister: Bool = false
+    
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     
     @IBOutlet weak var firstTextField: UITextField!
@@ -59,6 +62,21 @@ class LoginViewController: UIViewController {
         firstTextField.placeholder = "Emailadres"
         secondTextField.placeholder = "Wachtwoord"
         wantAccountButton.setTitle("Heb je nog geen account?", for: UIControl.State.normal)
+    }
+    
+    //function that returns which part of the view is used
+    //is it used to login? or register?
+    //if register is selected; return true
+    //if login is selected; return false
+    func needsToRegister() -> Bool {
+        if segmentedControl.selectedSegmentIndex == 0 {
+            return true
+        }
+        if segmentedControl.selectedSegmentIndex == 1 {
+            return false
+        }
+        print("this really shouldn't happen")
+        return false
     }
     
     @IBAction func loginButtonTouched(_ sender: Any) {
@@ -136,11 +154,49 @@ class LoginViewController: UIViewController {
     
     //when changing the register/login switch segmentedcontrol
     @IBAction func segmentedControlClicked(_ sender: Any) {
-        if segmentedControl.selectedSegmentIndex == 0 {
+        if needsToRegister() {
             changeViewToRegister()
         }
-        if segmentedControl.selectedSegmentIndex == 1 {
+        else {
             changeViewToLogin()
+        }
+    }
+    
+    //when return button is pressed when first textfield while used
+    @IBAction func firstTextFieldTrigger(_ sender: Any) {
+        // TODO: check of het veld goed is ingevuld
+        firstTextField.endEditing(true)
+        secondTextField.becomeFirstResponder()
+    }
+    
+    //when return button is pressed when second textfield while used
+    @IBAction func secondTextFieldTrigger(_ sender: Any) {
+        secondTextField.endEditing(true)
+        if needsToRegister() {
+            // TODO: check of het veld goed is ingevuld
+            thirdTextField.becomeFirstResponder()
+        }
+        else {
+            // TODO: check of het veld goed is ingevuld
+            login()
+        }
+    }
+    
+    //when return button is pressed when third textfield while used
+    @IBAction func thirdTextFieldTrigger(_ sender: Any) {
+        if needsToRegister() {
+            // TODO: check of het veld goed is ingevuld
+            thirdTextField.endEditing(true)
+            fourthTextField.becomeFirstResponder()
+        }
+    }
+    
+    //when return button is pressed when fourth textfield while used
+    @IBAction func fourthTextFieldTrigger(_ sender: Any) {
+        if needsToRegister() {
+            // TODO: check of het veld goed is ingevuld
+            fourthTextField.endEditing(true)
+            register()
         }
     }
 }
