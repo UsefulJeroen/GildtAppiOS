@@ -13,9 +13,6 @@ import UIKit
 //TODO: show error messages from server
 class LoginViewController: UIViewController {
     
-    //do you need to login or register? which part of the segmentedcontrol is selected?
-    //var needsToRegister: Bool = false
-    
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     
     @IBOutlet weak var firstTextField: UITextField!
@@ -59,7 +56,7 @@ class LoginViewController: UIViewController {
         firstTextField.keyboardType = UIKeyboardType.alphabet
         firstTextField.returnKeyType = UIReturnKeyType.next
         
-                secondTextField.placeholder = "Emailadres"
+        secondTextField.placeholder = "Emailadres"
         secondTextField.keyboardType = UIKeyboardType.emailAddress
         secondTextField.isSecureTextEntry = false
         secondTextField.returnKeyType = UIReturnKeyType.next
@@ -150,8 +147,25 @@ class LoginViewController: UIViewController {
                     if data != nil {
                         self?.successfullyLoggedIn(postBack: data!)
                     }
+                    else {
+                        self?.couldntLoginError()
+                    }
                 }
             })
+    }
+    
+    func couldntLoginError() {
+        let alertTitle = "Kan niet inloggen :("
+        let alertMessage = "Het is helaas niet gelukt om in te loggen, je hebt waarschijnlijk niet de juiste info ingevuld."
+        let discardText = "Probeer het eens opnieuw"
+        
+        let alert = UIAlertController(title: alertTitle, message: alertMessage, preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: discardText, style: .cancel, handler: { action in
+            self.secondTextField.becomeFirstResponder()
+        }))
+        
+        self.present(alert, animated: true)
     }
     
     func successfullyLoggedIn(postBack: LoginPostBack) {
