@@ -34,7 +34,19 @@ class LoginViewController: UIViewController {
         changeViewToLogin()
     }
     
+    func emptyAllFields() {
+        firstTextField.text = ""
+        firstTextField.endEditing(true)
+        secondTextField.text = ""
+        secondTextField.endEditing(true)
+        thirdTextField.text = ""
+        thirdTextField.endEditing(true)
+        fourthTextField.text = ""
+        fourthTextField.endEditing(true)
+    }
+    
     func changeViewToRegister() {
+        emptyAllFields()
         loginButton.isHidden = true
         wantAccountButton.isHidden = true
         
@@ -47,7 +59,7 @@ class LoginViewController: UIViewController {
         firstTextField.keyboardType = UIKeyboardType.alphabet
         firstTextField.returnKeyType = UIReturnKeyType.next
         
-        secondTextField.placeholder = "Emailadres"
+                secondTextField.placeholder = "Emailadres"
         secondTextField.keyboardType = UIKeyboardType.emailAddress
         secondTextField.isSecureTextEntry = false
         secondTextField.returnKeyType = UIReturnKeyType.next
@@ -66,6 +78,7 @@ class LoginViewController: UIViewController {
     }
     
     func changeViewToLogin() {
+        emptyAllFields()
         thirdTextField.isHidden = true
         fourthTextField.isHidden = true
         registerButton.isHidden = true
