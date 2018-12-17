@@ -34,7 +34,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
-                                    <action selector="secondTextFieldTrigger:" destination="9hQ-k7-HEv" eventType="editingDidEnd" id="OQQ-fI-loE"/>
+                                    <action selector="secondTextFieldTrigger:" destination="9hQ-k7-HEv" eventType="primaryActionTriggered" id="iHh-ej-IOP"/>
                                 </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="se6-jy-MdN">
@@ -43,7 +43,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
-                                    <action selector="thirdTextFieldTrigger:" destination="9hQ-k7-HEv" eventType="editingDidEnd" id="noY-dr-oDj"/>
+                                    <action selector="thirdTextFieldTrigger:" destination="9hQ-k7-HEv" eventType="primaryActionTriggered" id="XhO-m1-2gz"/>
                                 </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jMY-ds-iah">
@@ -52,7 +52,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
-                                    <action selector="fourthTextFieldTrigger:" destination="9hQ-k7-HEv" eventType="editingDidEnd" id="nxC-I8-Pwb"/>
+                                    <action selector="fourthTextFieldTrigger:" destination="9hQ-k7-HEv" eventType="primaryActionTriggered" id="5Zs-q9-gpX"/>
                                 </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g8C-1r-A3p">

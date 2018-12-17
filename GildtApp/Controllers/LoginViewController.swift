@@ -181,7 +181,7 @@ class LoginViewController: UIViewController {
             login()
         }
     }
-    
+
     //when return button is pressed when third textfield while used
     @IBAction func thirdTextFieldTrigger(_ sender: Any) {
         if needsToRegister() {
@@ -190,7 +190,7 @@ class LoginViewController: UIViewController {
             fourthTextField.becomeFirstResponder()
         }
     }
-    
+
     //when return button is pressed when fourth textfield while used
     @IBAction func fourthTextFieldTrigger(_ sender: Any) {
         if needsToRegister() {
