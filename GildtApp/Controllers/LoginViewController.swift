@@ -26,6 +26,8 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var wantAccountButton: UIButton!
     @IBOutlet weak var haveAccountButton: UIButton!
     
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         changeViewToLogin()
@@ -130,6 +132,7 @@ class LoginViewController: UIViewController {
     }
     
     func login() {
+        activityIndicator.isHidden = false
         let email: String = firstTextField.text!
         //show error if this is nil
         let password: String = secondTextField.text!
@@ -155,6 +158,7 @@ class LoginViewController: UIViewController {
     }
     
     func couldntLoginError() {
+        activityIndicator.isHidden = true
         let alertTitle = "Kan niet inloggen :("
         let alertMessage = "Het is helaas niet gelukt om in te loggen, je hebt waarschijnlijk niet de juiste info ingevuld."
         let discardText = "Probeer het eens opnieuw"
@@ -169,6 +173,7 @@ class LoginViewController: UIViewController {
     }
     
     func couldntRegisterError(error: ErrorMessage?) {
+        activityIndicator.isHidden = true
         let alertTitle = "Kan niet registreren :("
         var alertMessage = "Het is helaas niet gelukt om je te registreren, waarschijnlijk omdat je iets verkeerds hebt ingevuld."
         if let error = error {
@@ -186,6 +191,7 @@ class LoginViewController: UIViewController {
     }
     
     func successfullyLoggedIn(postBack: LoginPostBack) {
+        activityIndicator.isHidden = true
         LocalStorageService.setAuthToken(authToken: postBack.jwt)
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let agendaPageVc = storyboard.instantiateViewController(withIdentifier: "MainTabBarController") as! MainTabBarController
@@ -193,6 +199,7 @@ class LoginViewController: UIViewController {
     }
     
     func register() {
+        activityIndicator.isHidden = false
         let username: String = firstTextField.text!
         //show error if this is nil
         let email: String = secondTextField.text!
