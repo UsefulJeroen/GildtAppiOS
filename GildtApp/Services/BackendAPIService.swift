@@ -16,6 +16,7 @@ class BackendAPIService {
     
     private static let baseURL = "https://gildt.inholland-informatica.nl/api/v1"
     
+    //create a datarequest with a body
     fileprivate static func createRequest<T>(endPointURL: String, model: T) -> DataRequest where T: Encodable {
         var request = URLRequest(url: URL(string: "\(baseURL)/\(endPointURL)")!)
         request.httpMethod = HTTPMethod.post.rawValue
@@ -31,6 +32,7 @@ class BackendAPIService {
         return Alamofire.request(request)
     }
     
+    //create a datarequest without a body
     fileprivate static func createRequest(endPointURL: String) -> DataRequest {
         var headers: [String: String] = [:]
         if let authToken = LocalStorageService.getAuthToken() {
@@ -86,6 +88,11 @@ class JukeboxAPIService: BackendAPIService {
     static func addSong(song: NewSong) -> DataRequest {
         let endPointURL = "song"
         return createRequest(endPointURL: endPointURL, model: song)
+    }
+    
+    static func upvoteSong(song: SongRequest) -> DataRequest {
+        let endPointURL = "song/\(song.id)/upvote"
+        return createRequest(endPointURL: endPointURL)
     }
 }
 
