@@ -32,19 +32,28 @@
                                 <rect key="frame" x="61" y="181" width="252" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
+                                <connections>
+                                    <action selector="secondTextFieldTrigger:" destination="9hQ-k7-HEv" eventType="primaryActionTriggered" id="iHh-ej-IOP"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="se6-jy-MdN">
                                 <rect key="frame" x="61" y="232" width="252" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
+                                <connections>
+                                    <action selector="thirdTextFieldTrigger:" destination="9hQ-k7-HEv" eventType="primaryActionTriggered" id="XhO-m1-2gz"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jMY-ds-iah">
                                 <rect key="frame" x="61" y="281" width="252" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
+                                <connections>
+                                    <action selector="fourthTextFieldTrigger:" destination="9hQ-k7-HEv" eventType="primaryActionTriggered" id="5Zs-q9-gpX"/>
+                                </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g8C-1r-A3p">
                                 <rect key="frame" x="168" y="232" width="38" height="30"/>
@@ -72,7 +81,10 @@
                                 <rect key="frame" x="61" y="134" width="252" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
+                                <connections>
+                                    <action selector="firstTextFieldTrigger:" destination="9hQ-k7-HEv" eventType="primaryActionTriggered" id="AnC-wy-dxL"/>
+                                </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wSP-ce-r35">
                                 <rect key="frame" x="111" y="371" width="154" height="30"/>
@@ -82,6 +94,9 @@
                                     <action selector="haveAccountButtonTouched:" destination="9hQ-k7-HEv" eventType="touchUpInside" id="Ybv-Mm-FJB"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="GDe-GZ-YJs">
+                                <rect key="frame" x="177" y="99" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -95,6 +110,7 @@
                             <constraint firstItem="jMY-ds-iah" firstAttribute="top" secondItem="g8C-1r-A3p" secondAttribute="bottom" constant="19" id="Gm8-Xm-F3R"/>
                             <constraint firstItem="Jgq-Fx-DhH" firstAttribute="centerX" secondItem="OfM-mK-xlg" secondAttribute="centerX" id="LRc-Lj-wCo"/>
                             <constraint firstItem="se6-jy-MdN" firstAttribute="top" secondItem="g8C-1r-A3p" secondAttribute="top" id="NWw-aV-2Ih"/>
+                            <constraint firstItem="GDe-GZ-YJs" firstAttribute="top" secondItem="KzB-1P-tXw" secondAttribute="bottom" constant="14" id="Q4Y-v6-m0C"/>
                             <constraint firstItem="HYf-gt-pqa" firstAttribute="top" secondItem="jMY-ds-iah" secondAttribute="bottom" constant="22" id="RjU-ZS-fvi"/>
                             <constraint firstItem="Jgq-Fx-DhH" firstAttribute="leading" secondItem="GlJ-Zf-c4N" secondAttribute="leading" id="VC9-Nk-61N"/>
                             <constraint firstItem="Jgq-Fx-DhH" firstAttribute="trailing" secondItem="GlJ-Zf-c4N" secondAttribute="trailing" id="VEK-Nk-RCa"/>
@@ -107,14 +123,17 @@
                             <constraint firstItem="GlJ-Zf-c4N" firstAttribute="trailing" secondItem="se6-jy-MdN" secondAttribute="trailing" id="fny-QI-UiX"/>
                             <constraint firstItem="FWL-wh-gpL" firstAttribute="leading" secondItem="YRf-nj-eq0" secondAttribute="leading" constant="99" id="fpK-Wq-GC2"/>
                             <constraint firstItem="GlJ-Zf-c4N" firstAttribute="top" secondItem="Jgq-Fx-DhH" secondAttribute="bottom" constant="17" id="gQU-FI-qod"/>
+                            <constraint firstItem="GDe-GZ-YJs" firstAttribute="leading" secondItem="YRf-nj-eq0" secondAttribute="leading" constant="177" id="kWN-bq-0j1"/>
                             <constraint firstItem="Jgq-Fx-DhH" firstAttribute="leading" secondItem="YRf-nj-eq0" secondAttribute="leading" constant="61" id="q0K-xw-IHa"/>
                             <constraint firstItem="KzB-1P-tXw" firstAttribute="leading" secondItem="YRf-nj-eq0" secondAttribute="leading" constant="86" id="s8n-h3-zxK"/>
+                            <constraint firstItem="GDe-GZ-YJs" firstAttribute="centerX" secondItem="KzB-1P-tXw" secondAttribute="centerX" id="uCu-A5-ahh"/>
                             <constraint firstItem="wSP-ce-r35" firstAttribute="top" secondItem="HYf-gt-pqa" secondAttribute="bottom" constant="8" symbolic="YES" id="yVM-JD-pvq"/>
                             <constraint firstItem="FWL-wh-gpL" firstAttribute="centerX" secondItem="HYf-gt-pqa" secondAttribute="centerX" id="zp5-fi-08n"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="YRf-nj-eq0"/>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="GDe-GZ-YJs" id="F8U-3A-hWT"/>
                         <outlet property="firstTextField" destination="Jgq-Fx-DhH" id="mM1-y9-WYu"/>
                         <outlet property="fourthTextField" destination="jMY-ds-iah" id="ygR-yA-UqY"/>
                         <outlet property="haveAccountButton" destination="wSP-ce-r35" id="r6I-Wa-Mxx"/>
