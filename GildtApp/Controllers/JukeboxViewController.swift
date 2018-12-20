@@ -104,7 +104,7 @@ class JukeboxViewController: UITableViewController {
         let songRequest = songRequests[indexPath.row]
         
         cell.songRequestId = songRequest.id
-        cell.idLabelView.text = String(indexPath.row)
+        cell.idLabelView.text = String(indexPath.row+1)
         cell.titleLabelView.text = songRequest.title
         cell.artistLabelView.text = songRequest.artist
         cell.upvotesAmountLabelView.text = String(songRequest.votes)
