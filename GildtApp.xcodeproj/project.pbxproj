@@ -150,8 +150,8 @@
 				B0CD4DD021BEB8040060A28C /* Agenda */,
 				B0CD4DC821BE9F120060A28C /* Photos */,
 				DF70F68021A185FD001D3006 /* DealsViewController.swift */,
-				B0177A41219C64E500E379D5 /* JukeboxViewController.swift */,
 				B0CADB8D21AB2EA200E6D848 /* LoginViewController.swift */,
+				B0177A41219C64E500E379D5 /* JukeboxViewController.swift */,
 				B099D20521B02F9900DA4473 /* Hierarchy */,
 			);
 			path = Controllers;

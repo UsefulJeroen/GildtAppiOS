@@ -90,8 +90,8 @@ class JukeboxAPIService: BackendAPIService {
         return createRequest(endPointURL: endPointURL, model: song)
     }
     
-    static func upvoteSong(song: SongRequest) -> DataRequest {
-        let endPointURL = "song/\(song.id)/upvote"
+    static func upvoteSong(songId: Int) -> DataRequest {
+        let endPointURL = "song/\(songId)/upvote"
         return createRequest(endPointURL: endPointURL)
     }
 }
