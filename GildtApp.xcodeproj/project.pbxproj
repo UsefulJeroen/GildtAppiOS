@@ -23,6 +23,7 @@
 		B099D20221B029AA00DA4473 /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B099D20121B029AA00DA4473 /* NavigationViewController.swift */; };
 		B099D20421B02ED000DA4473 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B099D20321B02ED000DA4473 /* MainTabBarController.swift */; };
 		B099D20A21B0442600DA4473 /* NewSong.swift in Sources */ = {isa = PBXBuildFile; fileRef = B099D20921B0442600DA4473 /* NewSong.swift */; };
+		B0B1125F21C83EA300E4F721 /* ErrorMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B1125E21C83EA300E4F721 /* ErrorMessage.swift */; };
 		B0CADB8621AB243C00E6D848 /* RegisterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0CADB8521AB243C00E6D848 /* RegisterModel.swift */; };
 		B0CADB8821AB254600E6D848 /* LoginPostBack.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0CADB8721AB254600E6D848 /* LoginPostBack.swift */; };
 		B0CADB8A21AB258C00E6D848 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0CADB8921AB258C00E6D848 /* LoginModel.swift */; };
@@ -79,6 +80,7 @@
 		B099D20121B029AA00DA4473 /* NavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationViewController.swift; sourceTree = "<group>"; };
 		B099D20321B02ED000DA4473 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		B099D20921B0442600DA4473 /* NewSong.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewSong.swift; sourceTree = "<group>"; };
+		B0B1125E21C83EA300E4F721 /* ErrorMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorMessage.swift; sourceTree = "<group>"; };
 		B0CADB8521AB243C00E6D848 /* RegisterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterModel.swift; sourceTree = "<group>"; };
 		B0CADB8721AB254600E6D848 /* LoginPostBack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPostBack.swift; sourceTree = "<group>"; };
 		B0CADB8921AB258C00E6D848 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
@@ -263,6 +265,7 @@
 				B0CADB8921AB258C00E6D848 /* LoginModel.swift */,
 				B0CADB8721AB254600E6D848 /* LoginPostBack.swift */,
 				B0CADB8521AB243C00E6D848 /* RegisterModel.swift */,
+				B0B1125E21C83EA300E4F721 /* ErrorMessage.swift */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -530,6 +533,7 @@
 				B099D20421B02ED000DA4473 /* MainTabBarController.swift in Sources */,
 				DF9D57B921B0A52D003A97FB /* String.swift in Sources */,
 				B0177A44219CC6A100E379D5 /* SongRequest.swift in Sources */,
+				B0B1125F21C83EA300E4F721 /* ErrorMessage.swift in Sources */,
 				B0E84EFD21C2BEAC00EF2C49 /* PreviewImageTableViewCell.swift in Sources */,
 				B0CD4DCA21BE9F900060A28C /* TagOverviewViewController.swift in Sources */,
 				B099D20A21B0442600DA4473 /* NewSong.swift in Sources */,
