@@ -278,7 +278,7 @@ class LoginViewController: UIViewController {
     }
     
     
-    //hide keyboard when pressing outside textfields
+    //hide keyboard when pressing outside textfields
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
