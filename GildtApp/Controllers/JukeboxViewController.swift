@@ -33,6 +33,10 @@ class JukeboxViewController: UITableViewController {
         navigationController?.navigationBar.prefersLargeTitles = true
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+    }
+    
     func setupTableView() {
         tableView.dataSource = self
         tableView.register(UINib(nibName: "SongRequestTableViewCell", bundle: nil), forCellReuseIdentifier: "SongRequestTableViewCell")
@@ -45,7 +49,7 @@ class JukeboxViewController: UITableViewController {
         tableView.rowHeight = UITableView.automaticDimension
     }
     
-    func getSongRequests() {
+    @objc func getSongRequests() {
         pendingNetworkRequest = true
         JukeboxAPIService.getSongRequests()
             .responseData(completionHandler: { [weak self] (response) in
@@ -69,7 +73,6 @@ class JukeboxViewController: UITableViewController {
         DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: {
             self.refreshControl?.alpha = 0
             self.refreshControl?.endRefreshing()
-            
         })
         DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2), execute: {
             self.refreshControl?.alpha = 1
@@ -96,14 +99,37 @@ class JukeboxViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         super.tableView(tableView, cellForRowAt: indexPath)
         let cell = tableView.dequeueReusableCell(withIdentifier: "SongRequestTableViewCell") as! SongRequestTableViewCell
-        let row: Int = indexPath.row
+        let songRequest = songRequests[indexPath.row]
         
-        cell.idLabelView.text = String(songRequests[row].id)
-        cell.titleLabelView.text = songRequests[row].title
-        cell.artistLabelView.text = songRequests[row].artist
-        cell.upvotesAmountLabelView.text = String(songRequests[row].votes)
+        cell.idLabelView.text = String(indexPath.row+1)
+        cell.titleLabelView.text = songRequest.title
+        cell.artistLabelView.text = songRequest.artist
+        cell.upvotesAmountLabelView.text = String(songRequest.votes)
 
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let row = indexPath.row
+        let song = songRequests[row]
+        JukeboxAPIService.upvoteSong(songId: song.id)
+            .responseData(completionHandler: { [weak self] (response) in
+                guard let jsonData = response.data else { return }
+                
+                let decoder = JSONDecoder()
+                let data = try? decoder.decode(SongRequest.self, from: jsonData)
+                
+                DispatchQueue.main.async {
+                    if data != nil {
+                        self?.changeUpvote(indexPath: indexPath)
+                    }
+                }
+            })
+    }
+    
+    func changeUpvote(indexPath: IndexPath) {
+        getSongRequests()
+        tableView.deselectRow(at: indexPath, animated: true)
     }
     
     @IBAction func titleTextFieldDidEnd(_ sender: Any) {

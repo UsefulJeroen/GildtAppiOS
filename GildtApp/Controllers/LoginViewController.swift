@@ -9,8 +9,6 @@
 import Foundation
 import UIKit
 
-//TODO: make methods when clicking on return on textfields
-//TODO: show error messages from server
 class LoginViewController: UIViewController {
     
     @IBOutlet weak var segmentedControl: UISegmentedControl!
@@ -280,7 +278,7 @@ class LoginViewController: UIViewController {
     }
     
     
-    //hide keyboard when pressing outside textfields
+    //hide keyboard when pressing outside textfields
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
