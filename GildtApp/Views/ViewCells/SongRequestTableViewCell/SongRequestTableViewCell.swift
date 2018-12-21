@@ -12,8 +12,6 @@ import UIKit
 //custom tableviewcell for jukebox-tableview
 class SongRequestTableViewCell: UITableViewCell {
     
-    var songRequestId: Int?
-    
     @IBOutlet weak var idLabelView: UILabel!
     @IBOutlet weak var titleLabelView: UILabel!
     @IBOutlet weak var artistLabelView: UILabel!
@@ -23,9 +21,6 @@ class SongRequestTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        let upvoteRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.upvoteSongRequest(sender:)))
-        upvoteRecognizer.delegate = self
-        upvoteButton.addGestureRecognizer(upvoteRecognizer)
     }
     
     override func prepareForReuse() {
@@ -34,21 +29,5 @@ class SongRequestTableViewCell: UITableViewCell {
         titleLabelView.text = ""
         artistLabelView.text = ""
         upvotesAmountLabelView.text = ""
-    }
-    
-    @objc func upvoteSongRequest(sender: UITapGestureRecognizer? = nil) {
-        if let songRequestId = songRequestId {
-            JukeboxAPIService.upvoteSong(songId: songRequestId)
-                .responseData(completionHandler: { [weak self] (response) in
-                    DispatchQueue.main.async {
-                        self?.changeUpvote()
-                    }
-                })
-        }
-    }
-    
-    func changeUpvote() {
-        //change image to new image that is selected
-        NotificationCenter.default.post(name: Notification.Name("ReloadSongRequests"), object: nil, userInfo: nil)
     }
 }

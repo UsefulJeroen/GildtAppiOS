@@ -31,12 +31,10 @@ class JukeboxViewController: UITableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.navigationBar.prefersLargeTitles = true
-        NotificationCenter.default.addObserver(self, selector: #selector(self.getSongRequests), name: NSNotification.Name(rawValue: "SongRequestsReload"), object: nil)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        NotificationCenter.default.removeObserver(self)
     }
     
     func setupTableView() {
@@ -103,13 +101,35 @@ class JukeboxViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "SongRequestTableViewCell") as! SongRequestTableViewCell
         let songRequest = songRequests[indexPath.row]
         
-        cell.songRequestId = songRequest.id
         cell.idLabelView.text = String(indexPath.row+1)
         cell.titleLabelView.text = songRequest.title
         cell.artistLabelView.text = songRequest.artist
         cell.upvotesAmountLabelView.text = String(songRequest.votes)
 
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let row = indexPath.row
+        let song = songRequests[row]
+        JukeboxAPIService.upvoteSong(songId: song.id)
+            .responseData(completionHandler: { [weak self] (response) in
+                guard let jsonData = response.data else { return }
+                
+                let decoder = JSONDecoder()
+                let data = try? decoder.decode(SongRequest.self, from: jsonData)
+                
+                DispatchQueue.main.async {
+                    if data != nil {
+                        self?.changeUpvote(indexPath: indexPath)
+                    }
+                }
+            })
+    }
+    
+    func changeUpvote(indexPath: IndexPath) {
+        getSongRequests()
+        tableView.deselectRow(at: indexPath, animated: true)
     }
     
     @IBAction func titleTextFieldDidEnd(_ sender: Any) {
