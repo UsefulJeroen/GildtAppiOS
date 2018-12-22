@@ -8,11 +8,16 @@
 
 import Foundation
 import UIKit
+import Alamofire
 
 class TagOverviewViewController: GenericCollectionViewController<TagCollectionViewCell, Tag>, UICollectionViewDelegateFlowLayout {
     
     override func getCellId() -> String {
         return "TagCollectionViewCell"
+    }
+    
+    override func getMainAPICall() -> DataRequest {
+        return PhotoAPIService.getAllTags()
     }
     
     let itemsPerRow: CGFloat = 2
@@ -24,33 +29,33 @@ class TagOverviewViewController: GenericCollectionViewController<TagCollectionVi
         
         navigationItem.title = "Foto's"
         //setupCollectionView()
-        getTags()
+        //getTags()
     }
     
 //    func setupCollectionView() {
 //        collectionView.register(UINib(nibName: "TagCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "TagCollectionViewCell")
 //    }
     
-    func getTags() {
-        PhotoAPIService.getAllTags()
-            .responseData(completionHandler: { [weak self] (response) in
-                guard let jsonData = response.data else { return }
-                
-                let decoder = JSONDecoder()
-                let data = try? decoder.decode([Tag].self, from: jsonData)
-                
-                DispatchQueue.main.async {
-                    if data != nil {
-                        self?.reloadData(newData: data!)
-                    }
-                }
-            })
-    }
+//    func getTags() {
+//        PhotoAPIService.getAllTags()
+//            .responseData(completionHandler: { [weak self] (response) in
+//                guard let jsonData = response.data else { return }
+//
+//                let decoder = JSONDecoder()
+//                let data = try? decoder.decode([Tag].self, from: jsonData)
+//
+//                DispatchQueue.main.async {
+//                    if data != nil {
+//                        self?.reloadData(newData: data!)
+//                    }
+//                }
+//            })
+//    }
     
-    func reloadData(newData: [Tag]) {
-        items = newData
-        collectionView.reloadData()
-    }
+//    func reloadData(newData: [Tag]) {
+//        items = newData
+//        collectionView.reloadData()
+//    }
     
 //    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
 //        return items.count

@@ -26,7 +26,25 @@ class GenericCollectionViewController<T: GenericCollectionViewCell<U>, U>: UICol
     
     override func viewDidLoad() {
         collectionView.register(UINib(nibName: getCellId(), bundle: nil), forCellWithReuseIdentifier: getCellId())
-
+        getItems()
+    }
+    
+    func getItems() {
+        if let apiCall = getMainAPICall() {
+            apiCall.responseData(completionHandler: { [weak self] (response) in
+                guard let jsonData = response.data else { return }
+                
+                let decoder = JSONDecoder()
+                let data = try? decoder.decode([U].self, from: jsonData)
+                
+                DispatchQueue.main.async {
+                    if let data = data {
+                        self?.items = data
+                        self?.collectionView.reloadData()
+                    }
+                }
+            })
+        }
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
