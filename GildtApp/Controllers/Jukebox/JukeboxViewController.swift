@@ -35,6 +35,7 @@ class JukeboxViewController: GenericTableViewController<SongRequestTableViewCell
         setupAddButton()
     }
     
+    //add gesturerecognizer to addbutton
     func setupAddButton() {
         tableView.keyboardDismissMode = UIScrollView.KeyboardDismissMode.onDrag
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(addSongButtonTouched))
@@ -42,21 +43,7 @@ class JukeboxViewController: GenericTableViewController<SongRequestTableViewCell
         plusButton.addGestureRecognizer(tapGestureRecognizer)
     }
     
-    override func getItems() {
-        getAPICall().responseData(completionHandler: { [weak self] (response) in
-            guard let jsonData = response.data else { return }
-            
-            let decoder = JSONDecoder()
-            let data = try? decoder.decode([SongRequest].self, from: jsonData)
-            
-            DispatchQueue.main.async {
-                if data != nil {
-                    self?.reloadItems(newData: data!)
-                }
-            }
-        })
-    }
-    
+    //override reloadItems to set the row of each songRequest
     override func reloadItems(newData: [SongRequest]) {
         var i = 1
         for var song in newData {
@@ -67,6 +54,7 @@ class JukeboxViewController: GenericTableViewController<SongRequestTableViewCell
         finishRefreshing()
     }
     
+    //if row is selected; upvote the song
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let row = indexPath.row
         let song = items[row]
