@@ -29,7 +29,7 @@
         <!--Jukebox View Controller-->
         <scene sceneID="sYD-vp-q50">
             <objects>
-                <tableViewController useStoryboardIdentifierAsRestorationIdentifier="YES" id="XU3-U3-NsF" customClass="JukeboxViewController" customModule="GildtApp" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="JukeboxViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="XU3-U3-NsF" customClass="JukeboxViewController" customModule="GildtApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="yxm-qn-v2z">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
