@@ -22,54 +22,13 @@ class TagOverviewViewController: GenericCollectionViewController<TagCollectionVi
     
     let itemsPerRow: CGFloat = 2
     let sectionInsets = UIEdgeInsets(top: 20.0, left: 20.0, bottom: 20.0, right: 20.0)
-    //var tags: [Tag] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         navigationItem.title = "Foto's"
-        //setupCollectionView()
-        //getTags()
     }
-    
-//    func setupCollectionView() {
-//        collectionView.register(UINib(nibName: "TagCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "TagCollectionViewCell")
-//    }
-    
-//    func getTags() {
-//        PhotoAPIService.getAllTags()
-//            .responseData(completionHandler: { [weak self] (response) in
-//                guard let jsonData = response.data else { return }
-//
-//                let decoder = JSONDecoder()
-//                let data = try? decoder.decode([Tag].self, from: jsonData)
-//
-//                DispatchQueue.main.async {
-//                    if data != nil {
-//                        self?.reloadData(newData: data!)
-//                    }
-//                }
-//            })
-//    }
-    
-//    func reloadData(newData: [Tag]) {
-//        items = newData
-//        collectionView.reloadData()
-//    }
-    
-//    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-//        return items.count
-//    }
-    
-//    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-//        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TagCollectionViewCell", for: indexPath) as! TagCollectionViewCell
-//        let tag = tags[indexPath.row]
-//        cell.previewImage.kf.setImage(with: tag.preview_image?.getURL())
-//        cell.titleTextView.text = tag.title
-//        cell.amountPhotosTextView.text = String(tag.number_of_images ?? 0)
-//        return cell
-//    }
-//
+
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let storyboard = UIStoryboard(name: "Photo", bundle: nil)
         let tagPhotosVc = storyboard.instantiateViewController(withIdentifier: "TagPhotosViewController") as! TagPhotosViewController
@@ -101,7 +60,3 @@ class TagOverviewViewController: GenericCollectionViewController<TagCollectionVi
         return sectionInsets
     }
 }
-
-//extension TagOverviewViewController: UICollectionViewDelegateFlowLayout {
-//
-//}
