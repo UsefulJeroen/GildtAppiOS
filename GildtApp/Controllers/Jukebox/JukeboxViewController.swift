@@ -65,9 +65,9 @@ class JukeboxViewController: GenericTableViewController<SongRequestTableViewCell
                 let data = try? decoder.decode(SongRequest.self, from: jsonData)
                 
                 DispatchQueue.main.async {
-                    if data != nil {
+                    //if data != nil {
                         self?.changeUpvote(indexPath: indexPath)
-                    }
+                    //}
                 }
             })
     }
