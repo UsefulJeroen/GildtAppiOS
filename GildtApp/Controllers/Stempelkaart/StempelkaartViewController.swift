@@ -111,8 +111,7 @@ extension StempelkaartViewController: UICollectionViewDataSource {
 extension StempelkaartViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: "StampCollectionViewCell"), for: indexPath) as! StampCollectionViewCell
-        cell.stamp = stamps[indexPath.row]
-        cell.loadStampData()
+        cell.item = stamps[indexPath.row]
         return cell
     }
 }

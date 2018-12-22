@@ -17,9 +17,15 @@ class GenericTableViewController<T: GenericTableViewCell<U>, U>: UITableViewCont
     
     var items = [U]()
     
-    func getCellId() -> String { return "CellId" }
+    func getCellId() -> String {
+        print("Error: implement getCellId from GenericTableViewController!")
+        return "CellId"
+    }
     
-    func getMainAPICall() -> DataRequest? { return nil }
+    func getMainAPICall() -> DataRequest? {
+        print("Error: implement getMainAPICall from GenericTableViewController!")
+        return nil
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

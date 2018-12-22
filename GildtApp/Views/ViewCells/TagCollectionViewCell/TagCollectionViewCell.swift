@@ -9,7 +9,15 @@
 import Foundation
 import UIKit
 
-class TagCollectionViewCell: UICollectionViewCell {
+class TagCollectionViewCell: GenericCollectionViewCell<Tag> {
+    
+    override var item: Tag! {
+        didSet {
+            previewImage.kf.setImage(with: item.preview_image?.getURL())
+            titleTextView.text = item.title
+            amountPhotosTextView.text = String(item.number_of_images ?? 0)
+        }
+    }
     
     @IBOutlet weak var previewImage: UIImageView!
     @IBOutlet weak var titleTextView: UITextView!
