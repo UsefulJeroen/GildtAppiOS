@@ -73,28 +73,28 @@ class TagOverviewViewController: GenericCollectionViewController<TagCollectionVi
         self.navigationController?.pushViewController(tagPhotosVc, animated: true)
     }
     
-//    func collectionView(_ collectionView: UICollectionView,
-//                        layout collectionViewLayout: UICollectionViewLayout,
-//                        sizeForItemAt indexPath: IndexPath) -> CGSize {
-//        let paddingSpace = sectionInsets.left * (itemsPerRow + 1)
-//        let availableWidth = view.frame.width - paddingSpace
-//        let widthPerItem = availableWidth / itemsPerRow
-//
-//        return CGSize(width: widthPerItem, height: widthPerItem)
-//    }
-//
-//    func collectionView(_ collectionView: UICollectionView,
-//                        layout collectionViewLayout: UICollectionViewLayout,
-//                        minimumLineSpacingForSectionAt section: Int) -> CGFloat
-//    {
-//        return sectionInsets.left
-//    }
-//
-//    func collectionView(_ collectionView: UICollectionView,
-//                        layout collectionViewLayout: UICollectionViewLayout,
-//                        insetForSectionAt section: Int) -> UIEdgeInsets {
-//        return sectionInsets
-//    }
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let paddingSpace = sectionInsets.left * (itemsPerRow + 1)
+        let availableWidth = view.frame.width - paddingSpace
+        let widthPerItem = availableWidth / itemsPerRow
+
+        return CGSize(width: widthPerItem, height: widthPerItem)
+    }
+
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        minimumLineSpacingForSectionAt section: Int) -> CGFloat
+    {
+        return sectionInsets.left
+    }
+
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        insetForSectionAt section: Int) -> UIEdgeInsets {
+        return sectionInsets
+    }
 }
 
 //extension TagOverviewViewController: UICollectionViewDelegateFlowLayout {
