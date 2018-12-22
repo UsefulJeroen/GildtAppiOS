@@ -8,11 +8,19 @@
 
 import Foundation
 import UIKit
+import Alamofire
 
 class JukeboxViewController: GenericTableViewController<SongRequestTableViewCell, (songRequest: SongRequest, row: Int)> {
     
-    override func getCellId() -> String {
-        return "SongRequestTableViewCell"
+    override var cellId: String {
+        get {
+            return "SongRequestTableViewCell"
+        }
+        set {}
+    }
+    
+    override func getAPICall() -> DataRequest {
+        return JukeboxAPIService.getSongRequests()
     }
     
     @IBOutlet weak var titleTextField: UITextField!
@@ -27,14 +35,6 @@ class JukeboxViewController: GenericTableViewController<SongRequestTableViewCell
         setupAddButton()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        navigationController?.navigationBar.prefersLargeTitles = true
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-    }
-    
     func setupAddButton() {
         tableView.keyboardDismissMode = UIScrollView.KeyboardDismissMode.onDrag
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(addSongButtonTouched))
@@ -43,35 +43,40 @@ class JukeboxViewController: GenericTableViewController<SongRequestTableViewCell
     }
     
     override func getItems() {
-        JukeboxAPIService.getSongRequests()
-            .responseData(completionHandler: { [weak self] (response) in
-                guard let jsonData = response.data else { return }
-                
-                let decoder = JSONDecoder()
-                let data = try? decoder.decode([SongRequest].self, from: jsonData)
-                
-                DispatchQueue.main.async {
-                    if data != nil {
-                        self?.reloadSongRequests(newData: data!)
-                    }
+        getAPICall().responseData(completionHandler: { [weak self] (response) in
+            guard let jsonData = response.data else { return }
+            
+            let decoder = JSONDecoder()
+            let data = try? decoder.decode([SongRequest].self, from: jsonData)
+            
+            DispatchQueue.main.async {
+                if data != nil {
+                    self?.reloadItems(newData: data!)
                 }
-            })
+            }
+        })
+//        JukeboxAPIService.getSongRequests()
+//            .responseData(completionHandler: { [weak self] (response) in
+//                guard let jsonData = response.data else { return }
+//
+//                let decoder = JSONDecoder()
+//                let data = try? decoder.decode([SongRequest].self, from: jsonData)
+//
+//                DispatchQueue.main.async {
+//                    if data != nil {
+//                        self?.reloadSongRequests(newData: data!)
+//                    }
+//                }
+//            })
     }
     
-    func reloadSongRequests(newData: [SongRequest]) {
+    override func reloadItems(newData: [SongRequest]) {
         var i = 1
         for song in newData {
             items.append((song, i))
             i += 1
         }
-        tableView.reloadData()
-        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: {
-            self.refreshControl?.alpha = 0
-            self.refreshControl?.endRefreshing()
-        })
-        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2), execute: {
-            self.refreshControl?.alpha = 1
-        })
+        finishRefreshing()
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
