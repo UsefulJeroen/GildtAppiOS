@@ -73,7 +73,7 @@
                                                             <color key="textColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pDR-O2-kWh">
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TabStempelkaart" translatesAutoresizingMaskIntoConstraints="NO" id="pDR-O2-kWh">
                                                             <rect key="frame" x="8" y="8" width="74" height="74"/>
                                                         </imageView>
                                                     </subviews>
