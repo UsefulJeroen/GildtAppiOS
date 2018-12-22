@@ -42,12 +42,14 @@ class JukeboxViewController: GenericTableViewController<SongRequestTableViewCell
     
     //override reloadItems to set the row of each songRequest
     override func reloadItems(newData: [SongRequest]) {
+        var newItems: [SongRequest] = []
         var i = 1
         for var song in newData {
             song.row = i
-            items.append(song)
+            newItems.append(song)
             i += 1
         }
+        items = newItems
         finishRefreshing()
     }
     
