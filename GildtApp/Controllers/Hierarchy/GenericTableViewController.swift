@@ -11,19 +11,19 @@ import UIKit
 import Alamofire
 
 //basic tableviewcontroller with functions that all tableviewcontrollers use
-//if you want to implement this:
-//override cellId & getItems in childClass
+//if you want to implement/use this:
+//override getCellId & getAPICall in childClass
 class GenericTableViewController<T: GenericTableViewCell<U>, U>: UITableViewController where U: Decodable {
-    
-    var cellId: String = "CellId"
     
     var items = [U]()
     
-    func getAPICall() -> DataRequest? { return nil }
+    func getCellId() -> String { return "CellId" }
+    
+    func getMainAPICall() -> DataRequest? { return nil }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.register(UINib(nibName: cellId, bundle: nil), forCellReuseIdentifier: cellId)
+        tableView.register(UINib(nibName: getCellId(), bundle: nil), forCellReuseIdentifier: getCellId())
         
         refreshControl = UIRefreshControl()
         refreshControl?.addTarget(self, action: #selector(refresh), for: .valueChanged)
@@ -37,7 +37,7 @@ class GenericTableViewController<T: GenericTableViewCell<U>, U>: UITableViewCont
     }
     
     func getItems() {
-        if let apiCall = getAPICall() {
+        if let apiCall = getMainAPICall() {
             apiCall.responseData(completionHandler: { [weak self] (response) in
                 guard let jsonData = response.data else { return }
                 
@@ -74,7 +74,7 @@ class GenericTableViewController<T: GenericTableViewCell<U>, U>: UITableViewCont
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! GenericTableViewCell<U>
+        let cell = tableView.dequeueReusableCell(withIdentifier: getCellId(), for: indexPath) as! GenericTableViewCell<U>
         cell.item = items[indexPath.row]
         return cell
     }
