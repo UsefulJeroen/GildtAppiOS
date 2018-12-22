@@ -18,14 +18,14 @@ class TagPhotosViewController: GenericTableViewController<PreviewImageTableViewC
     }
     
     override func getMainAPICall() -> DataRequest {
-        return PhotoAPIService.getImagesFromTag(id: tag.id)
+        return PhotoAPIService.getImagesFromTag(id: tag?.id ?? 0)
     }
     
-    var tag: Tag = Tag(id: 0, title: "voorbeeldtitel", preview_image: Image(url: "url.com"), number_of_images: 0)
+    var tag: Tag?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationItem.title = tag.title
+        navigationItem.title = tag?.title ?? "Tag"
     }
 }
