@@ -174,12 +174,12 @@
 			children = (
 				DF70F66E219EE2C2001D3006 /* Agenda.storyboard */,
 				DF70F670219EE2DB001D3006 /* Deals.storyboard */,
-				DF70F676219EE337001D3006 /* Photo.storyboard */,
 				DF70F674219EE318001D3006 /* Jukebox.storyboard */,
 				B078A918219B0EE300545EAC /* LaunchScreen.storyboard */,
 				B0CADB8B21AB2AE700E6D848 /* Login.storyboard */,
 				B078A913219B0EE000545EAC /* Main.storyboard */,
 				B0177A39219B8F1C00E379D5 /* OnBoarding.storyboard */,
+				DF70F676219EE337001D3006 /* Photo.storyboard */,
 				DF70F672219EE304001D3006 /* Stempelkaart.storyboard */,
 				B0CD4DC721BE9A810060A28C /* ViewCells */,
 			);
@@ -190,8 +190,8 @@
 			isa = PBXGroup;
 			children = (
 				B0177A3D219B9C4B00E379D5 /* BackendAPIService.swift */,
-				B0177A3F219B9C8100E379D5 /* LocalStorageService.swift */,
 				B0E84EF321C047F200EF2C49 /* DeviceInfoHelper.swift */,
+				B0177A3F219B9C8100E379D5 /* LocalStorageService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -199,12 +199,12 @@
 		B0177A37219B89E900E379D5 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				B0CD4DC421BE99530060A28C /* Photo's */,
 				DF70F69121AF394A001D3006 /* Deal.swift */,
 				DF9D57B621B09A8C003A97FB /* Event.swift */,
+				DFD460E421C05AD900F90B52 /* Stamp.swift */,
+				B0CD4DC421BE99530060A28C /* Photo's */,
 				B099D20821B0440A00DA4473 /* Song */,
 				B0CADB8421AB242F00E6D848 /* User */,
-				DFD460E421C05AD900F90B52 /* Stamp.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -298,8 +298,8 @@
 		B0B1126721CE574200E4F721 /* Hierarchy */ = {
 			isa = PBXGroup;
 			children = (
-				B0B1126821CE575000E4F721 /* GenericTableViewCell.swift */,
 				B0B1126C21CE70C300E4F721 /* GenericCollectionViewCell.swift */,
+				B0B1126821CE575000E4F721 /* GenericTableViewCell.swift */,
 				B0B1127521CE804400E4F721 /* GenericViewCell.swift */,
 			);
 			path = Hierarchy;
@@ -308,10 +308,10 @@
 		B0CADB8421AB242F00E6D848 /* User */ = {
 			isa = PBXGroup;
 			children = (
+				B0B1125E21C83EA300E4F721 /* ErrorMessage.swift */,
 				B0CADB8921AB258C00E6D848 /* LoginModel.swift */,
 				B0CADB8721AB254600E6D848 /* LoginPostBack.swift */,
 				B0CADB8521AB243C00E6D848 /* RegisterModel.swift */,
-				B0B1125E21C83EA300E4F721 /* ErrorMessage.swift */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -319,9 +319,9 @@
 		B0CD4DC421BE99530060A28C /* Photo's */ = {
 			isa = PBXGroup;
 			children = (
-				B0CD4DC221BE99440060A28C /* Tag.swift */,
-				B0CD4DC521BE99620060A28C /* Photo.swift */,
 				B0E84EF721C2709B00EF2C49 /* Image.swift */,
+				B0CD4DC521BE99620060A28C /* Photo.swift */,
+				B0CD4DC221BE99440060A28C /* Tag.swift */,
 			);
 			path = "Photo's";
 			sourceTree = "<group>";
@@ -330,12 +330,12 @@
 			isa = PBXGroup;
 			children = (
 				B0B1126721CE574200E4F721 /* Hierarchy */,
-				DFD460DF21C0557C00F90B52 /* StampCollectionViewCell */,
-				B0E84EFB21C2BE8A00EF2C49 /* PreviewImageTableViewCell */,
-				B0CD4DCB21BEA2E70060A28C /* TagCollectionViewCell */,
 				DF9D57AF21B08591003A97FB /* AgendaTableViewCell */,
 				DF70F67F21A18516001D3006 /* DealsCollectionViewCell */,
+				B0E84EFB21C2BE8A00EF2C49 /* PreviewImageTableViewCell */,
 				B0177A45219CCD2D00E379D5 /* SongRequestTableViewCell */,
+				DFD460DF21C0557C00F90B52 /* StampCollectionViewCell */,
+				B0CD4DCB21BEA2E70060A28C /* TagCollectionViewCell */,
 			);
 			path = ViewCells;
 			sourceTree = "<group>";
@@ -353,8 +353,8 @@
 		B0CD4DCB21BEA2E70060A28C /* TagCollectionViewCell */ = {
 			isa = PBXGroup;
 			children = (
-				B0CD4DCC21BEA3120060A28C /* TagCollectionViewCell.xib */,
 				B0CD4DCE21BEA3200060A28C /* TagCollectionViewCell.swift */,
+				B0CD4DCC21BEA3120060A28C /* TagCollectionViewCell.xib */,
 			);
 			path = TagCollectionViewCell;
 			sourceTree = "<group>";
@@ -380,8 +380,8 @@
 		DF70F67921A1837E001D3006 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				DF70F67A21A183A7001D3006 /* UIColor.swift */,
 				DF9D57B821B0A52D003A97FB /* String.swift */,
+				DF70F67A21A183A7001D3006 /* UIColor.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -397,8 +397,8 @@
 		DF9D57AF21B08591003A97FB /* AgendaTableViewCell */ = {
 			isa = PBXGroup;
 			children = (
-				DF9D57B021B085BE003A97FB /* AgendaTableViewCell.xib */,
 				DF9D57B221B08615003A97FB /* AgendaTableViewCell.swift */,
+				DF9D57B021B085BE003A97FB /* AgendaTableViewCell.xib */,
 			);
 			path = AgendaTableViewCell;
 			sourceTree = "<group>";
