@@ -85,16 +85,6 @@
                                 <constraint firstAttribute="bottom" secondItem="R1I-e0-45f" secondAttribute="bottom" id="ztU-je-ZGN"/>
                             </constraints>
                         </view>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="SongRequestTableViewCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="kpp-Zc-8Po" customClass="SongRequestTableViewCell" customModule="GildtApp" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="281" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="kpp-Zc-8Po" id="RLu-W8-x1n">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="XU3-U3-NsF" id="QOv-kF-nkZ"/>
                             <outlet property="delegate" destination="XU3-U3-NsF" id="8Ne-lj-GW2"/>
