@@ -10,7 +10,18 @@ import Foundation
 import UIKit
 
 //custom tableviewcell for jukebox-tableview
-class SongRequestTableViewCell: UITableViewCell {
+class SongRequestTableViewCell: GenericTableViewCell<SongRequest> {
+    
+    override var item: SongRequest! {
+        didSet {
+            if let row = item.row {
+                idLabelView.text = String(row)
+            }
+            titleLabelView.text = item.title
+            artistLabelView.text = item.artist
+            upvotesAmountLabelView.text = String(item.votes)
+        }
+    }
     
     @IBOutlet weak var idLabelView: UILabel!
     @IBOutlet weak var titleLabelView: UILabel!

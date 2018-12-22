@@ -30,7 +30,7 @@
         <!--Stempelkaart-->
         <scene sceneID="elZ-yh-4GP">
             <objects>
-                <viewController id="mRx-gc-CsI" customClass="StempelkaartViewController" customModule="GildtApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="StempelkaartViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="mRx-gc-CsI" customClass="StempelkaartViewController" customModule="GildtApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="WDk-Kh-TYq">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -60,7 +60,7 @@
                                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         </collectionViewFlowLayout>
                                         <cells>
-                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="StampCollectionViewCell" id="CMH-Ok-tf0" customClass="StampCollectionViewCell" customModule="GildtApp" customModuleProvider="target">
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="StampCollectionViewCell" reuseIdentifier="StampCollectionViewCell" id="CMH-Ok-tf0" customClass="StampCollectionViewCell" customModule="GildtApp" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">

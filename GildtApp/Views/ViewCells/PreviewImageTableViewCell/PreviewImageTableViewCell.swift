@@ -9,7 +9,19 @@
 import Foundation
 import UIKit
 
-class PreviewImageTableViewCell: UITableViewCell {
+class PreviewImageTableViewCell: GenericTableViewCell<Photo> {
+    
+    override var item: Photo! {
+        didSet {
+            photo.kf.setImage(with: item.image.getURL())
+            descriptionLabel.text = item.description
+            let date = item.publish_date.toDate(dateFormat: "yyyy-MM-dd'T'HH:mm:ss.SSSZ")
+            let formatter = DateFormatter()
+            formatter.timeStyle = .none
+            formatter.dateStyle = .long
+            publishDateLabel.text = "\(formatter.string(from: date))"
+        }
+    }
     
     @IBOutlet weak var container: UIView!
     @IBOutlet weak var photo: UIImageView!

@@ -9,14 +9,19 @@
 import Foundation
 import UIKit
 
-class StampCollectionViewCell : UICollectionViewCell {
-    var stamp: Stamp? = nil
+class StampCollectionViewCell : GenericCollectionViewCell<Stamp> {
+    
+    override var item: Stamp! {
+        didSet {
+            loadStampData()
+        }
+    }
     
     @IBOutlet weak var StampLabel: UILabel!
     @IBOutlet weak var StampImage: UIImageView!
     
     func loadStampData() {
-        if let stamp = stamp {
+        if let stamp = item {
             StampLabel.isHidden = stamp.verifiedAttendance
             StampImage.isHidden = !stamp.verifiedAttendance
             

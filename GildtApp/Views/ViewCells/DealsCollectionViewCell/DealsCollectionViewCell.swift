@@ -9,7 +9,7 @@
 import UIKit
 import Kingfisher
 
-class DealsCollectionViewCell: UICollectionViewCell {
+class DealsCollectionViewCell: GenericCollectionViewCell<Deal> {
     // view
     @IBOutlet weak var Title: UILabel!
     @IBOutlet weak var DealImage: UIImageView!
@@ -28,7 +28,11 @@ class DealsCollectionViewCell: UICollectionViewCell {
     private var initialCenter: CGPoint = CGPoint.zero
 
     // Data
-    var deal: Deal? = nil
+    override var item: Deal! {
+        didSet {
+            loadDealData()
+        }
+    }
 
     func setUpView() {
         // corner radiusus
@@ -47,36 +51,34 @@ class DealsCollectionViewCell: UICollectionViewCell {
     }
 
     func loadDealData() {
-        self.Title.text = deal?.title
-        if let url = deal?.image {
+        self.Title.text = item?.title
+        if let url = item?.image {
             self.DealImage.kf.setImage(with: URL(string: url))
         }
-        self.Description.text = deal?.description
-        if deal?.dealType == "usage" {
-            self.Usability.text = "Nog \(deal?.dealsLeft ?? 0) keer bruikbaar"
+        self.Description.text = item?.description
+        if item?.dealType == "usage" {
+            self.Usability.text = "Nog \(item?.dealsLeft ?? 0) keer bruikbaar"
         } else {
             self.Usability.text = "Onbeperkt bruikbaar"
         }
-        self.Availability.text = deal?.expireDateHumanized
+        self.Availability.text = item?.expireDateHumanized
     }
-}
-
-extension DealsCollectionViewCell {
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         if let touch = touches.first {
             initialCenter = self.center
-
+            
             SlideUpInitPoint = touch.location(in: self)
             slideUpPoint = touch.location(in: self)
         }
     }
-
+    
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         if let touch = touches.first {
             if touch.location(in: self.superview).y < SlideUpInitPoint.y {
                 slideUpPoint = touch.location(in: self.superview)
                 slideUpDelta = SlideUpInitPoint.y - slideUpPoint.y
-
+                
                 if slideUpDelta <= self.slideUpEndDistance {
                     // logic to Disable scrollview after sliding up
                     if !slideUpIsActive {
@@ -97,29 +99,29 @@ extension DealsCollectionViewCell {
             }
         }
     }
-
+    
     func reset() {
         self.SlideUpInitPoint = CGPoint.zero
         self.slideUpPoint = CGPoint.zero
         self.slideUpDelta = 0
         self.slideUpIsActive = false
-
+        
         NotificationCenter.default.post(name: Notification.Name("DealIsSlideUpIdentifier"), object: nil, userInfo: ["ClaimState":false])
-
+        
         UIView.animate(withDuration: 0.2, animations: {
             self.center = self.initialCenter
         }, completion: { (complete: Bool) in
             self.initialCenter = self.center
         })
     }
-
+    
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         if self.slideUpDelta >= self.slideUpEndDistance {
-            NotificationCenter.default.post(name: Notification.Name("DealIsClaimedIdentifier"), object: nil, userInfo: ["Deal":deal!])
+            NotificationCenter.default.post(name: Notification.Name("DealIsClaimedIdentifier"), object: nil, userInfo: ["Deal":item!])
         }
         self.reset()
     }
-
+    
     override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.reset()
     }

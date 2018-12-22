@@ -179,8 +179,7 @@ extension DealsViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: "CollectionViewCell"), for: indexPath) as! DealsCollectionViewCell
         cell.setUpView()
-        cell.deal = deals[indexPath.row]
-        cell.loadDealData()
+        cell.item = deals[indexPath.row]
         return cell
     }
 }

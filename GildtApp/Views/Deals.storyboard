@@ -30,7 +30,7 @@
         <!--Deals View Controller-->
         <scene sceneID="zAh-ro-rwf">
             <objects>
-                <viewController storyboardIdentifier="StoryboardExampleViewController" id="P3x-Fl-iNl" customClass="DealsViewController" customModule="GildtApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="StoryboardExampleViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="P3x-Fl-iNl" customClass="DealsViewController" customModule="GildtApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fHJ-9j-dVE">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
