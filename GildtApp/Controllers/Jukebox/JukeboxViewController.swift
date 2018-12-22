@@ -9,9 +9,12 @@
 import Foundation
 import UIKit
 
-class JukeboxViewController: UITableViewController {
+class JukeboxViewController: GenericTableViewController<SongRequestTableViewCell, (songRequest: SongRequest, row: Int)> {
     
-    var songRequests: [SongRequest] = []
+    //var songRequests: [SongRequest] = []
+    override func getCellId() -> String {
+        return "SongRequestTableViewCell"
+    }
     
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var artistTextField: UITextField!
@@ -37,7 +40,7 @@ class JukeboxViewController: UITableViewController {
     
     func setupTableView() {
         tableView.dataSource = self
-        tableView.register(UINib(nibName: "SongRequestTableViewCell", bundle: nil), forCellReuseIdentifier: "SongRequestTableViewCell")
+        //tableView.register(UINib(nibName: "SongRequestTableViewCell", bundle: nil), forCellReuseIdentifier: "SongRequestTableViewCell")
         tableView.keyboardDismissMode = UIScrollView.KeyboardDismissMode.onDrag
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(addSongButtonTouched))
         plusButton.isUserInteractionEnabled = true
@@ -64,7 +67,10 @@ class JukeboxViewController: UITableViewController {
     }
     
     func reloadSongRequests(newData: [SongRequest]) {
-        songRequests = newData
+        newData.forEach( { song in
+            items.append((song, 1))
+        })
+        //items = newData
         tableView.reloadData()
         DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: {
             self.refreshControl?.alpha = 0
@@ -86,29 +92,29 @@ class JukeboxViewController: UITableViewController {
         refreshControl?.addTarget(self, action: #selector(refresh), for: .valueChanged)
     }
     
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        super.tableView(tableView, numberOfRowsInSection: section)
-        return songRequests.count
-    }
+//    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        super.tableView(tableView, numberOfRowsInSection: section)
+//        return songRequests.count
+//    }
     
-    //set properties for each row
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        super.tableView(tableView, cellForRowAt: indexPath)
-        let cell = tableView.dequeueReusableCell(withIdentifier: "SongRequestTableViewCell") as! SongRequestTableViewCell
-        let songRequest = songRequests[indexPath.row]
-        
-        cell.idLabelView.text = String(indexPath.row+1)
-        cell.titleLabelView.text = songRequest.title
-        cell.artistLabelView.text = songRequest.artist
-        cell.upvotesAmountLabelView.text = String(songRequest.votes)
-
-        return cell
-    }
+//    //set properties for each row
+//    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//        super.tableView(tableView, cellForRowAt: indexPath)
+//        let cell = tableView.dequeueReusableCell(withIdentifier: "SongRequestTableViewCell") as! SongRequestTableViewCell
+//        let songRequest = songRequests[indexPath.row]
+//
+//        cell.idLabelView.text = String(indexPath.row+1)
+//        cell.titleLabelView.text = songRequest.title
+//        cell.artistLabelView.text = songRequest.artist
+//        cell.upvotesAmountLabelView.text = String(songRequest.votes)
+//
+//        return cell
+//    }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let row = indexPath.row
-        let song = songRequests[row]
-        JukeboxAPIService.upvoteSong(songId: song.id)
+        let song = items[row]
+        JukeboxAPIService.upvoteSong(songId: song.songRequest.id)
             .responseData(completionHandler: { [weak self] (response) in
                 guard let jsonData = response.data else { return }
                 
@@ -166,7 +172,7 @@ class JukeboxViewController: UITableViewController {
     }
     
     func successfullyAddedSong(song: SongRequest) {
-        songRequests.append(song)
+        //songRequests.append(song)
         tableView.reloadData()
         titleTextField.text = ""
         artistTextField.text = ""

@@ -24,6 +24,8 @@
 		B099D20421B02ED000DA4473 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B099D20321B02ED000DA4473 /* MainTabBarController.swift */; };
 		B099D20A21B0442600DA4473 /* NewSong.swift in Sources */ = {isa = PBXBuildFile; fileRef = B099D20921B0442600DA4473 /* NewSong.swift */; };
 		B0B1125F21C83EA300E4F721 /* ErrorMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B1125E21C83EA300E4F721 /* ErrorMessage.swift */; };
+		B0B1126621CE56F400E4F721 /* GenericTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B1126521CE56F400E4F721 /* GenericTableViewController.swift */; };
+		B0B1126921CE575000E4F721 /* GenericTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B1126821CE575000E4F721 /* GenericTableViewCell.swift */; };
 		B0CADB8621AB243C00E6D848 /* RegisterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0CADB8521AB243C00E6D848 /* RegisterModel.swift */; };
 		B0CADB8821AB254600E6D848 /* LoginPostBack.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0CADB8721AB254600E6D848 /* LoginPostBack.swift */; };
 		B0CADB8A21AB258C00E6D848 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0CADB8921AB258C00E6D848 /* LoginModel.swift */; };
@@ -81,6 +83,8 @@
 		B099D20321B02ED000DA4473 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		B099D20921B0442600DA4473 /* NewSong.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewSong.swift; sourceTree = "<group>"; };
 		B0B1125E21C83EA300E4F721 /* ErrorMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorMessage.swift; sourceTree = "<group>"; };
+		B0B1126521CE56F400E4F721 /* GenericTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericTableViewController.swift; sourceTree = "<group>"; };
+		B0B1126821CE575000E4F721 /* GenericTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericTableViewCell.swift; sourceTree = "<group>"; };
 		B0CADB8521AB243C00E6D848 /* RegisterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterModel.swift; sourceTree = "<group>"; };
 		B0CADB8721AB254600E6D848 /* LoginPostBack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPostBack.swift; sourceTree = "<group>"; };
 		B0CADB8921AB258C00E6D848 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
@@ -148,12 +152,12 @@
 		B0177A34219B89B700E379D5 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				B0B1126421CE56AE00E4F721 /* Jukebox */,
+				B0B1126321CE56A900E4F721 /* Login */,
+				B0B1126221CE56A400E4F721 /* Deals */,
 				DFD460DC21C048E300F90B52 /* Stempelkaart */,
 				B0CD4DD021BEB8040060A28C /* Agenda */,
 				B0CD4DC821BE9F120060A28C /* Photos */,
-				DF70F68021A185FD001D3006 /* DealsViewController.swift */,
-				B0CADB8D21AB2EA200E6D848 /* LoginViewController.swift */,
-				B0177A41219C64E500E379D5 /* JukeboxViewController.swift */,
 				B099D20521B02F9900DA4473 /* Hierarchy */,
 			);
 			path = Controllers;
@@ -246,6 +250,7 @@
 			children = (
 				B099D20321B02ED000DA4473 /* MainTabBarController.swift */,
 				B099D20121B029AA00DA4473 /* NavigationViewController.swift */,
+				B0B1126521CE56F400E4F721 /* GenericTableViewController.swift */,
 			);
 			path = Hierarchy;
 			sourceTree = "<group>";
@@ -257,6 +262,38 @@
 				B0177A43219CC6A100E379D5 /* SongRequest.swift */,
 			);
 			path = Song;
+			sourceTree = "<group>";
+		};
+		B0B1126221CE56A400E4F721 /* Deals */ = {
+			isa = PBXGroup;
+			children = (
+				DF70F68021A185FD001D3006 /* DealsViewController.swift */,
+			);
+			path = Deals;
+			sourceTree = "<group>";
+		};
+		B0B1126321CE56A900E4F721 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				B0CADB8D21AB2EA200E6D848 /* LoginViewController.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		B0B1126421CE56AE00E4F721 /* Jukebox */ = {
+			isa = PBXGroup;
+			children = (
+				B0177A41219C64E500E379D5 /* JukeboxViewController.swift */,
+			);
+			path = Jukebox;
+			sourceTree = "<group>";
+		};
+		B0B1126721CE574200E4F721 /* Hierarchy */ = {
+			isa = PBXGroup;
+			children = (
+				B0B1126821CE575000E4F721 /* GenericTableViewCell.swift */,
+			);
+			path = Hierarchy;
 			sourceTree = "<group>";
 		};
 		B0CADB8421AB242F00E6D848 /* User */ = {
@@ -283,6 +320,7 @@
 		B0CD4DC721BE9A810060A28C /* ViewCells */ = {
 			isa = PBXGroup;
 			children = (
+				B0B1126721CE574200E4F721 /* Hierarchy */,
 				DFD460DF21C0557C00F90B52 /* StampCollectionViewCell */,
 				B0E84EFB21C2BE8A00EF2C49 /* PreviewImageTableViewCell */,
 				B0CD4DCB21BEA2E70060A28C /* TagCollectionViewCell */,
@@ -521,6 +559,7 @@
 				DFD460E521C05AD900F90B52 /* Stamp.swift in Sources */,
 				DF9D57BE21B1D732003A97FB /* EventViewController.swift in Sources */,
 				DF70F68121A185FD001D3006 /* DealsViewController.swift in Sources */,
+				B0B1126921CE575000E4F721 /* GenericTableViewCell.swift in Sources */,
 				DF70F67B21A183A7001D3006 /* UIColor.swift in Sources */,
 				B0CD4DC621BE99620060A28C /* Photo.swift in Sources */,
 				B099D20221B029AA00DA4473 /* NavigationViewController.swift in Sources */,
@@ -545,6 +584,7 @@
 				B099D20021B0278400DA4473 /* AgendaViewController.swift in Sources */,
 				B0CD4DC321BE99440060A28C /* Tag.swift in Sources */,
 				DF9D57B721B09A8C003A97FB /* Event.swift in Sources */,
+				B0B1126621CE56F400E4F721 /* GenericTableViewController.swift in Sources */,
 				B0CADB8821AB254600E6D848 /* LoginPostBack.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
