@@ -158,13 +158,13 @@
 		B0177A34219B89B700E379D5 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				B0CD4DD021BEB8040060A28C /* Agenda */,
+				B0B1126221CE56A400E4F721 /* Deals */,
+				B099D20521B02F9900DA4473 /* Hierarchy */,
 				B0B1126421CE56AE00E4F721 /* Jukebox */,
 				B0B1126321CE56A900E4F721 /* Login */,
-				B0B1126221CE56A400E4F721 /* Deals */,
-				DFD460DC21C048E300F90B52 /* Stempelkaart */,
-				B0CD4DD021BEB8040060A28C /* Agenda */,
 				B0CD4DC821BE9F120060A28C /* Photos */,
-				B099D20521B02F9900DA4473 /* Hierarchy */,
+				DFD460DC21C048E300F90B52 /* Stempelkaart */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -254,10 +254,10 @@
 		B099D20521B02F9900DA4473 /* Hierarchy */ = {
 			isa = PBXGroup;
 			children = (
+				B0B1126A21CE707D00E4F721 /* GenericCollectionViewController.swift */,
+				B0B1126521CE56F400E4F721 /* GenericTableViewController.swift */,
 				B099D20321B02ED000DA4473 /* MainTabBarController.swift */,
 				B099D20121B029AA00DA4473 /* NavigationViewController.swift */,
-				B0B1126521CE56F400E4F721 /* GenericTableViewController.swift */,
-				B0B1126A21CE707D00E4F721 /* GenericCollectionViewController.swift */,
 			);
 			path = Hierarchy;
 			sourceTree = "<group>";
@@ -343,8 +343,8 @@
 		B0CD4DC821BE9F120060A28C /* Photos */ = {
 			isa = PBXGroup;
 			children = (
-				B0CD4DC921BE9F900060A28C /* TagOverviewViewController.swift */,
 				B0E84EF521C0498A00EF2C49 /* ImagePreviewViewController.swift */,
+				B0CD4DC921BE9F900060A28C /* TagOverviewViewController.swift */,
 				B0E84EF921C2AA1700EF2C49 /* TagPhotosViewController.swift */,
 			);
 			path = Photos;
