@@ -50,10 +50,9 @@ class JukeboxViewController: UITableViewController {
     @objc func getSongRequests() {
         JukeboxAPIService.getSongRequests()
             .responseData(completionHandler: { [weak self] (response) in
-                guard let jsonData = response.data else { return }
                 
                 let decoder = JSONDecoder()
-                let data = try? decoder.decode([SongRequest].self, from: jsonData)
+                let data: [SongRequest] = decoder.decodeResponse([SongRequest], from: response)
                 
                 DispatchQueue.main.async {
                     if data != nil {
