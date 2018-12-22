@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import Alamofire
 
-class JukeboxViewController: GenericTableViewController<SongRequestTableViewCell, (songRequest: SongRequest, row: Int)> {
+class JukeboxViewController: GenericTableViewController<SongRequestTableViewCell, SongRequest> {
     
     override var cellId: String {
         get {
@@ -55,25 +55,13 @@ class JukeboxViewController: GenericTableViewController<SongRequestTableViewCell
                 }
             }
         })
-//        JukeboxAPIService.getSongRequests()
-//            .responseData(completionHandler: { [weak self] (response) in
-//                guard let jsonData = response.data else { return }
-//
-//                let decoder = JSONDecoder()
-//                let data = try? decoder.decode([SongRequest].self, from: jsonData)
-//
-//                DispatchQueue.main.async {
-//                    if data != nil {
-//                        self?.reloadSongRequests(newData: data!)
-//                    }
-//                }
-//            })
     }
     
     override func reloadItems(newData: [SongRequest]) {
         var i = 1
-        for song in newData {
-            items.append((song, i))
+        for var song in newData {
+            song.row = i
+            items.append(song)
             i += 1
         }
         finishRefreshing()
@@ -82,7 +70,7 @@ class JukeboxViewController: GenericTableViewController<SongRequestTableViewCell
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let row = indexPath.row
         let song = items[row]
-        JukeboxAPIService.upvoteSong(songId: song.songRequest.id)
+        JukeboxAPIService.upvoteSong(songId: song.id)
             .responseData(completionHandler: { [weak self] (response) in
                 guard let jsonData = response.data else { return }
                 
