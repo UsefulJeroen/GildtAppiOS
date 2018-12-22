@@ -11,8 +11,6 @@ import UIKit
 
 class JukeboxViewController: UITableViewController {
     
-    var pendingNetworkRequest: Bool = false
-    
     var songRequests: [SongRequest] = []
     
     @IBOutlet weak var titleTextField: UITextField!
@@ -50,7 +48,6 @@ class JukeboxViewController: UITableViewController {
     }
     
     @objc func getSongRequests() {
-        pendingNetworkRequest = true
         JukeboxAPIService.getSongRequests()
             .responseData(completionHandler: { [weak self] (response) in
                 guard let jsonData = response.data else { return }
@@ -64,7 +61,6 @@ class JukeboxViewController: UITableViewController {
                     }
                 }
             })
-        pendingNetworkRequest = false
     }
     
     func reloadSongRequests(newData: [SongRequest]) {
