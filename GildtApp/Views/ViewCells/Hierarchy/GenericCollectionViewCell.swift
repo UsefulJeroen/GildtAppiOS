@@ -9,6 +9,8 @@
 import Foundation
 import UIKit
 
-class GenericCollectionViewCell<U>: UICollectionViewCell {
+//base generic collectionviewcell with model
+//to implement; override the didSet of item to set the view
+class GenericCollectionViewCell<U>: UICollectionViewCell, GenericViewCell {
     var item: U!
 }
