@@ -28,8 +28,6 @@
 		B0B1126921CE575000E4F721 /* GenericTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B1126821CE575000E4F721 /* GenericTableViewCell.swift */; };
 		B0B1126B21CE707D00E4F721 /* GenericCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B1126A21CE707D00E4F721 /* GenericCollectionViewController.swift */; };
 		B0B1126D21CE70C300E4F721 /* GenericCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B1126C21CE70C300E4F721 /* GenericCollectionViewCell.swift */; };
-		B0B1127221CE785C00E4F721 /* GenericController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B1127121CE785C00E4F721 /* GenericController.swift */; };
-		B0B1127421CE78E200E4F721 /* GenericViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B1127321CE78E200E4F721 /* GenericViewCell.swift */; };
 		B0CADB8621AB243C00E6D848 /* RegisterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0CADB8521AB243C00E6D848 /* RegisterModel.swift */; };
 		B0CADB8821AB254600E6D848 /* LoginPostBack.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0CADB8721AB254600E6D848 /* LoginPostBack.swift */; };
 		B0CADB8A21AB258C00E6D848 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0CADB8921AB258C00E6D848 /* LoginModel.swift */; };
@@ -91,8 +89,6 @@
 		B0B1126821CE575000E4F721 /* GenericTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericTableViewCell.swift; sourceTree = "<group>"; };
 		B0B1126A21CE707D00E4F721 /* GenericCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericCollectionViewController.swift; sourceTree = "<group>"; };
 		B0B1126C21CE70C300E4F721 /* GenericCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericCollectionViewCell.swift; sourceTree = "<group>"; };
-		B0B1127121CE785C00E4F721 /* GenericController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericController.swift; sourceTree = "<group>"; };
-		B0B1127321CE78E200E4F721 /* GenericViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericViewCell.swift; sourceTree = "<group>"; };
 		B0CADB8521AB243C00E6D848 /* RegisterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterModel.swift; sourceTree = "<group>"; };
 		B0CADB8721AB254600E6D848 /* LoginPostBack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPostBack.swift; sourceTree = "<group>"; };
 		B0CADB8921AB258C00E6D848 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
@@ -260,7 +256,6 @@
 				B099D20121B029AA00DA4473 /* NavigationViewController.swift */,
 				B0B1126521CE56F400E4F721 /* GenericTableViewController.swift */,
 				B0B1126A21CE707D00E4F721 /* GenericCollectionViewController.swift */,
-				B0B1127121CE785C00E4F721 /* GenericController.swift */,
 			);
 			path = Hierarchy;
 			sourceTree = "<group>";
@@ -303,7 +298,6 @@
 			children = (
 				B0B1126821CE575000E4F721 /* GenericTableViewCell.swift */,
 				B0B1126C21CE70C300E4F721 /* GenericCollectionViewCell.swift */,
-				B0B1127321CE78E200E4F721 /* GenericViewCell.swift */,
 			);
 			path = Hierarchy;
 			sourceTree = "<group>";
@@ -564,7 +558,6 @@
 				B0B1126B21CE707D00E4F721 /* GenericCollectionViewController.swift in Sources */,
 				B0E84EFA21C2AA1700EF2C49 /* TagPhotosViewController.swift in Sources */,
 				B0177A47219CCD6800E379D5 /* SongRequestTableViewCell.swift in Sources */,
-				B0B1127221CE785C00E4F721 /* GenericController.swift in Sources */,
 				B0E84EF421C047F200EF2C49 /* DeviceInfoHelper.swift in Sources */,
 				B0E84EF821C2709B00EF2C49 /* Image.swift in Sources */,
 				B0CADB8A21AB258C00E6D848 /* LoginModel.swift in Sources */,
@@ -590,7 +583,6 @@
 				B0B1125F21C83EA300E4F721 /* ErrorMessage.swift in Sources */,
 				B0E84EFD21C2BEAC00EF2C49 /* PreviewImageTableViewCell.swift in Sources */,
 				B0CD4DCA21BE9F900060A28C /* TagOverviewViewController.swift in Sources */,
-				B0B1127421CE78E200E4F721 /* GenericViewCell.swift in Sources */,
 				B099D20A21B0442600DA4473 /* NewSong.swift in Sources */,
 				B0177A40219B9C8100E379D5 /* LocalStorageService.swift in Sources */,
 				DFD460E121C0559400F90B52 /* StampCollectionViewCell.swift in Sources */,

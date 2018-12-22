@@ -13,11 +13,11 @@ import Alamofire
 
 class TagPhotosViewController: GenericTableViewController<PreviewImageTableViewCell, Photo> {
     
-    func getCellId() -> String {
+    override func getCellId() -> String {
         return "PreviewImageTableViewCell"
     }
     
-    func getMainAPICall() -> DataRequest {
+    override func getMainAPICall() -> DataRequest {
         return PhotoAPIService.getImagesFromTag(id: tag.id)
     }
     

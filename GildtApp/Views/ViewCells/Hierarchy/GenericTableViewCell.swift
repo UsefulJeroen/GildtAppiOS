@@ -11,6 +11,6 @@ import UIKit
 
 //base generic tableviewcell with model
 //to implement; override the didSet of item to set the view
-class GenericTableViewCell<U>: UITableViewCell, GenericViewCell {
+class GenericTableViewCell<U>: UITableViewCell {
     var item: U!
 }

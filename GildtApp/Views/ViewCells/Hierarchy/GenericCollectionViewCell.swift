@@ -9,6 +9,6 @@
 import Foundation
 import UIKit
 
-class GenericCollectionViewCell<U>: UICollectionViewCell, GenericViewCell {
+class GenericCollectionViewCell<U>: UICollectionViewCell {
     var item: U!
 }

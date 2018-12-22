@@ -12,11 +12,11 @@ import Alamofire
 
 class JukeboxViewController: GenericTableViewController<SongRequestTableViewCell, SongRequest> {
     
-    func getCellId() -> String {
+    override func getCellId() -> String {
         return "SongRequestTableViewCell"
     }
     
-    func getMainAPICall() -> DataRequest {
+    override func getMainAPICall() -> DataRequest {
         return JukeboxAPIService.getSongRequests()
     }
     
