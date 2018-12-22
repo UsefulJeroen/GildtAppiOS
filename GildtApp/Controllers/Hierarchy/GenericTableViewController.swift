@@ -21,14 +21,18 @@ class GenericTableViewController<T: GenericTableViewCell<U>, U>: UITableViewCont
         super.viewDidLoad()
         tableView.register(UINib(nibName: getCellId(), bundle: nil), forCellReuseIdentifier: getCellId())
         
-        //let rc = UIRefreshControl()
-        //rc.addTarget(self, action: #selector(handleRefresh), for: .valueChanged)
-        //tableView.refreshControl = rc
+        refreshControl = UIRefreshControl()
+        refreshControl?.addTarget(self, action: #selector(refresh), for: .valueChanged)
+        
+        getItems()
     }
     
-//    @objc func handleRefresh() {
-//        tableView.refreshControl?.endRefreshing()
-//    }
+    @objc func refresh() {
+        refreshControl?.alpha = 1
+        getItems()
+    }
+    
+    func getItems() {}
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return items.count

@@ -11,7 +11,6 @@ import UIKit
 
 class JukeboxViewController: GenericTableViewController<SongRequestTableViewCell, (songRequest: SongRequest, row: Int)> {
     
-    //var songRequests: [SongRequest] = []
     override func getCellId() -> String {
         return "SongRequestTableViewCell"
     }
@@ -25,9 +24,7 @@ class JukeboxViewController: GenericTableViewController<SongRequestTableViewCell
         
         navigationItem.title = "Jukebox"
         
-        setupTableView()
-        getSongRequests()
-        setupRefreshControl()
+        setupAddButton()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -38,19 +35,14 @@ class JukeboxViewController: GenericTableViewController<SongRequestTableViewCell
         super.viewWillDisappear(animated)
     }
     
-    func setupTableView() {
-        tableView.dataSource = self
-        //tableView.register(UINib(nibName: "SongRequestTableViewCell", bundle: nil), forCellReuseIdentifier: "SongRequestTableViewCell")
+    func setupAddButton() {
         tableView.keyboardDismissMode = UIScrollView.KeyboardDismissMode.onDrag
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(addSongButtonTouched))
         plusButton.isUserInteractionEnabled = true
         plusButton.addGestureRecognizer(tapGestureRecognizer)
-        //can remove these 2 lines?
-        tableView.estimatedRowHeight = tableView.rowHeight
-        tableView.rowHeight = UITableView.automaticDimension
     }
     
-    @objc func getSongRequests() {
+    override func getItems() {
         JukeboxAPIService.getSongRequests()
             .responseData(completionHandler: { [weak self] (response) in
                 guard let jsonData = response.data else { return }
@@ -67,10 +59,11 @@ class JukeboxViewController: GenericTableViewController<SongRequestTableViewCell
     }
     
     func reloadSongRequests(newData: [SongRequest]) {
-        newData.forEach( { song in
-            items.append((song, 1))
-        })
-        //items = newData
+        var i = 1
+        for song in newData {
+            items.append((song, i))
+            i += 1
+        }
         tableView.reloadData()
         DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: {
             self.refreshControl?.alpha = 0
@@ -80,36 +73,6 @@ class JukeboxViewController: GenericTableViewController<SongRequestTableViewCell
             self.refreshControl?.alpha = 1
         })
     }
-    
-    @objc func refresh() {
-        refreshControl?.alpha = 1
-        getSongRequests()
-    }
-    
-    func setupRefreshControl() {
-        refreshControl = UIRefreshControl()
-        tableView.refreshControl = refreshControl
-        refreshControl?.addTarget(self, action: #selector(refresh), for: .valueChanged)
-    }
-    
-//    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        super.tableView(tableView, numberOfRowsInSection: section)
-//        return songRequests.count
-//    }
-    
-//    //set properties for each row
-//    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        super.tableView(tableView, cellForRowAt: indexPath)
-//        let cell = tableView.dequeueReusableCell(withIdentifier: "SongRequestTableViewCell") as! SongRequestTableViewCell
-//        let songRequest = songRequests[indexPath.row]
-//
-//        cell.idLabelView.text = String(indexPath.row+1)
-//        cell.titleLabelView.text = songRequest.title
-//        cell.artistLabelView.text = songRequest.artist
-//        cell.upvotesAmountLabelView.text = String(songRequest.votes)
-//
-//        return cell
-//    }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let row = indexPath.row
@@ -130,7 +93,7 @@ class JukeboxViewController: GenericTableViewController<SongRequestTableViewCell
     }
     
     func changeUpvote(indexPath: IndexPath) {
-        getSongRequests()
+        getItems()
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
