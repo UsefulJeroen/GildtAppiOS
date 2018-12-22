@@ -10,13 +10,13 @@ import Foundation
 import UIKit
 import Alamofire
 
-class AgendaViewController: GenericTableViewController<AgendaTableViewCell, Event>, UIViewControllerPreviewingDelegate {
+class AgendaViewController: GenericTableViewController<AgendaTableViewCell, Event>, UIViewControllerPreviewingDelegate, GenericController {
     
-    override func getCellId() -> String {
+    func getCellId() -> String {
         return "AgendaTableViewCell"
     }
     
-    override func getMainAPICall() -> DataRequest {
+    func getMainAPICall() -> DataRequest {
         return AgendaAPIService.getAgendaItems()
     }
     

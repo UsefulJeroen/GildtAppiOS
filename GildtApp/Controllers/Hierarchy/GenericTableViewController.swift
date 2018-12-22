@@ -13,19 +13,19 @@ import Alamofire
 //basic tableviewcontroller with functions that all tableviewcontrollers use
 //if you want to implement/use this:
 //override getCellId & getAPICall in childClass
-class GenericTableViewController<T: GenericTableViewCell<U>, U>: UITableViewController where U: Decodable {
+class GenericTableViewController<T: GenericTableViewCell<U>, U>: UITableViewController, GenericController where U: Decodable {
     
     var items = [U]()
     
-    func getCellId() -> String {
-        print("Error: implement getCellId from GenericTableViewController!")
-        return "CellId"
-    }
-    
-    func getMainAPICall() -> DataRequest? {
-        print("Error: implement getMainAPICall from GenericTableViewController!")
-        return nil
-    }
+//    func getCellId() -> String {
+//        print("Error: implement getCellId from GenericTableViewController!")
+//        return "CellId"
+//    }
+//
+//    func getMainAPICall() -> DataRequest? {
+//        print("Error: implement getMainAPICall from GenericTableViewController!")
+//        return nil
+//    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

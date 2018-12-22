@@ -39,12 +39,16 @@ class GenericCollectionViewController<T: GenericCollectionViewCell<U>, U>: UICol
                 
                 DispatchQueue.main.async {
                     if let data = data {
-                        self?.items = data
-                        self?.collectionView.reloadData()
+                        self?.reloadItems(newData: data)
                     }
                 }
             })
         }
+    }
+    
+    func reloadItems(newData: [U]) {
+        items = newData
+        collectionView.reloadData()
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
