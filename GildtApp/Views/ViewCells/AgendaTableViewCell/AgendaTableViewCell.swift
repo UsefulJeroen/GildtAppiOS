@@ -9,14 +9,19 @@
 import Foundation
 import UIKit
 
-class AgendaTableViewCell: UITableViewCell {
+class AgendaTableViewCell: GenericTableViewCell<Event> {
+    
     @IBOutlet weak var Container: UIView!
     @IBOutlet weak var Button: UIButton!
     @IBOutlet weak var TitleLabel: UILabel!
     @IBOutlet weak var Stamp: UIImageView!
     @IBOutlet weak var DateLabel: UILabel!
     
-    var event: Event? = nil
+    override var item: Event! {
+        didSet {
+            loadEventData()
+        }
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -33,7 +38,7 @@ class AgendaTableViewCell: UITableViewCell {
     }
     
     func loadEventData() {
-        if let event = event {
+        if let event = item {
             self.TitleLabel.text = "\(event.title):\n\(event.shortDescription)"
             let date = event.eventDate.toDate(dateFormat: "yyyy-MM-dd'T'HH:mm:ss.SSSZ")
             let formatter = DateFormatter()
@@ -48,7 +53,7 @@ class AgendaTableViewCell: UITableViewCell {
     
     @IBAction func attendanceButtonTapped(_ sender: Any) {
         UIImpactFeedbackGenerator(style: .medium).impactOccurred()
-        if let event = event {
+        if let event = item {
             setAttendance(attendance: !event.attendance)
         }
     }
@@ -70,7 +75,7 @@ class AgendaTableViewCell: UITableViewCell {
     }
     
     func setAttendance(attendance: Bool) {
-        AgendaAPIService.setAttendance(event: self.event!, attendance: attendance)
+        AgendaAPIService.setAttendance(event: self.item!, attendance: attendance)
             .response(completionHandler: { [weak self] (response) in
                 guard let jsonData = response.data else { return }
                 
@@ -86,7 +91,7 @@ class AgendaTableViewCell: UITableViewCell {
     }
     
     func successfullySetAttendance(updatedEvent: Event) {
-        self.event = updatedEvent
+        self.item = updatedEvent
         NotificationCenter.default.post(name: Notification.Name("AttendanceIdentifier"), object: nil, userInfo: ["Event" : updatedEvent])
         self.loadEventData()
     }
