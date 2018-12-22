@@ -13,12 +13,17 @@ class StampCollectionViewCell : GenericCollectionViewCell<Stamp> {
     
     override var item: Stamp! {
         didSet {
+            setupView()
             loadStampData()
         }
     }
     
     @IBOutlet weak var StampLabel: UILabel!
     @IBOutlet weak var StampImage: UIImageView!
+    
+    func setupView() {
+        self.layer.cornerRadius = 10
+    }
     
     func loadStampData() {
         if let stamp = item {
