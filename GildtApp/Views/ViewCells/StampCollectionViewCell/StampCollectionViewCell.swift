@@ -13,6 +13,7 @@ class StampCollectionViewCell : GenericCollectionViewCell<Stamp> {
     
     override var item: Stamp! {
         didSet {
+            setupView()
             loadStampData()
         }
     }
