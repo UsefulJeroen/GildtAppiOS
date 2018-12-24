@@ -15,7 +15,6 @@ struct Tag: Codable {
     let number_of_images : Int?
     
     enum CodingKeys: String, CodingKey {
-        
         case id = "id"
         case title = "title"
         case preview_image = "preview_image"
