@@ -29,6 +29,7 @@ class SongRequestTableViewCell: GenericTableViewCell<SongRequest> {
     @IBOutlet weak var upvotesAmountLabelView: UILabel!
     
     @IBOutlet weak var upvoteButton: UIImageView!
+    @IBOutlet weak var downvoteButton: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
