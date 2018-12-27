@@ -94,6 +94,11 @@ class JukeboxAPIService: BackendAPIService {
         let endPointURL = "song/\(songId)/upvote"
         return createRequest(endPointURL: endPointURL, httpMethod: .put)
     }
+    
+    static func downvoteSong(songId: Int) -> DataRequest {
+        let endPointURL = "song/\(songId)/downvote"
+        return createRequest(endPointURL: endPointURL, httpMethod: .put)
+    }
 }
 
 class PhotoAPIService: BackendAPIService {

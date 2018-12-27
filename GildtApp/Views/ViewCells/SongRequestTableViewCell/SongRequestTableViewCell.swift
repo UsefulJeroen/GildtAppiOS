@@ -48,7 +48,7 @@ class SongRequestTableViewCell: GenericTableViewCell<SongRequest> {
     }
     
     @objc func downvoteClicked(_ sender: UIButton?) {
-        print("downvote clicked")
+        
     }
     
     @objc func upvoteButtonClicked(_ sender: UIButton?) {
