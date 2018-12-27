@@ -30,8 +30,16 @@ class JukeboxViewController: GenericTableViewController<SongRequestTableViewCell
         navigationItem.title = "Jukebox"
         
         setupAddButton()
-        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         NotificationCenter.default.addObserver(self, selector: #selector(self.reloadDataNotificationHandler(notification: )), name: NSNotification.Name(rawValue: "JukeboxIdentifier"), object: nil)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        NotificationCenter.default.removeObserver(self)
     }
     
     @objc private func reloadDataNotificationHandler(notification: Notification) {
@@ -59,27 +67,8 @@ class JukeboxViewController: GenericTableViewController<SongRequestTableViewCell
         finishRefreshing()
     }
     
-    //if row is selected; upvote the song
-//    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        let row = indexPath.row
-//        let song = items[row]
-//        JukeboxAPIService.upvoteSong(songId: song.id)
-//            .responseData(completionHandler: { [weak self] (response) in
-//                guard let jsonData = response.data else { return }
-//
-//                let decoder = JSONDecoder()
-//                let data = try? decoder.decode(SongRequest.self, from: jsonData)
-//
-//                DispatchQueue.main.async {
-//                    if data != nil {
-//                        self?.changeUpvote(indexPath: indexPath)
-//                    }
-//                }
-//            })
-//    }
-    
-    func changeUpvote(indexPath: IndexPath) {
-        getItems()
+    //if row is selected
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
