@@ -48,11 +48,43 @@ class SongRequestTableViewCell: GenericTableViewCell<SongRequest> {
     }
     
     @objc func downvoteClicked(_ sender: UIButton?) {
-        
+        JukeboxAPIService.downvoteSong(songId: item.id)
+            .responseData(completionHandler: { [weak self] (response) in
+                guard let jsonData = response.data else { return }
+                
+                let decoder = JSONDecoder()
+                let data = try? decoder.decode(SongRequest.self, from: jsonData)
+                
+                DispatchQueue.main.async {
+                    if let data = data {
+                        if data.id == self?.item.id {
+                            self?.successfullyVoted()
+                        }
+                    }
+                }
+            })
     }
     
     @objc func upvoteButtonClicked(_ sender: UIButton?) {
-        print("upvote clicked")
+        JukeboxAPIService.upvoteSong(songId: item.id)
+            .responseData(completionHandler: { [weak self] (response) in
+                guard let jsonData = response.data else { return }
+                
+                let decoder = JSONDecoder()
+                let data = try? decoder.decode(SongRequest.self, from: jsonData)
+                
+                DispatchQueue.main.async {
+                    if let data = data {
+                        if data.id == self?.item.id {
+                            self?.successfullyVoted()
+                        }
+                    }
+                }
+            })
+    }
+    
+    func successfullyVoted() {
+        NotificationCenter.default.post(name: Notification.Name("JukeboxIdentifier"), object: nil)
     }
     
     override func awakeFromNib() {
@@ -67,7 +99,8 @@ class SongRequestTableViewCell: GenericTableViewCell<SongRequest> {
         titleLabelView.text = ""
         artistLabelView.text = ""
         upvotesAmountLabelView.text = ""
+        upvotesAmountLabelView.textColor = UIColor.black
         upvoteButton.setImage(UIImage(named: "arrow-up-grey"), for: UIControl.State.normal)
-        downvoteButton.setImage(UIImage(named: "arrow-up-grey"), for: UIControl.State.normal)
+        downvoteButton.setImage(UIImage(named: "arrow-down-grey"), for: UIControl.State.normal)
     }
 }

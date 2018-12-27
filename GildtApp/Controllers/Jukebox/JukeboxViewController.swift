@@ -30,6 +30,12 @@ class JukeboxViewController: GenericTableViewController<SongRequestTableViewCell
         navigationItem.title = "Jukebox"
         
         setupAddButton()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(self.reloadDataNotificationHandler(notification: )), name: NSNotification.Name(rawValue: "JukeboxIdentifier"), object: nil)
+    }
+    
+    @objc private func reloadDataNotificationHandler(notification: Notification) {
+        getItems()
     }
     
     //add gesturerecognizer to addbutton
