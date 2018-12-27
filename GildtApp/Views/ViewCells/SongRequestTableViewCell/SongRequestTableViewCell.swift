@@ -44,8 +44,8 @@ class SongRequestTableViewCell: GenericTableViewCell<SongRequest> {
     }
     
     func setDownvoted() {
-        upvotesAmountLabelView.textColor = UIColor.green
-        downvoteButton.setImage(UIImage(named: "arrow-down-green"), for: UIControl.State.normal)
+        upvotesAmountLabelView.textColor = UIColor.red
+        downvoteButton.setImage(UIImage(named: "arrow-down-red"), for: UIControl.State.normal)
         //downvoteButton.image = UIImage(named: "arrow-down-green")
     }
     
