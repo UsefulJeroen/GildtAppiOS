@@ -20,6 +20,12 @@ class SongRequestTableViewCell: GenericTableViewCell<SongRequest> {
             titleLabelView.text = item.title
             artistLabelView.text = item.artist
             upvotesAmountLabelView.text = String(item.votes)
+            if item.didVote == -1 {
+                setDownvoted()
+            }
+            if item.didVote == 1 {
+                setUpvoted()
+            }
         }
     }
     
@@ -28,10 +34,63 @@ class SongRequestTableViewCell: GenericTableViewCell<SongRequest> {
     @IBOutlet weak var artistLabelView: UILabel!
     @IBOutlet weak var upvotesAmountLabelView: UILabel!
     
-    @IBOutlet weak var upvoteButton: UIImageView!
+    @IBOutlet weak var downvoteButton: UIButton!
+    @IBOutlet weak var upvoteButton: UIButton!
+    
+    func setUpvoted() {
+        upvotesAmountLabelView.textColor = UIColor.green
+        upvoteButton.setImage(UIImage(named: "arrow-up-green"), for: UIControl.State.normal)
+    }
+    
+    func setDownvoted() {
+        upvotesAmountLabelView.textColor = UIColor.red
+        downvoteButton.setImage(UIImage(named: "arrow-down-red"), for: UIControl.State.normal)
+    }
+    
+    @objc func downvoteClicked(_ sender: UIButton?) {
+        JukeboxAPIService.downvoteSong(songId: item.id)
+            .responseData(completionHandler: { [weak self] (response) in
+                guard let jsonData = response.data else { return }
+                
+                let decoder = JSONDecoder()
+                let data = try? decoder.decode(SongRequest.self, from: jsonData)
+                
+                DispatchQueue.main.async {
+                    if let data = data {
+                        if data.id == self?.item.id {
+                            self?.successfullyVoted()
+                        }
+                    }
+                }
+            })
+    }
+    
+    @objc func upvoteButtonClicked(_ sender: UIButton?) {
+        JukeboxAPIService.upvoteSong(songId: item.id)
+            .responseData(completionHandler: { [weak self] (response) in
+                guard let jsonData = response.data else { return }
+                
+                let decoder = JSONDecoder()
+                let data = try? decoder.decode(SongRequest.self, from: jsonData)
+                
+                DispatchQueue.main.async {
+                    if let data = data {
+                        if data.id == self?.item.id {
+                            self?.successfullyVoted()
+                        }
+                    }
+                }
+            })
+    }
+    
+    func successfullyVoted() {
+        NotificationCenter.default.post(name: Notification.Name("JukeboxIdentifier"), object: nil)
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        downvoteButton.addTarget(self, action:#selector(self.downvoteClicked(_:)), for: .touchUpInside)
+        upvoteButton.addTarget(self, action:#selector(self.upvoteButtonClicked(_:)), for: .touchUpInside)
     }
     
     override func prepareForReuse() {
@@ -40,5 +99,8 @@ class SongRequestTableViewCell: GenericTableViewCell<SongRequest> {
         titleLabelView.text = ""
         artistLabelView.text = ""
         upvotesAmountLabelView.text = ""
+        upvotesAmountLabelView.textColor = UIColor.black
+        upvoteButton.setImage(UIImage(named: "arrow-up-grey"), for: UIControl.State.normal)
+        downvoteButton.setImage(UIImage(named: "arrow-down-grey"), for: UIControl.State.normal)
     }
 }

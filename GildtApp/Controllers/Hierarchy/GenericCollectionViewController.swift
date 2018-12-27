@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 import Alamofire
 
+// TODO: make everything where (https://stackoverflow.com/questions/24089145/multiple-type-constraints-in-swift)
 class GenericCollectionViewController<T: GenericCollectionViewCell<U>, U>: UICollectionViewController where U: Decodable {
     
     var items = [U]()

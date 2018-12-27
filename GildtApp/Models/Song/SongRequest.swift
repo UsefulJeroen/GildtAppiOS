@@ -15,6 +15,7 @@ struct SongRequest: Codable {
     let title: String
     var votes: Int
     let userId: Int
+    let didVote: Int?
     var row: Int?
     
     enum CodingKeys: String, CodingKey {
@@ -23,6 +24,7 @@ struct SongRequest: Codable {
         case title = "title"
         case votes = "votes"
         case userId = "user_id"
+        case didVote = "did_vote"
     }
     
     //for new songrequest on device
@@ -32,5 +34,6 @@ struct SongRequest: Codable {
         self.title = title
         self.votes = votes
         self.userId = userId
+        self.didVote = 1
     }
 }
