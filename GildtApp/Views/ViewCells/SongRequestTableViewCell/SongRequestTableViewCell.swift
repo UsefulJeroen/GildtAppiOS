@@ -47,8 +47,18 @@ class SongRequestTableViewCell: GenericTableViewCell<SongRequest> {
         downvoteButton.setImage(UIImage(named: "arrow-down-red"), for: UIControl.State.normal)
     }
     
+    @objc func downvoteClicked(_ sender: UIButton?) {
+        print("downvote clicked")
+    }
+    
+    @objc func upvoteButtonClicked(_ sender: UIButton?) {
+        print("upvote clicked")
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
+        downvoteButton.addTarget(self, action:#selector(self.downvoteClicked(_:)), for: .touchUpInside)
+        upvoteButton.addTarget(self, action:#selector(self.upvoteButtonClicked(_:)), for: .touchUpInside)
     }
     
     override func prepareForReuse() {

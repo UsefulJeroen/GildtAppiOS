@@ -54,23 +54,23 @@ class JukeboxViewController: GenericTableViewController<SongRequestTableViewCell
     }
     
     //if row is selected; upvote the song
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let row = indexPath.row
-        let song = items[row]
-        JukeboxAPIService.upvoteSong(songId: song.id)
-            .responseData(completionHandler: { [weak self] (response) in
-                guard let jsonData = response.data else { return }
-                
-                let decoder = JSONDecoder()
-                let data = try? decoder.decode(SongRequest.self, from: jsonData)
-                
-                DispatchQueue.main.async {
-                    if data != nil {
-                        self?.changeUpvote(indexPath: indexPath)
-                    }
-                }
-            })
-    }
+//    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        let row = indexPath.row
+//        let song = items[row]
+//        JukeboxAPIService.upvoteSong(songId: song.id)
+//            .responseData(completionHandler: { [weak self] (response) in
+//                guard let jsonData = response.data else { return }
+//
+//                let decoder = JSONDecoder()
+//                let data = try? decoder.decode(SongRequest.self, from: jsonData)
+//
+//                DispatchQueue.main.async {
+//                    if data != nil {
+//                        self?.changeUpvote(indexPath: indexPath)
+//                    }
+//                }
+//            })
+//    }
     
     func changeUpvote(indexPath: IndexPath) {
         getItems()
