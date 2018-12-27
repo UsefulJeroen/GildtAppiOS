@@ -40,13 +40,11 @@ class SongRequestTableViewCell: GenericTableViewCell<SongRequest> {
     func setUpvoted() {
         upvotesAmountLabelView.textColor = UIColor.green
         upvoteButton.setImage(UIImage(named: "arrow-up-green"), for: UIControl.State.normal)
-        //upvoteButton.image = UIImage(named: "arrow-up-green")
     }
     
     func setDownvoted() {
         upvotesAmountLabelView.textColor = UIColor.red
         downvoteButton.setImage(UIImage(named: "arrow-down-red"), for: UIControl.State.normal)
-        //downvoteButton.image = UIImage(named: "arrow-down-green")
     }
     
     override func awakeFromNib() {
