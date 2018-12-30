@@ -94,8 +94,15 @@ class StempelkaartViewController : UIViewController, CLLocationManagerDelegate {
             }
         } else {
             let alertController = UIAlertController(title: "Locatie", message: "Stempels kunnen niet worden toegekend wanneer locatiegegevens uitstaan voor 't Gildt.\n\nDe app dient te controleren of je daadwerkelijk aanwezig bent.", preferredStyle: .alert)
-            let defaultAction = UIAlertAction(title: "Annuleer", style: .default, handler: nil)
-            alertController.addAction(defaultAction)
+            
+            alertController.addAction(UIAlertAction(title: "Instellingen", style: .default, handler: { (_) in
+                DispatchQueue.main.async {
+                    if let settingsURL = URL(string: UIApplication.openSettingsURLString) {
+                        UIApplication.shared.open(settingsURL, options: [:], completionHandler: nil)
+                    }
+                }
+            }))
+            alertController.addAction(UIAlertAction(title: "Annuleer", style: .default, handler: nil))
             
             present(alertController, animated: true, completion: nil)
         }
