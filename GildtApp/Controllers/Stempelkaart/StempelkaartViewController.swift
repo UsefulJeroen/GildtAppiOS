@@ -15,7 +15,9 @@ import QRCodeReader
 class StempelkaartViewController : UIViewController, CLLocationManagerDelegate {
     var stamps: [Stamp] = []
     var manager = CLLocationManager()
-    
+
+    let statusAlertService = StatusAlertService()
+
     @IBOutlet weak var Container: UIView!
     @IBOutlet weak var ClaimButton: UIButton!
     
@@ -139,11 +141,16 @@ class StempelkaartViewController : UIViewController, CLLocationManagerDelegate {
                 DispatchQueue.main.async {
                     if (response.error == nil) {
                         self?.getStamps()
+                        self?.statusAlertService.showStatusAlert(
+                            withImage: #imageLiteral(resourceName: "TabStempelkaart"),
+                            title: "Stempel geclaimed",
+                            message: "Veel plezier op het feest!")
                     } else {
-                        let alertController = UIAlertController(title: "Oeps", message: "Er is iets mis gegaan tijdens het claimen van de stempel...", preferredStyle: .alert)
-                        let defaultAction = UIAlertAction(title: "Annuleer", style: .default, handler: nil)
-                        alertController.addAction(defaultAction)
-                        self!.present(alertController, animated: true, completion: nil)
+                        self?.statusAlertService.showStatusAlert(
+                            withImage: #imageLiteral(resourceName: "IconError"),
+                            title: "Whoops!",
+                            message: "Er ging iets mis tijdens het indoenen van je",
+                            error: true)
                     }
                 }
             })
@@ -172,14 +179,6 @@ extension StempelkaartViewController: QRCodeReaderViewControllerDelegate {
         
         dismiss(animated: true) { [weak self] in
             self?.claimStamp(qrCode: result.value)
-            let alert = UIAlertController(
-                title: "QRCodeReader",
-                message: String (format:"%@ (of type %@)", result.value, result.metadataType),
-                preferredStyle: .alert
-            )
-            alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
-            
-            self?.present(alert, animated: true, completion: nil)
         }
     }
     
