@@ -9,7 +9,6 @@
 import Foundation
 import UIKit
 import CenteredCollectionView
-import StatusAlert
 
 class DealsViewController: UIViewController {
     
@@ -18,6 +17,7 @@ class DealsViewController: UIViewController {
 
     var deals: [Deal] = []
 
+    let statusAlertService = StatusAlertService()
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var LetGoLabel: UILabel!
     
@@ -81,23 +81,6 @@ class DealsViewController: UIViewController {
         collectionView.reloadData()
     }
 
-    private func showStatusAlert(
-        withImage image: UIImage?,
-        title: String?,
-        message: String?,
-        error: Bool = false) {
-
-        let statusAlert = StatusAlert()
-        statusAlert.image = image
-        statusAlert.title = title
-        statusAlert.message = message
-        statusAlert.canBePickedOrDismissed = false
-        if error {
-            statusAlert.appearance.tintColor = UIColor.errorRed
-        }
-        statusAlert.show(withVerticalPosition: .center)
-    }
-
     @objc private func SlideUpIsActiveIdentifierNotificationHandler(notification: Notification) {
         collectionView.isScrollEnabled = false
     }
@@ -144,8 +127,7 @@ class DealsViewController: UIViewController {
             }
             collectionView.reloadData()
         }
-
-        showStatusAlert(
+        statusAlertService.showStatusAlert(
             withImage: #imageLiteral(resourceName: "IconSucces"),
             title: "Deal ingediend",
             message: "Geniet van je drankje!")
@@ -153,7 +135,7 @@ class DealsViewController: UIViewController {
     }
 
     func dealUnsuccessfullyRedeemed(message: String) {
-        showStatusAlert(
+        statusAlertService.showStatusAlert(
             withImage: #imageLiteral(resourceName: "IconError"),
             title: "Whoops!",
             message: message,
