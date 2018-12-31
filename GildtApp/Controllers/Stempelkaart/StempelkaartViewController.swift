@@ -139,7 +139,7 @@ class StempelkaartViewController : UIViewController, CLLocationManagerDelegate {
         StampAPIService.claimStamp(qrCode: qrCode)
             .responseData(completionHandler: { [weak self] (response) in
                 DispatchQueue.main.async {
-                    if (response.error == nil) {
+                    if (response.response?.statusCode == 200) {
                         self?.getStamps()
                         self?.statusAlertService.showStatusAlert(
                             withImage: #imageLiteral(resourceName: "TabStempelkaart"),
@@ -149,7 +149,7 @@ class StempelkaartViewController : UIViewController, CLLocationManagerDelegate {
                         self?.statusAlertService.showStatusAlert(
                             withImage: #imageLiteral(resourceName: "IconError"),
                             title: "Whoops!",
-                            message: "Er ging iets mis tijdens het indoenen van je",
+                            message: "Er ging iets mis tijdens het claimen van je stempel",
                             error: true)
                     }
                 }
