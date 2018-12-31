@@ -29,6 +29,7 @@ class StampCollectionViewCell : GenericCollectionViewCell<Stamp> {
         if let stamp = item {
             StampLabel.isHidden = stamp.verifiedAttendance
             StampImage.isHidden = !stamp.verifiedAttendance
+            StampImage.rotate(angle: Int.random(in: -50 ... 50))
             
             StampLabel.text = stamp.eventDateHumanized
         }
