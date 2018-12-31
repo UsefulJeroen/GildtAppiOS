@@ -2,6 +2,7 @@ PODS:
   - Alamofire (4.8.0)
   - CenteredCollectionView (2.1.0)
   - Kingfisher (5.0.0)
+  - QRCodeReader.swift (9.0.1)
   - StatusAlert (1.0.0)
   - SwiftKeychainWrapper (3.0.1)
 
@@ -9,6 +10,7 @@ DEPENDENCIES:
   - Alamofire
   - CenteredCollectionView
   - Kingfisher
+  - QRCodeReader.swift
   - StatusAlert
   - SwiftKeychainWrapper
 
@@ -17,6 +19,7 @@ SPEC REPOS:
     - Alamofire
     - CenteredCollectionView
     - Kingfisher
+    - QRCodeReader.swift
     - StatusAlert
     - SwiftKeychainWrapper
 
@@ -24,9 +27,10 @@ SPEC CHECKSUMS:
   Alamofire: 3ec537f71edc9804815215393ae2b1a8ea33a844
   CenteredCollectionView: a32f1d57505be294ff6080251384a38ffd1e61f3
   Kingfisher: 2b0dd651e4fe5a07305b8242fde56f8e2d410f58
+  QRCodeReader.swift: 96292a5612fbc2fd9a0b26f93fa5164c8d02f59d
   StatusAlert: 329dc305de42c63811782729c3a38ca49662afc9
   SwiftKeychainWrapper: 38952a3636320ae61bad3513cadd870929de7a4a
 
-PODFILE CHECKSUM: 4c7450248713d20666979cd7a3d3c21437c70cf4
+PODFILE CHECKSUM: be34e0f99806d97bee5780a81a150136559309cc
 
 COCOAPODS: 1.5.3

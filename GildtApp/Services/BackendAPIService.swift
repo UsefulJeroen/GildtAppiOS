@@ -121,6 +121,6 @@ class StampAPIService: BackendAPIService {
     
     static func claimStamp(qrCode: String) -> DataRequest {
         let endPointURL = "stamp_card/\(qrCode)"
-        return createRequest(endPointURL: endPointURL, httpMethod: .get)
+        return createRequest(endPointURL: endPointURL, httpMethod: .post)
     }
 }
