@@ -44,6 +44,7 @@ class GenericTableViewController<T: GenericTableViewCell<U>, U>: UITableViewCont
     
     func getItems() {
         if let apiCall = getMainAPICall() {
+            //weak self to avoid memory leak
             apiCall.responseData(completionHandler: { [weak self] (response) in
                 guard let jsonData = response.data else { return }
                 
