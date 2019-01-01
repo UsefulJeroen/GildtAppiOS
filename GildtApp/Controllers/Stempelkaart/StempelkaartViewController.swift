@@ -92,19 +92,12 @@ class StempelkaartViewController : UIViewController, CLLocationManagerDelegate {
         if status == .authorizedWhenInUse && CLLocationManager.locationServicesEnabled() {
             manager.requestLocation()
             let location = manager.location
-//            let gildtLocation = CLCircularRegion.init(
-//                center: CLLocationCoordinate2D.init(
-//                    latitude: 52.3775974,
-//                    longitude: 4.6333507),
-//                radius: CLLocationDistance.init(exactly: 50)!,
-//                identifier: "Gildt")
             let gildtLocation = CLCircularRegion.init(
                 center: CLLocationCoordinate2D.init(
-                    latitude: 52.4912172,
-                    longitude: 4.649962),
-                radius: CLLocationDistance.init(exactly: 500)!,
+                    latitude: 52.3775974,
+                    longitude: 4.6333507),
+                radius: CLLocationDistance.init(exactly: 50)!,
                 identifier: "Gildt")
-            
             if gildtLocation.contains((location?.coordinate)!){
                 print("At 't Gildt")
                 if checkScanPermissions() {
