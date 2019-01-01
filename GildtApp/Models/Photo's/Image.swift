@@ -19,4 +19,8 @@ struct Image: Codable {
     func getURL() -> URL {
         return URL(string: "https://gildt.inholland-informatica.nl" + url)!
     }
+    
+    func getURLString() -> String {
+        return "https://gildt.inholland-informatica.nl" + url
+    }
 }
