@@ -1,14 +1,16 @@
 PODS:
   - Alamofire (4.8.0)
   - CenteredCollectionView (2.1.0)
-  - Kingfisher (5.0.0)
-  - StatusAlert (1.0.0)
-  - SwiftKeychainWrapper (3.0.1)
+  - Kingfisher (5.0.1)
+  - SKPhotoBrowser (6.0.0)
+  - StatusAlert (1.1.0)
+  - SwiftKeychainWrapper (3.2.0)
 
 DEPENDENCIES:
   - Alamofire
   - CenteredCollectionView
   - Kingfisher
+  - SKPhotoBrowser
   - StatusAlert
   - SwiftKeychainWrapper
 
@@ -17,16 +19,18 @@ SPEC REPOS:
     - Alamofire
     - CenteredCollectionView
     - Kingfisher
+    - SKPhotoBrowser
     - StatusAlert
     - SwiftKeychainWrapper
 
 SPEC CHECKSUMS:
   Alamofire: 3ec537f71edc9804815215393ae2b1a8ea33a844
   CenteredCollectionView: a32f1d57505be294ff6080251384a38ffd1e61f3
-  Kingfisher: 2b0dd651e4fe5a07305b8242fde56f8e2d410f58
-  StatusAlert: 329dc305de42c63811782729c3a38ca49662afc9
-  SwiftKeychainWrapper: 38952a3636320ae61bad3513cadd870929de7a4a
+  Kingfisher: 4f771421b9208185217550528a06fd48756cb7c2
+  SKPhotoBrowser: 76eb862685761707b5745fde7762757966565e07
+  StatusAlert: 4d6dadebf5f7abd5648fa774ef3062f2f95cc4aa
+  SwiftKeychainWrapper: 82c4c02cdc36f9a24f7edfcaab3e336401caa1a1
 
-PODFILE CHECKSUM: 4c7450248713d20666979cd7a3d3c21437c70cf4
+PODFILE CHECKSUM: f429b4ae732d7ca1bb05eab8abf3144b704dbf09
 
 COCOAPODS: 1.5.3
