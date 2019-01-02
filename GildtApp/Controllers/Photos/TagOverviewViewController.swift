@@ -46,17 +46,4 @@ class TagOverviewViewController: GenericCollectionViewController<TagCollectionVi
 
         return CGSize(width: widthPerItem, height: widthPerItem)
     }
-
-//    func collectionView(_ collectionView: UICollectionView,
-//                        layout collectionViewLayout: UICollectionViewLayout,
-//                        minimumLineSpacingForSectionAt section: Int) -> CGFloat
-//    {
-//        return sectionInsets.left
-//    }
-
-//    func collectionView(_ collectionView: UICollectionView,
-//                        layout collectionViewLayout: UICollectionViewLayout,
-//                        insetForSectionAt section: Int) -> UIEdgeInsets {
-//        return sectionInsets
-//    }
 }
