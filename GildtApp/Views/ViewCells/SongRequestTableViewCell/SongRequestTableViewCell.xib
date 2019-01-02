@@ -127,6 +127,7 @@
             </tableViewCellContentView>
             <connections>
                 <outlet property="artistLabelView" destination="Pwm-hk-saF" id="2sy-qL-UFU"/>
+                <outlet property="container" destination="yys-c5-U6t" id="9nW-gv-rxG"/>
                 <outlet property="downvoteButton" destination="uKO-zz-ZZj" id="cGc-LF-COt"/>
                 <outlet property="idLabelView" destination="jRQ-PC-Lhw" id="vNF-9K-slb"/>
                 <outlet property="titleLabelView" destination="oON-nV-vis" id="hCY-Dz-iIg"/>
