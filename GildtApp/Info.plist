@@ -2,8 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Je locatie wordt enkel gebruikt om te controleren of je daadwerkelijk in ’t Gildt bent.</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleExecutable</key>
@@ -22,6 +20,53 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSCameraUsageDescription</key>
+	<string>De camera wordt gebruikt om een QR code te scannen.</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Je locatie wordt enkel gebruikt om te controleren of je daadwerkelijk in ’t Gildt bent.</string>
+	<key>UIApplicationShortcutItems</key>
+	<array>
+		<dict>
+			<key>UIApplicationShortcutItemIconFile</key>
+			<string>TabAgenda</string>
+			<key>UIApplicationShortcutItemSubtitle</key>
+			<string>Opkomende events</string>
+			<key>UIApplicationShortcutItemTitle</key>
+			<string>Agenda</string>
+			<key>UIApplicationShortcutItemType</key>
+			<string>AgendaAction</string>
+		</dict>
+		<dict>
+			<key>UIApplicationShortcutItemIconFile</key>
+			<string>TabDeals</string>
+			<key>UIApplicationShortcutItemSubtitle</key>
+			<string>Bespaar muntjes</string>
+			<key>UIApplicationShortcutItemTitle</key>
+			<string>Deals</string>
+			<key>UIApplicationShortcutItemType</key>
+			<string>DealsAction</string>
+		</dict>
+		<dict>
+			<key>UIApplicationShortcutItemIconFile</key>
+			<string>TabStempelkaart</string>
+			<key>UIApplicationShortcutItemSubtitle</key>
+			<string>Open de stempelkaart</string>
+			<key>UIApplicationShortcutItemTitle</key>
+			<string>Stempelkaart</string>
+			<key>UIApplicationShortcutItemType</key>
+			<string>StempelkaartAction</string>
+		</dict>
+		<dict>
+			<key>UIApplicationShortcutItemIconFile</key>
+			<string>TabJukebox</string>
+			<key>UIApplicationShortcutItemSubtitle</key>
+			<string>Nummertje aanvragen</string>
+			<key>UIApplicationShortcutItemTitle</key>
+			<string>Jukebox</string>
+			<key>UIApplicationShortcutItemType</key>
+			<string>JukeboxAction</string>
+		</dict>
+	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
@@ -50,49 +95,6 @@
 		<string>UIInterfaceOrientationPortraitUpsideDown</string>
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
-	</array>
-	<key>UIApplicationShortcutItems</key>
-	<array>
-		<dict>
-			<key>UIApplicationShortcutItemType</key>
-			<string>AgendaAction</string>
-			<key>UIApplicationShortcutItemIconFile</key>
-			<string>TabAgenda</string>
-			<key>UIApplicationShortcutItemTitle</key>
-			<string>Agenda</string>
-			<key>UIApplicationShortcutItemSubtitle</key>
-			<string>Opkomende events</string>
-		</dict>
-		<dict>
-			<key>UIApplicationShortcutItemType</key>
-			<string>DealsAction</string>
-			<key>UIApplicationShortcutItemIconFile</key>
-			<string>TabDeals</string>
-			<key>UIApplicationShortcutItemTitle</key>
-			<string>Deals</string>
-			<key>UIApplicationShortcutItemSubtitle</key>
-			<string>Bespaar muntjes</string>
-		</dict>
-		<dict>
-			<key>UIApplicationShortcutItemType</key>
-			<string>StempelkaartAction</string>
-			<key>UIApplicationShortcutItemIconFile</key>
-			<string>TabStempelkaart</string>
-			<key>UIApplicationShortcutItemTitle</key>
-			<string>Stempelkaart</string>
-			<key>UIApplicationShortcutItemSubtitle</key>
-			<string>Open de stempelkaart</string>
-		</dict>
-		<dict>
-			<key>UIApplicationShortcutItemType</key>
-			<string>JukeboxAction</string>
-			<key>UIApplicationShortcutItemIconFile</key>
-			<string>TabJukebox</string>
-			<key>UIApplicationShortcutItemTitle</key>
-			<string>Jukebox</string>
-			<key>UIApplicationShortcutItemSubtitle</key>
-			<string>Nummertje aanvragen</string>
-		</dict>
 	</array>
 </dict>
 </plist>

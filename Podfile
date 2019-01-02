@@ -12,5 +12,6 @@ target 'GildtApp' do
   pod 'CenteredCollectionView'
   pod 'StatusAlert'
   pod 'SKPhotoBrowser'
-  
+  pod 'QRCodeReader.swift'
+
 end

@@ -52,6 +52,8 @@
 		DF70F68121A185FD001D3006 /* DealsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF70F68021A185FD001D3006 /* DealsViewController.swift */; };
 		DF70F68321A18635001D3006 /* DealsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF70F68221A18635001D3006 /* DealsCollectionViewCell.swift */; };
 		DF70F69221AF394A001D3006 /* Deal.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF70F69121AF394A001D3006 /* Deal.swift */; };
+		DF772FBE21DA5F4600EC3EB1 /* StatusAlertService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF772FBD21DA5F4600EC3EB1 /* StatusAlertService.swift */; };
+		DF772FC221DA6E5800EC3EB1 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF772FC121DA6E5800EC3EB1 /* UIView.swift */; };
 		DF9D57B121B085BE003A97FB /* AgendaTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF9D57B021B085BE003A97FB /* AgendaTableViewCell.xib */; };
 		DF9D57B321B08615003A97FB /* AgendaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9D57B221B08615003A97FB /* AgendaTableViewCell.swift */; };
 		DF9D57B721B09A8C003A97FB /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9D57B621B09A8C003A97FB /* Event.swift */; };
@@ -112,6 +114,9 @@
 		DF70F68021A185FD001D3006 /* DealsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealsViewController.swift; sourceTree = "<group>"; };
 		DF70F68221A18635001D3006 /* DealsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealsCollectionViewCell.swift; sourceTree = "<group>"; };
 		DF70F69121AF394A001D3006 /* Deal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Deal.swift; sourceTree = "<group>"; };
+		DF772FBC21D948D900EC3EB1 /* GildtApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GildtApp.entitlements; sourceTree = "<group>"; };
+		DF772FBD21DA5F4600EC3EB1 /* StatusAlertService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusAlertService.swift; sourceTree = "<group>"; };
+		DF772FC121DA6E5800EC3EB1 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		DF9D57B021B085BE003A97FB /* AgendaTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AgendaTableViewCell.xib; sourceTree = "<group>"; };
 		DF9D57B221B08615003A97FB /* AgendaTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgendaTableViewCell.swift; sourceTree = "<group>"; };
 		DF9D57B621B09A8C003A97FB /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
@@ -187,6 +192,7 @@
 			children = (
 				B0177A3D219B9C4B00E379D5 /* BackendAPIService.swift */,
 				B0177A3F219B9C8100E379D5 /* LocalStorageService.swift */,
+				DF772FBD21DA5F4600EC3EB1 /* StatusAlertService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -234,6 +240,7 @@
 		B078A90C219B0EE000545EAC /* GildtApp */ = {
 			isa = PBXGroup;
 			children = (
+				DF772FBC21D948D900EC3EB1 /* GildtApp.entitlements */,
 				B078A90D219B0EE000545EAC /* AppDelegate.swift */,
 				B00563B8219DC34E00B9F635 /* Assets.xcassets */,
 				B0177A34219B89B700E379D5 /* Controllers */,
@@ -376,6 +383,7 @@
 			children = (
 				DF9D57B821B0A52D003A97FB /* String.swift */,
 				DF70F67A21A183A7001D3006 /* UIColor.swift */,
+				DF772FC121DA6E5800EC3EB1 /* UIView.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -447,6 +455,11 @@
 				TargetAttributes = {
 					B078A909219B0EE000545EAC = {
 						CreatedOnToolsVersion = 10.1;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 0;
+							};
+						};
 					};
 				};
 			};
@@ -527,6 +540,7 @@
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/CenteredCollectionView/CenteredCollectionView.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/QRCodeReader.swift/QRCodeReader.framework",
 				"${BUILT_PRODUCTS_DIR}/SKPhotoBrowser/SKPhotoBrowser.framework",
 				"${BUILT_PRODUCTS_DIR}/StatusAlert/StatusAlert.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftKeychainWrapper/SwiftKeychainWrapper.framework",
@@ -538,6 +552,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CenteredCollectionView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/QRCodeReader.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SKPhotoBrowser.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/StatusAlert.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftKeychainWrapper.framework",
@@ -565,6 +580,7 @@
 				DFD460E521C05AD900F90B52 /* Stamp.swift in Sources */,
 				DF9D57BE21B1D732003A97FB /* EventViewController.swift in Sources */,
 				DF70F68121A185FD001D3006 /* DealsViewController.swift in Sources */,
+				DF772FC221DA6E5800EC3EB1 /* UIView.swift in Sources */,
 				B0B1126921CE575000E4F721 /* GenericTableViewCell.swift in Sources */,
 				DF70F67B21A183A7001D3006 /* UIColor.swift in Sources */,
 				B0CD4DC621BE99620060A28C /* Photo.swift in Sources */,
@@ -577,6 +593,7 @@
 				B099D20421B02ED000DA4473 /* MainTabBarController.swift in Sources */,
 				DF9D57B921B0A52D003A97FB /* String.swift in Sources */,
 				B0177A44219CC6A100E379D5 /* SongRequest.swift in Sources */,
+				DF772FBE21DA5F4600EC3EB1 /* StatusAlertService.swift in Sources */,
 				B0B1125F21C83EA300E4F721 /* ErrorMessage.swift in Sources */,
 				B0E84EFD21C2BEAC00EF2C49 /* PreviewImageTableViewCell.swift in Sources */,
 				B0CD4DCA21BE9F900060A28C /* TagOverviewViewController.swift in Sources */,
@@ -738,16 +755,18 @@
 			baseConfigurationReference = 010AC7F5A521E5C8F7C74994 /* Pods-GildtApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6FC9595Z84;
+				DEVELOPMENT_TEAM = XT9TUGW438;
 				INFOPLIST_FILE = GildtApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = nl.Gildt.GildtApp;
+				PRODUCT_BUNDLE_IDENTIFIER = nl.Gildt.iOSGildt;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -758,16 +777,18 @@
 			baseConfigurationReference = AC61AC83AADC724FF2441FBC /* Pods-GildtApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6FC9595Z84;
+				DEVELOPMENT_TEAM = XT9TUGW438;
 				INFOPLIST_FILE = GildtApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = nl.Gildt.GildtApp;
+				PRODUCT_BUNDLE_IDENTIFIER = nl.Gildt.iOSGildt;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
