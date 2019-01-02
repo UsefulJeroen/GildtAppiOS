@@ -39,12 +39,8 @@ class TagPhotosViewController: GenericTableViewController<PreviewImageTableViewC
             photo.caption = item.description
             images.append(photo)
         }
-        
-        let cell = tableView.cellForRow(at: indexPath)
-        let originImage = cell?.imageView?.image
-        let browser = SKPhotoBrowser(originImage: originImage ?? UIImage(), photos: images, animatedFromView: cell!)
-        
-        //let browser = SKPhotoBrowser(photos: images)
+        //present skPhotoBrowser
+        let browser = SKPhotoBrowser(photos: images)
         browser.initializePageIndex(indexPath.row)
         present(browser, animated: true, completion: {})
     }
