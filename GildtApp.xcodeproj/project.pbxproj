@@ -39,7 +39,6 @@
 		B0CD4DCA21BE9F900060A28C /* TagOverviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0CD4DC921BE9F900060A28C /* TagOverviewViewController.swift */; };
 		B0CD4DCD21BEA3120060A28C /* TagCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B0CD4DCC21BEA3120060A28C /* TagCollectionViewCell.xib */; };
 		B0CD4DCF21BEA3200060A28C /* TagCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0CD4DCE21BEA3200060A28C /* TagCollectionViewCell.swift */; };
-		B0E84EF621C0498A00EF2C49 /* ImagePreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E84EF521C0498A00EF2C49 /* ImagePreviewViewController.swift */; };
 		B0E84EF821C2709B00EF2C49 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E84EF721C2709B00EF2C49 /* Image.swift */; };
 		B0E84EFA21C2AA1700EF2C49 /* TagPhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E84EF921C2AA1700EF2C49 /* TagPhotosViewController.swift */; };
 		B0E84EFD21C2BEAC00EF2C49 /* PreviewImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E84EFC21C2BEAC00EF2C49 /* PreviewImageTableViewCell.swift */; };
@@ -100,7 +99,6 @@
 		B0CD4DC921BE9F900060A28C /* TagOverviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagOverviewViewController.swift; sourceTree = "<group>"; };
 		B0CD4DCC21BEA3120060A28C /* TagCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TagCollectionViewCell.xib; sourceTree = "<group>"; };
 		B0CD4DCE21BEA3200060A28C /* TagCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagCollectionViewCell.swift; sourceTree = "<group>"; };
-		B0E84EF521C0498A00EF2C49 /* ImagePreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePreviewViewController.swift; sourceTree = "<group>"; };
 		B0E84EF721C2709B00EF2C49 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		B0E84EF921C2AA1700EF2C49 /* TagPhotosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagPhotosViewController.swift; sourceTree = "<group>"; };
 		B0E84EFC21C2BEAC00EF2C49 /* PreviewImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewImageTableViewCell.swift; sourceTree = "<group>"; };
@@ -340,7 +338,6 @@
 		B0CD4DC821BE9F120060A28C /* Photos */ = {
 			isa = PBXGroup;
 			children = (
-				B0E84EF521C0498A00EF2C49 /* ImagePreviewViewController.swift */,
 				B0CD4DC921BE9F900060A28C /* TagOverviewViewController.swift */,
 				B0E84EF921C2AA1700EF2C49 /* TagPhotosViewController.swift */,
 			);
@@ -573,7 +570,6 @@
 				B0CD4DC621BE99620060A28C /* Photo.swift in Sources */,
 				B099D20221B029AA00DA4473 /* NavigationViewController.swift in Sources */,
 				B0CD4DCF21BEA3200060A28C /* TagCollectionViewCell.swift in Sources */,
-				B0E84EF621C0498A00EF2C49 /* ImagePreviewViewController.swift in Sources */,
 				B078A90E219B0EE000545EAC /* AppDelegate.swift in Sources */,
 				B0177A42219C64E500E379D5 /* JukeboxViewController.swift in Sources */,
 				DFD460DE21C0493100F90B52 /* StempelkaartViewController.swift in Sources */,
