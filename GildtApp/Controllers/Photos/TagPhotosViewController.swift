@@ -31,6 +31,7 @@ class TagPhotosViewController: GenericTableViewController<PreviewImageTableViewC
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        //convert Photo's to SKPhoto's to use in SKPhotoBrowser
         var images = [SKPhoto]()
         for item in items {
             let photo = SKPhoto.photoWithImageURL(item.image.getURLString())
@@ -39,7 +40,11 @@ class TagPhotosViewController: GenericTableViewController<PreviewImageTableViewC
             images.append(photo)
         }
         
-        let browser = SKPhotoBrowser(photos: images)
+        let cell = tableView.cellForRow(at: indexPath)
+        let originImage = cell?.imageView?.image
+        let browser = SKPhotoBrowser(originImage: originImage ?? UIImage(), photos: images, animatedFromView: cell!)
+        
+        //let browser = SKPhotoBrowser(photos: images)
         browser.initializePageIndex(indexPath.row)
         present(browser, animated: true, completion: {})
     }
