@@ -117,6 +117,8 @@ class JukeboxViewController: GenericTableViewController<SongRequestTableViewCell
         tableView.reloadData()
         titleTextField.text = ""
         artistTextField.text = ""
+        titleTextField.endEditing(true)
+        artistTextField.endEditing(true)
         //make beautifull animation highlight thingy
     }
 }
