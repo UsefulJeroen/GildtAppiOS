@@ -102,18 +102,23 @@ class JukeboxViewController: GenericTableViewController<SongRequestTableViewCell
                     
                     DispatchQueue.main.async {
                         if let songRequest = songRequest {
-                            self?.successfullyAddedSong(song: songRequest)
+                            self?.successfullyAddedSong(songRequest: songRequest)
                         }
                     }
                 })
         }
     }
     
-    func successfullyAddedSong(song: SongRequest) {
+    func successfullyAddedSong(songRequest: SongRequest) {
+        var song = songRequest
+        song.new = true
+        items.insert(song, at: 0)
         //songRequests.append(song)
         tableView.reloadData()
         titleTextField.text = ""
         artistTextField.text = ""
+        titleTextField.endEditing(true)
+        artistTextField.endEditing(true)
         //make beautifull animation highlight thingy
     }
 }

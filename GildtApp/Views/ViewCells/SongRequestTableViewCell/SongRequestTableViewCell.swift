@@ -26,9 +26,15 @@ class SongRequestTableViewCell: GenericTableViewCell<SongRequest> {
             if item.didVote == 1 {
                 setUpvoted()
             }
+            if item.new == true {
+                setNew()
+            }
         }
     }
     
+    @IBOutlet weak var container: UIView!
+    
+    @IBOutlet weak var idImageView: UIImageView!
     @IBOutlet weak var idLabelView: UILabel!
     @IBOutlet weak var titleLabelView: UILabel!
     @IBOutlet weak var artistLabelView: UILabel!
@@ -45,6 +51,22 @@ class SongRequestTableViewCell: GenericTableViewCell<SongRequest> {
     func setDownvoted() {
         upvotesAmountLabelView.textColor = UIColor.red
         downvoteButton.setImage(UIImage(named: "arrow-down-red"), for: UIControl.State.normal)
+    }
+    
+    func setNew() {
+        container.backgroundColor = .white
+        titleLabelView.backgroundColor = .white
+        artistLabelView.backgroundColor = .white
+        idImageView.image = UIImage(named: "SongRequestCircleImageGreen")
+        idLabelView.text = "NEW"
+        idLabelView.textColor = .white
+        
+        container.layer.cornerRadius = 10
+        container.layer.shadowColor = UIColor.black.cgColor
+        container.layer.shadowOffset = CGSize(width: 0, height: 3)
+        container.layer.shadowRadius = 14
+        container.layer.shadowOpacity = 0.16
+        container.layer.masksToBounds = false
     }
     
     @objc func downvoteClicked(_ sender: UIButton?) {
@@ -102,5 +124,14 @@ class SongRequestTableViewCell: GenericTableViewCell<SongRequest> {
         upvotesAmountLabelView.textColor = UIColor.black
         upvoteButton.setImage(UIImage(named: "arrow-up-grey"), for: UIControl.State.normal)
         downvoteButton.setImage(UIImage(named: "arrow-down-grey"), for: UIControl.State.normal)
+        container.backgroundColor = .appBackground
+        container.layer.cornerRadius = 0
+        container.layer.shadowRadius = 0
+        container.layer.shadowOpacity = 0
+        titleLabelView.backgroundColor = .appBackground
+        artistLabelView.backgroundColor = .appBackground
+        idImageView.image = UIImage(named: "SongRequestCircleImageWhite")
+        idLabelView.textColor = .black
+        //container.layer.cornerRadius = 0
     }
 }

@@ -17,6 +17,7 @@ struct SongRequest: Codable {
     let userId: Int
     let didVote: Int?
     var row: Int?
+    var new: Bool?
     
     enum CodingKeys: String, CodingKey {
         case id = "id"
