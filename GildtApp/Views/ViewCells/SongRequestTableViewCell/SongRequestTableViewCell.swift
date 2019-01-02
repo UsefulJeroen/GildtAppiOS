@@ -34,6 +34,7 @@ class SongRequestTableViewCell: GenericTableViewCell<SongRequest> {
     
     @IBOutlet weak var container: UIView!
     
+    @IBOutlet weak var idImageView: UIImageView!
     @IBOutlet weak var idLabelView: UILabel!
     @IBOutlet weak var titleLabelView: UILabel!
     @IBOutlet weak var artistLabelView: UILabel!
@@ -56,6 +57,9 @@ class SongRequestTableViewCell: GenericTableViewCell<SongRequest> {
         container.backgroundColor = .white
         titleLabelView.backgroundColor = .white
         artistLabelView.backgroundColor = .white
+        idImageView.image = UIImage(named: "SongRequestCircleImageGreen")
+        idLabelView.text = "NEW"
+        idLabelView.textColor = .white
         
         container.layer.cornerRadius = 10
         container.layer.shadowColor = UIColor.black.cgColor
@@ -123,6 +127,8 @@ class SongRequestTableViewCell: GenericTableViewCell<SongRequest> {
         container.backgroundColor = .appBackground
         titleLabelView.backgroundColor = .appBackground
         artistLabelView.backgroundColor = .appBackground
+        idImageView.image = UIImage(named: "SongRequestCircleImageWhite")
+        idLabelView.textColor = .black
         //container.layer.cornerRadius = 0
     }
 }
