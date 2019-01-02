@@ -21,7 +21,7 @@ class TagOverviewViewController: GenericCollectionViewController<TagCollectionVi
     }
     
     let itemsPerRow: CGFloat = 2
-    let sectionInsets = UIEdgeInsets(top: 20.0, left: 20.0, bottom: 20.0, right: 20.0)
+    let sectionInsets = UIEdgeInsets(top: 5.0, left: 5.0, bottom: 5.0, right: 5.0)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,18 +45,5 @@ class TagOverviewViewController: GenericCollectionViewController<TagCollectionVi
         let widthPerItem = availableWidth / itemsPerRow
 
         return CGSize(width: widthPerItem, height: widthPerItem)
-    }
-
-    func collectionView(_ collectionView: UICollectionView,
-                        layout collectionViewLayout: UICollectionViewLayout,
-                        minimumLineSpacingForSectionAt section: Int) -> CGFloat
-    {
-        return sectionInsets.left
-    }
-
-    func collectionView(_ collectionView: UICollectionView,
-                        layout collectionViewLayout: UICollectionViewLayout,
-                        insetForSectionAt section: Int) -> UIEdgeInsets {
-        return sectionInsets
     }
 }

@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 import Kingfisher
 import Alamofire
+import SKPhotoBrowser
 
 class TagPhotosViewController: GenericTableViewController<PreviewImageTableViewCell, Photo> {
     
@@ -27,5 +28,20 @@ class TagPhotosViewController: GenericTableViewController<PreviewImageTableViewC
         super.viewDidLoad()
         
         navigationItem.title = tag?.title ?? "Tag"
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        //convert Photo's to SKPhoto's to use in SKPhotoBrowser
+        var images = [SKPhoto]()
+        for item in items {
+            let photo = SKPhoto.photoWithImageURL(item.image.getURLString())
+            photo.shouldCachePhotoURLImage = true
+            photo.caption = item.description
+            images.append(photo)
+        }
+        //present skPhotoBrowser
+        let browser = SKPhotoBrowser(photos: images)
+        browser.initializePageIndex(indexPath.row)
+        present(browser, animated: true, completion: {})
     }
 }
