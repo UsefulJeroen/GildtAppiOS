@@ -125,6 +125,9 @@ class SongRequestTableViewCell: GenericTableViewCell<SongRequest> {
         upvoteButton.setImage(UIImage(named: "arrow-up-grey"), for: UIControl.State.normal)
         downvoteButton.setImage(UIImage(named: "arrow-down-grey"), for: UIControl.State.normal)
         container.backgroundColor = .appBackground
+        container.layer.cornerRadius = 0
+        container.layer.shadowRadius = 0
+        container.layer.shadowOpacity = 0
         titleLabelView.backgroundColor = .appBackground
         artistLabelView.backgroundColor = .appBackground
         idImageView.image = UIImage(named: "SongRequestCircleImageWhite")

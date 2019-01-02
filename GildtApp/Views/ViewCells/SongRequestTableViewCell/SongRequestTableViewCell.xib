@@ -25,7 +25,7 @@
                                 <rect key="frame" x="10" y="14" width="40" height="40"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Better Now" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="2" translatesAutoresizingMaskIntoConstraints="NO" id="oON-nV-vis">
-                                <rect key="frame" x="66" y="14" width="169" height="30"/>
+                                <rect key="frame" x="66" y="11" width="169" height="30"/>
                                 <color key="backgroundColor" red="0.96421021220000003" green="0.97613400220000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
                                 <color key="textColor" white="0.0" alpha="0.75187285958904104" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -48,7 +48,7 @@
                                 <state key="normal" image="arrow-up-grey"/>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Post Malone" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pwm-hk-saF">
-                                <rect key="frame" x="67" y="44" width="167" height="13"/>
+                                <rect key="frame" x="67" y="40" width="167" height="13"/>
                                 <color key="backgroundColor" red="0.96421021220000003" green="0.97613400220000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="13" id="OEM-Vd-cZt"/>
@@ -70,7 +70,7 @@
                         </subviews>
                         <color key="backgroundColor" red="0.96421021220000003" green="0.97613400220000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="jRQ-PC-Lhw" firstAttribute="baseline" secondItem="Pwm-hk-saF" secondAttribute="baseline" constant="-4" id="BSO-cZ-g0a"/>
+                            <constraint firstItem="jRQ-PC-Lhw" firstAttribute="baseline" secondItem="Pwm-hk-saF" secondAttribute="baseline" id="BSO-cZ-g0a"/>
                             <constraint firstItem="Pwm-hk-saF" firstAttribute="leading" secondItem="pYq-Rh-XPg" secondAttribute="trailing" constant="17" id="CPY-fH-C6t"/>
                             <constraint firstAttribute="trailing" secondItem="dmn-N0-EHf" secondAttribute="trailing" constant="12" id="FgP-Qf-zTX"/>
                             <constraint firstItem="uKO-zz-ZZj" firstAttribute="top" secondItem="dmn-N0-EHf" secondAttribute="top" id="IOR-ZV-WI6"/>
@@ -78,7 +78,7 @@
                             <constraint firstItem="oON-nV-vis" firstAttribute="leading" secondItem="jRQ-PC-Lhw" secondAttribute="trailing" constant="16" id="VFQ-ou-BIu"/>
                             <constraint firstItem="pYq-Rh-XPg" firstAttribute="centerY" secondItem="uKO-zz-ZZj" secondAttribute="centerY" constant="-1" id="Whn-On-oQO"/>
                             <constraint firstAttribute="bottom" secondItem="uKO-zz-ZZj" secondAttribute="bottom" constant="11" id="bA6-Bq-fEw"/>
-                            <constraint firstItem="oON-nV-vis" firstAttribute="top" secondItem="uKO-zz-ZZj" secondAttribute="top" constant="-3" id="bNq-eb-Rwu"/>
+                            <constraint firstItem="oON-nV-vis" firstAttribute="top" secondItem="uKO-zz-ZZj" secondAttribute="top" constant="-6" id="bNq-eb-Rwu"/>
                             <constraint firstAttribute="bottom" secondItem="dmn-N0-EHf" secondAttribute="bottom" constant="11" id="fdd-2O-HsP"/>
                             <constraint firstItem="pYq-Rh-XPg" firstAttribute="leading" secondItem="yys-c5-U6t" secondAttribute="leadingMargin" constant="2" id="gVs-Vu-J7f"/>
                             <constraint firstAttribute="bottom" secondItem="pYq-Rh-XPg" secondAttribute="bottom" constant="10" id="h6A-dH-0qt"/>
@@ -87,9 +87,9 @@
                             <constraint firstItem="uKO-zz-ZZj" firstAttribute="top" secondItem="yys-c5-U6t" secondAttribute="top" constant="17" id="qHv-Ak-lPh"/>
                             <constraint firstItem="pYq-Rh-XPg" firstAttribute="leading" secondItem="jRQ-PC-Lhw" secondAttribute="leading" id="r7o-0s-Kej"/>
                             <constraint firstItem="jRQ-PC-Lhw" firstAttribute="top" secondItem="yys-c5-U6t" secondAttribute="top" constant="14" id="rcl-Nc-yLX"/>
-                            <constraint firstItem="oON-nV-vis" firstAttribute="top" secondItem="yys-c5-U6t" secondAttribute="top" constant="14" id="sqM-Dh-Okt"/>
+                            <constraint firstItem="oON-nV-vis" firstAttribute="top" secondItem="yys-c5-U6t" secondAttribute="top" constant="11" id="sqM-Dh-Okt"/>
                             <constraint firstItem="dmn-N0-EHf" firstAttribute="top" secondItem="yys-c5-U6t" secondAttribute="top" constant="17" id="tEF-iz-E4E"/>
-                            <constraint firstItem="Pwm-hk-saF" firstAttribute="top" secondItem="oON-nV-vis" secondAttribute="bottom" id="tQF-cs-Ced"/>
+                            <constraint firstItem="Pwm-hk-saF" firstAttribute="top" secondItem="oON-nV-vis" secondAttribute="bottom" constant="-1" id="tQF-cs-Ced"/>
                             <constraint firstItem="uKO-zz-ZZj" firstAttribute="bottom" secondItem="dmn-N0-EHf" secondAttribute="bottom" id="wC1-SW-GPJ"/>
                             <constraint firstItem="pYq-Rh-XPg" firstAttribute="top" secondItem="yys-c5-U6t" secondAttribute="top" constant="14" id="wRP-hX-glz"/>
                             <constraint firstItem="oON-nV-vis" firstAttribute="leading" secondItem="pYq-Rh-XPg" secondAttribute="trailing" constant="16" id="xsl-9b-1d3"/>
