@@ -35,6 +35,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Geen deals beschikbaar..." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V32-os-OTD" userLabel="NoDealsLabel">
+                                <rect key="frame" x="98.5" y="325" width="178" height="17"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                <color key="textColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DealUpIndicator" translatesAutoresizingMaskIntoConstraints="NO" id="XX1-qs-zhc">
                                 <rect key="frame" x="0.0" y="132" width="375" height="36"/>
                             </imageView>
@@ -146,8 +152,10 @@
                             <constraint firstAttribute="trailing" secondItem="Z2C-Bx-yGd" secondAttribute="trailing" constant="8" id="2pc-Wq-Dmu"/>
                             <constraint firstItem="X6t-Pe-cZu" firstAttribute="trailing" secondItem="THy-Ff-5xH" secondAttribute="trailing" constant="8" id="36C-A1-dUj"/>
                             <constraint firstItem="Z2C-Bx-yGd" firstAttribute="leading" secondItem="X6t-Pe-cZu" secondAttribute="leading" constant="8" id="3lZ-IU-oCz"/>
+                            <constraint firstItem="V32-os-OTD" firstAttribute="centerX" secondItem="fHJ-9j-dVE" secondAttribute="centerX" id="3m8-XQ-Fn4"/>
                             <constraint firstItem="60I-j6-rE5" firstAttribute="top" secondItem="XX1-qs-zhc" secondAttribute="bottom" constant="8" id="4Ud-l6-RHz"/>
                             <constraint firstItem="X6t-Pe-cZu" firstAttribute="trailing" secondItem="XX1-qs-zhc" secondAttribute="trailing" id="Bbq-Bf-KVV"/>
+                            <constraint firstItem="V32-os-OTD" firstAttribute="centerY" secondItem="fHJ-9j-dVE" secondAttribute="centerY" id="BuZ-vn-pO2"/>
                             <constraint firstItem="60I-j6-rE5" firstAttribute="leading" secondItem="X6t-Pe-cZu" secondAttribute="leading" id="Cld-v4-ODd"/>
                             <constraint firstItem="X6t-Pe-cZu" firstAttribute="bottom" secondItem="Z2C-Bx-yGd" secondAttribute="bottom" constant="8" id="PRu-Vb-Ca1"/>
                             <constraint firstItem="THy-Ff-5xH" firstAttribute="leading" secondItem="X6t-Pe-cZu" secondAttribute="leading" constant="8" id="egJ-nK-HHB"/>
@@ -163,6 +171,7 @@
                     <navigationItem key="navigationItem" largeTitleDisplayMode="always" id="GWJ-Tc-RbC"/>
                     <connections>
                         <outlet property="LetGoLabel" destination="THy-Ff-5xH" id="U0m-Qh-sVw"/>
+                        <outlet property="NoDealsLabel" destination="V32-os-OTD" id="9ZG-mx-hBy"/>
                         <outlet property="collectionView" destination="60I-j6-rE5" id="KED-pZ-dNz"/>
                     </connections>
                 </viewController>
