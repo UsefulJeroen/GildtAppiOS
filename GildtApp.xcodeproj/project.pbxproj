@@ -59,6 +59,8 @@
 		DF9D57B721B09A8C003A97FB /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9D57B621B09A8C003A97FB /* Event.swift */; };
 		DF9D57B921B0A52D003A97FB /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9D57B821B0A52D003A97FB /* String.swift */; };
 		DF9D57BE21B1D732003A97FB /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9D57BD21B1D732003A97FB /* EventViewController.swift */; };
+		DFB7981B21E13A980011425C /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DFB7981A21E13A980011425C /* Profile.storyboard */; };
+		DFB7981E21E13F7E0011425C /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB7981D21E13F7E0011425C /* ProfileViewController.swift */; };
 		DFD460DE21C0493100F90B52 /* StempelkaartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD460DD21C0493100F90B52 /* StempelkaartViewController.swift */; };
 		DFD460E121C0559400F90B52 /* StampCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD460E021C0559400F90B52 /* StampCollectionViewCell.swift */; };
 		DFD460E521C05AD900F90B52 /* Stamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD460E421C05AD900F90B52 /* Stamp.swift */; };
@@ -122,6 +124,8 @@
 		DF9D57B621B09A8C003A97FB /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		DF9D57B821B0A52D003A97FB /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		DF9D57BD21B1D732003A97FB /* EventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventViewController.swift; sourceTree = "<group>"; };
+		DFB7981A21E13A980011425C /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
+		DFB7981D21E13F7E0011425C /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		DFD460DD21C0493100F90B52 /* StempelkaartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StempelkaartViewController.swift; sourceTree = "<group>"; };
 		DFD460E021C0559400F90B52 /* StampCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StampCollectionViewCell.swift; sourceTree = "<group>"; };
 		DFD460E421C05AD900F90B52 /* Stamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stamp.swift; sourceTree = "<group>"; };
@@ -159,6 +163,7 @@
 		B0177A34219B89B700E379D5 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				DFB7981C21E13F630011425C /* Profile */,
 				B0CD4DD021BEB8040060A28C /* Agenda */,
 				B0B1126221CE56A400E4F721 /* Deals */,
 				B099D20521B02F9900DA4473 /* Hierarchy */,
@@ -181,6 +186,7 @@
 				B078A913219B0EE000545EAC /* Main.storyboard */,
 				B0177A39219B8F1C00E379D5 /* OnBoarding.storyboard */,
 				DF70F676219EE337001D3006 /* Photo.storyboard */,
+				DFB7981A21E13A980011425C /* Profile.storyboard */,
 				DF70F672219EE304001D3006 /* Stempelkaart.storyboard */,
 				B0CD4DC721BE9A810060A28C /* ViewCells */,
 			);
@@ -405,6 +411,14 @@
 			path = AgendaTableViewCell;
 			sourceTree = "<group>";
 		};
+		DFB7981C21E13F630011425C /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				DFB7981D21E13F7E0011425C /* ProfileViewController.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
 		DFD460DC21C048E300F90B52 /* Stempelkaart */ = {
 			isa = PBXGroup;
 			children = (
@@ -498,6 +512,7 @@
 				B0177A49219CCE3500E379D5 /* SongRequestTableViewCell.xib in Resources */,
 				DF70F677219EE337001D3006 /* Photo.storyboard in Resources */,
 				B00563B9219DC34E00B9F635 /* Assets.xcassets in Resources */,
+				DFB7981B21E13A980011425C /* Profile.storyboard in Resources */,
 				B0CADB8C21AB2AE700E6D848 /* Login.storyboard in Resources */,
 				DF9D57B121B085BE003A97FB /* AgendaTableViewCell.xib in Resources */,
 			);
@@ -609,6 +624,7 @@
 				B0177A3E219B9C4B00E379D5 /* BackendAPIService.swift in Sources */,
 				B0CADB8E21AB2EA200E6D848 /* LoginViewController.swift in Sources */,
 				B099D20021B0278400DA4473 /* AgendaViewController.swift in Sources */,
+				DFB7981E21E13F7E0011425C /* ProfileViewController.swift in Sources */,
 				B0CD4DC321BE99440060A28C /* Tag.swift in Sources */,
 				DF9D57B721B09A8C003A97FB /* Event.swift in Sources */,
 				B0B1126621CE56F400E4F721 /* GenericTableViewController.swift in Sources */,
