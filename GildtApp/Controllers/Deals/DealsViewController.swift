@@ -90,11 +90,7 @@ class DealsViewController: UIViewController {
     @objc private func DealIsSlideUpNotificationHandler(notification: Notification) {
         collectionView.isScrollEnabled = true
         let showLabel = notification.userInfo!["ClaimState"] as! Bool
-        if showLabel {
-            LetGoLabel.isHidden = false
-        } else {
-            LetGoLabel.isHidden = true
-        }
+        LetGoLabel.isHidden = !showLabel
     }
 
     @objc private func DealIsClaimedNotificationHandler(notification: Notification) {
