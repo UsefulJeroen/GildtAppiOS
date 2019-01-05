@@ -13,9 +13,8 @@ import CoreLocation
 import QRCodeReader
 import SwiftLocation
 
-class StempelkaartViewController : UIViewController, CLLocationManagerDelegate {
+class StempelkaartViewController : UIViewController {
     var stamps: [Stamp] = []
-    var manager = CLLocationManager()
 
     let statusAlertService = StatusAlertService()
     
@@ -53,20 +52,8 @@ class StempelkaartViewController : UIViewController, CLLocationManagerDelegate {
         
         ClaimButton.layer.cornerRadius = 10
         
-        manager.delegate = self
         setUpCollectionView()
         getStamps()
-    }
-    
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-    }
-    
-    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        let alertController = UIAlertController(title: "Locatie", message: "Het lukte niet om je locatie te controleren, probeer het straks nog eens.", preferredStyle: .alert)
-        let defaultAction = UIAlertAction(title: "Annuleer", style: .default, handler: nil)
-        alertController.addAction(defaultAction)
-        
-        present(alertController, animated: true, completion: nil)
     }
     
     private func setUpCollectionView() {
