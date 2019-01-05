@@ -191,6 +191,7 @@ class LoginViewController: UIViewController {
     func successfullyLoggedIn(postBack: LoginPostBack) {
         activityIndicator.isHidden = true
         LocalStorageService.setAuthToken(authToken: postBack.jwt)
+        LocalStorageService.setUsername(username: postBack.username)
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let agendaPageVc = storyboard.instantiateViewController(withIdentifier: "MainTabBarController") as! MainTabBarController
         self.present(agendaPageVc, animated: true, completion: nil)

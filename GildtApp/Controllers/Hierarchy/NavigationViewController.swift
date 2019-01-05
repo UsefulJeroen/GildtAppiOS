@@ -17,14 +17,13 @@ class NavigationViewController: UINavigationController {
     }
     
     func setupNavigationButtons() {
-        self.navigationBar.topItem?.rightBarButtonItem = UIBarButtonItem(title: "Logout", style: .plain, target: self, action: #selector(logoutClicked))
+        self.navigationBar.topItem?.rightBarButtonItem = UIBarButtonItem(title: "Profiel", style: .plain, target: self, action: #selector(profileClicked))
     }
     
-    @objc func logoutClicked() {
-        LocalStorageService.removeAuthToken()
-        let storyboard = UIStoryboard(name: "Login", bundle: nil)
-        let loginPageVc = storyboard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+    @objc func profileClicked() {
+        let storyboard = UIStoryboard(name: "Profile", bundle: nil)
+        let loginPageVc = storyboard.instantiateViewController(withIdentifier: "ProfileViewController") as! ProfileViewController
         
-        present(loginPageVc, animated: true, completion: nil)
+        pushViewController(loginPageVc, animated: true)
     }
 }

@@ -14,9 +14,18 @@ import SwiftKeychainWrapper
 //and can be extended to support other data / settings
 final class LocalStorageService {
     private static let authTokenKey: String = "changeToSecureRandomKey"
+    private static let usernameKey: String = "GildtProfilename"
     
     static func setAuthToken(authToken: String) {
         KeychainWrapper.standard.set(authToken, forKey: authTokenKey)
+    }
+    
+    static func setUsername(username: String) {
+        UserDefaults.standard.set(username, forKey: usernameKey)
+    }
+    
+    static func getUsername() -> String? {
+        return UserDefaults.standard.string(forKey: usernameKey)
     }
     
     static func getAuthToken() -> String? {
