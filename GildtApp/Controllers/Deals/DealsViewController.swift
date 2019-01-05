@@ -20,6 +20,7 @@ class DealsViewController: UIViewController {
     let statusAlertService = StatusAlertService()
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var LetGoLabel: UILabel!
+    @IBOutlet weak var NoDealsLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -78,6 +79,7 @@ class DealsViewController: UIViewController {
     func reloadDeals(newData: [Deal]) {
         deals = newData
         deals = deals.filter({$0.dealsLeft != 0})
+        NoDealsLabel.isHidden = deals.count != 0
         collectionView.reloadData()
     }
 
