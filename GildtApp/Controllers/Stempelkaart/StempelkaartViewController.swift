@@ -11,12 +11,21 @@ import Foundation
 import UIKit
 import CoreLocation
 import QRCodeReader
+import SwiftLocation
 
 class StempelkaartViewController : UIViewController, CLLocationManagerDelegate {
     var stamps: [Stamp] = []
     var manager = CLLocationManager()
 
     let statusAlertService = StatusAlertService()
+    
+    let gildtLocation = CLCircularRegion.init(
+        center: CLLocationCoordinate2D.init(
+            latitude: 52.3775974,
+            longitude: 4.6333507),
+        radius: CLLocationDistance.init(exactly: 150)!,
+        identifier: "Gildt")
+
 
     @IBOutlet weak var Container: UIView!
     @IBOutlet weak var ClaimButton: UIButton!
@@ -86,46 +95,7 @@ class StempelkaartViewController : UIViewController, CLLocationManagerDelegate {
     }
     
     @IBAction func ClaimStampButtonTapped(_ sender: Any) {
-        manager.requestWhenInUseAuthorization()
-        
-        let status = CLLocationManager.authorizationStatus()
-        if status == .authorizedWhenInUse && CLLocationManager.locationServicesEnabled() {
-            manager.requestLocation()
-            let location = manager.location
-            let gildtLocation = CLCircularRegion.init(
-                center: CLLocationCoordinate2D.init(
-                    latitude: 52.3775974,
-                    longitude: 4.6333507),
-                radius: CLLocationDistance.init(exactly: 50)!,
-                identifier: "Gildt")
-            if gildtLocation.contains((location?.coordinate)!){
-                print("At 't Gildt")
-                if checkScanPermissions() {
-                    readerVC.modalPresentationStyle = .formSheet
-                    readerVC.delegate               = self
-                    present(readerVC, animated: true, completion: nil)
-                }
-            } else {
-                let alertController = UIAlertController(title: "Locatie", message: "Het lijkt er op dat je niet aanwezig bent bij 't Gildt. Probeer het later nog eens.", preferredStyle: .alert)
-                let defaultAction = UIAlertAction(title: "Annuleer", style: .default, handler: nil)
-                alertController.addAction(defaultAction)
-                
-                present(alertController, animated: true, completion: nil)
-            }
-        } else {
-            let alertController = UIAlertController(title: "Locatie", message: "Stempels kunnen niet worden toegekend wanneer locatiegegevens uitstaan voor 't Gildt.\n\nDe app dient te controleren of je daadwerkelijk aanwezig bent.", preferredStyle: .alert)
-            
-            alertController.addAction(UIAlertAction(title: "Instellingen", style: .default, handler: { (_) in
-                DispatchQueue.main.async {
-                    if let settingsURL = URL(string: UIApplication.openSettingsURLString) {
-                        UIApplication.shared.open(settingsURL, options: [:], completionHandler: nil)
-                    }
-                }
-            }))
-            alertController.addAction(UIAlertAction(title: "Annuleer", style: .default, handler: nil))
-            
-            present(alertController, animated: true, completion: nil)
-        }
+        getAndProccessUserLocation()
     }
     
     func claimStamp(qrCode: String) {
@@ -162,6 +132,50 @@ extension StempelkaartViewController: UICollectionViewDelegate {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: "StampCollectionViewCell"), for: indexPath) as! StampCollectionViewCell
         cell.item = stamps[indexPath.row]
         return cell
+    }
+}
+
+// Location Stuff
+extension StempelkaartViewController {
+    func getAndProccessUserLocation() {
+        SwiftLocation.Locator.currentPosition(
+            accuracy:   .block,
+            onSuccess:  {location in self.checkGildtDistance(from: location)},
+            onFail:     {error, last in self.LocationFailureHandling()})
+    }
+    
+    func LocationFailureHandling() {
+        let alertController = UIAlertController(
+            title: "Locatie",
+            message: "Stempels kunnen niet worden toegekend wanneer locatiegegevens uitstaan voor 't Gildt.\n\nDe app dient te controleren of je daadwerkelijk aanwezig bent.",
+            preferredStyle: .alert)
+        
+        alertController.addAction(UIAlertAction(title: "Instellingen", style: .default, handler: { (_) in
+            DispatchQueue.main.async {
+                if let settingsURL = URL(string: UIApplication.openSettingsURLString) {
+                    UIApplication.shared.open(settingsURL, options: [:], completionHandler: nil)
+                }
+            }
+        }))
+        alertController.addAction(UIAlertAction(title: "Annuleer", style: .default, handler: nil))
+        
+        present(alertController, animated: true, completion: nil)
+    }
+    
+    func checkGildtDistance(from location: CLLocation) {
+        if gildtLocation.contains(location.coordinate) {
+            if checkScanPermissions() {
+                readerVC.modalPresentationStyle = .formSheet
+                readerVC.delegate               = self
+                present(readerVC, animated: true, completion: nil)
+            }
+        } else {
+            statusAlertService.showStatusAlert(
+                withImage: #imageLiteral(resourceName: "IconError"),
+                title: "Whoops!",
+                message: "Het lijkt er op dat je niet in 't Gildt bent.",
+                error: true)
+        }
     }
 }
 

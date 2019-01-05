@@ -6,6 +6,9 @@ PODS:
   - SKPhotoBrowser (6.0.0)
   - StatusAlert (1.1.0)
   - SwiftKeychainWrapper (3.2.0)
+  - SwiftLocation (3.2.3):
+    - SwiftyJSON (~> 4.0.0-alpha.1)
+  - SwiftyJSON (4.0.0)
 
 DEPENDENCIES:
   - Alamofire
@@ -15,6 +18,7 @@ DEPENDENCIES:
   - SKPhotoBrowser
   - StatusAlert
   - SwiftKeychainWrapper
+  - SwiftLocation
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -25,6 +29,8 @@ SPEC REPOS:
     - SKPhotoBrowser
     - StatusAlert
     - SwiftKeychainWrapper
+    - SwiftLocation
+    - SwiftyJSON
 
 SPEC CHECKSUMS:
   Alamofire: 3ec537f71edc9804815215393ae2b1a8ea33a844
@@ -34,7 +40,9 @@ SPEC CHECKSUMS:
   SKPhotoBrowser: 76eb862685761707b5745fde7762757966565e07
   StatusAlert: 4d6dadebf5f7abd5648fa774ef3062f2f95cc4aa
   SwiftKeychainWrapper: 82c4c02cdc36f9a24f7edfcaab3e336401caa1a1
+  SwiftLocation: a3c3bc2023118171ef3572188a31def94aa0892c
+  SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
 
-PODFILE CHECKSUM: 221109303887e8848905d7428ab69929d7f69a7a
+PODFILE CHECKSUM: c28e1aa58ef4a7d28e2a9e809d9cc793ce7ed02d
 
 COCOAPODS: 1.5.3
