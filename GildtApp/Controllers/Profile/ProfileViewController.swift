@@ -16,6 +16,10 @@ class ProfileViewController : UITableViewController {
         title = LocalStorageService.getUsername() ?? "Profiel"
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
     @IBAction func logoutButtonTapped(_ sender: Any) {
         LocalStorageService.removeAuthToken()
         let storyboard = UIStoryboard(name: "Login", bundle: nil)
