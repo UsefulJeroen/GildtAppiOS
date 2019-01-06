@@ -12,7 +12,7 @@ import Kingfisher
 
 class EventViewController: UIViewController {
     @IBOutlet weak var EventContainer: UIView!
-    @IBOutlet weak var EventButton: UIButton!
+    @IBOutlet weak var EventButton: UIButtonExtended!
     @IBOutlet weak var EventImage: UIImageView!
     @IBOutlet weak var EventStamp: UIImageView!
     @IBOutlet weak var EventTitle: UILabel!
@@ -32,6 +32,7 @@ class EventViewController: UIViewController {
         EventContainer.layer.shadowRadius = 14
         EventContainer.layer.shadowOpacity = 0.16
         EventButton.layer.cornerRadius = 10
+        EventButton.addedTouchArea = 10
         
         AttendeesContainer.layer.cornerRadius = 10
         AttendeesContainer.layer.shadowColor = UIColor.black.cgColor

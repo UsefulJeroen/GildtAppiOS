@@ -52,17 +52,6 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="85M-In-tCR" userLabel="Event View">
                                                 <rect key="frame" x="18" y="150" width="339" height="121.5"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5zE-GI-HdQ">
-                                                        <rect key="frame" x="119" y="-17" width="101" height="34"/>
-                                                        <color key="backgroundColor" red="0.13725490200000001" green="0.75294117650000003" blue="0.23921568630000001" alpha="1" colorSpace="calibratedRGB"/>
-                                                        <inset key="contentEdgeInsets" minX="12" minY="8" maxX="12" maxY="8"/>
-                                                        <state key="normal" title="Aanmelden">
-                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        </state>
-                                                        <connections>
-                                                            <action selector="AttendanceButtonTapped:" destination="3Nl-Wz-Nc7" eventType="touchUpInside" id="ShP-G5-xaL"/>
-                                                        </connections>
-                                                    </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J3H-Ia-Aep">
                                                         <rect key="frame" x="8" y="16" width="323" height="26.5"/>
                                                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="22"/>
@@ -99,7 +88,6 @@
                                                     <constraint firstAttribute="trailing" secondItem="Al5-Ia-mnC" secondAttribute="trailing" constant="8" id="2YT-7x-kTr"/>
                                                     <constraint firstAttribute="trailing" secondItem="J3H-Ia-Aep" secondAttribute="trailing" constant="8" id="4SM-3m-fNw"/>
                                                     <constraint firstAttribute="bottom" secondItem="Al5-Ia-mnC" secondAttribute="bottom" constant="8" id="7mJ-zO-DBf"/>
-                                                    <constraint firstItem="5zE-GI-HdQ" firstAttribute="centerX" secondItem="85M-In-tCR" secondAttribute="centerX" id="8tT-BR-v9g"/>
                                                     <constraint firstItem="Al5-Ia-mnC" firstAttribute="leading" secondItem="85M-In-tCR" secondAttribute="leading" constant="8" id="AAj-UG-QgL"/>
                                                     <constraint firstItem="KE1-lH-lVG" firstAttribute="top" secondItem="J3H-Ia-Aep" secondAttribute="bottom" constant="8" id="Fpj-zZ-xjo"/>
                                                     <constraint firstItem="J3H-Ia-Aep" firstAttribute="leading" secondItem="85M-In-tCR" secondAttribute="leading" constant="8" id="LWU-zw-slh"/>
@@ -107,7 +95,6 @@
                                                     <constraint firstItem="58v-sD-wmJ" firstAttribute="width" secondItem="58v-sD-wmJ" secondAttribute="height" multiplier="1:1" id="PgY-Lx-bah"/>
                                                     <constraint firstItem="Ymg-gD-9A6" firstAttribute="top" secondItem="KE1-lH-lVG" secondAttribute="bottom" constant="8" id="fBB-Tm-evn"/>
                                                     <constraint firstItem="KE1-lH-lVG" firstAttribute="leading" secondItem="85M-In-tCR" secondAttribute="leading" constant="8" id="nEC-DE-8g2"/>
-                                                    <constraint firstItem="5zE-GI-HdQ" firstAttribute="centerY" secondItem="85M-In-tCR" secondAttribute="top" id="nJ5-D9-sxz"/>
                                                     <constraint firstItem="58v-sD-wmJ" firstAttribute="top" secondItem="85M-In-tCR" secondAttribute="top" id="qua-6y-and"/>
                                                     <constraint firstAttribute="trailing" secondItem="Ymg-gD-9A6" secondAttribute="trailing" constant="8" id="rxM-OR-uFS"/>
                                                     <constraint firstAttribute="trailing" secondItem="58v-sD-wmJ" secondAttribute="trailing" id="wDy-Zp-YcY"/>
@@ -116,6 +103,17 @@
                                                     <constraint firstItem="Ymg-gD-9A6" firstAttribute="leading" secondItem="85M-In-tCR" secondAttribute="leading" constant="8" id="zkB-1t-Pcs"/>
                                                 </constraints>
                                             </view>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5zE-GI-HdQ" customClass="UIButtonExtended" customModule="GildtApp" customModuleProvider="target">
+                                                <rect key="frame" x="137" y="133" width="101" height="34"/>
+                                                <color key="backgroundColor" red="0.13725490200000001" green="0.75294117650000003" blue="0.23921568630000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                <inset key="contentEdgeInsets" minX="12" minY="8" maxX="12" maxY="8"/>
+                                                <state key="normal" title="Aanmelden">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="AttendanceButtonTapped:" destination="3Nl-Wz-Nc7" eventType="touchUpInside" id="ShP-G5-xaL"/>
+                                                </connections>
+                                            </button>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FSr-Ac-zRr" userLabel="Attendees View">
                                                 <rect key="frame" x="18" y="289.5" width="339" height="83"/>
                                                 <subviews>
@@ -158,6 +156,7 @@
                                         <constraints>
                                             <constraint firstItem="FSr-Ac-zRr" firstAttribute="leading" secondItem="wSj-DT-5C4" secondAttribute="leading" constant="18" id="1Gf-wX-DZ4"/>
                                             <constraint firstAttribute="trailing" secondItem="85M-In-tCR" secondAttribute="trailing" constant="18" id="34Y-1F-X6U"/>
+                                            <constraint firstItem="5zE-GI-HdQ" firstAttribute="centerY" secondItem="85M-In-tCR" secondAttribute="top" id="4Ay-Q7-to9"/>
                                             <constraint firstItem="85M-In-tCR" firstAttribute="top" secondItem="8Rj-KB-Z5b" secondAttribute="bottom" constant="-50" id="7oS-Cl-Lpa"/>
                                             <constraint firstAttribute="trailing" secondItem="8Rj-KB-Z5b" secondAttribute="trailing" id="Bah-2A-nHz"/>
                                             <constraint firstItem="8Rj-KB-Z5b" firstAttribute="top" secondItem="wSj-DT-5C4" secondAttribute="top" id="NV8-ez-KBu"/>
@@ -167,6 +166,7 @@
                                             <constraint firstAttribute="trailing" secondItem="FSr-Ac-zRr" secondAttribute="trailing" constant="18" id="std-ob-Ewy"/>
                                             <constraint firstItem="8Rj-KB-Z5b" firstAttribute="leading" secondItem="wSj-DT-5C4" secondAttribute="leading" id="ujd-hU-laf"/>
                                             <constraint firstAttribute="bottom" secondItem="FSr-Ac-zRr" secondAttribute="bottom" constant="18" id="we5-da-Zcq"/>
+                                            <constraint firstItem="5zE-GI-HdQ" firstAttribute="centerX" secondItem="wSj-DT-5C4" secondAttribute="centerX" id="wq3-7t-mbd"/>
                                         </constraints>
                                     </view>
                                 </subviews>
