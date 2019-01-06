@@ -39,24 +39,11 @@
                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WVR-Qv-rOn">
-                                <rect key="frame" x="113" y="103" width="101" height="34"/>
-                                <color key="backgroundColor" red="0.13725490200000001" green="0.75294117650000003" blue="0.23921568630000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <inset key="contentEdgeInsets" minX="12" minY="8" maxX="12" maxY="8"/>
-                                <state key="normal" title="Aanmelden">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="attendanceButtonTapped:" destination="fog-IA-8Ln" eventType="touchUpInside" id="EB6-a0-gux"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="CKi-qF-2Ba" firstAttribute="top" secondItem="whx-JT-bZD" secondAttribute="top" id="1OL-1p-U22"/>
                             <constraint firstItem="Evh-la-2No" firstAttribute="leading" secondItem="whx-JT-bZD" secondAttribute="leading" constant="8" id="DvL-gy-UhM"/>
-                            <constraint firstAttribute="bottom" secondItem="WVR-Qv-rOn" secondAttribute="centerY" id="H5u-6x-zbP"/>
-                            <constraint firstItem="WVR-Qv-rOn" firstAttribute="centerX" secondItem="whx-JT-bZD" secondAttribute="centerX" id="Hii-fB-X9M"/>
                             <constraint firstAttribute="trailing" secondItem="To5-bW-2Oq" secondAttribute="trailing" constant="40" id="MPs-b5-wE6"/>
                             <constraint firstAttribute="trailing" secondItem="CKi-qF-2Ba" secondAttribute="trailing" id="eAM-zI-lI6"/>
                             <constraint firstItem="To5-bW-2Oq" firstAttribute="top" secondItem="whx-JT-bZD" secondAttribute="top" constant="8" id="gQn-qO-004"/>
@@ -65,13 +52,26 @@
                             <constraint firstAttribute="bottom" secondItem="Evh-la-2No" secondAttribute="bottom" constant="24" id="ysp-U5-Hp5"/>
                         </constraints>
                     </view>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WVR-Qv-rOn" customClass="UIButtonExtended" customModule="GildtApp" customModuleProvider="target">
+                        <rect key="frame" x="137" y="122" width="101" height="34"/>
+                        <color key="backgroundColor" red="0.13725490200000001" green="0.75294117650000003" blue="0.23921568630000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <inset key="contentEdgeInsets" minX="12" minY="8" maxX="12" maxY="8"/>
+                        <state key="normal" title="Aanmelden">
+                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </state>
+                        <connections>
+                            <action selector="attendanceButtonTapped:" destination="fog-IA-8Ln" eventType="touchUpInside" id="EB6-a0-gux"/>
+                        </connections>
+                    </button>
                 </subviews>
                 <color key="backgroundColor" red="0.96470588235294119" green="0.97647058823529409" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                 <constraints>
+                    <constraint firstItem="WVR-Qv-rOn" firstAttribute="centerX" secondItem="5Kj-2Z-XCF" secondAttribute="centerX" id="7jV-DA-Hqb"/>
                     <constraint firstAttribute="trailingMargin" secondItem="whx-JT-bZD" secondAttribute="trailing" constant="8" id="Nb1-ZI-WrI"/>
                     <constraint firstItem="whx-JT-bZD" firstAttribute="top" secondItem="5Kj-2Z-XCF" secondAttribute="topMargin" constant="8" id="iAD-gi-LVb"/>
                     <constraint firstAttribute="bottomMargin" secondItem="whx-JT-bZD" secondAttribute="bottom" constant="8" id="jqn-pA-kW7"/>
                     <constraint firstItem="whx-JT-bZD" firstAttribute="centerX" secondItem="5Kj-2Z-XCF" secondAttribute="centerX" id="lER-kQ-bgS"/>
+                    <constraint firstItem="WVR-Qv-rOn" firstAttribute="centerY" secondItem="whx-JT-bZD" secondAttribute="bottom" id="lTv-dR-ata"/>
                     <constraint firstItem="whx-JT-bZD" firstAttribute="leading" secondItem="5Kj-2Z-XCF" secondAttribute="leadingMargin" constant="8" id="xoo-Ue-oBk"/>
                 </constraints>
             </tableViewCellContentView>

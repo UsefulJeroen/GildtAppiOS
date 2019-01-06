@@ -12,7 +12,7 @@ import UIKit
 class AgendaTableViewCell: GenericTableViewCell<Event> {
     
     @IBOutlet weak var Container: UIView!
-    @IBOutlet weak var Button: UIButton!
+    @IBOutlet weak var Button: UIButtonExtended!
     @IBOutlet weak var TitleLabel: UILabel!
     @IBOutlet weak var Stamp: UIImageView!
     @IBOutlet weak var DateLabel: UILabel!
@@ -27,6 +27,7 @@ class AgendaTableViewCell: GenericTableViewCell<Event> {
         super.awakeFromNib()
         Container.layer.cornerRadius = 10
         Button.layer.cornerRadius = 10
+        Button.addedTouchArea = 10
         self.selectionStyle = .none
         
         // Shaddow is iffy
