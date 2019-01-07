@@ -56,7 +56,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="272" height="368"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Deal Titel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yfe-Jk-pac">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="252" text="Deal Titel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="yfe-Jk-pac">
                                                     <rect key="frame" x="16" y="36" width="240" height="29"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                                     <nil key="textColor"/>
@@ -68,14 +68,17 @@
                                                         <constraint firstAttribute="width" secondItem="aS3-xP-GQV" secondAttribute="height" multiplier="48:25" id="l6m-hM-psD"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0vV-Nh-dDM" userLabel="Description">
-                                                    <rect key="frame" x="20" y="206" width="232" height="20.5"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="0vV-Nh-dDM" userLabel="Description" customClass="UILabelTopAlign" customModule="GildtApp" customModuleProvider="target">
+                                                    <rect key="frame" x="20" y="206" width="232" height="88"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nog 2 keer bruikbaar" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FzO-gj-WPf" userLabel="Useability">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="Nog 2 keer bruikbaar" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="FzO-gj-WPf" userLabel="Useability">
                                                     <rect key="frame" x="8" y="302" width="256" height="17"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="17" id="DSa-M3-5BQ"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -83,7 +86,7 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tpt-KV-Adn">
                                                     <rect key="frame" x="0.0" y="323" width="272" height="45"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="13E-j1-2Pq">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="13E-j1-2Pq">
                                                             <rect key="frame" x="0.0" y="6" width="272" height="33.5"/>
                                                             <string key="text">Geldig t/m 23:30
 18 Oktober</string>
@@ -107,6 +110,7 @@
                                         <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstItem="tpt-KV-Adn" firstAttribute="top" secondItem="FzO-gj-WPf" secondAttribute="bottom" constant="4" id="2wg-ZV-5tW"/>
+                                            <constraint firstItem="FzO-gj-WPf" firstAttribute="top" secondItem="0vV-Nh-dDM" secondAttribute="bottom" constant="8" id="3lC-yd-d7y"/>
                                             <constraint firstItem="yfe-Jk-pac" firstAttribute="leading" secondItem="WPn-DY-905" secondAttribute="leadingMargin" constant="8" id="8zB-H1-mY8"/>
                                             <constraint firstItem="FzO-gj-WPf" firstAttribute="leading" secondItem="WPn-DY-905" secondAttribute="leadingMargin" id="BN2-si-wtZ"/>
                                             <constraint firstAttribute="trailingMargin" secondItem="0vV-Nh-dDM" secondAttribute="trailing" constant="12" id="XAz-hM-sNn"/>
