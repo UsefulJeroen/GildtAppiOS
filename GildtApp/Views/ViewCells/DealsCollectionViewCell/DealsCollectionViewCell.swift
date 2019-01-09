@@ -13,7 +13,7 @@ class DealsCollectionViewCell: GenericCollectionViewCell<Deal> {
     // view
     @IBOutlet weak var Title: UILabel!
     @IBOutlet weak var DealImage: UIImageView!
-    @IBOutlet weak var Description: UILabel!
+    @IBOutlet weak var Description: UILabelTopAlign!
     @IBOutlet weak var Usability: UILabel!
     @IBOutlet weak var GreenBar: UIView!
     @IBOutlet weak var Availability: UILabel!

@@ -62,6 +62,7 @@
 		DFB7981B21E13A980011425C /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DFB7981A21E13A980011425C /* Profile.storyboard */; };
 		DFB7981E21E13F7E0011425C /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB7981D21E13F7E0011425C /* ProfileViewController.swift */; };
 		DFB7982021E158A30011425C /* GildtButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB7981F21E158A30011425C /* GildtButton.swift */; };
+		DFB7982221E355DA0011425C /* UILabelTopAlign.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB7982121E355DA0011425C /* UILabelTopAlign.swift */; };
 		DFD460DE21C0493100F90B52 /* StempelkaartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD460DD21C0493100F90B52 /* StempelkaartViewController.swift */; };
 		DFD460E121C0559400F90B52 /* StampCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD460E021C0559400F90B52 /* StampCollectionViewCell.swift */; };
 		DFD460E521C05AD900F90B52 /* Stamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD460E421C05AD900F90B52 /* Stamp.swift */; };
@@ -128,6 +129,7 @@
 		DFB7981A21E13A980011425C /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		DFB7981D21E13F7E0011425C /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		DFB7981F21E158A30011425C /* GildtButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GildtButton.swift; sourceTree = "<group>"; };
+		DFB7982121E355DA0011425C /* UILabelTopAlign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabelTopAlign.swift; sourceTree = "<group>"; };
 		DFD460DD21C0493100F90B52 /* StempelkaartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StempelkaartViewController.swift; sourceTree = "<group>"; };
 		DFD460E021C0559400F90B52 /* StampCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StampCollectionViewCell.swift; sourceTree = "<group>"; };
 		DFD460E421C05AD900F90B52 /* Stamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stamp.swift; sourceTree = "<group>"; };
@@ -393,6 +395,7 @@
 				DF70F67A21A183A7001D3006 /* UIColor.swift */,
 				DF772FC121DA6E5800EC3EB1 /* UIView.swift */,
 				DFB7981F21E158A30011425C /* GildtButton.swift */,
+				DFB7982121E355DA0011425C /* UILabelTopAlign.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -617,6 +620,7 @@
 				DF9D57B921B0A52D003A97FB /* String.swift in Sources */,
 				B0177A44219CC6A100E379D5 /* SongRequest.swift in Sources */,
 				DF772FBE21DA5F4600EC3EB1 /* StatusAlertService.swift in Sources */,
+				DFB7982221E355DA0011425C /* UILabelTopAlign.swift in Sources */,
 				B0B1125F21C83EA300E4F721 /* ErrorMessage.swift in Sources */,
 				B0E84EFD21C2BEAC00EF2C49 /* PreviewImageTableViewCell.swift in Sources */,
 				B0CD4DCA21BE9F900060A28C /* TagOverviewViewController.swift in Sources */,
