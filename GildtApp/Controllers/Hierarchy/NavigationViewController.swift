@@ -17,7 +17,7 @@ class NavigationViewController: UINavigationController {
     }
     
     func setupNavigationButtons() {
-        self.navigationBar.topItem?.rightBarButtonItem = UIBarButtonItem(title: "Profiel", style: .plain, target: self, action: #selector(profileClicked))
+        self.navigationBar.topItem?.rightBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "IconProfile"), style: .plain, target: self, action: #selector(profileClicked))
     }
     
     @objc func profileClicked() {
