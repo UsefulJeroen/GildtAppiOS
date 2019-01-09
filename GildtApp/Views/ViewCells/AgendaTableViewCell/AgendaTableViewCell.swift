@@ -33,7 +33,7 @@ class AgendaTableViewCell: GenericTableViewCell<Event> {
         // Shaddow is iffy
         Container.layer.shadowColor = UIColor.black.cgColor
         Container.layer.shadowOffset = CGSize(width: 0, height: 3)
-        Container.layer.shadowRadius = 14
+        Container.layer.shadowRadius = 9
         Container.layer.shadowOpacity = 0.16
         Container.layer.masksToBounds = false
     }
