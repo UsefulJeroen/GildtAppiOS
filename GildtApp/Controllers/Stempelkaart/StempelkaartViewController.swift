@@ -27,7 +27,7 @@ class StempelkaartViewController : UIViewController {
 
 
     @IBOutlet weak var Container: UIView!
-    @IBOutlet weak var ClaimButton: UIButton!
+    @IBOutlet weak var ClaimButton: GildtButton!
     
     @IBOutlet weak var CollectionView: UICollectionView!
 
@@ -82,6 +82,7 @@ class StempelkaartViewController : UIViewController {
     }
     
     @IBAction func ClaimStampButtonTapped(_ sender: Any) {
+        ClaimButton.showLoading()
         getAndProccessUserLocation()
     }
     
@@ -132,6 +133,7 @@ extension StempelkaartViewController {
     }
     
     func LocationFailureHandling() {
+        ClaimButton.hideLoading()
         let alertController = UIAlertController(
             title: "Locatie",
             message: "Stempels kunnen niet worden toegekend wanneer locatiegegevens uitstaan voor 't Gildt.\n\nDe app dient te controleren of je daadwerkelijk aanwezig bent.",
@@ -151,12 +153,14 @@ extension StempelkaartViewController {
     
     func checkGildtDistance(from location: CLLocation) {
         if gildtLocation.contains(location.coordinate) {
+            ClaimButton.hideLoading()
             if checkScanPermissions() {
                 readerVC.modalPresentationStyle = .formSheet
                 readerVC.delegate               = self
                 present(readerVC, animated: true, completion: nil)
             }
         } else {
+            ClaimButton.hideLoading()
             statusAlertService.showStatusAlert(
                 withImage: #imageLiteral(resourceName: "IconError"),
                 title: "Whoops!",

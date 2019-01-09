@@ -103,7 +103,7 @@
                                                     <constraint firstItem="Ymg-gD-9A6" firstAttribute="leading" secondItem="85M-In-tCR" secondAttribute="leading" constant="8" id="zkB-1t-Pcs"/>
                                                 </constraints>
                                             </view>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5zE-GI-HdQ" customClass="UIButtonExtended" customModule="GildtApp" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5zE-GI-HdQ" customClass="GildtButton" customModule="GildtApp" customModuleProvider="target">
                                                 <rect key="frame" x="137" y="133" width="101" height="34"/>
                                                 <color key="backgroundColor" red="0.13725490200000001" green="0.75294117650000003" blue="0.23921568630000001" alpha="1" colorSpace="calibratedRGB"/>
                                                 <inset key="contentEdgeInsets" minX="12" minY="8" maxX="12" maxY="8"/>
