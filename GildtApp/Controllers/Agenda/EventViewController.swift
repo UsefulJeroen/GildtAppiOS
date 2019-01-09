@@ -12,7 +12,7 @@ import Kingfisher
 
 class EventViewController: UIViewController {
     @IBOutlet weak var EventContainer: UIView!
-    @IBOutlet weak var EventButton: UIButtonExtended!
+    @IBOutlet weak var EventButton: GildtButton!
     @IBOutlet weak var EventImage: UIImageView!
     @IBOutlet weak var EventStamp: UIImageView!
     @IBOutlet weak var EventTitle: UILabel!
@@ -83,6 +83,7 @@ class EventViewController: UIViewController {
     }
     
     @IBAction func AttendanceButtonTapped(_ sender: Any) {
+        EventButton.showLoading()
         UIImpactFeedbackGenerator(style: .medium).impactOccurred()
         if let event = event {
             setAttendance(attendance: !event.attendance)
@@ -98,8 +99,15 @@ class EventViewController: UIViewController {
                 let data = try? decoder.decode(Event.self, from: jsonData)
                 
                 DispatchQueue.main.async {
+                    self?.EventButton.hideLoading()
                     if data != nil {
                         self?.successfullySetAttendance(updatedEvent: data!)
+                    } else {
+                        StatusAlertService().showStatusAlert(
+                            withImage: #imageLiteral(resourceName: "IconError"),
+                            title: "Whoops!",
+                            message: "Er is iets mis gegaan tijdens het doorgeven van je aanwezigheid",
+                            error: true)
                     }
                 }
             })

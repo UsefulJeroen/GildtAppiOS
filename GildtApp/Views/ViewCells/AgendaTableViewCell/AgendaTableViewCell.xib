@@ -52,7 +52,7 @@
                             <constraint firstAttribute="bottom" secondItem="Evh-la-2No" secondAttribute="bottom" constant="24" id="ysp-U5-Hp5"/>
                         </constraints>
                     </view>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WVR-Qv-rOn" customClass="UIButtonExtended" customModule="GildtApp" customModuleProvider="target">
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WVR-Qv-rOn" customClass="GildtButton" customModule="GildtApp" customModuleProvider="target">
                         <rect key="frame" x="137" y="122" width="101" height="34"/>
                         <color key="backgroundColor" red="0.13725490200000001" green="0.75294117650000003" blue="0.23921568630000001" alpha="1" colorSpace="calibratedRGB"/>
                         <inset key="contentEdgeInsets" minX="12" minY="8" maxX="12" maxY="8"/>

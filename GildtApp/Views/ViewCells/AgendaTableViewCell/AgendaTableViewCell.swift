@@ -12,7 +12,7 @@ import UIKit
 class AgendaTableViewCell: GenericTableViewCell<Event> {
     
     @IBOutlet weak var Container: UIView!
-    @IBOutlet weak var Button: UIButtonExtended!
+    @IBOutlet weak var Button: GildtButton!
     @IBOutlet weak var TitleLabel: UILabel!
     @IBOutlet weak var Stamp: UIImageView!
     @IBOutlet weak var DateLabel: UILabel!
@@ -53,6 +53,7 @@ class AgendaTableViewCell: GenericTableViewCell<Event> {
     }
     
     @IBAction func attendanceButtonTapped(_ sender: Any) {
+        Button.showLoading()
         UIImpactFeedbackGenerator(style: .medium).impactOccurred()
         if let event = item {
             setAttendance(attendance: !event.attendance)
@@ -84,8 +85,15 @@ class AgendaTableViewCell: GenericTableViewCell<Event> {
                 let data = try? decoder.decode(Event.self, from: jsonData)
                 
                 DispatchQueue.main.async {
+                    self?.Button.hideLoading()
                     if data != nil {
                         self?.successfullySetAttendance(updatedEvent: data!)
+                    } else {
+                        StatusAlertService().showStatusAlert(
+                            withImage: #imageLiteral(resourceName: "IconError"),
+                            title: "Whoops!",
+                            message: "Er is iets mis gegaan tijdens het doorgeven van je aanwezigheid",
+                            error: true)
                     }
                 }
             })

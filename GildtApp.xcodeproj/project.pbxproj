@@ -61,7 +61,7 @@
 		DF9D57BE21B1D732003A97FB /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9D57BD21B1D732003A97FB /* EventViewController.swift */; };
 		DFB7981B21E13A980011425C /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DFB7981A21E13A980011425C /* Profile.storyboard */; };
 		DFB7981E21E13F7E0011425C /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB7981D21E13F7E0011425C /* ProfileViewController.swift */; };
-		DFB7982021E158A30011425C /* UIButtonExtended.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB7981F21E158A30011425C /* UIButtonExtended.swift */; };
+		DFB7982021E158A30011425C /* GildtButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB7981F21E158A30011425C /* GildtButton.swift */; };
 		DFD460DE21C0493100F90B52 /* StempelkaartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD460DD21C0493100F90B52 /* StempelkaartViewController.swift */; };
 		DFD460E121C0559400F90B52 /* StampCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD460E021C0559400F90B52 /* StampCollectionViewCell.swift */; };
 		DFD460E521C05AD900F90B52 /* Stamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD460E421C05AD900F90B52 /* Stamp.swift */; };
@@ -127,7 +127,7 @@
 		DF9D57BD21B1D732003A97FB /* EventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventViewController.swift; sourceTree = "<group>"; };
 		DFB7981A21E13A980011425C /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		DFB7981D21E13F7E0011425C /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
-		DFB7981F21E158A30011425C /* UIButtonExtended.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtended.swift; sourceTree = "<group>"; };
+		DFB7981F21E158A30011425C /* GildtButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GildtButton.swift; sourceTree = "<group>"; };
 		DFD460DD21C0493100F90B52 /* StempelkaartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StempelkaartViewController.swift; sourceTree = "<group>"; };
 		DFD460E021C0559400F90B52 /* StampCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StampCollectionViewCell.swift; sourceTree = "<group>"; };
 		DFD460E421C05AD900F90B52 /* Stamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stamp.swift; sourceTree = "<group>"; };
@@ -392,7 +392,7 @@
 				DF9D57B821B0A52D003A97FB /* String.swift */,
 				DF70F67A21A183A7001D3006 /* UIColor.swift */,
 				DF772FC121DA6E5800EC3EB1 /* UIView.swift */,
-				DFB7981F21E158A30011425C /* UIButtonExtended.swift */,
+				DFB7981F21E158A30011425C /* GildtButton.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -602,7 +602,7 @@
 				DFD460E521C05AD900F90B52 /* Stamp.swift in Sources */,
 				DF9D57BE21B1D732003A97FB /* EventViewController.swift in Sources */,
 				DF70F68121A185FD001D3006 /* DealsViewController.swift in Sources */,
-				DFB7982021E158A30011425C /* UIButtonExtended.swift in Sources */,
+				DFB7982021E158A30011425C /* GildtButton.swift in Sources */,
 				DF772FC221DA6E5800EC3EB1 /* UIView.swift in Sources */,
 				B0B1126921CE575000E4F721 /* GenericTableViewCell.swift in Sources */,
 				DF70F67B21A183A7001D3006 /* UIColor.swift in Sources */,
