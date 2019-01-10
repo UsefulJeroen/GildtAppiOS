@@ -31,7 +31,7 @@ class UIImageAlertController: UIAlertController {
     /// - parameter image: `UIImage` to be displayed about title label
     func setTitleImage(_ image: UIImage?) {
         guard let imageView = self.imageView else {
-            let imageView = UIImageView(image: resizeImage(source: image!, scaledToWidth: 220))
+            let imageView = UIImageView(image: resizeImage(source: image!, scaledTo: 160))
             self.view.addSubview(imageView)
             self.imageView = imageView
             return
@@ -39,18 +39,31 @@ class UIImageAlertController: UIAlertController {
         imageView.image = image
     }
     
-    private func resizeImage(source:UIImage, scaledToWidth: CGFloat) -> UIImage {
-        let oldWidth = source.size.width
-        let scaleFactor = scaledToWidth / oldWidth
-        
-        let newHeight = source.size.height * scaleFactor
-        let newWidth = oldWidth * scaleFactor
-        
-        UIGraphicsBeginImageContext(CGSize(width:newWidth, height:newHeight))
-        source.draw(in: CGRect(x:0, y:0, width:newWidth, height:newHeight))
+    private func resizeImage(source:UIImage, scaledTo: CGFloat) -> UIImage {
+        let newSize = getNewSize(source: source, scaledTo: scaledTo)
+        UIGraphicsBeginImageContext(newSize)
+        source.draw(in: CGRect(x:0, y:0, width:newSize.width, height:newSize.height))
         let newImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         return newImage!
+    }
+    
+    private func getNewSize(source: UIImage, scaledTo: CGFloat) -> CGSize {
+        if source.size.width > source.size.height {
+            let oldWidth = source.size.width
+            let scaleFactor = scaledTo / oldWidth
+            
+            let newHeight = source.size.height * scaleFactor
+            let newWidth = oldWidth * scaleFactor
+            return CGSize(width:newWidth, height:newHeight)
+        } else {
+            let oldheight = source.size.height
+            let scaleFactor = scaledTo / oldheight
+            
+            let newHeight = oldheight * scaleFactor
+            let newWidth = source.size.width * scaleFactor
+            return CGSize(width:newWidth, height:newHeight)
+        }
     }
     
     // MARK: -  Layout code
