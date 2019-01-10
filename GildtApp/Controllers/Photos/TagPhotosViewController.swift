@@ -37,8 +37,6 @@ class TagPhotosViewController: GenericTableViewController<PreviewImageTableViewC
     }
     
     @objc func uploadClicked() {
-        
-
         let status = PHPhotoLibrary.authorizationStatus()
         
         if (status == PHAuthorizationStatus.authorized) {
@@ -61,14 +59,12 @@ class TagPhotosViewController: GenericTableViewController<PreviewImageTableViewC
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        var chosenImage = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
-        print(chosenImage.size.height)
+        let chosenImage = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
         picker.dismiss(animated: true, completion: nil)
         
         showUploadAlert(image: chosenImage)
     }
 
-    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         //convert Photo's to SKPhoto's to use in SKPhotoBrowser
         var images = [SKPhoto]()
@@ -120,7 +116,7 @@ extension TagPhotosViewController {
         alertController.addAction(UIAlertAction(title: "Upload", style: .default, handler: {
             (alert: UIAlertAction!) in
             if let textField = alertController.textFields?.first {
-                print(textField.text!)
+                // DO UPLOAD
             }}))
         alertController.addAction(UIAlertAction(title: "Annuleer", style: .cancel, handler: nil))
         
