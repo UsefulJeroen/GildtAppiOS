@@ -15,6 +15,7 @@ import SwiftKeychainWrapper
 final class LocalStorageService {
     private static let authTokenKey: String = "changeToSecureRandomKey"
     private static let usernameKey: String = "GildtProfilename"
+    private static let onboardingKey: String = "GildtOnboardingKey"
     
     static func setAuthToken(authToken: String) {
         KeychainWrapper.standard.set(authToken, forKey: authTokenKey)
@@ -38,5 +39,13 @@ final class LocalStorageService {
     
     static func removeAuthToken() {
         KeychainWrapper.standard.removeObject(forKey: authTokenKey)
+    }
+    
+    static func setOnboardingState(state: Bool) {
+        UserDefaults.standard.set(state, forKey: onboardingKey)
+    }
+    
+    static func getOnboardingState() -> Bool {
+        return UserDefaults.standard.bool(forKey: onboardingKey)
     }
 }
