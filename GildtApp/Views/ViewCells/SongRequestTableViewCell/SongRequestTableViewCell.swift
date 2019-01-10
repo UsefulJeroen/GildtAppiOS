@@ -44,7 +44,7 @@ class SongRequestTableViewCell: GenericTableViewCell<SongRequest> {
     @IBOutlet weak var upvoteButton: UIButton!
     
     func setUpvoted() {
-        upvotesAmountLabelView.textColor = UIColor.green
+        upvotesAmountLabelView.textColor = UIColor.primaryGildtGreen
         upvoteButton.setImage(UIImage(named: "arrow-up-green"), for: UIControl.State.normal)
     }
     
