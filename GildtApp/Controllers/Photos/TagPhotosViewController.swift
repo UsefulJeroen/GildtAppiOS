@@ -102,12 +102,12 @@ extension TagPhotosViewController {
     }
     
     func showUploadAlert(image: UIImage) {
-        let alertController = UIImageAlertController(
+        let alertController = UIAlertController(
             title: "Foto upload",
             message: "Wat valt er op deze foto te zien?",
             preferredStyle: .alert)
         
-        alertController.setTitleImage(image)
+        alertController.addImage(image)
         
         alertController.addTextField { textField in
             textField.placeholder = "Beschrijving"
