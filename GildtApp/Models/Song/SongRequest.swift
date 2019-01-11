@@ -9,13 +9,19 @@
 import Foundation
 import UIKit
 
+enum DidVote: Int, Codable {
+    case downvote = -1
+    case none = 0
+    case upvote = 1
+}
+
 struct SongRequest: Codable {
     let id: Int
     let artist: String
     let title: String
     var votes: Int
     let userId: Int
-    let didVote: Int?
+    let didVote: DidVote?
     var row: Int?
     var new: Bool?
     
@@ -35,6 +41,7 @@ struct SongRequest: Codable {
         self.title = title
         self.votes = votes
         self.userId = userId
-        self.didVote = 1
+        self.didVote = .none
     }
 }
+

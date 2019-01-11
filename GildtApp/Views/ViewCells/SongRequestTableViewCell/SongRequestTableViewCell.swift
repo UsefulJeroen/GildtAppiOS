@@ -20,10 +20,10 @@ class SongRequestTableViewCell: GenericTableViewCell<SongRequest> {
             titleLabelView.text = item.title
             artistLabelView.text = item.artist
             upvotesAmountLabelView.text = String(item.votes)
-            if item.didVote == -1 {
+            if item.didVote == .downvote {
                 setDownvoted()
             }
-            if item.didVote == 1 {
+            if item.didVote == .upvote {
                 setUpvoted()
             }
             if item.new == true {
