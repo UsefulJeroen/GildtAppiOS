@@ -137,7 +137,7 @@ class LoginViewController: UIViewController {
         //show error if this is nil
         
         let user: LoginModel = LoginModel(email: email, password: password)
-        UserAPIService.login(user: user)
+        GildtAPIService.login(user: user)
             .response(completionHandler: { [weak self] (response) in
                 guard let jsonData = response.data else { return }
                 
@@ -209,7 +209,7 @@ class LoginViewController: UIViewController {
         //show error if this is nil
         
         let user: RegisterModel = RegisterModel(username: username, email: email, password: password, password_confirmation: passwordConfirmation)
-        UserAPIService.register(user: user)
+        GildtAPIService.register(user: user)
             .response(completionHandler: { [weak self] (response) in
                 guard let jsonData = response.data else { return }
                 

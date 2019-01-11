@@ -17,7 +17,7 @@ class TagOverviewViewController: GenericCollectionViewController<TagCollectionVi
     }
     
     override func getMainAPICall() -> DataRequest {
-        return PhotoAPIService.getAllTags()
+        return GildtAPIService.getAllTags()
     }
     
     let itemsPerRow: CGFloat = 2

@@ -70,7 +70,7 @@ class SongRequestTableViewCell: GenericTableViewCell<SongRequest> {
     }
     
     @objc func downvoteClicked(_ sender: UIButton?) {
-        JukeboxAPIService.downvoteSong(songId: item.id)
+        GildtAPIService.downvoteSong(songId: item.id)
             .responseData(completionHandler: { [weak self] (response) in
                 guard let jsonData = response.data else { return }
                 
@@ -88,7 +88,7 @@ class SongRequestTableViewCell: GenericTableViewCell<SongRequest> {
     }
     
     @objc func upvoteButtonClicked(_ sender: UIButton?) {
-        JukeboxAPIService.upvoteSong(songId: item.id)
+        GildtAPIService.upvoteSong(songId: item.id)
             .responseData(completionHandler: { [weak self] (response) in
                 guard let jsonData = response.data else { return }
                 

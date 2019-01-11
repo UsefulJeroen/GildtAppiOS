@@ -20,7 +20,7 @@ class TagPhotosViewController: GenericTableViewController<PreviewImageTableViewC
     }
     
     override func getMainAPICall() -> DataRequest {
-        return PhotoAPIService.getImagesFromTag(id: tag?.id ?? 0)
+        return GildtAPIService.getImagesFromTag(id: tag?.id ?? 0)
     }
     
     var tag: Tag?

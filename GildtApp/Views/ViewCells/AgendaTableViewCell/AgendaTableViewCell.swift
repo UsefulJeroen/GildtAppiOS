@@ -77,7 +77,7 @@ class AgendaTableViewCell: GenericTableViewCell<Event> {
     }
     
     func setAttendance(attendance: Bool) {
-        AgendaAPIService.setAttendance(event: self.item!, attendance: attendance)
+        GildtAPIService.setAttendance(event: self.item!, attendance: attendance)
             .response(completionHandler: { [weak self] (response) in
                 guard let jsonData = response.data else { return }
                 

@@ -61,7 +61,7 @@ class DealsViewController: UIViewController {
     }
 
     @objc private func getDeals() {
-        DealsAPIService.getDeals()
+        GildtAPIService.getDeals()
             .responseData(completionHandler: { [weak self] (response) in
                 guard let jsonData = response.data else { return }
 
@@ -99,7 +99,7 @@ class DealsViewController: UIViewController {
     }
     
     func redeemDeal(deal: Deal) {
-        DealsAPIService.redeemDeal(deal: deal)
+        GildtAPIService.redeemDeal(deal: deal)
             .responseData(completionHandler: { [weak self] (response) in
                 guard let jsonData = response.data else { return }
 

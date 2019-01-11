@@ -10,14 +10,14 @@ import Foundation
 import Alamofire
 
 //bakendapiservice to implement alamofire requests
-//this will depend on the api made by Erik,
-//possibly changed if an api from an apigroup is available at launch
-class BackendAPIService {
+//this will depend on the api made by Erik
+
+class GildtAPIService {
     
     private static let baseURL = "https://gildt.inholland-informatica.nl/api/v1"
     
     //create a datarequest with a body
-    fileprivate static func createRequest<T>(endPointURL: String, httpMethod: HTTPMethod, body: T) -> DataRequest where T: Encodable {
+    private static func createRequest<T>(endPointURL: String, httpMethod: HTTPMethod, body: T) -> DataRequest where T: Encodable {
         var request = URLRequest(url: URL(string: "\(baseURL)/\(endPointURL)")!)
         request.httpMethod = httpMethod.rawValue
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
@@ -33,16 +33,15 @@ class BackendAPIService {
     }
 
     //create a datarequest without a body
-    fileprivate static func createRequest(endPointURL: String, httpMethod: HTTPMethod) -> DataRequest {
+    private static func createRequest(endPointURL: String, httpMethod: HTTPMethod) -> DataRequest {
         var headers: [String: String] = [:]
         if let authToken = LocalStorageService.getAuthToken() {
             headers["Authorization"] = "Bearer \(authToken)"
         }
         return Alamofire.request("\(baseURL)/\(endPointURL)", method: httpMethod, parameters: nil, encoding: URLEncoding.default, headers: headers)
     }
-}
-
-class DealsAPIService: BackendAPIService {
+    
+    //MARK: - Deals
     static func getDeals() -> DataRequest {
         let endPointURL = "deal"
         return createRequest(endPointURL: endPointURL, httpMethod: .get)
@@ -52,9 +51,8 @@ class DealsAPIService: BackendAPIService {
         let endPointURL = "deal/\(deal.id)/redeem"
         return createRequest(endPointURL: endPointURL, httpMethod: .put)
     }
-}
-
-class AgendaAPIService: BackendAPIService {
+    
+    //MARK: - Agenda
     static func getAgendaItems() -> DataRequest {
         let endPointURL = "event"
         return createRequest(endPointURL: endPointURL, httpMethod: .get)
@@ -65,9 +63,8 @@ class AgendaAPIService: BackendAPIService {
         let attendance = Attendance.init(attendance: attendance)
         return createRequest(endPointURL: endPointURL, httpMethod: .post, body: attendance)
     }
-}
-
-class UserAPIService: BackendAPIService {
+    
+    //MARK: - User
     static func register(user: RegisterModel) -> DataRequest {
         let endPointURL = "user"
         return createRequest(endPointURL: endPointURL, httpMethod: .post, body: user)
@@ -77,9 +74,8 @@ class UserAPIService: BackendAPIService {
         let endPointURL = "user_token"
         return createRequest(endPointURL: endPointURL, httpMethod: .post, body: user)
     }
-}
-
-class JukeboxAPIService: BackendAPIService {
+    
+    //MARK: - Jukebox
     static func getSongRequests() -> DataRequest {
         let endPointURL = "song"
         return createRequest(endPointURL: endPointURL, httpMethod: .get)
@@ -99,9 +95,8 @@ class JukeboxAPIService: BackendAPIService {
         let endPointURL = "song/\(songId)/downvote"
         return createRequest(endPointURL: endPointURL, httpMethod: .put)
     }
-}
-
-class PhotoAPIService: BackendAPIService {
+    
+    //MARK: - Photo
     static func getAllTags() -> DataRequest {
         let endPointURL = "tag"
         return createRequest(endPointURL: endPointURL, httpMethod: .get)
@@ -111,9 +106,8 @@ class PhotoAPIService: BackendAPIService {
         let endPointURL = "tag/\(id)/images"
         return createRequest(endPointURL: endPointURL, httpMethod: .get)
     }
-}
-
-class StampAPIService: BackendAPIService {
+    
+    //MARK: - Stamp
     static func getStamps() -> DataRequest {
         let endPointURL = "stamp_card"
         return createRequest(endPointURL: endPointURL, httpMethod: .get)

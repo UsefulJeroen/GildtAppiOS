@@ -17,7 +17,7 @@ class JukeboxViewController: GenericTableViewController<SongRequestTableViewCell
     }
     
     override func getMainAPICall() -> DataRequest {
-        return JukeboxAPIService.getSongRequests()
+        return GildtAPIService.getSongRequests()
     }
     
     @IBOutlet weak var titleTextField: UITextField!
@@ -98,7 +98,7 @@ class JukeboxViewController: GenericTableViewController<SongRequestTableViewCell
         //check if nil!!??
         if let title = title, let artist = artist {
             let song = NewSong(title: title, artist: artist)
-            JukeboxAPIService.addSong(song: song)
+            GildtAPIService.addSong(song: song)
                 .response(completionHandler: { [weak self] (response) in
                     
                     guard let jsonData = response.data else { return }
