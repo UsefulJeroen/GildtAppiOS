@@ -19,17 +19,17 @@
                 <rect key="frame" x="0.0" y="0.0" width="250" height="250"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Yii-hh-ziz" userLabel="Content View">
-                        <rect key="frame" x="-2" y="-1" width="253" height="251"/>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yii-hh-ziz" userLabel="Content View">
+                        <rect key="frame" x="-2" y="0.0" width="254" height="250"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kCL-aP-81Y" userLabel="Container">
                                 <rect key="frame" x="26" y="25" width="202" height="200"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="goJ-Zx-GUf">
-                                        <rect key="frame" x="0.0" y="0.0" width="200" height="150"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="goJ-Zx-GUf">
+                                        <rect key="frame" x="0.0" y="0.0" width="202" height="150"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bfJ-tx-sCG">
-                                        <rect key="frame" x="8" y="158" width="184" height="21"/>
+                                        <rect key="frame" x="8" y="158" width="186" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -48,12 +48,12 @@
                                     <constraint firstItem="bfJ-tx-sCG" firstAttribute="top" secondItem="goJ-Zx-GUf" secondAttribute="bottom" constant="8" symbolic="YES" id="7Ba-Cx-aV3"/>
                                     <constraint firstItem="bfJ-tx-sCG" firstAttribute="leading" secondItem="Q5x-1q-M0O" secondAttribute="leading" id="82O-ts-0kk"/>
                                     <constraint firstAttribute="trailing" secondItem="Q5x-1q-M0O" secondAttribute="trailing" constant="87" id="CRf-rm-RQi"/>
+                                    <constraint firstItem="goJ-Zx-GUf" firstAttribute="width" secondItem="kCL-aP-81Y" secondAttribute="width" id="KFo-BW-gf1"/>
                                     <constraint firstItem="bfJ-tx-sCG" firstAttribute="leading" secondItem="kCL-aP-81Y" secondAttribute="leadingMargin" id="Ku8-XT-acv"/>
                                     <constraint firstItem="Q5x-1q-M0O" firstAttribute="top" secondItem="bfJ-tx-sCG" secondAttribute="bottom" id="NQD-tw-n6O"/>
                                     <constraint firstAttribute="bottom" secondItem="Q5x-1q-M0O" secondAttribute="bottom" constant="3" id="V8R-gw-9l1"/>
-                                    <constraint firstAttribute="trailing" secondItem="goJ-Zx-GUf" secondAttribute="trailing" constant="2" id="pN3-vE-0MK"/>
+                                    <constraint firstItem="goJ-Zx-GUf" firstAttribute="centerX" secondItem="kCL-aP-81Y" secondAttribute="centerX" id="Zql-GV-IfX"/>
                                     <constraint firstAttribute="bottom" secondItem="goJ-Zx-GUf" secondAttribute="bottom" constant="50" id="vxm-2q-FGh"/>
-                                    <constraint firstItem="goJ-Zx-GUf" firstAttribute="leading" secondItem="kCL-aP-81Y" secondAttribute="leading" id="y5m-MN-Gbp"/>
                                 </constraints>
                             </view>
                         </subviews>

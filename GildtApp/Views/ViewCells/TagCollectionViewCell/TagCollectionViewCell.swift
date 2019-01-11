@@ -29,6 +29,9 @@ class TagCollectionViewCell: GenericCollectionViewCell<Tag> {
         container.layer.cornerRadius = 10
         //self.selectionStyle = .none
         
+        previewImage.layer.cornerRadius = 10
+        previewImage.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
+        
         // Shaddow is iffy
         container.layer.shadowColor = UIColor.black.cgColor
         container.layer.shadowOffset = CGSize(width: 0, height: 3)
