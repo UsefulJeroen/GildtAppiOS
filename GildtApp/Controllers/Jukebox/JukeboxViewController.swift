@@ -28,8 +28,14 @@ class JukeboxViewController: GenericTableViewController<SongRequestTableViewCell
         super.viewDidLoad()
         
         navigationItem.title = "Jukebox"
-        
+        let tapGesture: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
+        self.tableView.addGestureRecognizer(tapGesture)
         setupAddButton()
+    }
+    
+    @objc private func hideKeyboard() {
+        titleTextField.resignFirstResponder()
+        artistTextField.resignFirstResponder()
     }
     
     override func viewWillAppear(_ animated: Bool) {
