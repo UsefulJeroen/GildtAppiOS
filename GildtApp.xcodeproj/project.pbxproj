@@ -47,6 +47,7 @@
 		DF33B30A21E79F0D00F8E71D /* SwiftyOnboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF33B30921E79F0D00F8E71D /* SwiftyOnboard.swift */; };
 		DF33B30C21E79F1C00F8E71D /* SwiftyOnboardOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF33B30B21E79F1C00F8E71D /* SwiftyOnboardOverlay.swift */; };
 		DF33B30E21E79F2700F8E71D /* SwiftyOnboardPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF33B30D21E79F2600F8E71D /* SwiftyOnboardPage.swift */; };
+		DF33B31521E825C700F8E71D /* UIAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF33B31421E825C700F8E71D /* UIAlertController.swift */; };
 		DF70F66F219EE2C2001D3006 /* Agenda.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF70F66E219EE2C2001D3006 /* Agenda.storyboard */; };
 		DF70F671219EE2DB001D3006 /* Deals.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF70F670219EE2DB001D3006 /* Deals.storyboard */; };
 		DF70F673219EE304001D3006 /* Stempelkaart.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF70F672219EE304001D3006 /* Stempelkaart.storyboard */; };
@@ -117,6 +118,7 @@
 		DF33B30921E79F0D00F8E71D /* SwiftyOnboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftyOnboard.swift; sourceTree = "<group>"; };
 		DF33B30B21E79F1C00F8E71D /* SwiftyOnboardOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftyOnboardOverlay.swift; sourceTree = "<group>"; };
 		DF33B30D21E79F2600F8E71D /* SwiftyOnboardPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftyOnboardPage.swift; sourceTree = "<group>"; };
+		DF33B31421E825C700F8E71D /* UIAlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAlertController.swift; sourceTree = "<group>"; };
 		DF70F66E219EE2C2001D3006 /* Agenda.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Agenda.storyboard; sourceTree = "<group>"; };
 		DF70F670219EE2DB001D3006 /* Deals.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Deals.storyboard; sourceTree = "<group>"; };
 		DF70F672219EE304001D3006 /* Stempelkaart.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Stempelkaart.storyboard; sourceTree = "<group>"; };
@@ -424,6 +426,7 @@
 				DF772FC121DA6E5800EC3EB1 /* UIView.swift */,
 				DFB7981F21E158A30011425C /* GildtButton.swift */,
 				DFB7982121E355DA0011425C /* UILabelTopAlign.swift */,
+				DF33B31421E825C700F8E71D /* UIAlertController.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -653,6 +656,7 @@
 				DF772FBE21DA5F4600EC3EB1 /* StatusAlertService.swift in Sources */,
 				DFB7982221E355DA0011425C /* UILabelTopAlign.swift in Sources */,
 				B0B1125F21C83EA300E4F721 /* ErrorMessage.swift in Sources */,
+				DF33B31521E825C700F8E71D /* UIAlertController.swift in Sources */,
 				B0E84EFD21C2BEAC00EF2C49 /* PreviewImageTableViewCell.swift in Sources */,
 				B0CD4DCA21BE9F900060A28C /* TagOverviewViewController.swift in Sources */,
 				B099D20A21B0442600DA4473 /* NewSong.swift in Sources */,
