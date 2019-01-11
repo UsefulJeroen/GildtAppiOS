@@ -91,7 +91,7 @@ class EventViewController: UIViewController {
     }
     
     func setAttendance(attendance: Bool) {
-        AgendaAPIService.setAttendance(event: self.event!, attendance: attendance)
+        GildtAPIService.setAttendance(event: self.event!, attendance: attendance)
             .response(completionHandler: { [weak self] (response) in
                 guard let jsonData = response.data else { return }
                 

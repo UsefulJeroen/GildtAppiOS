@@ -17,7 +17,7 @@ class AgendaViewController: GenericTableViewController<AgendaTableViewCell, Even
     }
     
     override func getMainAPICall() -> DataRequest {
-        return AgendaAPIService.getAgendaItems()
+        return GildtAPIService.getAgendaItems()
     }
     
     override func viewDidLoad() {

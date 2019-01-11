@@ -62,7 +62,7 @@ class StempelkaartViewController : UIViewController {
     }
     
     @objc private func getStamps() {
-        StampAPIService.getStamps()
+        GildtAPIService.getStamps()
             .responseData(completionHandler: { [weak self] (response) in
                 guard let jsonData = response.data else { return }
                 
@@ -87,7 +87,7 @@ class StempelkaartViewController : UIViewController {
     }
     
     func claimStamp(qrCode: String) {
-        StampAPIService.claimStamp(qrCode: qrCode)
+        GildtAPIService.claimStamp(qrCode: qrCode)
             .responseData(completionHandler: { [weak self] (response) in
                 DispatchQueue.main.async {
                     if (response.response?.statusCode == 200) {
