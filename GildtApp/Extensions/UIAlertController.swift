@@ -13,7 +13,7 @@ extension UIAlertController {
         let maxSize = CGSize(width: 245, height: 125)
         
         var ratio : CGFloat!
-        if (image.size.width > image.size.height) {
+        if (image.size.width >= image.size.height) {
             ratio = maxSize.width / image.size.width
         } else {
             ratio = maxSize.height / image.size.height
@@ -24,7 +24,7 @@ extension UIAlertController {
             height: image.size.height * ratio)
         
         var scaledImage = resizeImage(source: image, resizeTo: scaledSize)
-        if image.size.height > image.size.width {
+        if image.size.height >= image.size.width {
             let offset = (maxSize.width - scaledImage.size.width) / 2
             scaledImage = scaledImage.withAlignmentRectInsets(UIEdgeInsets(top: 0, left: -offset, bottom: 0, right: 0))
         }
