@@ -32,6 +32,20 @@
 "Onboarding_Open_App"               = "Open de app!";
 
 // MARK: Login
+"Login_Username"                    = "Gebruikersnaam";
+"Login_Email"                       = "Emailadres";
+"Login_Password"                    = "Wachtwoord";
+"Login_Password_Verification"       = "Wachtwoord verificatie";
+"Login_Existing_Account"            = "Heb je al een account?";
+"Login_No_Existing_Account"         = "Heb je nog geen account?";
+
+"Login_Error_Title"                 = "Kan niet inloggen :(";
+"Login_Error_Message"               = "Het is helaas niet gelukt om in te loggen, je hebt waarschijnlijk niet de juiste info ingevuld.";
+"Login_Error_Discard"               = "Probeer het nog eens";
+
+"Login_Register_Error_Title"        = "Kan niet registreren :(";
+"Login_Register_Error_Message"      = "Het is helaas niet gelukt om je te registreren, waarschijnlijk omdat je iets verkeerds hebt ingevuld.";
+"Login_Register_Error_Reason"       = "Het is helaas niet gelukt om je te registreren, omdat: ";
 
 // MARK: Agenda
 
