@@ -8,6 +8,10 @@
 
 // MARK: General
 "General_Whoops"                    = "Whoops!";
+"General_Camera"                    = "Camera";
+"General_Cancel"                    = "Annuleer";
+"General_Settings"                  = "Instellingen";
+"General_Ok"                        = "Oke";
 
 // MARK: Onboarding
 "Onboarding_Welcome"                = "Welkom!";
@@ -64,6 +68,17 @@
 "Deals_Usage_Still"                 = "Nog ";
 "Deals_Times_Usable"                = "keer bruikbaar";
 "Deals_Usable_Unlimited"            = "Onbeperkt bruikbaar";
+
+// Mark: Stamps
+"Stamps_Close_QR"                   = "Sluiten";
+"Stamps_Claimed"                    = "Stempel geclaimd";
+"Stamps_Enjoy"                      = "Veel plezier op het feest!";
+"Stamps_Error"                      = "Er ging iets mis tijdens het claimen van je stempel";
+"Stamps_Location"                   = "Locatie";
+"Stamps_Location_Error"             = "Stempels kunnen niet worden toegekend wanneer locatiegegevens uitstaan voor 't Gildt.\n\nDe app dient te controleren of je daadwerkelijk aanwezig bent.";
+"Stamps_Location_Wrong"             = "Het lijkt er op dat je niet in 't Gildt bent.";
+"Stamps_Camera_Permission"          = "Het lijkt er op dat er geen camera toestemming is gegeven.";
+"Stamps_Camera_Not_Suported"        = "QR Reader niet ondersteunt, neem contact op met de ontwikkelaar.";
 
 // MARK: Jukebox
 "Jukebox_Title"                     = "Jukebox";
