@@ -7,6 +7,7 @@
 */
 
 // MARK: General
+"General_Whoops"                    = "Whoops!";
 
 // MARK: Onboarding
 "Onboarding_Welcome"                = "Welkom!";
@@ -48,6 +49,12 @@
 "Login_Register_Error_Reason"       = "Het is helaas niet gelukt om je te registreren, omdat: ";
 
 // MARK: Agenda
+"Agenda_Title"                      = "Agenda";
+"Agenda_Already"                    = "Nu al ";
+"Agenda_Attendees"                  = "Aanmeldingen!";
+"Agenda_Signup"                     = "Aanmelden";
+"Agenda_Signoff"                    = "Afmelden";
+"Agenda_Signup_Error"               = "Er is iets mis gegaan tijdens het doorgeven van je aanwezigheid";
 
 // MARK: Deals
 

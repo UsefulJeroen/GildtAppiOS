@@ -55,10 +55,16 @@ class EventViewController: UIViewController {
             formatter.timeStyle = .none
             formatter.dateStyle = .long
             EventDateTime.text = "\(formatter.string(from: date))"
-            EventAttendees.text = "Nu al \(event.attendanceUsers.count) aanmeldingen!"
+            EventAttendees.text =
+                NSLocalizedString("Agenda_Already", comment: "") +
+                "\(event.attendanceUsers.count) " +
+                NSLocalizedString("Agenda_Attendees", comment: "")
             EventDescription.text = event.description
             
-            EventAttendeesCount.text = "\(event.attendanceUsers.count) aanmeldingen"
+            EventAttendeesCount.text =
+                "\(event.attendanceUsers.count) " +
+                NSLocalizedString("Agenda_Attendees", comment: "")
+            
             EventAttendeesList.text = "\n"
             for attendee in event.attendanceUsers {
                 EventAttendeesList.text?.append("- \(attendee)\n")
@@ -68,13 +74,13 @@ class EventViewController: UIViewController {
     
     private func setAttendanceButton(attendance: Bool) {
         if attendance {
-            EventButton.setTitle("Afmelden", for: .normal)
+            EventButton.setTitle(NSLocalizedString("Agenda_Signup", comment: ""), for: .normal)
             EventButton.setTitleColor(UIColor.primaryGildtGreen, for: .normal)
             EventButton.backgroundColor = UIColor.white
             EventButton.layer.borderColor = UIColor.primaryGildtGreen.cgColor
             EventButton.layer.borderWidth = 1
         } else {
-            EventButton.setTitle("Aanmelden", for: .normal)
+            EventButton.setTitle(NSLocalizedString("Agenda_Signoff", comment: ""), for: .normal)
             EventButton.setTitleColor(UIColor.white, for: .normal)
             EventButton.backgroundColor = UIColor.primaryGildtGreen
             EventButton.layer.borderColor = UIColor.primaryGildtGreen.cgColor
@@ -105,8 +111,8 @@ class EventViewController: UIViewController {
                     } else {
                         StatusAlertService().showStatusAlert(
                             withImage: #imageLiteral(resourceName: "IconError"),
-                            title: "Whoops!",
-                            message: "Er is iets mis gegaan tijdens het doorgeven van je aanwezigheid",
+                            title: NSLocalizedString("General_Whoops", comment: ""),
+                            message: NSLocalizedString("Agenda_Signup_Error", comment: ""),
                             error: true)
                     }
                 }
