@@ -127,10 +127,18 @@ extension TagPhotosViewController {
         let baseURL = "https://gildt.inholland-informatica.nl/api/v1"
         let authToken = LocalStorageService.getAuthToken()!
         let headers: HTTPHeaders = ["Authorization": "Bearer \(authToken)"]
-        let imageData = image.jpegData(compressionQuality: 0.7)
+        let imageData = image.jpegData(compressionQuality: 0.6)
+        
+        // Upload modal
+        let alert = UIAlertController(title: "Foto uploaden", message: "Voortgang: 0%", preferredStyle: .alert)
+        let rect = CGRect(x: 10, y: 70, width: 250, height: 0)
+        let progressView = UIProgressView(frame: rect)
+        progressView.tintColor = UIColor.primaryGildtGreen
+        alert.view.addSubview(progressView)
+        
+        self.present(alert, animated: true, completion: nil)
         
         Alamofire.upload(multipartFormData: { multipartFormData in
-            // import image to request
             multipartFormData.append(imageData!, withName: "image", fileName: "\(Date().timeIntervalSince1970).jpeg", mimeType: "image/jpeg")
             multipartFormData.append(description.data(using: .utf8)!, withName: "description")
             multipartFormData.append(String(tag).data(using: .utf8)!, withName: "tags")
@@ -139,13 +147,20 @@ extension TagPhotosViewController {
            headers: headers) { encodingResult in
             switch encodingResult {
             case .success(let upload, _, _):
-                upload.responseJSON { response in
-                    if response.result.isSuccess {
-                        self.showSuccessMessage()
-                    } else {
-                        self.showFailureMessage()
+                upload.uploadProgress(closure: { (progress) in
+                    progressView.setProgress(Float(progress.fractionCompleted), animated: true)
+                    alert.message = "Voortgang: \(NSString(format: "%.1f", progress.fractionCompleted * 100))%"
+                    if progress.isFinished {
+                        alert.dismiss(animated: true, completion: {
+                            self.showSuccessMessage()
+                        })
                     }
-                }
+                    if progress.isCancelled {
+                        alert.dismiss(animated: true, completion: {
+                            self.showFailureMessage()
+                        })
+                    }
+                })
             case .failure(_ ):
                 self.showFailureMessage()
             }
