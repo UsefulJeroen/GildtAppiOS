@@ -66,5 +66,7 @@
 "Deals_Usable_Unlimited"            = "Onbeperkt bruikbaar";
 
 // MARK: Jukebox
+"Jukebox_Title"                     = "Jukebox";
+"Jukebox_New"                       = "NEW";
 
 // MARK: Foto's
