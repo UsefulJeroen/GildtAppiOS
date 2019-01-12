@@ -5,3 +5,38 @@
   Created by Wouter Janson on 12/01/2019.
   Copyright © 2019 Gildt. All rights reserved.
 */
+
+// MARK: General
+
+// MARK: Onboarding
+"Onboarding_Welcome"                = "Welkom!";
+"Onboarding_Welcome_Description"    = "Hier een kleine uitleg over de app van ’t Gildt\n\nEr zijn 5 basisfuncties beschikbaar voor de gasten van ’t Haerlems Studenten Gildt";
+
+"Onboarding_Agenda"                 = "Agenda";
+"Onboarding_Agenda_Description"     = "De agenda laat zien wat de aankomende evenementen zijn. Je kunt aangeven of je aanwezig zult zijn en je kan zien wie er ook naar het evenement komt. Zorg dus voor een leuke gebruikersnaam!";
+
+"Onboarding_Deals"                  = "Deals";
+"Onboarding_Deals_Description"      = "Deals laat je jouw coupons zien. Vanuit dit scherm kan de bar-medewerker jouw coupon verzilveren. Sommige deals zijn onbeperkt beschikbaar andere hebben een maximum per gebruiker.";
+
+"Onboarding_Stamps"                 = "Stamps";
+"Onboarding_Stamps_Description"     = "De stempelkaart laat zien hoeveel stempels je al hebt gespaard en je kan een stempel claimen als je aanwezig bent op een stempel-evenement.\nMet een volle stempelkaart zijn prijzen te winnen!";
+
+"Onboarding_Jukebox"                = "Jukebox";
+"Onboarding_Jukebox_Description"    = "Bij de jukebox kunnen er muzieknummers worden aangevraagd om af te spelen in ’t Gildt.\nOok kan er ge-upvote en ge-downvote worden op eerder aangevraagde nummers.";
+
+"Onboarding_Photos"                 = "Foto's";
+"Onboarding_Photos_Description"     = "Bij de foto’s worden er tags getoont. De tag ‘Halloween’ bevat bijvoorbeeld foto’s van het thema-feest ‘Halloween’. Ook kan je hier zelf foto’s van thema-feesten  uploaden.";
+
+"Onboarding_Next"                   = "Volgende";
+"Onboarding_Skip"                   = "Skip";
+"Onboarding_Open_App"               = "Open de app!";
+
+// MARK: Login
+
+// MARK: Agenda
+
+// MARK: Deals
+
+// MARK: Jukebox
+
+// MARK: Foto's
