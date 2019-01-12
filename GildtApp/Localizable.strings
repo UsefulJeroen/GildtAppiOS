@@ -51,12 +51,19 @@
 // MARK: Agenda
 "Agenda_Title"                      = "Agenda";
 "Agenda_Already"                    = "Nu al ";
-"Agenda_Attendees"                  = "Aanmeldingen!";
+"Agenda_Attendees"                  = "aanmeldingen!";
 "Agenda_Signup"                     = "Aanmelden";
 "Agenda_Signoff"                    = "Afmelden";
 "Agenda_Signup_Error"               = "Er is iets mis gegaan tijdens het doorgeven van je aanwezigheid";
 
 // MARK: Deals
+"Deals_Title"                       = "Deals";
+"Deals_Error_Message"               = "Er is iets mis gegaan tijdens het indienen...";
+"Deals_Deal_Claimed"                = "Deal ingediend";
+"Deals_Enjoy"                       = "Geniet van je drankje!";
+"Deals_Usage_Still"                 = "Nog ";
+"Deals_Times_Usable"                = "keer bruikbaar";
+"Deals_Usable_Unlimited"            = "Onbeperkt bruikbaar";
 
 // MARK: Jukebox
 
