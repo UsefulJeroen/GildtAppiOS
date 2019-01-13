@@ -24,7 +24,7 @@ class DealsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.title = "Deals"
+        navigationItem.title = NSLocalizedString("Deals_Title", comment: "")
         navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.refresh, target: self, action: #selector(getDeals))
         view.backgroundColor = UIColor.appBackground
         
@@ -110,7 +110,7 @@ class DealsViewController: UIViewController {
                     if data != nil {
                         self?.dealSuccessfullyRedeemed(updatedDeal: data!)
                     } else {
-                        self?.dealUnsuccessfullyRedeemed(message: "Er is iets mis gegaan tijdens het indienen...")
+                        self?.dealUnsuccessfullyRedeemed(message: NSLocalizedString("Deals_Error_Message", comment: ""))
                     }
                 }
             })
@@ -127,15 +127,15 @@ class DealsViewController: UIViewController {
         }
         statusAlertService.showStatusAlert(
             withImage: #imageLiteral(resourceName: "IconSucces"),
-            title: "Deal ingediend",
-            message: "Geniet van je drankje!")
+            title: NSLocalizedString("Deals_Deal_Claimed", comment: ""),
+            message: NSLocalizedString("Deals_Enjoy", comment: ""))
         UINotificationFeedbackGenerator().notificationOccurred(.success)
     }
 
     func dealUnsuccessfullyRedeemed(message: String) {
         statusAlertService.showStatusAlert(
             withImage: #imageLiteral(resourceName: "IconError"),
-            title: "Whoops!",
+            title: NSLocalizedString("General_Whoops", comment: ""),
             message: message,
             error: true)
         UINotificationFeedbackGenerator().notificationOccurred(.error)

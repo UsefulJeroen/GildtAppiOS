@@ -23,7 +23,7 @@ class AgendaViewController: GenericTableViewController<AgendaTableViewCell, Even
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationItem.title = "Agenda"
+        navigationItem.title = NSLocalizedString("Agenda_Title", comment: "")
         
         registerForPreviewing(with: self, sourceView: tableView)
         
@@ -39,7 +39,6 @@ class AgendaViewController: GenericTableViewController<AgendaTableViewCell, Even
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("Selected \(indexPath.row)")
         self.navigationController?.pushViewController(detailViewController(for: indexPath.row), animated: true)
     }
     

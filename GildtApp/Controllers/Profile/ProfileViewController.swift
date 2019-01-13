@@ -13,7 +13,7 @@ class ProfileViewController : UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = LocalStorageService.getUsername() ?? "Profiel"
+        title = LocalStorageService.getUsername() ?? NSLocalizedString("General_Profile", comment: "")
     }
     
     override func viewDidDisappear(_ animated: Bool) {

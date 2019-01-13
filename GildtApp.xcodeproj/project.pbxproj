@@ -48,6 +48,7 @@
 		DF33B30C21E79F1C00F8E71D /* SwiftyOnboardOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF33B30B21E79F1C00F8E71D /* SwiftyOnboardOverlay.swift */; };
 		DF33B30E21E79F2700F8E71D /* SwiftyOnboardPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF33B30D21E79F2600F8E71D /* SwiftyOnboardPage.swift */; };
 		DF33B31521E825C700F8E71D /* UIAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF33B31421E825C700F8E71D /* UIAlertController.swift */; };
+		DF33B31921EA63E800F8E71D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DF33B31821EA63E800F8E71D /* Localizable.strings */; };
 		DF70F66F219EE2C2001D3006 /* Agenda.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF70F66E219EE2C2001D3006 /* Agenda.storyboard */; };
 		DF70F671219EE2DB001D3006 /* Deals.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF70F670219EE2DB001D3006 /* Deals.storyboard */; };
 		DF70F673219EE304001D3006 /* Stempelkaart.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF70F672219EE304001D3006 /* Stempelkaart.storyboard */; };
@@ -119,6 +120,9 @@
 		DF33B30B21E79F1C00F8E71D /* SwiftyOnboardOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftyOnboardOverlay.swift; sourceTree = "<group>"; };
 		DF33B30D21E79F2600F8E71D /* SwiftyOnboardPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftyOnboardPage.swift; sourceTree = "<group>"; };
 		DF33B31421E825C700F8E71D /* UIAlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAlertController.swift; sourceTree = "<group>"; };
+		DF33B31621EA636B00F8E71D /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		DF33B31721EA636C00F8E71D /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/Main.strings; sourceTree = "<group>"; };
+		DF33B31821EA63E800F8E71D /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		DF70F66E219EE2C2001D3006 /* Agenda.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Agenda.storyboard; sourceTree = "<group>"; };
 		DF70F670219EE2DB001D3006 /* Deals.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Deals.storyboard; sourceTree = "<group>"; };
 		DF70F672219EE304001D3006 /* Stempelkaart.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Stempelkaart.storyboard; sourceTree = "<group>"; };
@@ -270,6 +274,7 @@
 				B0177A37219B89E900E379D5 /* Models */,
 				B0177A36219B89E400E379D5 /* Services */,
 				B0177A35219B89D400E379D5 /* Views */,
+				DF33B31821EA63E800F8E71D /* Localizable.strings */,
 			);
 			path = GildtApp;
 			sourceTree = "<group>";
@@ -550,6 +555,7 @@
 				DF70F677219EE337001D3006 /* Photo.storyboard in Resources */,
 				B00563B9219DC34E00B9F635 /* Assets.xcassets in Resources */,
 				DFB7981B21E13A980011425C /* Profile.storyboard in Resources */,
+				DF33B31921EA63E800F8E71D /* Localizable.strings in Resources */,
 				B0CADB8C21AB2AE700E6D848 /* Login.storyboard in Resources */,
 				DF9D57B121B085BE003A97FB /* AgendaTableViewCell.xib in Resources */,
 			);
@@ -683,6 +689,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				B078A914219B0EE000545EAC /* Base */,
+				DF33B31721EA636C00F8E71D /* nl */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -691,6 +698,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				B078A919219B0EE300545EAC /* Base */,
+				DF33B31621EA636B00F8E71D /* nl */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -702,6 +710,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -763,6 +772,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

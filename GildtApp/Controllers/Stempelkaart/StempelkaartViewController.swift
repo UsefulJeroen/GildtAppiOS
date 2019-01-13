@@ -34,7 +34,7 @@ class StempelkaartViewController : UIViewController {
     lazy var readerVC: QRCodeReaderViewController = {
         let builder = QRCodeReaderViewControllerBuilder {
             $0.reader                  = QRCodeReader(metadataObjectTypes: [.qr], captureDevicePosition: .back)
-            $0.cancelButtonTitle       = "Sluiten"
+            $0.cancelButtonTitle       = NSLocalizedString("Stamps_Close_QQ", comment: "")
             $0.showTorchButton         = true
             $0.preferredStatusBarStyle = .lightContent
             $0.reader.stopScanningWhenCodeIsFound = false
@@ -94,13 +94,13 @@ class StempelkaartViewController : UIViewController {
                         self?.getStamps()
                         self?.statusAlertService.showStatusAlert(
                             withImage: #imageLiteral(resourceName: "TabStempelkaart"),
-                            title: "Stempel geclaimed",
-                            message: "Veel plezier op het feest!")
+                            title: NSLocalizedString("Stamps_Claimed", comment: ""),
+                            message: NSLocalizedString("Stamps_Enjoy", comment: ""))
                     } else {
                         self?.statusAlertService.showStatusAlert(
                             withImage: #imageLiteral(resourceName: "IconError"),
-                            title: "Whoops!",
-                            message: "Er ging iets mis tijdens het claimen van je stempel",
+                            title: NSLocalizedString("General_Whoops", comment: ""),
+                            message: NSLocalizedString("Stamps_Error", comment: ""),
                             error: true)
                     }
                 }
@@ -135,18 +135,18 @@ extension StempelkaartViewController {
     func LocationFailureHandling() {
         ClaimButton.hideLoading()
         let alertController = UIAlertController(
-            title: "Locatie",
-            message: "Stempels kunnen niet worden toegekend wanneer locatiegegevens uitstaan voor 't Gildt.\n\nDe app dient te controleren of je daadwerkelijk aanwezig bent.",
+            title: NSLocalizedString("Stamps_Location", comment: ""),
+            message: NSLocalizedString("Stamps_Location_Error", comment: ""),
             preferredStyle: .alert)
         
-        alertController.addAction(UIAlertAction(title: "Instellingen", style: .default, handler: { (_) in
+        alertController.addAction(UIAlertAction(title: NSLocalizedString("General_Settings", comment: ""), style: .default, handler: { (_) in
             DispatchQueue.main.async {
                 if let settingsURL = URL(string: UIApplication.openSettingsURLString) {
                     UIApplication.shared.open(settingsURL, options: [:], completionHandler: nil)
                 }
             }
         }))
-        alertController.addAction(UIAlertAction(title: "Annuleer", style: .default, handler: nil))
+        alertController.addAction(UIAlertAction(title: NSLocalizedString("General_Cancel", comment: ""), style: .default, handler: nil))
         
         present(alertController, animated: true, completion: nil)
     }
@@ -163,8 +163,8 @@ extension StempelkaartViewController {
             ClaimButton.hideLoading()
             statusAlertService.showStatusAlert(
                 withImage: #imageLiteral(resourceName: "IconError"),
-                title: "Whoops!",
-                message: "Het lijkt er op dat je niet in 't Gildt bent.",
+                title: NSLocalizedString("General_Whoops", comment: ""),
+                message: NSLocalizedString("Stamps_Location_Wrong", comment: ""),
                 error: true)
         }
     }
@@ -193,9 +193,9 @@ extension StempelkaartViewController: QRCodeReaderViewControllerDelegate {
             
             switch error.code {
             case -11852:
-                alert = UIAlertController(title: "Camera", message: "Het lijkt er op dat er geen camera toestemming is gegeven.", preferredStyle: .alert)
+                alert = UIAlertController(title: NSLocalizedString("General_Camera", comment: ""), message: NSLocalizedString("Stamps_Camera_Permission", comment: ""), preferredStyle: .alert)
                 
-                alert.addAction(UIAlertAction(title: "Instellingen", style: .default, handler: { (_) in
+                alert.addAction(UIAlertAction(title: NSLocalizedString("General_Settings", comment: ""), style: .default, handler: { (_) in
                     DispatchQueue.main.async {
                         if let settingsURL = URL(string: UIApplication.openSettingsURLString) {
                             UIApplication.shared.open(settingsURL, options: [:], completionHandler: nil)
@@ -203,10 +203,10 @@ extension StempelkaartViewController: QRCodeReaderViewControllerDelegate {
                     }
                 }))
                 
-                alert.addAction(UIAlertAction(title: "Annuleer", style: .cancel, handler: nil))
+                alert.addAction(UIAlertAction(title: NSLocalizedString("General_Cancel", comment: ""), style: .cancel, handler: nil))
             default:
-                alert = UIAlertController(title: "Camera", message: "QR Reader niet ondersteunt, neem contact op met de ontwikkelaar.", preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title: "Oke", style: .cancel, handler: nil))
+                alert = UIAlertController(title: NSLocalizedString("General_Camera", comment: ""), message: NSLocalizedString("Stamps_Camera_Not_Suported", comment: ""), preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: NSLocalizedString("General_Ok", comment: ""), style: .cancel, handler: nil))
             }
             
             present(alert, animated: true, completion: nil)

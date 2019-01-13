@@ -27,7 +27,7 @@ class JukeboxViewController: GenericTableViewController<SongRequestTableViewCell
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationItem.title = "Jukebox"
+        navigationItem.title = NSLocalizedString("Jukebox_Title", comment: "")
         let tapGesture: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
         self.tableView.addGestureRecognizer(tapGesture)
         setupAddButton()

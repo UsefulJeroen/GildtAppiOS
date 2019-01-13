@@ -12,20 +12,20 @@ class OnboardingViewController: UIViewController {
     
     var swiftyOnboard: SwiftyOnboard!
     var titleArray: [String] = [
-        "Welkom!",
-        "Agenda",
-        "Deals",
-        "Stempelkaart",
-        "Jukebox",
-        "Foto's"
+        NSLocalizedString("Onboarding_Welcome", comment: ""),
+        NSLocalizedString("Onboarding_Agenda", comment: ""),
+        NSLocalizedString("Onboarding_Deals", comment: ""),
+        NSLocalizedString("Onboarding_Stamps", comment: ""),
+        NSLocalizedString("Onboarding_Jukebox", comment: ""),
+        NSLocalizedString("Onboarding_Photos", comment: "")
     ]
     var subTitleArray: [String] = [
-        "Hier een kleine uitleg over de app van ’t Gildt\n\nEr zijn 5 basisfuncties beschikbaar voor de gasten van ’t Haerlems Studenten Gildt",
-        "De agenda laat zien wat de aankomende evenementen zijn. Je kunt aangeven of je aanwezig zult zijn en je kan zien wie er ook naar het evenement komt. Zorg dus voor een leuke gebruikersnaam!",
-        "Deals laat je jouw coupons zien. Vanuit dit scherm kan de bar-medewerker jouw coupon verzilveren. Sommige deals zijn onbeperkt beschikbaar andere hebben een maximum per gebruiker.",
-        "De stempelkaart laat zien hoeveel stempels je al hebt gespaard en je kan een stempel claimen als je aanwezig bent op een stempel-evenement.\nMet een volle stempelkaart zijn prijzen te winnen!",
-        "Bij de jukebox kunnen er muzieknummers worden aangevraagd om af te spelen in ’t Gildt.\nOok kan er ge-upvote en ge-downvote worden op eerder aangevraagde nummers.",
-        "Bij de foto’s worden er tags getoont. De tag ‘Halloween’ bevat bijvoorbeeld foto’s van het thema-feest ‘Halloween’. Ook kan je hier zelf foto’s van thema-feesten  uploaden."
+        NSLocalizedString("Onboarding_Welcome_Description", comment: ""),
+        NSLocalizedString("Onboarding_Agenda_Description", comment: ""),
+        NSLocalizedString("Onboarding_Deals_Description", comment: ""),
+        NSLocalizedString("Onboarding_Stamps_Description", comment: ""),
+        NSLocalizedString("Onboarding_Jukebox_Description", comment: ""),
+        NSLocalizedString("Onboarding_Photos_Description", comment: "")
     ]
     
     override func viewDidLoad() {
@@ -108,11 +108,11 @@ extension OnboardingViewController: SwiftyOnboardDelegate, SwiftyOnboardDataSour
         overlay.continueButton.tag = Int(position)
         
         if currentPage < titleArray.count - 1 {
-            overlay.continueButton.setTitle("Volgende", for: .normal)
-            overlay.skipButton.setTitle("Skip", for: .normal)
+            overlay.continueButton.setTitle(NSLocalizedString("Onboarding_Next", comment: ""), for: .normal)
+            overlay.skipButton.setTitle(NSLocalizedString("Onboarding_Skip", comment: ""), for: .normal)
             overlay.skipButton.isHidden = false
         } else {
-            overlay.continueButton.setTitle("Open de app!", for: .normal)
+            overlay.continueButton.setTitle(NSLocalizedString("Onboarding_Open_App", comment: ""), for: .normal)
             overlay.skipButton.isHidden = true
         }
     }

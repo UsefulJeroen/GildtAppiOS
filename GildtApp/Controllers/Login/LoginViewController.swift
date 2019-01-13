@@ -52,26 +52,26 @@ class LoginViewController: UIViewController {
         registerButton.isHidden = false
         haveAccountButton.isHidden = false
         
-        firstTextField.placeholder = "Gebruikersnaam"
+        firstTextField.placeholder = NSLocalizedString("Login_Username", comment: "")
         firstTextField.keyboardType = UIKeyboardType.alphabet
         firstTextField.returnKeyType = UIReturnKeyType.next
         
-        secondTextField.placeholder = "Emailadres"
+        secondTextField.placeholder = NSLocalizedString("Login_Email", comment: "")
         secondTextField.keyboardType = UIKeyboardType.emailAddress
         secondTextField.isSecureTextEntry = false
         secondTextField.returnKeyType = UIReturnKeyType.next
         
-        thirdTextField.placeholder = "Wachtwoord"
+        thirdTextField.placeholder = NSLocalizedString("Login_Password", comment: "")
         thirdTextField.keyboardType = UIKeyboardType.default
         thirdTextField.isSecureTextEntry = true
         thirdTextField.returnKeyType = UIReturnKeyType.next
         
-        fourthTextField.placeholder = "Wachtwoord verificatie"
+        fourthTextField.placeholder = NSLocalizedString("Login_Password_Verification", comment: "")
         fourthTextField.keyboardType = UIKeyboardType.default
         fourthTextField.isSecureTextEntry = true
         fourthTextField.returnKeyType = UIReturnKeyType.go
         
-        haveAccountButton.setTitle("Heb je al een account?", for: UIControl.State.normal)
+        haveAccountButton.setTitle(NSLocalizedString("Login_Existing_Account", comment: ""), for: UIControl.State.normal)
     }
     
     func changeViewToLogin() {
@@ -84,16 +84,16 @@ class LoginViewController: UIViewController {
         loginButton.isHidden = false
         wantAccountButton.isHidden = false
         
-        firstTextField.placeholder = "Emailadres"
+        firstTextField.placeholder = NSLocalizedString("Login_Email", comment: "")
         firstTextField.keyboardType = UIKeyboardType.emailAddress
         firstTextField.returnKeyType = UIReturnKeyType.next
         
-        secondTextField.placeholder = "Wachtwoord"
+        secondTextField.placeholder = NSLocalizedString("Login_Password", comment: "")
         secondTextField.keyboardType = UIKeyboardType.default
         secondTextField.isSecureTextEntry = true
         secondTextField.returnKeyType = UIReturnKeyType.go
         
-        wantAccountButton.setTitle("Heb je nog geen account?", for: UIControl.State.normal)
+        wantAccountButton.setTitle(NSLocalizedString("Login_No_Existing_Account", comment: ""), for: UIControl.State.normal)
     }
     
     //function that returns which part of the view is used
@@ -157,9 +157,9 @@ class LoginViewController: UIViewController {
     
     func couldntLoginError() {
         activityIndicator.isHidden = true
-        let alertTitle = "Kan niet inloggen :("
-        let alertMessage = "Het is helaas niet gelukt om in te loggen, je hebt waarschijnlijk niet de juiste info ingevuld."
-        let discardText = "Probeer het eens opnieuw"
+        let alertTitle = NSLocalizedString("Login_Error_Title", comment: "")
+        let alertMessage = NSLocalizedString("Login_Error_Message", comment: "")
+        let discardText = NSLocalizedString("Login_Error_Discard", comment: "")
         
         let alert = UIAlertController(title: alertTitle, message: alertMessage, preferredStyle: .alert)
         
@@ -172,12 +172,12 @@ class LoginViewController: UIViewController {
     
     func couldntRegisterError(error: ErrorMessage?) {
         activityIndicator.isHidden = true
-        let alertTitle = "Kan niet registreren :("
-        var alertMessage = "Het is helaas niet gelukt om je te registreren, waarschijnlijk omdat je iets verkeerds hebt ingevuld."
+        let alertTitle = NSLocalizedString("Login_Register_Error_Title", comment: "")
+        var alertMessage = NSLocalizedString("Login_Register_Error_Message", comment: "")
         if let error = error {
-            alertMessage = "Het is helaas niet gelukt om je te registreren, omdat: \(error.message)"
+            alertMessage = NSLocalizedString("Login_Register_Error_Reason", comment: "") + (error.message)
         }
-        let discardText = "Probeer het eens opnieuw"
+        let discardText = NSLocalizedString("Login_Error_Discard", comment: "")
         
         let alert = UIAlertController(title: alertTitle, message: alertMessage, preferredStyle: .alert)
         

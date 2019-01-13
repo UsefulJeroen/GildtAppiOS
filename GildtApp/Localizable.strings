@@ -1,0 +1,100 @@
+/* 
+  Localizable.strings
+  GildtApp
+
+  Created by Wouter Janson on 12/01/2019.
+  Copyright © 2019 Gildt. All rights reserved.
+*/
+
+// MARK: General
+"General_Whoops"                    = "Whoops!";
+"General_Camera"                    = "Camera";
+"General_Cancel"                    = "Annuleer";
+"General_Settings"                  = "Instellingen";
+"General_Ok"                        = "Oke";
+"General_Upload"                    = "Upload";
+"General_Profile"                   = "Profiel";
+
+// MARK: Onboarding
+"Onboarding_Welcome"                = "Welkom!";
+"Onboarding_Welcome_Description"    = "Hier een kleine uitleg over de app van ’t Gildt\n\nEr zijn 5 basisfuncties beschikbaar voor de gasten van ’t Haerlems Studenten Gildt";
+
+"Onboarding_Agenda"                 = "Agenda";
+"Onboarding_Agenda_Description"     = "De agenda laat zien wat de aankomende evenementen zijn. Je kunt aangeven of je aanwezig zult zijn en je kan zien wie er ook naar het evenement komt. Zorg dus voor een leuke gebruikersnaam!";
+
+"Onboarding_Deals"                  = "Deals";
+"Onboarding_Deals_Description"      = "Deals laat je jouw coupons zien. Vanuit dit scherm kan de bar-medewerker jouw coupon verzilveren. Sommige deals zijn onbeperkt beschikbaar andere hebben een maximum per gebruiker.";
+
+"Onboarding_Stamps"                 = "Stamps";
+"Onboarding_Stamps_Description"     = "De stempelkaart laat zien hoeveel stempels je al hebt gespaard en je kan een stempel claimen als je aanwezig bent op een stempel-evenement.\nMet een volle stempelkaart zijn prijzen te winnen!";
+
+"Onboarding_Jukebox"                = "Jukebox";
+"Onboarding_Jukebox_Description"    = "Bij de jukebox kunnen er muzieknummers worden aangevraagd om af te spelen in ’t Gildt.\nOok kan er ge-upvote en ge-downvote worden op eerder aangevraagde nummers.";
+
+"Onboarding_Photos"                 = "Foto's";
+"Onboarding_Photos_Description"     = "Bij de foto’s worden er tags getoont. De tag ‘Halloween’ bevat bijvoorbeeld foto’s van het thema-feest ‘Halloween’. Ook kan je hier zelf foto’s van thema-feesten  uploaden.";
+
+"Onboarding_Next"                   = "Volgende";
+"Onboarding_Skip"                   = "Skip";
+"Onboarding_Open_App"               = "Open de app!";
+
+// MARK: Login
+"Login_Username"                    = "Gebruikersnaam";
+"Login_Email"                       = "Emailadres";
+"Login_Password"                    = "Wachtwoord";
+"Login_Password_Verification"       = "Wachtwoord verificatie";
+"Login_Existing_Account"            = "Heb je al een account?";
+"Login_No_Existing_Account"         = "Heb je nog geen account?";
+
+"Login_Error_Title"                 = "Kan niet inloggen :(";
+"Login_Error_Message"               = "Het is helaas niet gelukt om in te loggen, je hebt waarschijnlijk niet de juiste info ingevuld.";
+"Login_Error_Discard"               = "Probeer het nog eens";
+
+"Login_Register_Error_Title"        = "Kan niet registreren :(";
+"Login_Register_Error_Message"      = "Het is helaas niet gelukt om je te registreren, waarschijnlijk omdat je iets verkeerds hebt ingevuld.";
+"Login_Register_Error_Reason"       = "Het is helaas niet gelukt om je te registreren, omdat: ";
+
+// MARK: Agenda
+"Agenda_Title"                      = "Agenda";
+"Agenda_Already"                    = "Nu al ";
+"Agenda_Attendees"                  = "aanmeldingen!";
+"Agenda_Signup"                     = "Aanmelden";
+"Agenda_Signoff"                    = "Afmelden";
+"Agenda_Signup_Error"               = "Er is iets mis gegaan tijdens het doorgeven van je aanwezigheid";
+
+// MARK: Deals
+"Deals_Title"                       = "Deals";
+"Deals_Error_Message"               = "Er is iets mis gegaan tijdens het indienen...";
+"Deals_Deal_Claimed"                = "Deal ingediend";
+"Deals_Enjoy"                       = "Geniet van je drankje!";
+"Deals_Usage_Still"                 = "Nog ";
+"Deals_Times_Usable"                = "keer bruikbaar";
+"Deals_Usable_Unlimited"            = "Onbeperkt bruikbaar";
+
+// Mark: Stamps
+"Stamps_Close_QR"                   = "Sluiten";
+"Stamps_Claimed"                    = "Stempel geclaimd";
+"Stamps_Enjoy"                      = "Veel plezier op het feest!";
+"Stamps_Error"                      = "Er ging iets mis tijdens het claimen van je stempel";
+"Stamps_Location"                   = "Locatie";
+"Stamps_Location_Error"             = "Stempels kunnen niet worden toegekend wanneer locatiegegevens uitstaan voor 't Gildt.\n\nDe app dient te controleren of je daadwerkelijk aanwezig bent.";
+"Stamps_Location_Wrong"             = "Het lijkt er op dat je niet in 't Gildt bent.";
+"Stamps_Camera_Permission"          = "Het lijkt er op dat er geen camera toestemming is gegeven.";
+"Stamps_Camera_Not_Suported"        = "QR Reader niet ondersteunt, neem contact op met de ontwikkelaar.";
+
+// MARK: Jukebox
+"Jukebox_Title"                     = "Jukebox";
+"Jukebox_New"                       = "NEW";
+
+// MARK: Photos
+"Photos_Title"                      = "Foto's";
+"Photos_Tag"                        = "Tag";
+"Photos_Upload"                     = "Foto upload";
+"Photos_Permission"                 = "'t Gildt heeft toegang nodig tot je foto's wanneer je een foto wilt uploaden.";
+"Photos_Description_Question"       = "Hoe zou jij deze foto beschrijven?";
+"Photos_Description"                = "Omschrijving";
+"Photos_Upload_Progress"            = "Voortgang:";
+"Photos_Upload_Success_Title"       = "Foto geupload";
+"Photos_Upload_Success_Message"     = "Bedankt voor je foto!";
+"Photos_Upload_Fail_Title"          = "Foto niet geupload";
+"Photos_Upload_Fail_Message"        = "Er is iets fout gegaan tijdens het uploaden!";

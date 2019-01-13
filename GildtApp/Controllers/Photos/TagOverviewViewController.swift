@@ -26,7 +26,7 @@ class TagOverviewViewController: GenericCollectionViewController<TagCollectionVi
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationItem.title = "Foto's"
+        navigationItem.title = NSLocalizedString("Photos_Title", comment: "")
     }
 
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
