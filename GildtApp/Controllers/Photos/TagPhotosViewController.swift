@@ -32,8 +32,8 @@ class TagPhotosViewController: GenericTableViewController<PreviewImageTableViewC
         picker.sourceType = UIImagePickerController.SourceType.photoLibrary;
         picker.allowsEditing = false
         
-        navigationItem.title = tag?.title ?? "Tag"
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Upload", style: .plain, target: self, action: #selector(uploadClicked))
+        navigationItem.title = tag?.title ?? NSLocalizedString("Photos_Tag", comment: "")
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: NSLocalizedString("General_Upload", comment: ""), style: .plain, target: self, action: #selector(uploadClicked))
     }
     
     @objc func uploadClicked() {
@@ -85,40 +85,40 @@ class TagPhotosViewController: GenericTableViewController<PreviewImageTableViewC
 extension TagPhotosViewController {
     private func showAuthorizationAlert() {
         let alertController = UIAlertController(
-            title: "Foto's",
-            message: "'t Gildt heeft toegang nodig tot je foto's wanneer je een foto wilt uploaden.",
+            title: NSLocalizedString("Photos_Title", comment: ""),
+            message: NSLocalizedString("Photos_Permission", comment: ""),
             preferredStyle: .alert)
         
-        alertController.addAction(UIAlertAction(title: "Instellingen", style: .default, handler: { (_) in
+        alertController.addAction(UIAlertAction(title: NSLocalizedString("General_Settings", comment: ""), style: .default, handler: { (_) in
             DispatchQueue.main.async {
                 if let settingsURL = URL(string: UIApplication.openSettingsURLString) {
                     UIApplication.shared.open(settingsURL, options: [:], completionHandler: nil)
                 }
             }
         }))
-        alertController.addAction(UIAlertAction(title: "Annuleer", style: .default, handler: nil))
+        alertController.addAction(UIAlertAction(title: NSLocalizedString("General_Cancel", comment: ""), style: .default, handler: nil))
         
         present(alertController, animated: true, completion: nil)
     }
     
     private func showUploadAlert(image: UIImage) {
         let alertController = UIAlertController(
-            title: "Foto upload",
-            message: "Wat valt er op deze foto te zien?",
+            title: NSLocalizedString("Photos_Upload", comment: ""),
+            message: NSLocalizedString("Photos_Description_Question", comment: ""),
             preferredStyle: .alert)
         
         alertController.addImage(image)
         
         alertController.addTextField { textField in
-            textField.placeholder = "Beschrijving"
+            textField.placeholder = NSLocalizedString("Photos_Description", comment: "")
         }
         
-        alertController.addAction(UIAlertAction(title: "Upload", style: .default, handler: {
+        alertController.addAction(UIAlertAction(title: NSLocalizedString("General_Upload", comment: ""), style: .default, handler: {
             (alert: UIAlertAction!) in
             if let textField = alertController.textFields?.first {
                 self.uploadImage(image: image, description: textField.text!, tag: (self.tag?.id)!)
             }}))
-        alertController.addAction(UIAlertAction(title: "Annuleer", style: .cancel, handler: nil))
+        alertController.addAction(UIAlertAction(title: NSLocalizedString("General_Cancel", comment: ""), style: .cancel, handler: nil))
         
         present(alertController, animated: true, completion: nil)
     }
@@ -130,7 +130,7 @@ extension TagPhotosViewController {
         let imageData = image.jpegData(compressionQuality: 0.6)
         
         // Upload modal
-        let alert = UIAlertController(title: "Foto uploaden", message: "Voortgang: 0%", preferredStyle: .alert)
+        let alert = UIAlertController(title: NSLocalizedString("Photos_Upload", comment: ""), message: NSLocalizedString("Photos_Upload_Progress", comment: "") + " 0%", preferredStyle: .alert)
         let rect = CGRect(x: 10, y: 70, width: 250, height: 0)
         let progressView = UIProgressView(frame: rect)
         progressView.tintColor = UIColor.primaryGildtGreen
@@ -149,7 +149,7 @@ extension TagPhotosViewController {
             case .success(let upload, _, _):
                 upload.uploadProgress(closure: { (progress) in
                     progressView.setProgress(Float(progress.fractionCompleted), animated: true)
-                    alert.message = "Voortgang: \(NSString(format: "%.1f", progress.fractionCompleted * 100))%"
+                    alert.message = NSLocalizedString("Photos_Upload_Progress", comment: "") + " \(NSString(format: "%.1f", progress.fractionCompleted * 100))%"
                     if progress.isFinished {
                         alert.dismiss(animated: true, completion: {
                             self.showSuccessMessage()
@@ -170,15 +170,15 @@ extension TagPhotosViewController {
     private func showSuccessMessage() {
         StatusAlertService().showStatusAlert(
             withImage: #imageLiteral(resourceName: "IconSucces"),
-            title: "Foto geupload",
-            message: "Bedankt voor je foto!")
+            title: NSLocalizedString("Photos_Upload_Success_Title", comment: ""),
+            message: NSLocalizedString("Photos_Upload_Success_Message", comment: ""))
     }
     
     private func showFailureMessage() {
         StatusAlertService().showStatusAlert(
             withImage: #imageLiteral(resourceName: "IconError"),
-            title: "Foto niet geupload",
-            message: "er is iets fout gegaan tijdens het uploaden!",
+            title: NSLocalizedString("Photos_Upload_Fail_Title", comment: ""),
+            message: NSLocalizedString("Photos_Upload_Fail_Message", comment: ""),
             error: true)
     }
 }

@@ -12,6 +12,7 @@
 "General_Cancel"                    = "Annuleer";
 "General_Settings"                  = "Instellingen";
 "General_Ok"                        = "Oke";
+"General_Upload"                    = "Upload";
 
 // MARK: Onboarding
 "Onboarding_Welcome"                = "Welkom!";
@@ -84,4 +85,15 @@
 "Jukebox_Title"                     = "Jukebox";
 "Jukebox_New"                       = "NEW";
 
-// MARK: Foto's
+// MARK: Photos
+"Photos_Title"                      = "Foto's";
+"Photos_Tag"                        = "Tag";
+"Photos_Upload"                     = "Foto upload";
+"Photos_Permission"                 = "'t Gildt heeft toegang nodig tot je foto's wanneer je een foto wilt uploaden.";
+"Photos_Description_Question"       = "Hoe zou jij deze foto beschrijven?";
+"Photos_Description"                = "Omschrijving";
+"Photos_Upload_Progress"            = "Voortgang:";
+"Photos_Upload_Success_Title"       = "Foto geupload";
+"Photos_Upload_Success_Message"     = "Bedankt voor je foto!";
+"Photos_Upload_Fail_Title"          = "Foto niet geupload";
+"Photos_Upload_Fail_Message"        = "Er is iets fout gegaan tijdens het uploaden!";
