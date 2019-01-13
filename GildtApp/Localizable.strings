@@ -13,6 +13,7 @@
 "General_Settings"                  = "Instellingen";
 "General_Ok"                        = "Oke";
 "General_Upload"                    = "Upload";
+"General_Profile"                   = "Profiel";
 
 // MARK: Onboarding
 "Onboarding_Welcome"                = "Welkom!";
