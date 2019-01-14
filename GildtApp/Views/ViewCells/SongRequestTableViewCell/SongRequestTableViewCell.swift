@@ -136,6 +136,5 @@ class SongRequestTableViewCell: GenericTableViewCell<SongRequest> {
         artistLabelView.backgroundColor = .appBackground
         idImageView.image = UIImage(named: "SongRequestCircleImageWhite")
         idLabelView.textColor = .black
-        //container.layer.cornerRadius = 0
     }
 }
