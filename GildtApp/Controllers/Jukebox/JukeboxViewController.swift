@@ -31,10 +31,13 @@ class JukeboxViewController: GenericTableViewController<SongRequestTableViewCell
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         navigationItem.title = NSLocalizedString("Jukebox_Title", comment: "")
+        
         //setup hide keyboard when clicking on other part of the screen (not keyboard)
         let tapGesture: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
         self.tableView.addGestureRecognizer(tapGesture)
+        
         setupAddButton()
     }
     
