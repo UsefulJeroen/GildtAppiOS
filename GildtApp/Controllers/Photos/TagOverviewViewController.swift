@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import Alamofire
 
-class TagOverviewViewController: GenericCollectionViewController<TagCollectionViewCell, Tag>, UICollectionViewDelegateFlowLayout {
+class TagOverviewViewController: GenericCollectionViewController<TagCollectionViewCell, Tag>, UICollectionViewDelegateFlowLayout, UIViewControllerPreviewingDelegate {
     
     override func getCellId() -> String {
         return "TagCollectionViewCell"
@@ -27,6 +27,8 @@ class TagOverviewViewController: GenericCollectionViewController<TagCollectionVi
         super.viewDidLoad()
         
         navigationItem.title = NSLocalizedString("Photos_Title", comment: "")
+        
+        registerForPreviewing(with: self, sourceView: collectionView)
     }
 
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -45,5 +47,27 @@ class TagOverviewViewController: GenericCollectionViewController<TagCollectionVi
         let widthPerItem = availableWidth / itemsPerRow
 
         return CGSize(width: widthPerItem, height: widthPerItem)
+    }
+    
+    //MARK: 3D-touch previewing
+    func previewingContext(_ previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
+        guard let indexPath = collectionView?.indexPathForItem(at: location) else { return nil }
+        guard let cell = collectionView?.cellForItem(at: indexPath) else { return nil }
+        
+        
+        let storyboard = UIStoryboard(name: "Photo", bundle: nil)
+        let tagPhotosVc = storyboard.instantiateViewController(withIdentifier: "TagPhotosViewController") as! TagPhotosViewController
+        let tag = items[indexPath.row]
+        tagPhotosVc.tag = tag
+        //is this needed?
+        tagPhotosVc.preferredContentSize = CGSize(width: 0.0, height: 300)
+        
+        previewingContext.sourceRect = cell.frame
+        
+        return tagPhotosVc
+    }
+    
+    func previewingContext(_ previewingContext: UIViewControllerPreviewing, commit viewControllerToCommit: UIViewController) {
+        navigationController?.pushViewController(viewControllerToCommit, animated: true)
     }
 }
