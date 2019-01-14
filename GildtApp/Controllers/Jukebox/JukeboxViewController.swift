@@ -24,32 +24,52 @@ class JukeboxViewController: GenericTableViewController<SongRequestTableViewCell
     @IBOutlet weak var artistTextField: UITextField!
     @IBOutlet weak var plusButton: UIImageView!
     
+    //timer for autorefresh
+    var autorefreshTimer: Timer?
+    //seconds between each timer tick for autorefresh
+    let autorefreshTimerTickRate = 60.0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         navigationItem.title = NSLocalizedString("Jukebox_Title", comment: "")
+        //setup hide keyboard when clicking on other part of the screen (not keyboard)
         let tapGesture: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
         self.tableView.addGestureRecognizer(tapGesture)
         setupAddButton()
     }
     
-    @objc private func hideKeyboard() {
-        titleTextField.resignFirstResponder()
-        artistTextField.resignFirstResponder()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         NotificationCenter.default.addObserver(self, selector: #selector(self.reloadDataNotificationHandler(notification: )), name: NSNotification.Name(rawValue: "JukeboxIdentifier"), object: nil)
+        startAutoRefreshTimer()
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        stopAutoRefreshTimer()
         NotificationCenter.default.removeObserver(self)
+    }
+    
+    func startAutoRefreshTimer() {
+        autorefreshTimer = Timer.scheduledTimer(timeInterval: autorefreshTimerTickRate, target: self, selector: #selector(onTimerTick), userInfo: nil, repeats: true)
+        autorefreshTimer?.tolerance = 0.30
+    }
+    
+    func stopAutoRefreshTimer() {
+        autorefreshTimer?.invalidate()
+    }
+    
+    @objc func onTimerTick(timer: Timer) {
+        getItems()
     }
     
     @objc private func reloadDataNotificationHandler(notification: Notification) {
         getItems()
+    }
+    
+    @objc private func hideKeyboard() {
+        titleTextField.resignFirstResponder()
+        artistTextField.resignFirstResponder()
     }
     
     //add gesturerecognizer to addbutton
@@ -78,11 +98,13 @@ class JukeboxViewController: GenericTableViewController<SongRequestTableViewCell
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
+    //when editing the titletextfield, and clicked on the return button on the keyboard
     @IBAction func titleTextFieldDidEnd(_ sender: Any) {
         titleTextField.endEditing(true)
         artistTextField.becomeFirstResponder()
     }
 
+    //when editing the artisttextfield, and clicked on the return button on the keyboard
     @IBAction func artistTextFieldDidEnd(_ sender: Any) {
         addSong()
         artistTextField.endEditing(true)
@@ -95,23 +117,44 @@ class JukeboxViewController: GenericTableViewController<SongRequestTableViewCell
     func addSong() {
         let title = titleTextField.text
         let artist = artistTextField.text
-        //check if nil!!??
-        if let title = title, let artist = artist {
-            let song = NewSong(title: title, artist: artist)
-            GildtAPIService.addSong(song: song)
-                .response(completionHandler: { [weak self] (response) in
-                    
-                    guard let jsonData = response.data else { return }
-                    
-                    let decoder = JSONDecoder()
-                    let songRequest = try? decoder.decode(SongRequest.self, from: jsonData)
-                    
-                    DispatchQueue.main.async {
-                        if let songRequest = songRequest {
-                            self?.successfullyAddedSong(songRequest: songRequest)
+        //check if title and artist are filled
+        if (title != "" && artist != "") {
+            if let title = title, let artist = artist {
+                let song = NewSong(title: title, artist: artist)
+                GildtAPIService.addSong(song: song)
+                    .response(completionHandler: { [weak self] (response) in
+                        
+                        guard let jsonData = response.data else { return }
+                        
+                        let decoder = JSONDecoder()
+                        let songRequest = try? decoder.decode(SongRequest.self, from: jsonData)
+                        
+                        DispatchQueue.main.async {
+                            if let songRequest = songRequest {
+                                self?.successfullyAddedSong(songRequest: songRequest)
+                            }
                         }
-                    }
-                })
+                    })
+            }
+        }
+        else {
+            //show alert that you need to fill in the artist & title fields
+            let alertTitle = NSLocalizedString("Jukebox_Error_Title", comment: "")
+            let alertMessage = NSLocalizedString("Jukebox_Error_Message", comment: "")
+            let discardText = NSLocalizedString("Jukebox_Error_Discard", comment: "")
+            let alert = UIAlertController(title: alertTitle, message: alertMessage, preferredStyle: .alert)
+            //check which field needs be be changed
+            if title == "" {
+                alert.addAction(UIAlertAction(title: discardText, style: .default, handler: { action in
+                    self.titleTextField.becomeFirstResponder()
+                }))
+            }
+            else {
+                alert.addAction(UIAlertAction(title: discardText, style: .default, handler: { action in
+                    self.artistTextField.becomeFirstResponder()
+                }))
+            }
+            self.present(alert, animated: true)
         }
     }
     
@@ -119,12 +162,10 @@ class JukeboxViewController: GenericTableViewController<SongRequestTableViewCell
         var song = songRequest
         song.new = true
         items.insert(song, at: 0)
-        //songRequests.append(song)
         tableView.reloadData()
         titleTextField.text = ""
         artistTextField.text = ""
         titleTextField.endEditing(true)
         artistTextField.endEditing(true)
-        //make beautifull animation highlight thingy
     }
 }
