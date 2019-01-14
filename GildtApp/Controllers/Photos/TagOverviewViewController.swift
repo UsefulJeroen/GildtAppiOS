@@ -30,12 +30,17 @@ class TagOverviewViewController: GenericCollectionViewController<TagCollectionVi
         
         registerForPreviewing(with: self, sourceView: collectionView)
     }
-
-    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    
+    func createDetailVc(indexPath: IndexPath) -> TagPhotosViewController {
         let storyboard = UIStoryboard(name: "Photo", bundle: nil)
         let tagPhotosVc = storyboard.instantiateViewController(withIdentifier: "TagPhotosViewController") as! TagPhotosViewController
         let tag = items[indexPath.row]
         tagPhotosVc.tag = tag
+        return tagPhotosVc
+    }
+
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let tagPhotosVc = createDetailVc(indexPath: indexPath)
         self.navigationController?.pushViewController(tagPhotosVc, animated: true)
     }
     
@@ -54,19 +59,13 @@ class TagOverviewViewController: GenericCollectionViewController<TagCollectionVi
         guard let indexPath = collectionView?.indexPathForItem(at: location) else { return nil }
         guard let cell = collectionView?.cellForItem(at: indexPath) else { return nil }
         
-        
-        let storyboard = UIStoryboard(name: "Photo", bundle: nil)
-        let tagPhotosVc = storyboard.instantiateViewController(withIdentifier: "TagPhotosViewController") as! TagPhotosViewController
-        let tag = items[indexPath.row]
-        tagPhotosVc.tag = tag
-        //is this needed?
-        tagPhotosVc.preferredContentSize = CGSize(width: 0.0, height: 300)
+        let tagPhotosVc = createDetailVc(indexPath: indexPath)
         
         previewingContext.sourceRect = cell.frame
         
         return tagPhotosVc
     }
-    
+        
     func previewingContext(_ previewingContext: UIViewControllerPreviewing, commit viewControllerToCommit: UIViewController) {
         navigationController?.pushViewController(viewControllerToCommit, animated: true)
     }
