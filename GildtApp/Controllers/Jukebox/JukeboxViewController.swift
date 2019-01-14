@@ -139,9 +139,9 @@ class JukeboxViewController: GenericTableViewController<SongRequestTableViewCell
         }
         else {
             //show alert that you need to fill in the artist & title fields
-            let alertTitle = "Velden niet ingevuld"
-            let alertMessage = "Om een nummer aan te vragen moet je beide velden invullen!"
-            let discardText = "Probeer het opnieuw"
+            let alertTitle = NSLocalizedString("Jukebox_Error_Title", comment: "")
+            let alertMessage = NSLocalizedString("Jukebox_Error_Message", comment: "")
+            let discardText = NSLocalizedString("Jukebox_Error_Discard", comment: "")
             let alert = UIAlertController(title: alertTitle, message: alertMessage, preferredStyle: .alert)
             //check which field needs be be changed
             if title == "" {
