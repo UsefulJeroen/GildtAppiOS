@@ -40,14 +40,12 @@ class JukeboxViewController: GenericTableViewController<SongRequestTableViewCell
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        NotificationCenter.default.addObserver(self, selector: #selector(self.reloadDataNotificationHandler(notification: )), name: NSNotification.Name(rawValue: "JukeboxIdentifier"), object: nil)
         startAutoRefreshTimer()
     }
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         stopAutoRefreshTimer()
-        NotificationCenter.default.removeObserver(self)
     }
     
     func startAutoRefreshTimer() {
@@ -60,10 +58,6 @@ class JukeboxViewController: GenericTableViewController<SongRequestTableViewCell
     }
     
     @objc func onTimerTick(timer: Timer) {
-        getItems()
-    }
-    
-    @objc private func reloadDataNotificationHandler(notification: Notification) {
         getItems()
     }
     

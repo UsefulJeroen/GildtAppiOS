@@ -80,7 +80,7 @@ class SongRequestTableViewCell: GenericTableViewCell<SongRequest> {
                 DispatchQueue.main.async {
                     if let data = data {
                         if data.id == self?.item.id {
-                            self?.successfullyVoted()
+                            self?.successfullyVoted(updatedSongrequest: data)
                         }
                     }
                 }
@@ -98,15 +98,19 @@ class SongRequestTableViewCell: GenericTableViewCell<SongRequest> {
                 DispatchQueue.main.async {
                     if let data = data {
                         if data.id == self?.item.id {
-                            self?.successfullyVoted()
+                            self?.successfullyVoted(updatedSongrequest: data)
                         }
                     }
                 }
             })
     }
     
-    func successfullyVoted() {
-        NotificationCenter.default.post(name: Notification.Name("JukeboxIdentifier"), object: nil)
+    func successfullyVoted(updatedSongrequest: SongRequest) {
+        upvotesAmountLabelView.text = ""
+        upvotesAmountLabelView.textColor = UIColor.black
+        upvoteButton.setImage(UIImage(named: "arrow-up-grey"), for: UIControl.State.normal)
+        downvoteButton.setImage(UIImage(named: "arrow-down-grey"), for: UIControl.State.normal)
+        item = updatedSongrequest
     }
     
     override func awakeFromNib() {
@@ -132,6 +136,5 @@ class SongRequestTableViewCell: GenericTableViewCell<SongRequest> {
         artistLabelView.backgroundColor = .appBackground
         idImageView.image = UIImage(named: "SongRequestCircleImageWhite")
         idLabelView.textColor = .black
-        //container.layer.cornerRadius = 0
     }
 }
