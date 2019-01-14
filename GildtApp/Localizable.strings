@@ -16,41 +16,42 @@
 "General_Profile"                   = "Profiel";
 
 // MARK: - Onboarding
+// MARK: Onboarding - Welcome
 "Onboarding_Welcome"                = "Welkom!";
 "Onboarding_Welcome_Description"    = "Hier een kleine uitleg over de app van ’t Gildt\n\nEr zijn 5 basisfuncties beschikbaar voor de gasten van ’t Haerlems Studenten Gildt";
-
+// MARK: Onboarding - Agenda
 "Onboarding_Agenda"                 = "Agenda";
 "Onboarding_Agenda_Description"     = "De agenda laat zien wat de aankomende evenementen zijn. Je kunt aangeven of je aanwezig zult zijn en je kan zien wie er ook naar het evenement komt. Zorg dus voor een leuke gebruikersnaam!";
-
+// MARK: Onboarding - Deals
 "Onboarding_Deals"                  = "Deals";
 "Onboarding_Deals_Description"      = "Deals laat je jouw coupons zien. Vanuit dit scherm kan de bar-medewerker jouw coupon verzilveren. Sommige deals zijn onbeperkt beschikbaar andere hebben een maximum per gebruiker.";
-
+// MARK: Onboarding - Stamps
 "Onboarding_Stamps"                 = "Stamps";
 "Onboarding_Stamps_Description"     = "De stempelkaart laat zien hoeveel stempels je al hebt gespaard en je kan een stempel claimen als je aanwezig bent op een stempel-evenement.\nMet een volle stempelkaart zijn prijzen te winnen!";
-
+// MARK: Onboarding - Jukebox
 "Onboarding_Jukebox"                = "Jukebox";
 "Onboarding_Jukebox_Description"    = "Bij de jukebox kunnen er muzieknummers worden aangevraagd om af te spelen in ’t Gildt.\nOok kan er ge-upvote en ge-downvote worden op eerder aangevraagde nummers.";
-
+// MARK: Onboarding: Photos
 "Onboarding_Photos"                 = "Foto's";
 "Onboarding_Photos_Description"     = "Bij de foto’s worden er tags getoont. De tag ‘Halloween’ bevat bijvoorbeeld foto’s van het thema-feest ‘Halloween’. Ook kan je hier zelf foto’s van thema-feesten  uploaden.";
-
+// MARK: Onboarding: Fields
 "Onboarding_Next"                   = "Volgende";
 "Onboarding_Skip"                   = "Skip";
 "Onboarding_Open_App"               = "Open de app!";
 
 // MARK: - Login
-// MARK: Fields
+// MARK: Login - Fields
 "Login_Username"                    = "Gebruikersnaam";
 "Login_Email"                       = "Emailadres";
 "Login_Password"                    = "Wachtwoord";
 "Login_Password_Verification"       = "Wachtwoord verificatie";
 "Login_Existing_Account"            = "Heb je al een account?";
 "Login_No_Existing_Account"         = "Heb je nog geen account?";
-//MARK: Login-alert-error
+//MARK: Login - alert-error
 "Login_Error_Title"                 = "Kan niet inloggen :(";
 "Login_Error_Message"               = "Het is helaas niet gelukt om in te loggen, je hebt waarschijnlijk niet de juiste info ingevuld.";
 "Login_Error_Discard"               = "Probeer het nog eens";
-//MARK: Register-alert-error
+//MARK: Register - alert-error
 "Login_Register_Error_Title"        = "Kan niet registreren :(";
 "Login_Register_Error_Message"      = "Het is helaas niet gelukt om je te registreren, waarschijnlijk omdat je iets verkeerds hebt ingevuld.";
 "Login_Register_Error_Reason"       = "Het is helaas niet gelukt om je te registreren, omdat: ";
@@ -84,17 +85,19 @@
 "Stamps_Camera_Not_Suported"        = "QR Reader niet ondersteunt, neem contact op met de ontwikkelaar.";
 
 // MARK: - Jukebox
-// MARK: Fields
+// MARK: Jukebox - Fields
 "Jukebox_Title"                     = "Jukebox";
 "Jukebox_New"                       = "NEW";
-// MARK: Add songrequest alert
+// MARK: Jukebox - Add songrequest alert
 "Jukebox_Error_Title"               = "Velden niet ingevuld";
 "Jukebox_Error_Message"             = "Om een nummer aan te vragen moet je beide velden invullen!";
 "Jukebox_Error_Discard"             = "Probeer het opnieuw";
 
 // MARK: - Photos
+// MARK: Photos - Fields
 "Photos_Title"                      = "Foto's";
 "Photos_Tag"                        = "Tag";
+// MARK: Photos - Upload
 "Photos_Upload"                     = "Foto upload";
 "Photos_Permission"                 = "'t Gildt heeft toegang nodig tot je foto's wanneer je een foto wilt uploaden.";
 "Photos_Description_Question"       = "Hoe zou jij deze foto beschrijven?";
