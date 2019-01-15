@@ -78,6 +78,8 @@ class TagPhotosViewController: GenericTableViewController<PreviewImageTableViewC
         let browser = SKPhotoBrowser(photos: images)
         browser.initializePageIndex(indexPath.row)
         present(browser, animated: true, completion: {})
+
+        tableView.deselectRow(at: indexPath, animated: false)
     }
 }
 
