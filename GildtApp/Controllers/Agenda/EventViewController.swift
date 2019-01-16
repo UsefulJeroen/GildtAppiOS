@@ -74,13 +74,13 @@ class EventViewController: UIViewController {
     
     private func setAttendanceButton(attendance: Bool) {
         if attendance {
-            EventButton.setTitle(NSLocalizedString("Agenda_Signup", comment: ""), for: .normal)
+            EventButton.setTitle(NSLocalizedString("Agenda_Signoff", comment: ""), for: .normal)
             EventButton.setTitleColor(UIColor.primaryGildtGreen, for: .normal)
             EventButton.backgroundColor = UIColor.white
             EventButton.layer.borderColor = UIColor.primaryGildtGreen.cgColor
             EventButton.layer.borderWidth = 1
         } else {
-            EventButton.setTitle(NSLocalizedString("Agenda_Signoff", comment: ""), for: .normal)
+            EventButton.setTitle(NSLocalizedString("Agenda_Signup", comment: ""), for: .normal)
             EventButton.setTitleColor(UIColor.white, for: .normal)
             EventButton.backgroundColor = UIColor.primaryGildtGreen
             EventButton.layer.borderColor = UIColor.primaryGildtGreen.cgColor
