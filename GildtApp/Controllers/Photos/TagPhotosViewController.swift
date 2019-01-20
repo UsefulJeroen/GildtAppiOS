@@ -26,6 +26,10 @@ class TagPhotosViewController: GenericTableViewController<PreviewImageTableViewC
     var tag: Tag?
     let picker = UIImagePickerController()
     
+    //alert + progressView for uploadscreen
+    var alert: UIAlertController?
+    var progressView: UIProgressView?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         picker.delegate = self
@@ -85,6 +89,9 @@ class TagPhotosViewController: GenericTableViewController<PreviewImageTableViewC
 
 // Photo picker stuff
 extension TagPhotosViewController {
+    
+
+    
     private func showAuthorizationAlert() {
         let alertController = UIAlertController(
             title: NSLocalizedString("Photos_Title", comment: ""),
@@ -132,13 +139,13 @@ extension TagPhotosViewController {
         let imageData = image.jpegData(compressionQuality: 0.6)
         
         // Upload modal
-        let alert = UIAlertController(title: NSLocalizedString("Photos_Upload", comment: ""), message: NSLocalizedString("Photos_Upload_Progress", comment: "") + " 0%", preferredStyle: .alert)
+        alert = UIAlertController(title: NSLocalizedString("Photos_Upload", comment: ""), message: NSLocalizedString("Photos_Upload_Progress", comment: "") + " 0%", preferredStyle: .alert)
         let rect = CGRect(x: 10, y: 70, width: 250, height: 0)
         let progressView = UIProgressView(frame: rect)
         progressView.tintColor = UIColor.primaryGildtGreen
-        alert.view.addSubview(progressView)
+        alert?.view.addSubview(progressView)
         
-        self.present(alert, animated: true, completion: nil)
+        self.present(alert!, animated: true, completion: nil)
         
         Alamofire.upload(multipartFormData: { multipartFormData in
             multipartFormData.append(imageData!, withName: "image", fileName: "\(Date().timeIntervalSince1970).jpeg", mimeType: "image/jpeg")
@@ -146,27 +153,29 @@ extension TagPhotosViewController {
             multipartFormData.append(String(tag).data(using: .utf8)!, withName: "tags")
         },
             to: URL(string: "\(baseURL)/image")!, method: .post, headers: headers,
-        encodingCompletion: { encodingResult in
-            switch encodingResult {
-            case .success(let upload, _, _):
-                upload.uploadProgress(closure: { (progress) in
-                    progressView.setProgress(Float(progress.fractionCompleted), animated: true)
-                    alert.message = NSLocalizedString("Photos_Upload_Progress", comment: "") + " \(NSString(format: "%.1f", progress.fractionCompleted * 100))%"
-                    if progress.isFinished {
-                        alert.dismiss(animated: true, completion: {
-                            self.showSuccessMessage()
-                        })
-                    }
-                    if progress.isCancelled {
-                        alert.dismiss(animated: true, completion: {
-                            self.showFailureMessage()
-                        })
-                    }
-                })
-            case .failure(_ ):
-                self.showFailureMessage()
-            }
-        })
+            encodingCompletion: photoUploadHandler)
+    }
+    
+    func photoUploadHandler(encodingResult: SessionManager.MultipartFormDataEncodingResult) {
+        switch encodingResult {
+        case .success(let upload, _, _):
+            upload.uploadProgress(closure: { (progress) in
+                self.progressView?.setProgress(Float(progress.fractionCompleted), animated: true)
+                self.alert?.message = NSLocalizedString("Photos_Upload_Progress", comment: "") + " \(NSString(format: "%.1f", progress.fractionCompleted * 100))%"
+                if progress.isFinished {
+                    self.alert?.dismiss(animated: true, completion: {
+                        self.showSuccessMessage()
+                    })
+                }
+                if progress.isCancelled {
+                    self.alert?.dismiss(animated: true, completion: {
+                        self.showFailureMessage()
+                    })
+                }
+            })
+        case .failure(_ ):
+            self.showFailureMessage()
+        }
     }
     
     private func showSuccessMessage() {
@@ -174,6 +183,7 @@ extension TagPhotosViewController {
             withImage: #imageLiteral(resourceName: "IconSucces"),
             title: NSLocalizedString("Photos_Upload_Success_Title", comment: ""),
             message: NSLocalizedString("Photos_Upload_Success_Message", comment: ""))
+        getItems()
     }
     
     private func showFailureMessage() {
@@ -184,3 +194,4 @@ extension TagPhotosViewController {
             error: true)
     }
 }
+
