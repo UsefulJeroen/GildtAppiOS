@@ -8,6 +8,10 @@
 
 import Foundation
 import Alamofire
+import UIKit
+import Kingfisher
+import SKPhotoBrowser
+import Photos
 
 //bakendapiservice to implement alamofire requests
 //this will depend on the api made by Erik
@@ -105,6 +109,20 @@ class GildtAPIService {
     static func getImagesFromTag(id: Int) -> DataRequest {
         let endPointURL = "tag/\(id)/images"
         return createRequest(endPointURL: endPointURL, httpMethod: .get)
+    }
+    
+    static func uploadImage(image: UIImage, description: String, tag: Int, callback:(SessionManager.MultipartFormDataEncodingResult)-> Void) {
+        let authToken = LocalStorageService.getAuthToken()
+        let headers: HTTPHeaders = ["Authorization": "Bearer \(authToken)"]
+        let iamgeData = image.jpegData(compressionQuality: 0.6)
+        
+        Alamofire.upload(multipartFormData: { multipartFormData in
+            multipartFormData.append(imageData!, withName: "image", fileName: "\(Date().timeIntervalSince1970).jpeg", mimeType: "image/jpeg")
+            multipartFormData.append(description.data(using: .utf8)!, withName: "description")
+            multipartFormData.append(String(tag).data(using: .utf8)!, withName: "tags")
+        },
+                         to: URL(string: "\(baseURL)/image")!, method: .post, headers: headers,
+                         encodingCompletion: callback)
     }
     
     //MARK: - Stamp
