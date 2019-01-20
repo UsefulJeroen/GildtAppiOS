@@ -114,7 +114,7 @@ class GildtAPIService {
     static func uploadImage(image: UIImage, description: String, tag: Int, callback:(SessionManager.MultipartFormDataEncodingResult)-> Void) {
         let authToken = LocalStorageService.getAuthToken()
         let headers: HTTPHeaders = ["Authorization": "Bearer \(authToken)"]
-        let iamgeData = image.jpegData(compressionQuality: 0.6)
+        let imageData = image.jpegData(compressionQuality: 0.6)
         
         Alamofire.upload(multipartFormData: { multipartFormData in
             multipartFormData.append(imageData!, withName: "image", fileName: "\(Date().timeIntervalSince1970).jpeg", mimeType: "image/jpeg")
