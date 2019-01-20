@@ -120,9 +120,9 @@ class GildtAPIService {
             multipartFormData.append(imageData!, withName: "image", fileName: "\(Date().timeIntervalSince1970).jpeg", mimeType: "image/jpeg")
             multipartFormData.append(description.data(using: .utf8)!, withName: "description")
             multipartFormData.append(String(tag).data(using: .utf8)!, withName: "tags")
-        },
-                         to: URL(string: "\(baseURL)/image")!, method: .post, headers: headers,
-                         encodingCompletion: callback)
+        }, to: URL(string: "\(baseURL)/image")!,
+           method: .post, headers: headers,
+           encodingCompletion: callback)
     }
     
     //MARK: - Stamp
