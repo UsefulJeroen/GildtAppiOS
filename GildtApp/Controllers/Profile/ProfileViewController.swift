@@ -27,4 +27,20 @@ class ProfileViewController : UITableViewController {
         
         present(loginPageVc, animated: true, completion: nil)
     }
+    
+    @IBAction func algemeneVoorwaardenTapped(_ sender: Any) {
+//        let alertTitle = "Algemene voorwaarden"
+//        let alertMessage = "Er zijn helaas nog geen algemene voorwaarden voor deze applicatie."
+//        let discardText = "Ok :("
+//        let alert = UIAlertController(title: alertTitle, message: alertMessage, preferredStyle: .alert)
+//        alert.addAction(UIAlertAction(title: discardText, style: .default))
+//        self.present(alert, animated: true)
+        let storyboard = UIStoryboard(name: "Profile", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "AlgemeneVoorwaardenViewController")
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    @IBAction func overOntwikkelaarsTapped(_ sender: Any) {
+        
+    }
 }
