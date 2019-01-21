@@ -22,8 +22,6 @@ class GenericTableViewController<T: GenericTableViewCell<U>, U>: UITableViewCont
     //seconds between each timer tick for autorefresh
     let autorefreshTimerTickRate = 60.0
     
-    
-    
     func getCellId() -> String {
         print("Error: implement getCellId from GenericTableViewController!")
         return "CellId"

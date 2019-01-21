@@ -22,8 +22,6 @@ class GenericCollectionViewController<T: GenericCollectionViewCell<U>, U>: UICol
     //seconds between each timer tick for autorefresh
     let autorefreshTimerTickRate = 60.0
     
-    var refreshControl: UIRefreshControl?
-    
     func getCellId() -> String {
         print("Error: implement getCellId from GenericCollectionViewController!")
         return "CellId"
@@ -37,10 +35,10 @@ class GenericCollectionViewController<T: GenericCollectionViewCell<U>, U>: UICol
     override func viewDidLoad() {
         collectionView.register(UINib(nibName: getCellId(), bundle: nil), forCellWithReuseIdentifier: getCellId())
         
-        refreshControl = UIRefreshControl()
-        refreshControl?.addTarget(self, action: #selector(refresh), for: .valueChanged)
+        collectionView.refreshControl = UIRefreshControl()
+        collectionView.refreshControl?.addTarget(self, action: #selector(refresh), for: .valueChanged)
         collectionView.alwaysBounceVertical = true
-        collectionView.addSubview(refreshControl!)
+        //collectionView.addSubview(refreshControl!)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -68,7 +66,6 @@ class GenericCollectionViewController<T: GenericCollectionViewCell<U>, U>: UICol
     }
     
     @objc func refresh() {
-        refreshControl?.alpha = 1
         getItems()
     }
     
@@ -96,13 +93,7 @@ class GenericCollectionViewController<T: GenericCollectionViewCell<U>, U>: UICol
     
     func finishRefreshing() {
         collectionView.reloadData()
-        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: {
-            self.refreshControl?.alpha = 0
-            self.refreshControl?.endRefreshing()
-        })
-        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2), execute: {
-            self.refreshControl?.alpha = 1
-        })
+        collectionView.refreshControl?.endRefreshing()
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
