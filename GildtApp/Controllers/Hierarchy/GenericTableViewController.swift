@@ -17,6 +17,11 @@ class GenericTableViewController<T: GenericTableViewCell<U>, U>: UITableViewCont
     
     var items = [U]()
     
+    //timer for autorefresh
+    var autorefreshTimer: Timer?
+    //seconds between each timer tick for autorefresh
+    let autorefreshTimerTickRate = 60.0
+    
     func getCellId() -> String {
         print("Error: implement getCellId from GenericTableViewController!")
         return "CellId"
@@ -36,6 +41,26 @@ class GenericTableViewController<T: GenericTableViewCell<U>, U>: UITableViewCont
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        getItems()
+        startAutoRefreshTimer()
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        stopAutoRefreshTimer()
+    }
+    
+    func startAutoRefreshTimer() {
+        autorefreshTimer = Timer.scheduledTimer(timeInterval: autorefreshTimerTickRate, target: self, selector: #selector(onTimerTick), userInfo: nil, repeats: true)
+        autorefreshTimer?.tolerance = 0.30
+    }
+    
+    func stopAutoRefreshTimer() {
+        autorefreshTimer?.invalidate()
+    }
+    
+    @objc func onTimerTick(timer: Timer) {
         getItems()
     }
     
