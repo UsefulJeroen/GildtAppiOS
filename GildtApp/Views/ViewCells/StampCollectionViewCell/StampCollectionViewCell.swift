@@ -23,6 +23,9 @@ class StampCollectionViewCell : GenericCollectionViewCell<Stamp> {
     
     func setupView() {
         self.layer.cornerRadius = 10
+        let templateImage = StampImage.image?.withRenderingMode(UIImage.RenderingMode.alwaysTemplate)
+        StampImage.image = templateImage
+        StampImage.tintColor = UIColor.black
     }
     
     func loadStampData() {
@@ -30,8 +33,7 @@ class StampCollectionViewCell : GenericCollectionViewCell<Stamp> {
             StampLabel.isHidden = stamp.verifiedAttendance
             StampImage.isHidden = !stamp.verifiedAttendance
             StampImage.rotate(angle: Int.random(in: -50 ... 50))
-            StampImage.alpha = CGFloat.random(in: 0.5 ... 1)
-            
+            StampImage.alpha = CGFloat.random(in: 0.4 ... 0.8)
             StampLabel.text = stamp.eventDateHumanized
         }
     }
