@@ -34,7 +34,7 @@ class StempelkaartViewController : UIViewController {
     lazy var readerVC: QRCodeReaderViewController = {
         let builder = QRCodeReaderViewControllerBuilder {
             $0.reader                  = QRCodeReader(metadataObjectTypes: [.qr], captureDevicePosition: .back)
-            $0.cancelButtonTitle       = NSLocalizedString("Stamps_Close_QQ", comment: "")
+            $0.cancelButtonTitle       = NSLocalizedString("Stamps_Close_QR", comment: "")
             $0.showTorchButton         = true
             $0.preferredStatusBarStyle = .lightContent
             $0.reader.stopScanningWhenCodeIsFound = false
