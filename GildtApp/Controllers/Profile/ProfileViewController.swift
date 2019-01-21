@@ -27,4 +27,22 @@ class ProfileViewController : UITableViewController {
         
         present(loginPageVc, animated: true, completion: nil)
     }
+    
+    @IBAction func algemeneVoorwaardenTapped(_ sender: Any) {
+        let alertTitle = "Algemene voorwaarden"
+        let alertMessage = "Er zijn helaas nog geen algemene voorwaarden voor deze applicatie."
+        let discardText = "Ok jammer :("
+        let alert = UIAlertController(title: alertTitle, message: alertMessage, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: discardText, style: .default))
+        self.present(alert, animated: true)
+    }
+    
+    @IBAction func overOntwikkelaarsTapped(_ sender: Any) {
+        let alertTitle = NSLocalizedString("Profile_OverOntwikkelaars_title", comment: "")
+        let alertMessage = NSLocalizedString("Profile_OverOntwikkelaars_message", comment: "")
+        let discardText = NSLocalizedString("Profile_OverOntwikkelaars_discard", comment: "")
+        let alert = UIAlertController(title: alertTitle, message: alertMessage, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: discardText, style: .default))
+        self.present(alert, animated: true)
+    }
 }

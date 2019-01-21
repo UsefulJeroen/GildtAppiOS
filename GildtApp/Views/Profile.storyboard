@@ -99,6 +99,52 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
+                            <tableViewSection headerTitle="Overige informatie" id="dCm-cT-8dp">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="gz9-sw-7Uo">
+                                        <rect key="frame" x="0.0" y="327.5" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gz9-sw-7Uo" id="q4b-jn-xnT">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h71-oz-Uap">
+                                                    <rect key="frame" x="106.5" y="7" width="162" height="30"/>
+                                                    <state key="normal" title="Algemene voorwaarden"/>
+                                                    <connections>
+                                                        <action selector="algemeneVoorwaardenTapped:" destination="kMv-PC-nce" eventType="touchUpInside" id="h59-9d-bu2"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="h71-oz-Uap" firstAttribute="centerX" secondItem="q4b-jn-xnT" secondAttribute="centerX" id="QJ1-l7-3KH"/>
+                                                <constraint firstItem="h71-oz-Uap" firstAttribute="centerY" secondItem="q4b-jn-xnT" secondAttribute="centerY" id="plm-qc-Xtt"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="5sU-XW-8GF">
+                                        <rect key="frame" x="0.0" y="371.5" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="5sU-XW-8GF" id="VXo-Qc-BZ7">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uQN-Kl-i4f">
+                                                    <rect key="frame" x="111.5" y="7" width="152" height="30"/>
+                                                    <state key="normal" title="Over de ontwikkelaars"/>
+                                                    <connections>
+                                                        <action selector="overOntwikkelaarsTapped:" destination="kMv-PC-nce" eventType="touchUpInside" id="ubG-Fo-XZf"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="uQN-Kl-i4f" firstAttribute="centerX" secondItem="VXo-Qc-BZ7" secondAttribute="centerX" id="0fp-Re-dvl"/>
+                                                <constraint firstItem="uQN-Kl-i4f" firstAttribute="centerY" secondItem="VXo-Qc-BZ7" secondAttribute="centerY" id="CMf-Ix-xoG"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
                         </sections>
                         <connections>
                             <outlet property="dataSource" destination="kMv-PC-nce" id="Tk6-0c-5EX"/>

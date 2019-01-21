@@ -24,11 +24,6 @@ class JukeboxViewController: GenericTableViewController<SongRequestTableViewCell
     @IBOutlet weak var artistTextField: UITextField!
     @IBOutlet weak var plusButton: UIImageView!
     
-    //timer for autorefresh
-    var autorefreshTimer: Timer?
-    //seconds between each timer tick for autorefresh
-    let autorefreshTimerTickRate = 60.0
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -39,29 +34,6 @@ class JukeboxViewController: GenericTableViewController<SongRequestTableViewCell
         self.tableView.addGestureRecognizer(tapGesture)
         
         setupAddButton()
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        startAutoRefreshTimer()
-    }
-    
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
-        stopAutoRefreshTimer()
-    }
-    
-    func startAutoRefreshTimer() {
-        autorefreshTimer = Timer.scheduledTimer(timeInterval: autorefreshTimerTickRate, target: self, selector: #selector(onTimerTick), userInfo: nil, repeats: true)
-        autorefreshTimer?.tolerance = 0.30
-    }
-    
-    func stopAutoRefreshTimer() {
-        autorefreshTimer?.invalidate()
-    }
-    
-    @objc func onTimerTick(timer: Timer) {
-        getItems()
     }
     
     @objc private func hideKeyboard() {

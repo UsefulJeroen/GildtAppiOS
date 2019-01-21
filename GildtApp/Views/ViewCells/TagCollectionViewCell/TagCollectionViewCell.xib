@@ -35,7 +35,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Amount Photos" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q5x-1q-M0O">
-                                        <rect key="frame" x="8" y="179" width="107" height="18"/>
+                                        <rect key="frame" x="8" y="179" width="160" height="18"/>
                                         <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="15"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -47,7 +47,7 @@
                                     <constraint firstItem="goJ-Zx-GUf" firstAttribute="top" secondItem="kCL-aP-81Y" secondAttribute="top" id="71K-6J-O2a"/>
                                     <constraint firstItem="bfJ-tx-sCG" firstAttribute="top" secondItem="goJ-Zx-GUf" secondAttribute="bottom" constant="8" symbolic="YES" id="7Ba-Cx-aV3"/>
                                     <constraint firstItem="bfJ-tx-sCG" firstAttribute="leading" secondItem="Q5x-1q-M0O" secondAttribute="leading" id="82O-ts-0kk"/>
-                                    <constraint firstAttribute="trailing" secondItem="Q5x-1q-M0O" secondAttribute="trailing" constant="87" id="CRf-rm-RQi"/>
+                                    <constraint firstAttribute="trailing" secondItem="Q5x-1q-M0O" secondAttribute="trailing" constant="34" id="CRf-rm-RQi"/>
                                     <constraint firstItem="goJ-Zx-GUf" firstAttribute="width" secondItem="kCL-aP-81Y" secondAttribute="width" id="KFo-BW-gf1"/>
                                     <constraint firstItem="bfJ-tx-sCG" firstAttribute="leading" secondItem="kCL-aP-81Y" secondAttribute="leadingMargin" id="Ku8-XT-acv"/>
                                     <constraint firstItem="Q5x-1q-M0O" firstAttribute="top" secondItem="bfJ-tx-sCG" secondAttribute="bottom" id="NQD-tw-n6O"/>
