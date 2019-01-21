@@ -33,7 +33,9 @@ class GenericTableViewController<T: GenericTableViewCell<U>, U>: UITableViewCont
         
         refreshControl = UIRefreshControl()
         refreshControl?.addTarget(self, action: #selector(refresh), for: .valueChanged)
-        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
         getItems()
     }
     

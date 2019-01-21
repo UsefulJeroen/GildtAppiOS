@@ -27,6 +27,9 @@ class GenericCollectionViewController<T: GenericCollectionViewCell<U>, U>: UICol
     
     override func viewDidLoad() {
         collectionView.register(UINib(nibName: getCellId(), bundle: nil), forCellWithReuseIdentifier: getCellId())
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
         getItems()
     }
     
