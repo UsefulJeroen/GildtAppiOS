@@ -116,13 +116,28 @@ class GildtAPIService {
         let headers: HTTPHeaders = ["Authorization": "Bearer \(authToken)"]
         let imageData = image.jpegData(compressionQuality: 0.6)
         
+//        Alamofire.upload(multipartFormData: { (MultipartFormData) in
+//            //
+//        }, to: URL(string: "\(baseURL)/image")!, encodingCompletion: callback )
+        Alamofire.upload(multipartFormData: (MultipartFormData)  {}, to: URL(string: "\(GildtAPIService.baseURL)/image")!, encodingCompletion: callback)
+        
+        
         Alamofire.upload(multipartFormData: { multipartFormData in
             multipartFormData.append(imageData!, withName: "image", fileName: "\(Date().timeIntervalSince1970).jpeg", mimeType: "image/jpeg")
             multipartFormData.append(description.data(using: .utf8)!, withName: "description")
             multipartFormData.append(String(tag).data(using: .utf8)!, withName: "tags")
-        }, to: URL(string: "\(baseURL)/image")!,
+        }, to: URL(string: "\(GildtAPIService.baseURL)/image")!,
            method: .post, headers: headers,
            encodingCompletion: callback)
+        
+        
+//        Alamofire.upload(multipartFormData: { multipartFormData in
+//            multipartFormData.append(imageData!, withName: "image", fileName: "\(Date().timeIntervalSince1970).jpeg", mimeType: "image/jpeg")
+//            multipartFormData.append(description.data(using: .utf8)!, withName: "description")
+//            multipartFormData.append(String(tag).data(using: .utf8)!, withName: "tags")
+//        }, to: URL(string: "\(GildtAPIService.baseURL)/image")!,
+//           method: .post, headers: headers,
+//           encodingCompletion: callback)
     }
     
     //MARK: - Stamp
