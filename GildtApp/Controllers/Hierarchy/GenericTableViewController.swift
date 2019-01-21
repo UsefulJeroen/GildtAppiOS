@@ -22,6 +22,8 @@ class GenericTableViewController<T: GenericTableViewCell<U>, U>: UITableViewCont
     //seconds between each timer tick for autorefresh
     let autorefreshTimerTickRate = 60.0
     
+    
+    
     func getCellId() -> String {
         print("Error: implement getCellId from GenericTableViewController!")
         return "CellId"
@@ -79,8 +81,8 @@ class GenericTableViewController<T: GenericTableViewCell<U>, U>: UITableViewCont
                 let data = try? decoder.decode([U].self, from: jsonData)
                 
                 DispatchQueue.main.async {
-                    if data != nil {
-                        self?.reloadItems(newData: data!)
+                    if let data = data {
+                        self?.reloadItems(newData: data)
                     }
                 }
             })
