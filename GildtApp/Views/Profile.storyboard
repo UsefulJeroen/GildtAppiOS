@@ -112,7 +112,7 @@
                                                     <rect key="frame" x="106.5" y="7" width="162" height="30"/>
                                                     <state key="normal" title="Algemene voorwaarden"/>
                                                     <connections>
-                                                        <segue destination="7mC-hx-Aeg" kind="presentation" id="lgH-qb-54r"/>
+                                                        <action selector="algemeneVoorwaardenTapped:" destination="kMv-PC-nce" eventType="touchUpInside" id="h59-9d-bu2"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -133,7 +133,7 @@
                                                     <rect key="frame" x="111.5" y="7" width="152" height="30"/>
                                                     <state key="normal" title="Over de ontwikkelaars"/>
                                                     <connections>
-                                                        <action selector="overOntwikkelaarsTapped:" destination="kMv-PC-nce" eventType="touchUpInside" id="eda-nP-U1M"/>
+                                                        <action selector="overOntwikkelaarsTapped:" destination="kMv-PC-nce" eventType="touchUpInside" id="ubG-Fo-XZf"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -155,80 +155,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sLj-d8-p7U" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-379" y="120"/>
-        </scene>
-        <!--Algemene Voorwaarden View Controller-->
-        <scene sceneID="fZN-UG-9FZ">
-            <objects>
-                <tableViewController storyboardIdentifier="AlgemeneVoorwaardenViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="7mC-hx-Aeg" customClass="AlgemeneVoorwaardenViewController" customModule="GildtApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="i0W-NL-bmo">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <sections>
-                            <tableViewSection headerTitle="Algemene Voorwaarden" id="Mve-I4-wN3">
-                                <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="SAY-zW-OSJ">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="SAY-zW-OSJ" id="9hl-8Y-GGG">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Helaas zijn er nog geen algemene voorwaarden voor deze applicatie. :(" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G2q-9O-Ys7">
-                                                    <rect key="frame" x="16" y="12" width="343" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="G2q-9O-Ys7" firstAttribute="leading" secondItem="9hl-8Y-GGG" secondAttribute="leadingMargin" id="1KA-Jb-3bt"/>
-                                                <constraint firstItem="G2q-9O-Ys7" firstAttribute="centerY" secondItem="9hl-8Y-GGG" secondAttribute="centerY" id="BGr-d1-7V7"/>
-                                                <constraint firstItem="G2q-9O-Ys7" firstAttribute="bottom" secondItem="9hl-8Y-GGG" secondAttribute="bottomMargin" id="Bx1-4o-jfy"/>
-                                                <constraint firstItem="G2q-9O-Ys7" firstAttribute="trailing" secondItem="9hl-8Y-GGG" secondAttribute="trailingMargin" id="wps-Ev-Vrc"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </cells>
-                            </tableViewSection>
-                        </sections>
-                        <connections>
-                            <outlet property="dataSource" destination="7mC-hx-Aeg" id="k8W-pb-Ck0"/>
-                            <outlet property="delegate" destination="7mC-hx-Aeg" id="Weu-nr-WPl"/>
-                        </connections>
-                    </tableView>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="b2C-bY-4Wu" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="301.60000000000002" y="118.29085457271366"/>
-        </scene>
-        <!--Over Ontwikkelaars View Controller-->
-        <scene sceneID="Vu8-jr-s6K">
-            <objects>
-                <tableViewController storyboardIdentifier="OverOntwikkelaarsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="WIu-S9-v5K" customClass="OverOntwikkelaarsViewController" customModule="GildtApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="VNa-Ov-ri2">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="6J0-7D-Jap">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="6J0-7D-Jap" id="eD3-RJ-cLl">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="WIu-S9-v5K" id="7fW-Bn-wPP"/>
-                            <outlet property="delegate" destination="WIu-S9-v5K" id="gSO-cI-CRN"/>
-                        </connections>
-                    </tableView>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="AAh-b7-bK7" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="967" y="118"/>
         </scene>
     </scenes>
 </document>
