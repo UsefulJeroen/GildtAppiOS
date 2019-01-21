@@ -1,7 +1,7 @@
 PODS:
-  - Alamofire (4.8.0)
+  - Alamofire (4.8.1)
   - CenteredCollectionView (2.1.0)
-  - Kingfisher (5.0.1)
+  - Kingfisher (5.1.0)
   - QRCodeReader.swift (9.0.1)
   - SKPhotoBrowser (6.0.0)
   - StatusAlert (1.1.0)
@@ -33,9 +33,9 @@ SPEC REPOS:
     - SwiftyJSON
 
 SPEC CHECKSUMS:
-  Alamofire: 3ec537f71edc9804815215393ae2b1a8ea33a844
+  Alamofire: 16ce2c353fb72865124ddae8a57c5942388f4f11
   CenteredCollectionView: a32f1d57505be294ff6080251384a38ffd1e61f3
-  Kingfisher: 4f771421b9208185217550528a06fd48756cb7c2
+  Kingfisher: fcec238063d17404fca89bf0a850583211c4cbf6
   QRCodeReader.swift: 96292a5612fbc2fd9a0b26f93fa5164c8d02f59d
   SKPhotoBrowser: 76eb862685761707b5745fde7762757966565e07
   StatusAlert: 4d6dadebf5f7abd5648fa774ef3062f2f95cc4aa

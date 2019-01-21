@@ -70,39 +70,43 @@ class SongRequestTableViewCell: GenericTableViewCell<SongRequest> {
     }
     
     @objc func downvoteClicked(_ sender: UIButton?) {
-        GildtAPIService.downvoteSong(songId: item.id)
-            .responseData(completionHandler: { [weak self] (response) in
-                guard let jsonData = response.data else { return }
-                
-                let decoder = JSONDecoder()
-                let data = try? decoder.decode(SongRequest.self, from: jsonData)
-                
-                DispatchQueue.main.async {
-                    if let data = data {
-                        if data.id == self?.item.id {
-                            self?.successfullyVoted(updatedSongrequest: data)
+        if item.didVote != .downvote {
+            GildtAPIService.downvoteSong(songId: item.id)
+                .responseData(completionHandler: { [weak self] (response) in
+                    guard let jsonData = response.data else { return }
+                    
+                    let decoder = JSONDecoder()
+                    let data = try? decoder.decode(SongRequest.self, from: jsonData)
+                    
+                    DispatchQueue.main.async {
+                        if let data = data {
+                            if data.id == self?.item.id {
+                                self?.successfullyVoted(updatedSongrequest: data)
+                            }
                         }
                     }
-                }
-            })
+                })
+        }
     }
     
     @objc func upvoteButtonClicked(_ sender: UIButton?) {
-        GildtAPIService.upvoteSong(songId: item.id)
-            .responseData(completionHandler: { [weak self] (response) in
-                guard let jsonData = response.data else { return }
-                
-                let decoder = JSONDecoder()
-                let data = try? decoder.decode(SongRequest.self, from: jsonData)
-                
-                DispatchQueue.main.async {
-                    if let data = data {
-                        if data.id == self?.item.id {
-                            self?.successfullyVoted(updatedSongrequest: data)
+        if item.didVote != .upvote {
+            GildtAPIService.upvoteSong(songId: item.id)
+                .responseData(completionHandler: { [weak self] (response) in
+                    guard let jsonData = response.data else { return }
+                    
+                    let decoder = JSONDecoder()
+                    let data = try? decoder.decode(SongRequest.self, from: jsonData)
+                    
+                    DispatchQueue.main.async {
+                        if let data = data {
+                            if data.id == self?.item.id {
+                                self?.successfullyVoted(updatedSongrequest: data)
+                            }
                         }
                     }
-                }
-            })
+                })
+        }
     }
     
     func successfullyVoted(updatedSongrequest: SongRequest) {
