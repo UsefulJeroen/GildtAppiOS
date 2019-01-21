@@ -34,6 +34,11 @@ class GenericCollectionViewController<T: GenericCollectionViewCell<U>, U>: UICol
     
     override func viewDidLoad() {
         collectionView.register(UINib(nibName: getCellId(), bundle: nil), forCellWithReuseIdentifier: getCellId())
+        
+        collectionView.refreshControl = UIRefreshControl()
+        collectionView.refreshControl?.addTarget(self, action: #selector(refresh), for: .valueChanged)
+        collectionView.alwaysBounceVertical = true
+        //collectionView.addSubview(refreshControl!)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -60,6 +65,10 @@ class GenericCollectionViewController<T: GenericCollectionViewCell<U>, U>: UICol
         getItems()
     }
     
+    @objc func refresh() {
+        getItems()
+    }
+    
     func getItems() {
         if let apiCall = getMainAPICall() {
             apiCall.responseData(completionHandler: { [weak self] (response) in
@@ -70,12 +79,21 @@ class GenericCollectionViewController<T: GenericCollectionViewCell<U>, U>: UICol
                 
                 DispatchQueue.main.async {
                     if let data = data {
-                        self?.items = data
-                        self?.collectionView.reloadData()
+                        self?.reloadItems(newData: data)
                     }
                 }
             })
         }
+    }
+    
+    func reloadItems(newData: [U]) {
+        items = newData
+        finishRefreshing()
+    }
+    
+    func finishRefreshing() {
+        collectionView.reloadData()
+        collectionView.refreshControl?.endRefreshing()
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

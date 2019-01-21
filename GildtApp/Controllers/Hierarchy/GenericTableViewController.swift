@@ -79,8 +79,8 @@ class GenericTableViewController<T: GenericTableViewCell<U>, U>: UITableViewCont
                 let data = try? decoder.decode([U].self, from: jsonData)
                 
                 DispatchQueue.main.async {
-                    if data != nil {
-                        self?.reloadItems(newData: data!)
+                    if let data = data {
+                        self?.reloadItems(newData: data)
                     }
                 }
             })
