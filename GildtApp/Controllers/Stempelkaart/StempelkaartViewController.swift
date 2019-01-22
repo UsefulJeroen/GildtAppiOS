@@ -152,28 +152,21 @@ extension StempelkaartViewController {
     }
     
     func checkGildtDistance(from location: CLLocation) {
-        // TODO: ONLY FOR DEMO, REVERT BACK TO COMMENTED CODE IN LIVE VERSION
-        ClaimButton.hideLoading()
-        if checkScanPermissions() {
-            readerVC.modalPresentationStyle = .formSheet
-            readerVC.delegate               = self
-            present(readerVC, animated: true, completion: nil)
+        if gildtLocation.contains(location.coordinate) {
+            ClaimButton.hideLoading()
+            if checkScanPermissions() {
+                readerVC.modalPresentationStyle = .formSheet
+                readerVC.delegate               = self
+                present(readerVC, animated: true, completion: nil)
+            }
+        } else {
+            ClaimButton.hideLoading()
+            statusAlertService.showStatusAlert(
+                withImage: #imageLiteral(resourceName: "IconError"),
+                title: NSLocalizedString("General_Whoops", comment: ""),
+                message: NSLocalizedString("Stamps_Location_Wrong", comment: ""),
+                error: true)
         }
-//        if gildtLocation.contains(location.coordinate) {
-//            ClaimButton.hideLoading()
-//            if checkScanPermissions() {
-//                readerVC.modalPresentationStyle = .formSheet
-//                readerVC.delegate               = self
-//                present(readerVC, animated: true, completion: nil)
-//            }
-//        } else {
-//            ClaimButton.hideLoading()
-//            statusAlertService.showStatusAlert(
-//                withImage: #imageLiteral(resourceName: "IconError"),
-//                title: NSLocalizedString("General_Whoops", comment: ""),
-//                message: NSLocalizedString("Stamps_Location_Wrong", comment: ""),
-//                error: true)
-//        }
     }
 }
 
