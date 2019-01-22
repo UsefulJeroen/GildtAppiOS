@@ -10,10 +10,17 @@ import Foundation
 import UIKit
 import Alamofire
 
-// TODO: make everything where (https://stackoverflow.com/questions/24089145/multiple-type-constraints-in-swift)
+//basic collectionviewcontroller with functions that all collectionviewcontrollers use
+//if you want to implement/use this:
+//override getCellId & getAPICall in childClass
 class GenericCollectionViewController<T: GenericCollectionViewCell<U>, U>: UICollectionViewController where U: Decodable {
     
     var items = [U]()
+    
+    //timer for autorefresh
+    var autorefreshTimer: Timer?
+    //seconds between each timer tick for autorefresh
+    let autorefreshTimerTickRate = 60.0
     
     func getCellId() -> String {
         print("Error: implement getCellId from GenericCollectionViewController!")
@@ -27,6 +34,38 @@ class GenericCollectionViewController<T: GenericCollectionViewCell<U>, U>: UICol
     
     override func viewDidLoad() {
         collectionView.register(UINib(nibName: getCellId(), bundle: nil), forCellWithReuseIdentifier: getCellId())
+        
+        collectionView.refreshControl = UIRefreshControl()
+        collectionView.refreshControl?.addTarget(self, action: #selector(refresh), for: .valueChanged)
+        collectionView.alwaysBounceVertical = true
+        //collectionView.addSubview(refreshControl!)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        getItems()
+        startAutoRefreshTimer()
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        stopAutoRefreshTimer()
+    }
+    
+    func startAutoRefreshTimer() {
+        autorefreshTimer = Timer.scheduledTimer(timeInterval: autorefreshTimerTickRate, target: self, selector: #selector(onTimerTick), userInfo: nil, repeats: true)
+        autorefreshTimer?.tolerance = 0.30
+    }
+    
+    func stopAutoRefreshTimer() {
+        autorefreshTimer?.invalidate()
+    }
+    
+    @objc func onTimerTick(timer: Timer) {
+        getItems()
+    }
+    
+    @objc func refresh() {
         getItems()
     }
     
@@ -40,12 +79,21 @@ class GenericCollectionViewController<T: GenericCollectionViewCell<U>, U>: UICol
                 
                 DispatchQueue.main.async {
                     if let data = data {
-                        self?.items = data
-                        self?.collectionView.reloadData()
+                        self?.reloadItems(newData: data)
                     }
                 }
             })
         }
+    }
+    
+    func reloadItems(newData: [U]) {
+        items = newData
+        finishRefreshing()
+    }
+    
+    func finishRefreshing() {
+        collectionView.reloadData()
+        collectionView.refreshControl?.endRefreshing()
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

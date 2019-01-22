@@ -107,3 +107,13 @@
 "Photos_Upload_Success_Message"     = "Bedankt voor je foto!";
 "Photos_Upload_Fail_Title"          = "Foto niet geupload";
 "Photos_Upload_Fail_Message"        = "Er is iets fout gegaan tijdens het uploaden!";
+
+// MARK: - Profile
+// MARK: Profile - algemenevoorwaarden
+"Profile_AlgemeneVoorwaarden_title" = "Algemene voorwaarden";
+"Profile_AlgemeneVoorwaarden_message"="Er zijn helaas nog geen algemene voorwaarden voor deze applicatie.";
+"Profile_AlgemeneVoorwaarden_discard"="Ok jammer :(";
+// MARK: Profile - overontwikkelaars
+"Profile_OverOntwikkelaars_title"   = "Over de ontwikkelaars van de applicatie";
+"Profile_OverOntwikkelaars_message" = "Deze app is gemaakt door: Jeroen Besse, Erik Alserda, Wouter Janson en Camille Schopmeijer tijdens hun minor Mobile Development op Inholland.";
+"Profile_OverOntwikkelaars_discard" = "Ok cool!";
