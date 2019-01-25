@@ -23,7 +23,7 @@ class AgendaViewController: GenericTableViewController<AgendaTableViewCell, Even
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationItem.title = NSLocalizedString("Agenda_Title", comment: "")
+        navigationItem.title = R.string.localizable.agenda_Title()
         
         registerForPreviewing(with: self, sourceView: tableView)
         

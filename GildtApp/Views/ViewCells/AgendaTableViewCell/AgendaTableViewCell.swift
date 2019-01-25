@@ -62,13 +62,13 @@ class AgendaTableViewCell: GenericTableViewCell<Event> {
     
     private func setAttendanceButton(attendance: Bool) {
         if attendance {
-            Button.setTitle(NSLocalizedString("Agenda_Signoff", comment: ""), for: .normal)
+            Button.setTitle(R.string.localizable.agenda_Signoff(), for: .normal)
             Button.setTitleColor(UIColor.primaryGildtGreen, for: .normal)
             Button.backgroundColor = UIColor.white
             Button.layer.borderColor = UIColor.primaryGildtGreen.cgColor
             Button.layer.borderWidth = 1
         } else {
-            Button.setTitle(NSLocalizedString("Agenda_Signup", comment: ""), for: .normal)
+            Button.setTitle(R.string.localizable.agenda_Signup(), for: .normal)
             Button.setTitleColor(UIColor.white, for: .normal)
             Button.backgroundColor = UIColor.primaryGildtGreen
             Button.layer.borderColor = UIColor.primaryGildtGreen.cgColor
@@ -91,8 +91,8 @@ class AgendaTableViewCell: GenericTableViewCell<Event> {
                     } else {
                         StatusAlertService().showStatusAlert(
                             withImage: #imageLiteral(resourceName: "IconError"),
-                            title: NSLocalizedString("General_Whoops", comment: ""),
-                            message: NSLocalizedString("Agenda_Signup_Error", comment: ""),
+                            title: R.string.localizable.general_Whoops(),
+                            message: R.string.localizable.agenda_Signup_Error(),
                             error: true)
                     }
                 }

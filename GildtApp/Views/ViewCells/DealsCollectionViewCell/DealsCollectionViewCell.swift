@@ -57,11 +57,11 @@ class DealsCollectionViewCell: GenericCollectionViewCell<Deal> {
         }
         self.Description.text = item?.description
         if item?.dealType == "usage" {
-            self.Usability.text = NSLocalizedString("Deals_Usage_Still", comment: "") +
+            self.Usability.text = R.string.localizable.deals_Usage_Still() +
             "\(item?.dealsLeft ?? 0) " +
-            NSLocalizedString("Deals_Times_Usable", comment: "")
+            R.string.localizable.deals_Times_Usable()
         } else {
-            self.Usability.text = NSLocalizedString("Deals_Usable_Unlimited", comment: "")
+            self.Usability.text = R.string.localizable.deals_Usable_Unlimited()
         }
         self.Availability.text = item?.expireDateHumanized
     }

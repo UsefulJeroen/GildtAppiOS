@@ -26,7 +26,7 @@ class TagOverviewViewController: GenericCollectionViewController<TagCollectionVi
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationItem.title = NSLocalizedString("Photos_Title", comment: "")
+        navigationItem.title = R.string.localizable.photos_Title()
         
         registerForPreviewing(with: self, sourceView: collectionView)
     }

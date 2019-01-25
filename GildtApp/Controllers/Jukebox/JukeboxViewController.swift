@@ -27,7 +27,7 @@ class JukeboxViewController: GenericTableViewController<SongRequestTableViewCell
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationItem.title = NSLocalizedString("Jukebox_Title", comment: "")
+        navigationItem.title = R.string.localizable.jukebox_Title()
         
         //setup hide keyboard when clicking on other part of the screen (not keyboard)
         let tapGesture: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
@@ -108,9 +108,9 @@ class JukeboxViewController: GenericTableViewController<SongRequestTableViewCell
         }
         else {
             //show alert that you need to fill in the artist & title fields
-            let alertTitle = NSLocalizedString("Jukebox_Error_Title", comment: "")
-            let alertMessage = NSLocalizedString("Jukebox_Error_Message", comment: "")
-            let discardText = NSLocalizedString("Jukebox_Error_Discard", comment: "")
+            let alertTitle = R.string.localizable.jukebox_Error_Title()
+            let alertMessage = R.string.localizable.jukebox_Error_Message()
+            let discardText = R.string.localizable.jukebox_Error_Discard()
             let alert = UIAlertController(title: alertTitle, message: alertMessage, preferredStyle: .alert)
             //check which field needs be be changed
             if title == "" {

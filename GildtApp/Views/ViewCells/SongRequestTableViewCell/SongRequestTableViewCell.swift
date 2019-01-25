@@ -58,7 +58,7 @@ class SongRequestTableViewCell: GenericTableViewCell<SongRequest> {
         titleLabelView.backgroundColor = .white
         artistLabelView.backgroundColor = .white
         idImageView.image = UIImage(named: "SongRequestCircleImageGreen")
-        idLabelView.text = NSLocalizedString("Jukebox_New", comment: "")
+        idLabelView.text = R.string.localizable.jukebox_New()
         idLabelView.textColor = .white
         
         container.layer.cornerRadius = 10

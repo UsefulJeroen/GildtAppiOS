@@ -13,7 +13,7 @@ class ProfileViewController : UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = LocalStorageService.getUsername() ?? NSLocalizedString("General_Profile", comment: "")
+        title = LocalStorageService.getUsername() ?? R.string.localizable.general_Profile()
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -29,18 +29,18 @@ class ProfileViewController : UITableViewController {
     }
     
     @IBAction func algemeneVoorwaardenTapped(_ sender: Any) {
-        let alertTitle = "Algemene voorwaarden"
-        let alertMessage = "Er zijn helaas nog geen algemene voorwaarden voor deze applicatie."
-        let discardText = "Ok jammer :("
+        let alertTitle = R.string.localizable.profile_AlgemeneVoorwaarden_title()
+        let alertMessage = R.string.localizable.profile_AlgemeneVoorwaarden_message()
+        let discardText = R.string.localizable.profile_AlgemeneVoorwaarden_discard()
         let alert = UIAlertController(title: alertTitle, message: alertMessage, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: discardText, style: .default))
         self.present(alert, animated: true)
     }
     
     @IBAction func overOntwikkelaarsTapped(_ sender: Any) {
-        let alertTitle = NSLocalizedString("Profile_OverOntwikkelaars_title", comment: "")
-        let alertMessage = NSLocalizedString("Profile_OverOntwikkelaars_message", comment: "")
-        let discardText = NSLocalizedString("Profile_OverOntwikkelaars_discard", comment: "")
+        let alertTitle = R.string.localizable.profile_OverOntwikkelaars_title()
+        let alertMessage = R.string.localizable.profile_OverOntwikkelaars_message()
+        let discardText = R.string.localizable.profile_OverOntwikkelaars_discard()
         let alert = UIAlertController(title: alertTitle, message: alertMessage, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: discardText, style: .default))
         self.present(alert, animated: true)

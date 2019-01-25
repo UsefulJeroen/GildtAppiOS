@@ -56,14 +56,14 @@ class EventViewController: UIViewController {
             formatter.dateStyle = .long
             EventDateTime.text = "\(formatter.string(from: date))"
             EventAttendees.text =
-                NSLocalizedString("Agenda_Already", comment: "") +
+                R.string.localizable.agenda_Already() +
                 "\(event.attendanceUsers.count) " +
-                NSLocalizedString("Agenda_Attendees", comment: "")
+                R.string.localizable.agenda_Attendees()
             EventDescription.text = event.description
             
             EventAttendeesCount.text =
                 "\(event.attendanceUsers.count) " +
-                NSLocalizedString("Agenda_Attendees", comment: "")
+                R.string.localizable.agenda_Attendees()
             
             EventAttendeesList.text = "\n"
             for attendee in event.attendanceUsers {
@@ -74,13 +74,13 @@ class EventViewController: UIViewController {
     
     private func setAttendanceButton(attendance: Bool) {
         if attendance {
-            EventButton.setTitle(NSLocalizedString("Agenda_Signoff", comment: ""), for: .normal)
+            EventButton.setTitle(R.string.localizable.agenda_Signoff(), for: .normal)
             EventButton.setTitleColor(UIColor.primaryGildtGreen, for: .normal)
             EventButton.backgroundColor = UIColor.white
             EventButton.layer.borderColor = UIColor.primaryGildtGreen.cgColor
             EventButton.layer.borderWidth = 1
         } else {
-            EventButton.setTitle(NSLocalizedString("Agenda_Signup", comment: ""), for: .normal)
+            EventButton.setTitle(R.string.localizable.agenda_Signup(), for: .normal)
             EventButton.setTitleColor(UIColor.white, for: .normal)
             EventButton.backgroundColor = UIColor.primaryGildtGreen
             EventButton.layer.borderColor = UIColor.primaryGildtGreen.cgColor
@@ -111,8 +111,8 @@ class EventViewController: UIViewController {
                     } else {
                         StatusAlertService().showStatusAlert(
                             withImage: #imageLiteral(resourceName: "IconError"),
-                            title: NSLocalizedString("General_Whoops", comment: ""),
-                            message: NSLocalizedString("Agenda_Signup_Error", comment: ""),
+                            title: R.string.localizable.general_Whoops(),
+                            message: R.string.localizable.agenda_Signup_Error(),
                             error: true)
                     }
                 }

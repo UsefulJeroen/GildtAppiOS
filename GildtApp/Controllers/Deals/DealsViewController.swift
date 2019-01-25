@@ -24,7 +24,7 @@ class DealsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.title = NSLocalizedString("Deals_Title", comment: "")
+        navigationItem.title = R.string.localizable.deals_Title()
         navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.refresh, target: self, action: #selector(getDeals))
         view.backgroundColor = UIColor.appBackground
         
@@ -110,7 +110,7 @@ class DealsViewController: UIViewController {
                     if data != nil {
                         self?.dealSuccessfullyRedeemed(updatedDeal: data!)
                     } else {
-                        self?.dealUnsuccessfullyRedeemed(message: NSLocalizedString("Deals_Error_Message", comment: ""))
+                        self?.dealUnsuccessfullyRedeemed(message: R.string.localizable.deals_Error_Message())
                     }
                 }
             })
@@ -127,15 +127,15 @@ class DealsViewController: UIViewController {
         }
         statusAlertService.showStatusAlert(
             withImage: #imageLiteral(resourceName: "IconSucces"),
-            title: NSLocalizedString("Deals_Deal_Claimed", comment: ""),
-            message: NSLocalizedString("Deals_Enjoy", comment: ""))
+            title: R.string.localizable.deals_Deal_Claimed(),
+            message: R.string.localizable.deals_Enjoy())
         UINotificationFeedbackGenerator().notificationOccurred(.success)
     }
 
     func dealUnsuccessfullyRedeemed(message: String) {
         statusAlertService.showStatusAlert(
             withImage: #imageLiteral(resourceName: "IconError"),
-            title: NSLocalizedString("General_Whoops", comment: ""),
+            title: R.string.localizable.general_Whoops(),
             message: message,
             error: true)
         UINotificationFeedbackGenerator().notificationOccurred(.error)
