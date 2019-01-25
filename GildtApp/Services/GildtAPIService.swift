@@ -112,7 +112,7 @@ class GildtAPIService {
     }
     
     static func uploadImage(image: UIImage, description: String, tag: Int, callback:@escaping (SessionManager.MultipartFormDataEncodingResult)-> Void) {
-        let authToken = LocalStorageService.getAuthToken()
+        let authToken = LocalStorageService.getAuthToken()!
         let headers: HTTPHeaders = ["Authorization": "Bearer \(authToken)"]
         let imageData = image.jpegData(compressionQuality: 0.6)
         
