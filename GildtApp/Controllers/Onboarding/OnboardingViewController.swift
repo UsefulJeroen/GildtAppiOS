@@ -12,20 +12,20 @@ class OnboardingViewController: UIViewController {
     
     var swiftyOnboard: SwiftyOnboard!
     var titleArray: [String] = [
-        NSLocalizedString("Onboarding_Welcome", comment: ""),
-        NSLocalizedString("Onboarding_Agenda", comment: ""),
-        NSLocalizedString("Onboarding_Deals", comment: ""),
-        NSLocalizedString("Onboarding_Stamps", comment: ""),
-        NSLocalizedString("Onboarding_Jukebox", comment: ""),
-        NSLocalizedString("Onboarding_Photos", comment: "")
+        R.string.localizable.onboarding_Welcome(),
+        R.string.localizable.onboarding_Agenda(),
+        R.string.localizable.onboarding_Deals(),
+        R.string.localizable.onboarding_Stamps(),
+        R.string.localizable.onboarding_Jukebox(),
+        R.string.localizable.onboarding_Photos()
     ]
     var subTitleArray: [String] = [
-        NSLocalizedString("Onboarding_Welcome_Description", comment: ""),
-        NSLocalizedString("Onboarding_Agenda_Description", comment: ""),
-        NSLocalizedString("Onboarding_Deals_Description", comment: ""),
-        NSLocalizedString("Onboarding_Stamps_Description", comment: ""),
-        NSLocalizedString("Onboarding_Jukebox_Description", comment: ""),
-        NSLocalizedString("Onboarding_Photos_Description", comment: "")
+        R.string.localizable.onboarding_Welcome_Description(),
+        R.string.localizable.onboarding_Agenda_Description(),
+        R.string.localizable.onboarding_Deals_Description(),
+        R.string.localizable.onboarding_Stamps_Description(),
+        R.string.localizable.onboarding_Jukebox_Description(),
+        R.string.localizable.onboarding_Photos_Description()
     ]
     
     override func viewDidLoad() {
@@ -57,13 +57,11 @@ class OnboardingViewController: UIViewController {
     
     func exitOnboardingFlow() {
         LocalStorageService.setOnboardingState(state: true)
-        if (!LocalStorageService.isAuthTokenSet()){
-            let storyboard = UIStoryboard(name: "Login", bundle: nil)
-            let loginVc = storyboard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+        if (!LocalStorageService.isAuthTokenSet()) {
+            let loginVc = R.storyboard.login.loginViewController()!
             self.present(loginVc, animated: true, completion: nil)
         } else {
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let agendaPageVc = storyboard.instantiateViewController(withIdentifier: "MainTabBarController") as! MainTabBarController
+            let agendaPageVc = R.storyboard.main.mainTabBarController()!
             self.present(agendaPageVc, animated: true, completion: nil)
         }
     }
@@ -108,11 +106,11 @@ extension OnboardingViewController: SwiftyOnboardDelegate, SwiftyOnboardDataSour
         overlay.continueButton.tag = Int(position)
         
         if currentPage < titleArray.count - 1 {
-            overlay.continueButton.setTitle(NSLocalizedString("Onboarding_Next", comment: ""), for: .normal)
-            overlay.skipButton.setTitle(NSLocalizedString("Onboarding_Skip", comment: ""), for: .normal)
+            overlay.continueButton.setTitle(R.string.localizable.onboarding_Next(), for: .normal)
+            overlay.skipButton.setTitle(R.string.localizable.onboarding_Skip(), for: .normal)
             overlay.skipButton.isHidden = false
         } else {
-            overlay.continueButton.setTitle(NSLocalizedString("Onboarding_Open_App", comment: ""), for: .normal)
+            overlay.continueButton.setTitle(R.string.localizable.onboarding_Open_App(), for: .normal)
             overlay.skipButton.isHidden = true
         }
     }

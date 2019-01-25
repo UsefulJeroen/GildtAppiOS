@@ -52,26 +52,26 @@ class LoginViewController: UIViewController {
         registerButton.isHidden = false
         haveAccountButton.isHidden = false
         
-        firstTextField.placeholder = NSLocalizedString("Login_Username", comment: "")
+        firstTextField.placeholder = R.string.localizable.login_Username()
         firstTextField.keyboardType = UIKeyboardType.alphabet
         firstTextField.returnKeyType = UIReturnKeyType.next
         
-        secondTextField.placeholder = NSLocalizedString("Login_Email", comment: "")
+        secondTextField.placeholder = R.string.localizable.login_Email()
         secondTextField.keyboardType = UIKeyboardType.emailAddress
         secondTextField.isSecureTextEntry = false
         secondTextField.returnKeyType = UIReturnKeyType.next
         
-        thirdTextField.placeholder = NSLocalizedString("Login_Password", comment: "")
+        thirdTextField.placeholder = R.string.localizable.login_Password()
         thirdTextField.keyboardType = UIKeyboardType.default
         thirdTextField.isSecureTextEntry = true
         thirdTextField.returnKeyType = UIReturnKeyType.next
         
-        fourthTextField.placeholder = NSLocalizedString("Login_Password_Verification", comment: "")
+        fourthTextField.placeholder = R.string.localizable.login_Password_Verification()
         fourthTextField.keyboardType = UIKeyboardType.default
         fourthTextField.isSecureTextEntry = true
         fourthTextField.returnKeyType = UIReturnKeyType.go
         
-        haveAccountButton.setTitle(NSLocalizedString("Login_Existing_Account", comment: ""), for: UIControl.State.normal)
+        haveAccountButton.setTitle(R.string.localizable.login_Existing_Account(), for: UIControl.State.normal)
     }
     
     func changeViewToLogin() {
@@ -84,16 +84,16 @@ class LoginViewController: UIViewController {
         loginButton.isHidden = false
         wantAccountButton.isHidden = false
         
-        firstTextField.placeholder = NSLocalizedString("Login_Email", comment: "")
+        firstTextField.placeholder = R.string.localizable.login_Email()
         firstTextField.keyboardType = UIKeyboardType.emailAddress
         firstTextField.returnKeyType = UIReturnKeyType.next
         
-        secondTextField.placeholder = NSLocalizedString("Login_Password", comment: "")
+        secondTextField.placeholder = R.string.localizable.login_Password()
         secondTextField.keyboardType = UIKeyboardType.default
         secondTextField.isSecureTextEntry = true
         secondTextField.returnKeyType = UIReturnKeyType.go
         
-        wantAccountButton.setTitle(NSLocalizedString("Login_No_Existing_Account", comment: ""), for: UIControl.State.normal)
+        wantAccountButton.setTitle(R.string.localizable.login_No_Existing_Account(), for: UIControl.State.normal)
     }
     
     //function that returns which part of the view is used
@@ -132,9 +132,7 @@ class LoginViewController: UIViewController {
     func login() {
         activityIndicator.isHidden = false
         let email: String = firstTextField.text!
-        //show error if this is nil
         let password: String = secondTextField.text!
-        //show error if this is nil
         
         let user: LoginModel = LoginModel(email: email, password: password)
         GildtAPIService.login(user: user)
@@ -157,9 +155,9 @@ class LoginViewController: UIViewController {
     
     func couldntLoginError() {
         activityIndicator.isHidden = true
-        let alertTitle = NSLocalizedString("Login_Error_Title", comment: "")
-        let alertMessage = NSLocalizedString("Login_Error_Message", comment: "")
-        let discardText = NSLocalizedString("Login_Error_Discard", comment: "")
+        let alertTitle = R.string.localizable.login_Error_Title()
+        let alertMessage = R.string.localizable.login_Error_Message()
+        let discardText = R.string.localizable.login_Error_Discard()
         
         let alert = UIAlertController(title: alertTitle, message: alertMessage, preferredStyle: .alert)
         
@@ -172,12 +170,12 @@ class LoginViewController: UIViewController {
     
     func couldntRegisterError(error: ErrorMessage?) {
         activityIndicator.isHidden = true
-        let alertTitle = NSLocalizedString("Login_Register_Error_Title", comment: "")
-        var alertMessage = NSLocalizedString("Login_Register_Error_Message", comment: "")
+        let alertTitle = R.string.localizable.login_Register_Error_Title()
+        var alertMessage = R.string.localizable.login_Register_Error_Message()
         if let error = error {
-            alertMessage = NSLocalizedString("Login_Register_Error_Reason", comment: "") + (error.message)
+            alertMessage = R.string.localizable.login_Register_Error_Reason() + (error.message)
         }
-        let discardText = NSLocalizedString("Login_Error_Discard", comment: "")
+        let discardText = R.string.localizable.login_Error_Discard()
         
         let alert = UIAlertController(title: alertTitle, message: alertMessage, preferredStyle: .alert)
         
@@ -192,21 +190,16 @@ class LoginViewController: UIViewController {
         activityIndicator.isHidden = true
         LocalStorageService.setAuthToken(authToken: postBack.jwt)
         LocalStorageService.setUsername(username: postBack.username)
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let agendaPageVc = storyboard.instantiateViewController(withIdentifier: "MainTabBarController") as! MainTabBarController
+        let agendaPageVc = R.storyboard.main.mainTabBarController()!
         self.present(agendaPageVc, animated: true, completion: nil)
     }
     
     func register() {
         activityIndicator.isHidden = false
         let username: String = firstTextField.text!
-        //show error if this is nil
         let email: String = secondTextField.text!
-        //show error if this is nil
         let password: String = thirdTextField.text!
-        //show error if this is nil
         let passwordConfirmation: String = fourthTextField.text!
-        //show error if this is nil
         
         let user: RegisterModel = RegisterModel(username: username, email: email, password: password, password_confirmation: passwordConfirmation)
         GildtAPIService.register(user: user)
@@ -242,7 +235,6 @@ class LoginViewController: UIViewController {
     
     //when return button is pressed when first textfield while used
     @IBAction func firstTextFieldTrigger(_ sender: Any) {
-        // TODO: check of het veld goed is ingevuld
         firstTextField.endEditing(true)
         secondTextField.becomeFirstResponder()
     }
@@ -251,11 +243,9 @@ class LoginViewController: UIViewController {
     @IBAction func secondTextFieldTrigger(_ sender: Any) {
         secondTextField.endEditing(true)
         if needsToRegister() {
-            // TODO: check of het veld goed is ingevuld
             thirdTextField.becomeFirstResponder()
         }
         else {
-            // TODO: check of het veld goed is ingevuld
             login()
         }
     }
@@ -263,7 +253,6 @@ class LoginViewController: UIViewController {
     //when return button is pressed when third textfield while used
     @IBAction func thirdTextFieldTrigger(_ sender: Any) {
         if needsToRegister() {
-            // TODO: check of het veld goed is ingevuld
             thirdTextField.endEditing(true)
             fourthTextField.becomeFirstResponder()
         }
@@ -272,7 +261,6 @@ class LoginViewController: UIViewController {
     //when return button is pressed when fourth textfield while used
     @IBAction func fourthTextFieldTrigger(_ sender: Any) {
         if needsToRegister() {
-            // TODO: check of het veld goed is ingevuld
             fourthTextField.endEditing(true)
             register()
         }

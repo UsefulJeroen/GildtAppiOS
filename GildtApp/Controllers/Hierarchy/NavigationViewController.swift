@@ -21,9 +21,7 @@ class NavigationViewController: UINavigationController {
     }
     
     @objc func profileClicked() {
-        let storyboard = UIStoryboard(name: "Profile", bundle: nil)
-        let loginPageVc = storyboard.instantiateViewController(withIdentifier: "ProfileViewController") as! ProfileViewController
-        
-        pushViewController(loginPageVc, animated: true)
+        let profileVc = R.storyboard.profile.profileViewController()!
+        pushViewController(profileVc, animated: true)
     }
 }

@@ -13,7 +13,7 @@ import Alamofire
 class AgendaViewController: GenericTableViewController<AgendaTableViewCell, Event>, UIViewControllerPreviewingDelegate {
     
     override func getCellId() -> String {
-        return "AgendaTableViewCell"
+        return R.nib.agendaTableViewCell.name
     }
     
     override func getMainAPICall() -> DataRequest {
@@ -23,7 +23,7 @@ class AgendaViewController: GenericTableViewController<AgendaTableViewCell, Even
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationItem.title = NSLocalizedString("Agenda_Title", comment: "")
+        navigationItem.title = R.string.localizable.agenda_Title()
         
         registerForPreviewing(with: self, sourceView: tableView)
         
@@ -43,8 +43,7 @@ class AgendaViewController: GenericTableViewController<AgendaTableViewCell, Even
     }
     
     func detailViewController(for index: Int) -> UIViewController {
-        let storyboard = UIStoryboard(name: "Agenda", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "EventViewController") as! EventViewController
+        let vc = R.storyboard.agenda.eventViewController()!
         vc.navigationItem.largeTitleDisplayMode = .never
         vc.event = items[index]
         return vc

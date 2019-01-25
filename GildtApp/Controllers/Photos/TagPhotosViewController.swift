@@ -16,7 +16,7 @@ import Photos
 class TagPhotosViewController: GenericTableViewController<PreviewImageTableViewCell, Photo>, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     
     override func getCellId() -> String {
-        return "PreviewImageTableViewCell"
+        return R.nib.previewImageTableViewCell.name
     }
     
     override func getMainAPICall() -> DataRequest {
@@ -36,8 +36,8 @@ class TagPhotosViewController: GenericTableViewController<PreviewImageTableViewC
         picker.sourceType = UIImagePickerController.SourceType.photoLibrary;
         picker.allowsEditing = false
         
-        navigationItem.title = tag?.title ?? NSLocalizedString("Photos_Tag", comment: "")
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: NSLocalizedString("General_Upload", comment: ""), style: .plain, target: self, action: #selector(uploadClicked))
+        navigationItem.title = tag?.title ?? R.string.localizable.photos_Tag()
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: R.string.localizable.general_Upload(), style: .plain, target: self, action: #selector(uploadClicked))
     }
     
     @objc func uploadClicked() {
@@ -91,47 +91,47 @@ class TagPhotosViewController: GenericTableViewController<PreviewImageTableViewC
 extension TagPhotosViewController {
     private func showAuthorizationAlert() {
         let alertController = UIAlertController(
-            title: NSLocalizedString("Photos_Title", comment: ""),
-            message: NSLocalizedString("Photos_Permission", comment: ""),
+            title: R.string.localizable.photos_Title(),
+            message: R.string.localizable.photos_Permission(),
             preferredStyle: .alert)
         
-        alertController.addAction(UIAlertAction(title: NSLocalizedString("General_Settings", comment: ""), style: .default, handler: { (_) in
+        alertController.addAction(UIAlertAction(title: R.string.localizable.general_Settings(), style: .default, handler: { (_) in
             DispatchQueue.main.async {
                 if let settingsURL = URL(string: UIApplication.openSettingsURLString) {
                     UIApplication.shared.open(settingsURL, options: [:], completionHandler: nil)
                 }
             }
         }))
-        alertController.addAction(UIAlertAction(title: NSLocalizedString("General_Cancel", comment: ""), style: .default, handler: nil))
+        alertController.addAction(UIAlertAction(title: R.string.localizable.general_Cancel(), style: .default, handler: nil))
         
         present(alertController, animated: true, completion: nil)
     }
     
     private func showUploadAlert(image: UIImage) {
         let alertController = UIAlertController(
-            title: NSLocalizedString("Photos_Upload", comment: ""),
-            message: NSLocalizedString("Photos_Description_Question", comment: ""),
+            title: R.string.localizable.photos_Upload(),
+            message: R.string.localizable.photos_Description_Question(),
             preferredStyle: .alert)
         
         alertController.addImage(image)
         
         alertController.addTextField { textField in
-            textField.placeholder = NSLocalizedString("Photos_Description", comment: "")
+            textField.placeholder = R.string.localizable.photos_Description()
         }
         
-        alertController.addAction(UIAlertAction(title: NSLocalizedString("General_Upload", comment: ""), style: .default, handler: {
+        alertController.addAction(UIAlertAction(title: R.string.localizable.general_Upload(), style: .default, handler: {
             (alert: UIAlertAction!) in
             if let textField = alertController.textFields?.first {
                 self.uploadImage(image: image, description: textField.text!, tag: (self.tag?.id)!)
             }}))
-        alertController.addAction(UIAlertAction(title: NSLocalizedString("General_Cancel", comment: ""), style: .cancel, handler: nil))
+        alertController.addAction(UIAlertAction(title: R.string.localizable.general_Cancel(), style: .cancel, handler: nil))
         
         present(alertController, animated: true, completion: nil)
     }
     
     private func uploadImage(image: UIImage, description: String, tag: Int) {
         // Upload modal
-        alert = UIAlertController(title: NSLocalizedString("Photos_Upload", comment: ""), message: NSLocalizedString("Photos_Upload_Progress", comment: "") + " 0%", preferredStyle: .alert)
+        alert = UIAlertController(title: R.string.localizable.photos_Upload(), message: R.string.localizable.photos_Upload_Progress() + " 0%", preferredStyle: .alert)
         let rect = CGRect(x: 10, y: 70, width: 250, height: 0)
         progressView = UIProgressView(frame: rect)
         progressView!.tintColor = UIColor.primaryGildtGreen
@@ -147,7 +147,7 @@ extension TagPhotosViewController {
         case .success(let upload, _, _):
             upload.uploadProgress(closure: { (progress) in
                 self.progressView?.setProgress(Float(progress.fractionCompleted), animated: true)
-                self.alert?.message = NSLocalizedString("Photos_Upload_Progress", comment: "") + " \(NSString(format: "%.1f", progress.fractionCompleted * 100))%"
+                self.alert?.message = R.string.localizable.photos_Upload_Progress() + " \(NSString(format: "%.1f", progress.fractionCompleted * 100))%"
                 if progress.isFinished {
                     self.alert?.dismiss(animated: true, completion: {
                         self.showSuccessMessage()
@@ -167,16 +167,16 @@ extension TagPhotosViewController {
     private func showSuccessMessage() {
         StatusAlertService().showStatusAlert(
             withImage: #imageLiteral(resourceName: "IconSucces"),
-            title: NSLocalizedString("Photos_Upload_Success_Title", comment: ""),
-            message: NSLocalizedString("Photos_Upload_Success_Message", comment: ""))
+            title: R.string.localizable.photos_Upload_Success_Title(),
+            message: R.string.localizable.photos_Upload_Success_Message())
         getItems()
     }
     
     private func showFailureMessage() {
         StatusAlertService().showStatusAlert(
             withImage: #imageLiteral(resourceName: "IconError"),
-            title: NSLocalizedString("Photos_Upload_Fail_Title", comment: ""),
-            message: NSLocalizedString("Photos_Upload_Fail_Message", comment: ""),
+            title: R.string.localizable.photos_Upload_Fail_Title(),
+            message: R.string.localizable.photos_Upload_Fail_Message(),
             error: true)
     }
 }

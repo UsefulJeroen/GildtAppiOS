@@ -16,6 +16,7 @@
 		B0177A44219CC6A100E379D5 /* SongRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0177A43219CC6A100E379D5 /* SongRequest.swift */; };
 		B0177A47219CCD6800E379D5 /* SongRequestTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0177A46219CCD6800E379D5 /* SongRequestTableViewCell.swift */; };
 		B0177A49219CCE3500E379D5 /* SongRequestTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B0177A48219CCE3500E379D5 /* SongRequestTableViewCell.xib */; };
+		B01E104F21FB4D7200BDE214 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01E104E21FB4D7200BDE214 /* R.generated.swift */; };
 		B078A90E219B0EE000545EAC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B078A90D219B0EE000545EAC /* AppDelegate.swift */; };
 		B078A915219B0EE000545EAC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B078A913219B0EE000545EAC /* Main.storyboard */; };
 		B078A91A219B0EE300545EAC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B078A918219B0EE300545EAC /* LaunchScreen.storyboard */; };
@@ -86,6 +87,7 @@
 		B0177A43219CC6A100E379D5 /* SongRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongRequest.swift; sourceTree = "<group>"; };
 		B0177A46219CCD6800E379D5 /* SongRequestTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongRequestTableViewCell.swift; sourceTree = "<group>"; };
 		B0177A48219CCE3500E379D5 /* SongRequestTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SongRequestTableViewCell.xib; sourceTree = "<group>"; };
+		B01E104E21FB4D7200BDE214 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 		B078A90A219B0EE000545EAC /* GildtApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GildtApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B078A90D219B0EE000545EAC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B078A914219B0EE000545EAC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -265,16 +267,17 @@
 		B078A90C219B0EE000545EAC /* GildtApp */ = {
 			isa = PBXGroup;
 			children = (
-				DF772FBC21D948D900EC3EB1 /* GildtApp.entitlements */,
 				B078A90D219B0EE000545EAC /* AppDelegate.swift */,
 				B00563B8219DC34E00B9F635 /* Assets.xcassets */,
 				B0177A34219B89B700E379D5 /* Controllers */,
 				DF70F67921A1837E001D3006 /* Extensions */,
+				DF772FBC21D948D900EC3EB1 /* GildtApp.entitlements */,
 				B078A91B219B0EE300545EAC /* Info.plist */,
+				DF33B31821EA63E800F8E71D /* Localizable.strings */,
 				B0177A37219B89E900E379D5 /* Models */,
+				B01E104E21FB4D7200BDE214 /* R.generated.swift */,
 				B0177A36219B89E400E379D5 /* Services */,
 				B0177A35219B89D400E379D5 /* Views */,
-				DF33B31821EA63E800F8E71D /* Localizable.strings */,
 			);
 			path = GildtApp;
 			sourceTree = "<group>";
@@ -485,6 +488,7 @@
 			buildConfigurationList = B078A91E219B0EE300545EAC /* Build configuration list for PBXNativeTarget "GildtApp" */;
 			buildPhases = (
 				39A334292496634C3481A5EF /* [CP] Check Pods Manifest.lock */,
+				B01E104D21FB4CA600BDE214 /* ShellScript */,
 				B078A906219B0EE000545EAC /* Sources */,
 				B078A907219B0EE000545EAC /* Frameworks */,
 				B078A908219B0EE000545EAC /* Resources */,
@@ -586,6 +590,25 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		B01E104D21FB4CA600BDE214 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$TEMP_DIR/rswift-lastrun",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				$SRCROOT/R.generated.swift,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT/R.generated.swift\"\n";
+		};
 		B835E010DB4F716737B46076 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -599,6 +622,7 @@
 				"${BUILT_PRODUCTS_DIR}/CenteredCollectionView/CenteredCollectionView.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/QRCodeReader.swift/QRCodeReader.framework",
+				"${BUILT_PRODUCTS_DIR}/R.swift.Library/Rswift.framework",
 				"${BUILT_PRODUCTS_DIR}/SKPhotoBrowser/SKPhotoBrowser.framework",
 				"${BUILT_PRODUCTS_DIR}/StatusAlert/StatusAlert.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftKeychainWrapper/SwiftKeychainWrapper.framework",
@@ -613,6 +637,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CenteredCollectionView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/QRCodeReader.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Rswift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SKPhotoBrowser.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/StatusAlert.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftKeychainWrapper.framework",
@@ -667,6 +692,7 @@
 				B0CD4DCA21BE9F900060A28C /* TagOverviewViewController.swift in Sources */,
 				B099D20A21B0442600DA4473 /* NewSong.swift in Sources */,
 				DF33B30821E79EDD00F8E71D /* OnboardingViewController.swift in Sources */,
+				B01E104F21FB4D7200BDE214 /* R.generated.swift in Sources */,
 				B0177A40219B9C8100E379D5 /* LocalStorageService.swift in Sources */,
 				DFD460E121C0559400F90B52 /* StampCollectionViewCell.swift in Sources */,
 				DF9D57B321B08615003A97FB /* AgendaTableViewCell.swift in Sources */,

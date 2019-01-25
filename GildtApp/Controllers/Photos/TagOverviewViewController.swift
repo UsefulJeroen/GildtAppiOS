@@ -13,7 +13,7 @@ import Alamofire
 class TagOverviewViewController: GenericCollectionViewController<TagCollectionViewCell, Tag>, UICollectionViewDelegateFlowLayout, UIViewControllerPreviewingDelegate {
     
     override func getCellId() -> String {
-        return "TagCollectionViewCell"
+        return R.nib.tagCollectionViewCell.name
     }
     
     override func getMainAPICall() -> DataRequest {
@@ -26,14 +26,13 @@ class TagOverviewViewController: GenericCollectionViewController<TagCollectionVi
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationItem.title = NSLocalizedString("Photos_Title", comment: "")
+        navigationItem.title = R.string.localizable.photos_Title()
         
         registerForPreviewing(with: self, sourceView: collectionView)
     }
     
     func createDetailVc(indexPath: IndexPath) -> TagPhotosViewController {
-        let storyboard = UIStoryboard(name: "Photo", bundle: nil)
-        let tagPhotosVc = storyboard.instantiateViewController(withIdentifier: "TagPhotosViewController") as! TagPhotosViewController
+        let tagPhotosVc = R.storyboard.photo.tagPhotosViewController()!
         let tag = items[indexPath.row]
         tagPhotosVc.tag = tag
         return tagPhotosVc
