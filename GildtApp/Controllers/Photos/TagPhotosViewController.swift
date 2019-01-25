@@ -131,7 +131,7 @@ extension TagPhotosViewController {
     
     private func uploadImage(image: UIImage, description: String, tag: Int) {
         // Upload modal
-        alert = UIAlertController(title: NSLocalizedString("Photos_Upload", comment: ""), message: NSLocalizedString("Photos_Upload_Progress", comment: "") + " 0%", preferredStyle: .alert)
+        alert = UIAlertController(title: R.string.localizable.photos_Upload(), message: R.string.localizable.photos_Upload_Progress() + " 0%", preferredStyle: .alert)
         let rect = CGRect(x: 10, y: 70, width: 250, height: 0)
         progressView = UIProgressView(frame: rect)
         progressView!.tintColor = UIColor.primaryGildtGreen
@@ -147,7 +147,7 @@ extension TagPhotosViewController {
         case .success(let upload, _, _):
             upload.uploadProgress(closure: { (progress) in
                 self.progressView?.setProgress(Float(progress.fractionCompleted), animated: true)
-                self.alert?.message = NSLocalizedString("Photos_Upload_Progress", comment: "") + " \(NSString(format: "%.1f", progress.fractionCompleted * 100))%"
+                self.alert?.message = R.string.localizable.photos_Upload_Progress() + " \(NSString(format: "%.1f", progress.fractionCompleted * 100))%"
                 if progress.isFinished {
                     self.alert?.dismiss(animated: true, completion: {
                         self.showSuccessMessage()
@@ -167,16 +167,16 @@ extension TagPhotosViewController {
     private func showSuccessMessage() {
         StatusAlertService().showStatusAlert(
             withImage: #imageLiteral(resourceName: "IconSucces"),
-            title: NSLocalizedString("Photos_Upload_Success_Title", comment: ""),
-            message: NSLocalizedString("Photos_Upload_Success_Message", comment: ""))
+            title: R.string.localizable.photos_Upload_Success_Title(),
+            message: R.string.localizable.photos_Upload_Success_Message())
         getItems()
     }
     
     private func showFailureMessage() {
         StatusAlertService().showStatusAlert(
             withImage: #imageLiteral(resourceName: "IconError"),
-            title: NSLocalizedString("Photos_Upload_Fail_Title", comment: ""),
-            message: NSLocalizedString("Photos_Upload_Fail_Message", comment: ""),
+            title: R.string.localizable.photos_Upload_Fail_Title(),
+            message: R.string.localizable.photos_Upload_Fail_Message(),
             error: true)
     }
 }
