@@ -3,6 +3,9 @@ PODS:
   - CenteredCollectionView (2.1.0)
   - Kingfisher (5.1.0)
   - QRCodeReader.swift (9.0.1)
+  - R.swift (5.0.1):
+    - R.swift.Library (~> 5.0.0)
+  - R.swift.Library (5.0.0)
   - SKPhotoBrowser (6.0.0)
   - StatusAlert (1.1.0)
   - SwiftKeychainWrapper (3.2.0)
@@ -15,6 +18,7 @@ DEPENDENCIES:
   - CenteredCollectionView
   - Kingfisher
   - QRCodeReader.swift
+  - R.swift
   - SKPhotoBrowser
   - StatusAlert
   - SwiftKeychainWrapper
@@ -26,6 +30,8 @@ SPEC REPOS:
     - CenteredCollectionView
     - Kingfisher
     - QRCodeReader.swift
+    - R.swift
+    - R.swift.Library
     - SKPhotoBrowser
     - StatusAlert
     - SwiftKeychainWrapper
@@ -37,12 +43,14 @@ SPEC CHECKSUMS:
   CenteredCollectionView: a32f1d57505be294ff6080251384a38ffd1e61f3
   Kingfisher: fcec238063d17404fca89bf0a850583211c4cbf6
   QRCodeReader.swift: 96292a5612fbc2fd9a0b26f93fa5164c8d02f59d
+  R.swift: a8e1a7e7f38441282fbcb7a3c266076eb38b77ba
+  R.swift.Library: 0bf390e729bc10bb2c9e4fb78bd043164a7be4ff
   SKPhotoBrowser: 76eb862685761707b5745fde7762757966565e07
   StatusAlert: 4d6dadebf5f7abd5648fa774ef3062f2f95cc4aa
   SwiftKeychainWrapper: 82c4c02cdc36f9a24f7edfcaab3e336401caa1a1
   SwiftLocation: a3c3bc2023118171ef3572188a31def94aa0892c
   SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
 
-PODFILE CHECKSUM: c28e1aa58ef4a7d28e2a9e809d9cc793ce7ed02d
+PODFILE CHECKSUM: 523cefde95b4aefe1ffeeedf9fc698b11257c3c2
 
 COCOAPODS: 1.5.3

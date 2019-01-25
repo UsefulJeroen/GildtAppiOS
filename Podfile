@@ -14,5 +14,6 @@ target 'GildtApp' do
   pod 'SKPhotoBrowser'
   pod 'QRCodeReader.swift'
   pod 'SwiftLocation'
+  pod 'R.swift'
 
 end
