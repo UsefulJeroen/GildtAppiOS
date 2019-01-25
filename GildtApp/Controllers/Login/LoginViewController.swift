@@ -197,13 +197,9 @@ class LoginViewController: UIViewController {
     func register() {
         activityIndicator.isHidden = false
         let username: String = firstTextField.text!
-        //show error if this is nil
         let email: String = secondTextField.text!
-        //show error if this is nil
         let password: String = thirdTextField.text!
-        //show error if this is nil
         let passwordConfirmation: String = fourthTextField.text!
-        //show error if this is nil
         
         let user: RegisterModel = RegisterModel(username: username, email: email, password: password, password_confirmation: passwordConfirmation)
         GildtAPIService.register(user: user)
