@@ -49,7 +49,7 @@ class JukeboxViewController: GenericTableViewController<SongRequestTableViewCell
         plusButton.addGestureRecognizer(tapGestureRecognizer)
     }
     
-    //override reloadItems to set the row of each songRequest
+    //override reloadItems to set the row of each songRequest (for numbers on the left side of view)
     override func reloadItems(newData: [SongRequest]) {
         var newItems: [SongRequest] = []
         var i = 1
@@ -107,24 +107,28 @@ class JukeboxViewController: GenericTableViewController<SongRequestTableViewCell
             }
         }
         else {
-            //show alert that you need to fill in the artist & title fields
-            let alertTitle = R.string.localizable.jukebox_Error_Title()
-            let alertMessage = R.string.localizable.jukebox_Error_Message()
-            let discardText = R.string.localizable.jukebox_Error_Discard()
-            let alert = UIAlertController(title: alertTitle, message: alertMessage, preferredStyle: .alert)
-            //check which field needs be be changed
-            if title == "" {
-                alert.addAction(UIAlertAction(title: discardText, style: .default, handler: { action in
-                    self.titleTextField.becomeFirstResponder()
-                }))
-            }
-            else {
-                alert.addAction(UIAlertAction(title: discardText, style: .default, handler: { action in
-                    self.artistTextField.becomeFirstResponder()
-                }))
-            }
-            self.present(alert, animated: true)
+            showFieldsNotFilledInAlert(titleFilled: title != "")
         }
+    }
+    
+    //show alert that you need to fill in the artist & title fields
+    func showFieldsNotFilledInAlert(titleFilled: Bool) {
+        let alertTitle = R.string.localizable.jukebox_Error_Title()
+        let alertMessage = R.string.localizable.jukebox_Error_Message()
+        let discardText = R.string.localizable.jukebox_Error_Discard()
+        let alert = UIAlertController(title: alertTitle, message: alertMessage, preferredStyle: .alert)
+        //check which field needs be be changed
+        if !titleFilled {
+            alert.addAction(UIAlertAction(title: discardText, style: .default, handler: { action in
+                self.titleTextField.becomeFirstResponder()
+            }))
+        }
+        else {
+            alert.addAction(UIAlertAction(title: discardText, style: .default, handler: { action in
+                self.artistTextField.becomeFirstResponder()
+            }))
+        }
+        self.present(alert, animated: true)
     }
     
     func successfullyAddedSong(songRequest: SongRequest) {
