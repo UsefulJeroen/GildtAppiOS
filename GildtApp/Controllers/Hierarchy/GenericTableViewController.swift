@@ -10,7 +10,12 @@ import Foundation
 import UIKit
 import Alamofire
 
-//basic tableviewcontroller with functions that all tableviewcontrollers use
+//basic tableviewcontroller with functions that all tableviewcontrollers use;
+//show all items
+//get all items
+//reload all items
+//pull to refresh
+//autorefresh
 //if you want to implement/use this:
 //override getCellId & getAPICall in childClass
 class GenericTableViewController<T: GenericTableViewCell<U>, U>: UITableViewController where U: Decodable {
@@ -34,14 +39,16 @@ class GenericTableViewController<T: GenericTableViewCell<U>, U>: UITableViewCont
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //set which tableviewcells should be used
         tableView.register(UINib(nibName: getCellId(), bundle: nil), forCellReuseIdentifier: getCellId())
-        
+        //setup pull to refresh
         refreshControl = UIRefreshControl()
         refreshControl?.addTarget(self, action: #selector(refresh), for: .valueChanged)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        //check for new info when user open's page
         getItems()
         startAutoRefreshTimer()
     }
@@ -94,6 +101,7 @@ class GenericTableViewController<T: GenericTableViewCell<U>, U>: UITableViewCont
     
     func finishRefreshing() {
         tableView.reloadData()
+        //extra code to fix pull to refresh weirdness
         DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: {
             self.refreshControl?.alpha = 0
             self.refreshControl?.endRefreshing()
