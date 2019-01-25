@@ -1,5 +1,5 @@
 //
-//  BackendAPIService.swift
+//  GildtAPIService.swift
 //  GildtApp
 //
 //  Created by Jeroen Besse on 14/11/2018.
