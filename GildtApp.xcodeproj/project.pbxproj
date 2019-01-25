@@ -10,7 +10,7 @@
 		348921BC5C45455992621375 /* Pods_GildtApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 851FFD7A69B2CD05610C3A5C /* Pods_GildtApp.framework */; };
 		B00563B9219DC34E00B9F635 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B00563B8219DC34E00B9F635 /* Assets.xcassets */; };
 		B0177A3A219B8F1C00E379D5 /* OnBoarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0177A39219B8F1C00E379D5 /* OnBoarding.storyboard */; };
-		B0177A3E219B9C4B00E379D5 /* BackendAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0177A3D219B9C4B00E379D5 /* BackendAPIService.swift */; };
+		B0177A3E219B9C4B00E379D5 /* GildtAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0177A3D219B9C4B00E379D5 /* GildtAPIService.swift */; };
 		B0177A40219B9C8100E379D5 /* LocalStorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0177A3F219B9C8100E379D5 /* LocalStorageService.swift */; };
 		B0177A42219C64E500E379D5 /* JukeboxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0177A41219C64E500E379D5 /* JukeboxViewController.swift */; };
 		B0177A44219CC6A100E379D5 /* SongRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0177A43219CC6A100E379D5 /* SongRequest.swift */; };
@@ -80,7 +80,7 @@
 		AC61AC83AADC724FF2441FBC /* Pods-GildtApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GildtApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-GildtApp/Pods-GildtApp.release.xcconfig"; sourceTree = "<group>"; };
 		B00563B8219DC34E00B9F635 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B0177A39219B8F1C00E379D5 /* OnBoarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OnBoarding.storyboard; sourceTree = "<group>"; };
-		B0177A3D219B9C4B00E379D5 /* BackendAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackendAPIService.swift; sourceTree = "<group>"; };
+		B0177A3D219B9C4B00E379D5 /* GildtAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GildtAPIService.swift; sourceTree = "<group>"; };
 		B0177A3F219B9C8100E379D5 /* LocalStorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStorageService.swift; sourceTree = "<group>"; };
 		B0177A41219C64E500E379D5 /* JukeboxViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JukeboxViewController.swift; sourceTree = "<group>"; };
 		B0177A43219CC6A100E379D5 /* SongRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongRequest.swift; sourceTree = "<group>"; };
@@ -215,7 +215,7 @@
 		B0177A36219B89E400E379D5 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				B0177A3D219B9C4B00E379D5 /* BackendAPIService.swift */,
+				B0177A3D219B9C4B00E379D5 /* GildtAPIService.swift */,
 				B0177A3F219B9C8100E379D5 /* LocalStorageService.swift */,
 				DF772FBD21DA5F4600EC3EB1 /* StatusAlertService.swift */,
 			);
@@ -671,7 +671,7 @@
 				DFD460E121C0559400F90B52 /* StampCollectionViewCell.swift in Sources */,
 				DF9D57B321B08615003A97FB /* AgendaTableViewCell.swift in Sources */,
 				B0B1127621CE804400E4F721 /* GenericViewCell.swift in Sources */,
-				B0177A3E219B9C4B00E379D5 /* BackendAPIService.swift in Sources */,
+				B0177A3E219B9C4B00E379D5 /* GildtAPIService.swift in Sources */,
 				B0CADB8E21AB2EA200E6D848 /* LoginViewController.swift in Sources */,
 				B099D20021B0278400DA4473 /* AgendaViewController.swift in Sources */,
 				DFB7981E21E13F7E0011425C /* ProfileViewController.swift in Sources */,

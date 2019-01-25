@@ -10,7 +10,12 @@ import Foundation
 import UIKit
 import Alamofire
 
-//basic collectionviewcontroller with functions that all collectionviewcontrollers use
+//basic collectionviewcontroller with functions that all collectionviewcontrollers use;
+//show all items
+//get all items
+//reload all items
+//pull to refresh
+//autorefresh
 //if you want to implement/use this:
 //override getCellId & getAPICall in childClass
 class GenericCollectionViewController<T: GenericCollectionViewCell<U>, U>: UICollectionViewController where U: Decodable {
@@ -33,16 +38,17 @@ class GenericCollectionViewController<T: GenericCollectionViewCell<U>, U>: UICol
     }
     
     override func viewDidLoad() {
+        //set which collectioncells should be used
         collectionView.register(UINib(nibName: getCellId(), bundle: nil), forCellWithReuseIdentifier: getCellId())
-        
+        //setup pull to refresh
         collectionView.refreshControl = UIRefreshControl()
         collectionView.refreshControl?.addTarget(self, action: #selector(refresh), for: .valueChanged)
         collectionView.alwaysBounceVertical = true
-        //collectionView.addSubview(refreshControl!)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        //check for new info when user open's page
         getItems()
         startAutoRefreshTimer()
     }

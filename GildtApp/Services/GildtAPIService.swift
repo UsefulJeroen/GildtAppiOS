@@ -1,5 +1,5 @@
 //
-//  BackendAPIService.swift
+//  GildtAPIService.swift
 //  GildtApp
 //
 //  Created by Jeroen Besse on 14/11/2018.
@@ -8,6 +8,10 @@
 
 import Foundation
 import Alamofire
+import UIKit
+import Kingfisher
+import SKPhotoBrowser
+import Photos
 
 //bakendapiservice to implement alamofire requests
 //this will depend on the api made by Erik
@@ -105,6 +109,22 @@ class GildtAPIService {
     static func getImagesFromTag(id: Int) -> DataRequest {
         let endPointURL = "tag/\(id)/images"
         return createRequest(endPointURL: endPointURL, httpMethod: .get)
+    }
+    
+    static func uploadImage(image: UIImage, description: String, tag: Int, callback:@escaping (SessionManager.MultipartFormDataEncodingResult)-> Void) {
+        let authToken = LocalStorageService.getAuthToken()!
+        let headers: HTTPHeaders = ["Authorization": "Bearer \(authToken)"]
+        let imageData = image.jpegData(compressionQuality: 0.6)
+        
+        Alamofire.upload(multipartFormData: { (multipartFormData) in
+            multipartFormData.append(imageData!, withName: "image", fileName: "\(Date().timeIntervalSince1970).jpeg", mimeType: "image/jpeg")
+            multipartFormData.append(description.data(using: .utf8)!, withName: "description")
+            multipartFormData.append(String(tag).data(using: .utf8)!, withName: "tags")
+        }, to:URL(string: "\(GildtAPIService.baseURL)/image")!, method: .post, headers: headers)
+        {
+            encodingResult in
+            callback(encodingResult)
+        }
     }
     
     //MARK: - Stamp
