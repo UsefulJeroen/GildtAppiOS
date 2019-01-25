@@ -11,9 +11,9 @@ import SwiftKeychainWrapper
 
 //class to set data in the localstorage of device
 //will be used to save authtoken in keychain
-//and can be extended to support other data / settings
+//and will be used to save username and onboardingstate in userdefaults
 final class LocalStorageService {
-    private static let authTokenKey: String = "changeToSecureRandomKey"
+    private static let authTokenKey: String = "33^f6Z&W%t5z^kSA7PvN"
     private static let usernameKey: String = "GildtProfilename"
     private static let onboardingKey: String = "GildtOnboardingKey"
     
