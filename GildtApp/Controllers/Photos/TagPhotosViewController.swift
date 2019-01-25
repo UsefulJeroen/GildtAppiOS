@@ -133,8 +133,6 @@ extension TagPhotosViewController {
     }
     
     private func uploadImage(image: UIImage, description: String, tag: Int) {
-        
-        
         // Upload modal
         alert = UIAlertController(title: NSLocalizedString("Photos_Upload", comment: ""), message: NSLocalizedString("Photos_Upload_Progress", comment: "") + " 0%", preferredStyle: .alert)
         let rect = CGRect(x: 10, y: 70, width: 250, height: 0)
@@ -145,29 +143,7 @@ extension TagPhotosViewController {
         self.present(alert!, animated: true, completion: nil)
         
         GildtAPIService.uploadImage(image: image, description: description, tag: tag, callback: photoUploadHandler)
-        
-        //remove this!!
-//        let baseURL = "https://gildt.inholland-informatica.nl/api/v1"
-//        let authToken = LocalStorageService.getAuthToken()!
-//        let headers: HTTPHeaders = ["Authorization": "Bearer \(authToken)"]
-//        let imageData = image.jpegData(compressionQuality: 0.6)
-//
-//        Alamofire.upload(multipartFormData: { multipartFormData in
-//            multipartFormData.append(imageData!, withName: "image", fileName: "\(Date().timeIntervalSince1970).jpeg", mimeType: "image/jpeg")
-//            multipartFormData.append(description.data(using: .utf8)!, withName: "description")
-//            multipartFormData.append(String(tag).data(using: .utf8)!, withName: "tags")
-//        },
-//            to: URL(string: "\(baseURL)/image")!, method: .post, headers: headers,
-//            encodingCompletion: photoUploadHandler)
-//        Alamofire.upload(multipartFormData: { (multipartFormData) in
-//            multipartFormData.append(imageData!, withName: "image", fileName: "\(Date().timeIntervalSince1970).jpeg", mimeType: "image/jpeg")
-//            multipartFormData.append(description.data(using: .utf8)!, withName: "description")
-//            multipartFormData.append(String(tag).data(using: .utf8)!, withName: "tags")
-//        }, to:URL(string: "\(baseURL)/image")!, method: .post, headers: headers)
-//        {
-//            encodingResult in
-//            self.photoUploadHandler(encodingResult: encodingResult)
-//        }
+
     }
     
     func photoUploadHandler(encodingResult: SessionManager.MultipartFormDataEncodingResult) {
