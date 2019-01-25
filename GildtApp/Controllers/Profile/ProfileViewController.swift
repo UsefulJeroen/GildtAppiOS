@@ -22,9 +22,7 @@ class ProfileViewController : UITableViewController {
     
     @IBAction func logoutButtonTapped(_ sender: Any) {
         LocalStorageService.removeAuthToken()
-        let storyboard = UIStoryboard(name: "Login", bundle: nil)
-        let loginPageVc = storyboard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
-        
+        let loginPageVc = R.storyboard.login.loginViewController()!
         present(loginPageVc, animated: true, completion: nil)
     }
     

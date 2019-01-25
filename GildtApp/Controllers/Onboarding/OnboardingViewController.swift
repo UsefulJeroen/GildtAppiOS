@@ -57,13 +57,11 @@ class OnboardingViewController: UIViewController {
     
     func exitOnboardingFlow() {
         LocalStorageService.setOnboardingState(state: true)
-        if (!LocalStorageService.isAuthTokenSet()){
-            let storyboard = UIStoryboard(name: "Login", bundle: nil)
-            let loginVc = storyboard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+        if (!LocalStorageService.isAuthTokenSet()) {
+            let loginVc = R.storyboard.login.loginViewController()!
             self.present(loginVc, animated: true, completion: nil)
         } else {
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let agendaPageVc = storyboard.instantiateViewController(withIdentifier: "MainTabBarController") as! MainTabBarController
+            let agendaPageVc = R.storyboard.main.mainTabBarController()!
             self.present(agendaPageVc, animated: true, completion: nil)
         }
     }

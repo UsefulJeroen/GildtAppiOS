@@ -32,8 +32,7 @@ class TagOverviewViewController: GenericCollectionViewController<TagCollectionVi
     }
     
     func createDetailVc(indexPath: IndexPath) -> TagPhotosViewController {
-        let storyboard = UIStoryboard(name: "Photo", bundle: nil)
-        let tagPhotosVc = storyboard.instantiateViewController(withIdentifier: "TagPhotosViewController") as! TagPhotosViewController
+        let tagPhotosVc = R.storyboard.photo.tagPhotosViewController()!
         let tag = items[indexPath.row]
         tagPhotosVc.tag = tag
         return tagPhotosVc

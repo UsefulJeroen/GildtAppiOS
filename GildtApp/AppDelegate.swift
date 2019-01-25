@@ -20,8 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         //if user isn't loggedin, show login page
         if !LocalStorageService.isAuthTokenSet() {
-            let storyboard = UIStoryboard(name: "Login", bundle: nil)
-            let viewController = storyboard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+            let viewController = R.storyboard.login.loginViewController()
             self.window?.rootViewController = viewController
             self.window?.makeKeyAndVisible()
         }

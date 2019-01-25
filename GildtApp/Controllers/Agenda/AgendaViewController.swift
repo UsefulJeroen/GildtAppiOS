@@ -43,8 +43,7 @@ class AgendaViewController: GenericTableViewController<AgendaTableViewCell, Even
     }
     
     func detailViewController(for index: Int) -> UIViewController {
-        let storyboard = UIStoryboard(name: "Agenda", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "EventViewController") as! EventViewController
+        let vc = R.storyboard.agenda.eventViewController()!
         vc.navigationItem.largeTitleDisplayMode = .never
         vc.event = items[index]
         return vc

@@ -190,8 +190,7 @@ class LoginViewController: UIViewController {
         activityIndicator.isHidden = true
         LocalStorageService.setAuthToken(authToken: postBack.jwt)
         LocalStorageService.setUsername(username: postBack.username)
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let agendaPageVc = storyboard.instantiateViewController(withIdentifier: "MainTabBarController") as! MainTabBarController
+        let agendaPageVc = R.storyboard.main.mainTabBarController()!
         self.present(agendaPageVc, animated: true, completion: nil)
     }
     
