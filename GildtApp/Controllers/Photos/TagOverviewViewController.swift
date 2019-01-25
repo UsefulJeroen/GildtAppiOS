@@ -13,7 +13,7 @@ import Alamofire
 class TagOverviewViewController: GenericCollectionViewController<TagCollectionViewCell, Tag>, UICollectionViewDelegateFlowLayout, UIViewControllerPreviewingDelegate {
     
     override func getCellId() -> String {
-        return "TagCollectionViewCell"
+        return R.nib.tagCollectionViewCell.name
     }
     
     override func getMainAPICall() -> DataRequest {

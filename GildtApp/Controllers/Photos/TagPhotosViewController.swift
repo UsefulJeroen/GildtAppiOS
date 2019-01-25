@@ -16,7 +16,7 @@ import Photos
 class TagPhotosViewController: GenericTableViewController<PreviewImageTableViewCell, Photo>, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     
     override func getCellId() -> String {
-        return "PreviewImageTableViewCell"
+        return R.nib.previewImageTableViewCell.name
     }
     
     override func getMainAPICall() -> DataRequest {

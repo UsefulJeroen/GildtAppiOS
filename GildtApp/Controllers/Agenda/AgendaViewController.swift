@@ -13,7 +13,7 @@ import Alamofire
 class AgendaViewController: GenericTableViewController<AgendaTableViewCell, Event>, UIViewControllerPreviewingDelegate {
     
     override func getCellId() -> String {
-        return "AgendaTableViewCell"
+        return R.nib.agendaTableViewCell.name
     }
     
     override func getMainAPICall() -> DataRequest {
