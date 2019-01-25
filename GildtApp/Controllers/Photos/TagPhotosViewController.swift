@@ -135,7 +135,7 @@ extension TagPhotosViewController {
         let rect = CGRect(x: 10, y: 70, width: 250, height: 0)
         progressView = UIProgressView(frame: rect)
         progressView!.tintColor = UIColor.primaryGildtGreen
-        alert?.view.addSubview(progressView!)
+        alert!.view.addSubview(progressView!)
         
         self.present(alert!, animated: true, completion: nil)
         
@@ -169,6 +169,7 @@ extension TagPhotosViewController {
             withImage: #imageLiteral(resourceName: "IconSucces"),
             title: NSLocalizedString("Photos_Upload_Success_Title", comment: ""),
             message: NSLocalizedString("Photos_Upload_Success_Message", comment: ""))
+        getItems()
     }
     
     private func showFailureMessage() {
