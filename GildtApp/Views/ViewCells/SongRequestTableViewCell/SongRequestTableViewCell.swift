@@ -45,19 +45,19 @@ class SongRequestTableViewCell: GenericTableViewCell<SongRequest> {
     
     func setUpvoted() {
         upvotesAmountLabelView.textColor = UIColor.primaryGildtGreen
-        upvoteButton.setImage(UIImage(named: "arrow-up-green"), for: UIControl.State.normal)
+        upvoteButton.setImage(R.image.arrowUpGreen(), for: .normal)
     }
     
     func setDownvoted() {
         upvotesAmountLabelView.textColor = UIColor.red
-        downvoteButton.setImage(UIImage(named: "arrow-down-red"), for: UIControl.State.normal)
+        downvoteButton.setImage(R.image.arrowDownRed(), for: .normal)
     }
     
     func setNew() {
         container.backgroundColor = .white
         titleLabelView.backgroundColor = .white
         artistLabelView.backgroundColor = .white
-        idImageView.image = UIImage(named: "SongRequestCircleImageGreen")
+        idImageView.image = R.image.songRequestCircleImageGreen()
         idLabelView.text = R.string.localizable.jukebox_New()
         idLabelView.textColor = .white
         
@@ -112,8 +112,8 @@ class SongRequestTableViewCell: GenericTableViewCell<SongRequest> {
     func successfullyVoted(updatedSongrequest: SongRequest) {
         upvotesAmountLabelView.text = ""
         upvotesAmountLabelView.textColor = UIColor.black
-        upvoteButton.setImage(UIImage(named: "arrow-up-grey"), for: UIControl.State.normal)
-        downvoteButton.setImage(UIImage(named: "arrow-down-grey"), for: UIControl.State.normal)
+        upvoteButton.setImage(R.image.arrowUpGrey(), for: .normal)
+        downvoteButton.setImage(R.image.arrowDownGrey(), for: .normal)
         item = updatedSongrequest
     }
     
@@ -130,15 +130,15 @@ class SongRequestTableViewCell: GenericTableViewCell<SongRequest> {
         artistLabelView.text = ""
         upvotesAmountLabelView.text = ""
         upvotesAmountLabelView.textColor = UIColor.black
-        upvoteButton.setImage(UIImage(named: "arrow-up-grey"), for: UIControl.State.normal)
-        downvoteButton.setImage(UIImage(named: "arrow-down-grey"), for: UIControl.State.normal)
+        upvoteButton.setImage(R.image.arrowUpGrey(), for: .normal)
+        downvoteButton.setImage(R.image.arrowDownGrey(), for: .normal)
         container.backgroundColor = .appBackground
         container.layer.cornerRadius = 0
         container.layer.shadowRadius = 0
         container.layer.shadowOpacity = 0
         titleLabelView.backgroundColor = .appBackground
         artistLabelView.backgroundColor = .appBackground
-        idImageView.image = UIImage(named: "SongRequestCircleImageWhite")
+        idImageView.image = R.image.songRequestCircleImageWhite()
         idLabelView.textColor = .black
     }
 }
